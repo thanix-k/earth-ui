@@ -1,0 +1,23 @@
+---
+title: Introduction
+description: Earth Design System components for shadcn, built on Base UI and Tailwind CSS.
+---
+
+Earth UI is the [Earth Design System](https://earth.anywhere.co) delivered as a [shadcn](https://ui.shadcn.com) registry. You install components with the shadcn CLI and own the source. They come styled with Earth's tokens, typography and focus treatment.
+
+## What you get
+
+- **Every shadcn component on Base UI.** Same APIs, parts and composition as shadcn's Base UI components, so shadcn docs, blocks and AI-generated code work as-is.
+- **Earth tokens, everywhere.** The `@earth/base` item installs the setmore-black colour, type, radius and shadow tokens for light and dark mode. Stock shadcn variables such as `--primary` and `--muted` map to Earth values, so third-party shadcn code looks like Earth too.
+- **Earth's own utilities.** Every EDS token is also available directly: `bg-eds-neutral-hover`, `text-eds-secondary`, `border-eds-input-active`, `text-body-14`, `text-heading-24`, `shadow-eds-20` and `focus-ring`.
+
+## How it fits together
+
+| Layer | Source |
+| --- | --- |
+| Behaviour and accessibility | [Base UI](https://base-ui.com) |
+| Component API and composition | [shadcn](https://ui.shadcn.com) (Base UI flavour) |
+| Visual design | Earth Design System (setmore-black) |
+| Delivery | shadcn registry: `npx shadcn add @earth/<component>` |
+
+Ready to install? Head to [Get Started](/docs/get-started).

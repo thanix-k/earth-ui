@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-icon",
+  "title": "Toggle Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-icon.tsx",
+      "content": "import { BellIcon, EyeOffIcon } from \"lucide-react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function ToggleIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Toggle aria-label=\"Hide cancelled bookings\">\n        <EyeOffIcon />\n      </Toggle>\n      <Toggle variant=\"outline\" aria-label=\"Notify me\" defaultPressed>\n        <BellIcon />\n      </Toggle>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

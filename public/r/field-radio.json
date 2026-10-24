@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-radio",
+  "title": "Field Radio",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/field",
+    "@earth/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-radio.tsx",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n  FieldLegend,\n  FieldSet,\n} from \"@/registry/default/ui/field\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport default function FieldRadio() {\n  return (\n    <FieldSet className=\"max-w-sm\">\n      <FieldLegend variant=\"label\">Payment</FieldLegend>\n      <FieldDescription>When customers pay for their booking.</FieldDescription>\n      <RadioGroup defaultValue=\"deposit\">\n        <Field orientation=\"horizontal\">\n          <RadioGroupItem value=\"full\" id=\"payment-full\" />\n          <FieldLabel htmlFor=\"payment-full\">Pay in full when booking</FieldLabel>\n        </Field>\n        <Field orientation=\"horizontal\">\n          <RadioGroupItem value=\"deposit\" id=\"payment-deposit\" />\n          <FieldLabel htmlFor=\"payment-deposit\">Pay a 20% deposit</FieldLabel>\n        </Field>\n        <Field orientation=\"horizontal\">\n          <RadioGroupItem value=\"later\" id=\"payment-later\" />\n          <FieldLabel htmlFor=\"payment-later\">Pay at the appointment</FieldLabel>\n        </Field>\n      </RadioGroup>\n    </FieldSet>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

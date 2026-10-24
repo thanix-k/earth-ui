@@ -1,0 +1,50 @@
+---
+title: Tabs
+description: Switches between related views that share one place on the page.
+links:
+  doc: https://base-ui.com/react/components/tabs
+  api: https://base-ui.com/react/components/tabs#api-reference
+---
+
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+<Installation name="tabs" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+```
+
+```tsx
+<Tabs defaultValue="upcoming">
+  <TabsList>
+    <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
+    <TabsTrigger value="past">Past</TabsTrigger>
+  </TabsList>
+  <TabsContent value="upcoming">Upcoming appointments</TabsContent>
+  <TabsContent value="past">Past appointments</TabsContent>
+</Tabs>
+```
+
+## Examples
+
+### Line
+
+`variant="line"` underlines the active tab. Use it for page-level sections.
+
+<ComponentPreview name="tabs-line" />
+
+### Vertical
+
+<ComponentPreview name="tabs-vertical" />
+
+### With icon
+
+<ComponentPreview name="tabs-with-icon" />
+
+### Disabled
+
+<ComponentPreview name="tabs-disabled" />

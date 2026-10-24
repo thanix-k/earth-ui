@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-demo",
+  "title": "Tooltip Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-demo.tsx",
+      "content": "import { PlusIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/default/ui/tooltip\";\n\nexport default function TooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        render={<Button variant=\"outline\" size=\"icon\" aria-label=\"New appointment\" />}\n      >\n        <PlusIcon />\n      </TooltipTrigger>\n      <TooltipContent>New appointment</TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

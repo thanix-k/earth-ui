@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-small",
+  "title": "Card Small",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-small.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\n\nexport default function CardSmall() {\n  return (\n    <Card size=\"sm\" className=\"w-full max-w-xs\">\n      <CardHeader>\n        <CardTitle>Today</CardTitle>\n        <CardDescription>Thursday, 24 October</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>8 bookings, 2 waiting for confirmation.</p>\n      </CardContent>\n      <CardFooter>\n        <Button variant=\"outline\" size=\"sm\" className=\"w-full\">\n          View calendar\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

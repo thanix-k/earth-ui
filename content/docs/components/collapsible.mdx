@@ -1,0 +1,32 @@
+---
+title: Collapsible
+description: A section that can be expanded and collapsed with a trigger.
+links:
+  doc: https://base-ui.com/react/components/collapsible
+  api: https://base-ui.com/react/components/collapsible#api-reference
+---
+
+<ComponentPreview name="collapsible-demo" />
+
+## Installation
+
+<Installation name="collapsible" />
+
+## Usage
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Show more</CollapsibleTrigger>
+  <CollapsibleContent>More bookings</CollapsibleContent>
+</Collapsible>
+```
+
+Collapsible is unstyled. Use the `render` prop to make the trigger a `Button`.

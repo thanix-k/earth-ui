@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-label",
+  "title": "Progress Label",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/progress-label.tsx",
+      "content": "import { Progress, ProgressLabel, ProgressValue } from \"@/registry/default/ui/progress\";\n\nexport default function ProgressLabelExample() {\n  return (\n    <Progress value={75} className=\"w-full max-w-sm\">\n      <ProgressLabel>Importing customers</ProgressLabel>\n      <ProgressValue />\n    </Progress>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

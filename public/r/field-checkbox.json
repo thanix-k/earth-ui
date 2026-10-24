@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-checkbox",
+  "title": "Field Checkbox",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/checkbox",
+    "@earth/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-checkbox.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport {\n  Field,\n  FieldContent,\n  FieldDescription,\n  FieldGroup,\n  FieldLabel,\n  FieldLegend,\n  FieldSet,\n} from \"@/registry/default/ui/field\";\n\nexport default function FieldCheckbox() {\n  return (\n    <FieldSet className=\"max-w-sm\">\n      <FieldLegend variant=\"label\">Notifications</FieldLegend>\n      <FieldGroup className=\"gap-3\">\n        <Field orientation=\"horizontal\">\n          <Checkbox id=\"notify-new\" defaultChecked />\n          <FieldContent>\n            <FieldLabel htmlFor=\"notify-new\">New bookings</FieldLabel>\n            <FieldDescription>Email me when a customer books online.</FieldDescription>\n          </FieldContent>\n        </Field>\n        <Field orientation=\"horizontal\">\n          <Checkbox id=\"notify-cancel\" />\n          <FieldContent>\n            <FieldLabel htmlFor=\"notify-cancel\">Cancellations</FieldLabel>\n            <FieldDescription>Email me when a booking is cancelled.</FieldDescription>\n          </FieldContent>\n        </Field>\n      </FieldGroup>\n    </FieldSet>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

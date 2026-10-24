@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-demo",
+  "title": "Item Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/item"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/item-demo.tsx",
+      "content": "import { ChevronRightIcon, ScissorsIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemMedia,\n  ItemTitle,\n} from \"@/registry/default/ui/item\";\n\nexport default function ItemDemo() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <Item variant=\"outline\">\n        <ItemContent>\n          <ItemTitle>Online booking</ItemTitle>\n          <ItemDescription>\n            Customers can book any open slot from your booking page.\n          </ItemDescription>\n        </ItemContent>\n        <ItemActions>\n          <Button variant=\"outline\" size=\"sm\">\n            Settings\n          </Button>\n        </ItemActions>\n      </Item>\n      <Item variant=\"outline\" size=\"sm\" render={<a href=\"#services\" />}>\n        <ItemMedia variant=\"icon\">\n          <ScissorsIcon />\n        </ItemMedia>\n        <ItemContent>\n          <ItemTitle>Manage services</ItemTitle>\n        </ItemContent>\n        <ItemActions>\n          <ChevronRightIcon className=\"size-4 text-eds-icon-secondary\" />\n        </ItemActions>\n      </Item>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

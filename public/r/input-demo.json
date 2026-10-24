@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-demo",
+  "title": "Input Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-demo.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function InputDemo() {\n  return <Input className=\"max-w-xs\" type=\"email\" placeholder=\"Email\" aria-label=\"Email\" />;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

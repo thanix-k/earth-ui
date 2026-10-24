@@ -1,0 +1,34 @@
+---
+title: Popover
+description: Shows extra content or a small form in a floating panel next to its trigger.
+links:
+  doc: https://base-ui.com/react/components/popover
+  api: https://base-ui.com/react/components/popover#api-reference
+---
+
+<ComponentPreview name="popover-demo" />
+
+## Installation
+
+<Installation name="popover" />
+
+## Usage
+
+```tsx
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>Place content here.</PopoverContent>
+</Popover>
+```
+
+## Examples
+
+### Align
+
+Use `align` to line the popover up with the start, center or end of the trigger.
+
+<ComponentPreview name="popover-align" />

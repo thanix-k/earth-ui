@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-switch",
+  "title": "Field Switch",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/field",
+    "@earth/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-switch.tsx",
+      "content": "import { Field, FieldContent, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function FieldSwitch() {\n  return (\n    <Field orientation=\"horizontal\" className=\"max-w-sm\">\n      <FieldContent>\n        <FieldLabel htmlFor=\"waitlist\">Waitlist</FieldLabel>\n        <FieldDescription>Offer freed-up slots to customers on the waitlist.</FieldDescription>\n      </FieldContent>\n      <Switch id=\"waitlist\" defaultChecked />\n    </Field>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

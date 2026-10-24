@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-range",
+  "title": "Calendar Range",
+  "dependencies": [
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "@earth/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/calendar-range.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarRange() {\n  const [range, setRange] = React.useState<DateRange | undefined>({\n    from: new Date(2026, 10, 9),\n    to: new Date(2026, 10, 15),\n  });\n\n  return (\n    <Calendar\n      mode=\"range\"\n      defaultMonth={range?.from}\n      selected={range}\n      onSelect={setRange}\n      numberOfMonths={2}\n    />\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

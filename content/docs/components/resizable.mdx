@@ -1,0 +1,41 @@
+---
+title: Resizable
+description: Panels that people can resize by dragging the handle between them.
+links:
+  doc: https://react-resizable-panels.vercel.app
+  api: https://github.com/bvaughn/react-resizable-panels
+---
+
+<ComponentPreview name="resizable-demo" />
+
+## Installation
+
+<Installation name="resizable" />
+
+## Usage
+
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+```
+
+```tsx
+<ResizablePanelGroup orientation="horizontal">
+  <ResizablePanel>Services</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Service details</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Examples
+
+### Vertical
+
+<ComponentPreview name="resizable-vertical" />
+
+### With handle
+
+<ComponentPreview name="resizable-handle" />

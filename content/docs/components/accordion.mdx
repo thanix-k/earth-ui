@@ -1,0 +1,45 @@
+---
+title: Accordion
+description: A stack of headings that each show or hide a section of content.
+links:
+  doc: https://base-ui.com/react/components/accordion
+  api: https://base-ui.com/react/components/accordion#api-reference
+---
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<Installation name="accordion" />
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx
+<Accordion>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Can customers reschedule?</AccordionTrigger>
+    <AccordionContent>Yes, up to 24 hours before.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Examples
+
+### Multiple
+
+Pass `multiple` to let several sections stay open.
+
+<ComponentPreview name="accordion-multiple" />
+
+### Disabled
+
+<ComponentPreview name="accordion-disabled" />

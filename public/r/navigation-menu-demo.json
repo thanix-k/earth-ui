@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-demo",
+  "title": "Navigation Menu Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/navigation-menu-demo.tsx",
+      "content": "import {\n  CalendarCheckIcon,\n  ContactIcon,\n  CreditCardIcon,\n  GlobeIcon,\n  MessageSquareIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n  navigationMenuTriggerStyle,\n} from \"@/registry/default/ui/navigation-menu\";\n\nconst features = [\n  {\n    title: \"Booking page\",\n    description: \"A page customers use to book you 24/7.\",\n    icon: GlobeIcon,\n  },\n  {\n    title: \"Appointments\",\n    description: \"Every booking across your team in one calendar.\",\n    icon: CalendarCheckIcon,\n  },\n  {\n    title: \"Payments\",\n    description: \"Take deposits and full payments at booking.\",\n    icon: CreditCardIcon,\n  },\n];\n\nconst teams = [\n  { title: \"Staff\", icon: UsersIcon },\n  { title: \"Customers\", icon: ContactIcon },\n  { title: \"Messages\", icon: MessageSquareIcon },\n];\n\nexport default function NavigationMenuDemo() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Features</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-80 gap-0.5\">\n              {features.map((item) => (\n                <li key={item.title}>\n                  <NavigationMenuLink href=\"#\" className=\"items-start\">\n                    <item.icon className=\"mt-0.5\" />\n                    <div className=\"flex flex-col\">\n                      <span className=\"font-medium\">{item.title}</span>\n                      <span className=\"text-eds-secondary\">{item.description}</span>\n                    </div>\n                  </NavigationMenuLink>\n                </li>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Teams</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-48 gap-0.5\">\n              {teams.map((item) => (\n                <li key={item.title}>\n                  <NavigationMenuLink href=\"#\">\n                    <item.icon />\n                    {item.title}\n                  </NavigationMenuLink>\n                </li>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Pricing\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

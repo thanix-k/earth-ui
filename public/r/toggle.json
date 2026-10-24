@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "A button that stays pressed or unpressed, such as a filter chip.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/toggle.tsx",
+      "content": "\"use client\";\n\nimport { Toggle as TogglePrimitive } from \"@base-ui/react/toggle\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// `default` is the EDS Chip (pressed: neutral-secondary fill). `outline` is the\n// EDS DaySelect day (bordered, pressed: inverse fill). Icon-only toggles\n// (a lone icon plus `aria-label`) are circles.\nconst toggleVariants = cva(\n  \"group/toggle inline-flex shrink-0 cursor-pointer items-center justify-center gap-1 rounded-full border border-transparent whitespace-nowrap text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:bg-transparent data-disabled:text-eds-disabled [&[aria-label]:has(>svg:only-child)]:px-0 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-transparent hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed data-pressed:bg-eds-neutral-secondary data-pressed:hover:bg-eds-neutral-secondary-hover data-pressed:active:bg-eds-neutral-secondary-pressed data-disabled:data-pressed:bg-eds-neutral-disabled\",\n        outline:\n          \"border-eds-secondary bg-eds-neutral hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed data-pressed:border-transparent data-pressed:bg-eds-inverse data-pressed:text-eds-inverse data-pressed:hover:bg-eds-inverse-hover data-pressed:active:bg-eds-inverse-pressed data-disabled:border-eds-secondary data-disabled:bg-eds-neutral data-disabled:data-pressed:border-eds-secondary data-disabled:data-pressed:bg-eds-neutral-disabled data-disabled:data-pressed:text-eds-disabled\",\n      },\n      size: {\n        default:\n          \"h-10 min-w-10 px-4 text-body-14 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 lg:h-8 lg:min-w-8 lg:px-3 lg:text-body-12 lg:has-data-[icon=inline-end]:pr-2 lg:has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4\",\n        sm: \"h-8 min-w-8 px-3 text-body-12 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 lg:h-6 lg:min-w-6 lg:px-2 lg:has-data-[icon=inline-end]:pr-1.5 lg:has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-4\",\n        lg: \"h-10 min-w-10 px-4 text-body-14 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 [&_svg:not([class*='size-'])]:size-5\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  },\n);\n\nfunction Toggle({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {\n  return (\n    <TogglePrimitive\n      data-slot=\"toggle\"\n      className={cn(toggleVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

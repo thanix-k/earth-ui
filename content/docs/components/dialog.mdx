@@ -1,0 +1,52 @@
+---
+title: Dialog
+description: A modal window over the page for a focused task, such as editing a record.
+links:
+  doc: https://base-ui.com/react/components/dialog
+  api: https://base-ui.com/react/components/dialog#api-reference
+---
+
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+<Installation name="dialog" />
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit service</DialogTitle>
+      <DialogDescription>Changes apply to new bookings.</DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+The dialog is 640px wide and stays 16px from the edges of smaller screens. Pass a `max-w-*` class to `DialogContent` to change the width.
+
+## Examples
+
+### Close button in the footer
+
+Set `showCloseButton={false}` on `DialogContent` to hide the corner close button, and `showCloseButton` on `DialogFooter` to add a Close button.
+
+<ComponentPreview name="dialog-close-button" />
+
+### Scrollable content
+
+<ComponentPreview name="dialog-scrollable-content" />

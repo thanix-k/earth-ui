@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "Lets people turn an option on or off, or pick several options from a list.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/checkbox.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox as CheckboxPrimitive } from \"@base-ui/react/checkbox\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nfunction Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"peer relative flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-sm border border-eds-input bg-eds-canvas text-eds-inverse transition-colors duration-300 ease-[ease] outline-none after:absolute after:-inset-x-3 after:-inset-y-2 hover:border-eds-input-hover focus-visible:focus-ring lg:size-4\",\n        \"data-checked:border-eds-input-active data-checked:bg-eds-inverse data-checked:hover:border-eds-input-active-hover data-indeterminate:border-eds-input-active data-indeterminate:bg-eds-inverse data-indeterminate:hover:border-eds-input-active-hover\",\n        \"aria-invalid:border-eds-input-critical aria-invalid:hover:border-eds-input-critical-hover\",\n        \"data-disabled:pointer-events-none data-disabled:border-eds-input-disabled data-disabled:bg-eds-neutral-disabled data-disabled:text-eds-disabled\",\n        className,\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"grid place-content-center text-current transition-none [&>svg]:size-4 [&>svg]:stroke-3 lg:[&>svg]:size-3.5\"\n      >\n        <CheckIcon className=\"in-data-indeterminate:hidden\" />\n        <MinusIcon className=\"hidden in-data-indeterminate:block\" />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  );\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

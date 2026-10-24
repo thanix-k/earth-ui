@@ -1,0 +1,44 @@
+---
+title: Chart
+description: Recharts charts with Earth's chart palette, tooltip and legend.
+links:
+  doc: https://recharts.github.io/en-US/guide
+  api: https://recharts.github.io/en-US/api
+---
+
+<ComponentPreview name="chart-demo" />
+
+## Installation
+
+<Installation name="chart" />
+
+## Usage
+
+```tsx
+import { Bar, BarChart } from "recharts"
+import { type ChartConfig, ChartContainer } from "@/components/ui/chart"
+```
+
+```tsx
+const chartConfig = {
+  online: { label: "Online", color: "var(--chart-1)" },
+} satisfies ChartConfig
+
+<ChartContainer config={chartConfig} className="min-h-48 w-full">
+  <BarChart data={data}>
+    <Bar dataKey="online" fill="var(--color-online)" radius={4} />
+  </BarChart>
+</ChartContainer>
+```
+
+`--chart-1` to `--chart-5` map to EDS's chart accent scale, from darkest to lightest, and switch with dark mode.
+
+## Examples
+
+### Line
+
+<ComponentPreview name="chart-line" />
+
+### Pie
+
+<ComponentPreview name="chart-pie" />

@@ -1,0 +1,41 @@
+---
+title: Input
+description: A single-line text field. Pair it with a Label, or a Field for descriptions and errors.
+links:
+  doc: https://base-ui.com/react/components/input
+  api: https://base-ui.com/react/components/input#api-reference
+---
+
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+<Installation name="input" />
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input"
+```
+
+```tsx
+<Input placeholder="Email" />
+```
+
+Inputs are 40px tall with 14px text on touch screens, and 32px with 12px text from the `lg` breakpoint.
+
+## Examples
+
+### With label
+
+<ComponentPreview name="input-with-label" />
+
+### Invalid
+
+Set `aria-invalid` to show the error border.
+
+<ComponentPreview name="input-invalid" />
+
+### Disabled
+
+<ComponentPreview name="input-disabled" />

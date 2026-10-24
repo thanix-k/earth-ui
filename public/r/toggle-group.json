@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A set of toggles where one, or several, can be pressed at a time.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@earth/toggle",
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport { Toggle as TogglePrimitive } from \"@base-ui/react/toggle\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"@base-ui/react/toggle-group\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { toggleVariants } from \"@/registry/default/ui/toggle\";\n\nconst ToggleGroupContext = React.createContext<\n  VariantProps<typeof toggleVariants> & {\n    spacing?: number;\n    orientation?: \"horizontal\" | \"vertical\";\n  }\n>({\n  size: \"default\",\n  variant: \"default\",\n  spacing: 2,\n  orientation: \"horizontal\",\n});\n\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  spacing = 2,\n  orientation = \"horizontal\",\n  children,\n  ...props\n}: ToggleGroupPrimitive.Props &\n  VariantProps<typeof toggleVariants> & {\n    spacing?: number;\n    orientation?: \"horizontal\" | \"vertical\";\n  }) {\n  return (\n    <ToggleGroupPrimitive\n      data-slot=\"toggle-group\"\n      data-variant={variant}\n      data-size={size}\n      data-spacing={spacing}\n      data-orientation={orientation}\n      orientation={orientation}\n      style={{ \"--gap\": spacing } as React.CSSProperties}\n      className={cn(\n        \"group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-full data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-stretch data-[orientation=vertical]:data-[spacing=0]:rounded-lg\",\n        className,\n      )}\n      {...props}\n    >\n      <ToggleGroupContext.Provider value={{ variant, size, spacing, orientation }}>\n        {children}\n      </ToggleGroupContext.Provider>\n    </ToggleGroupPrimitive>\n  );\n}\n\n// With `spacing={0}` the items join into one segmented pill: only the outer\n// ends are rounded and outline items share borders.\nfunction ToggleGroupItem({\n  className,\n  children,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {\n  const context = React.useContext(ToggleGroupContext);\n\n  return (\n    <TogglePrimitive\n      data-slot=\"toggle-group-item\"\n      data-variant={context.variant || variant}\n      data-size={context.size || size}\n      data-spacing={context.spacing}\n      className={cn(\n        toggleVariants({\n          variant: context.variant || variant,\n          size: context.size || size,\n        }),\n        \"shrink-0 focus:z-10 focus-visible:z-10\",\n        \"group-data-[spacing=0]/toggle-group:rounded-none\",\n        \"group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:first:rounded-l-full group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:last:rounded-r-full group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:last:rounded-b-lg\",\n        \"group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t\",\n        className,\n      )}\n      {...props}\n    >\n      {children}\n    </TogglePrimitive>\n  );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

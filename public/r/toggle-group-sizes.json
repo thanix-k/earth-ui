@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-sizes",
+  "title": "Toggle Group Sizes",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-sizes.tsx",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport default function ToggleGroupSizes() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <ToggleGroup size=\"sm\" variant=\"outline\" defaultValue={[\"30\"]} aria-label=\"Slot length\">\n        <ToggleGroupItem value=\"15\">15 min</ToggleGroupItem>\n        <ToggleGroupItem value=\"30\">30 min</ToggleGroupItem>\n        <ToggleGroupItem value=\"60\">60 min</ToggleGroupItem>\n      </ToggleGroup>\n      <ToggleGroup variant=\"outline\" defaultValue={[\"30\"]} aria-label=\"Slot length\">\n        <ToggleGroupItem value=\"15\">15 min</ToggleGroupItem>\n        <ToggleGroupItem value=\"30\">30 min</ToggleGroupItem>\n        <ToggleGroupItem value=\"60\">60 min</ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

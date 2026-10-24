@@ -1,0 +1,52 @@
+---
+title: Sidebar
+description: A collapsible app sidebar with groups, menus, badges and a mobile sheet.
+links:
+  doc: https://ui.shadcn.com/docs/components/sidebar
+---
+
+<ComponentPreview name="sidebar-demo" iframe />
+
+## Installation
+
+<Installation name="sidebar" />
+
+## Usage
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
+```
+
+```tsx
+<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton isActive>Calendar</SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <SidebarTrigger />
+  </SidebarInset>
+</SidebarProvider>
+```
+
+Below 768px the sidebar opens as a sheet. Press <kbd>⌘</kbd> <kbd>B</kbd> (or <kbd>Ctrl</kbd> <kbd>B</kbd>) to toggle it.
+
+## Examples
+
+### Inset with sub-menu
+
+<ComponentPreview name="sidebar-inset" iframe />

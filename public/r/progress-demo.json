@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-demo",
+  "title": "Progress Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/progress-demo.tsx",
+      "content": "import { Progress } from \"@/registry/default/ui/progress\";\n\nexport default function ProgressDemo() {\n  return <Progress value={60} aria-label=\"Profile setup\" className=\"w-full max-w-sm\" />;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

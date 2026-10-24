@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-outline",
+  "title": "Toggle Group Outline",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-outline.tsx",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nconst days = [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\", \"Sun\"];\n\nexport default function ToggleGroupOutline() {\n  return (\n    <ToggleGroup\n      variant=\"outline\"\n      multiple\n      defaultValue={[\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"]}\n      aria-label=\"Working days\"\n      className=\"flex-wrap\"\n    >\n      {days.map((day) => (\n        <ToggleGroupItem key={day} value={day} className=\"min-w-12\">\n          {day}\n        </ToggleGroupItem>\n      ))}\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

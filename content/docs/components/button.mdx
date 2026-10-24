@@ -1,0 +1,65 @@
+---
+title: Button
+description: Triggers an action. Use one default button per view for the main action.
+links:
+  doc: https://base-ui.com/react/components/button
+  api: https://base-ui.com/react/components/button#api-reference
+---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+<Installation name="button" />
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Examples
+
+### Secondary
+
+<ComponentPreview name="button-secondary" />
+
+### Outline
+
+<ComponentPreview name="button-outline" />
+
+### Ghost
+
+<ComponentPreview name="button-ghost" />
+
+### Destructive
+
+<ComponentPreview name="button-destructive" />
+
+### Link
+
+<ComponentPreview name="button-link" />
+
+### Sizes
+
+<ComponentPreview name="button-sizes" />
+
+### With icon
+
+Mark icons with `data-icon="inline-start"` or `data-icon="inline-end"` so the button tightens its padding on that side.
+
+<ComponentPreview name="button-with-icon" />
+
+### Disabled
+
+<ComponentPreview name="button-disabled" />
+
+### As a link
+
+Use the `render` prop to render another element, such as a link, with button styles. Set `nativeButton={false}` when the rendered element is not a `<button>`.
+
+<ComponentPreview name="button-as-link" />

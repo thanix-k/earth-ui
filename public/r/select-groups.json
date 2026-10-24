@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-groups",
+  "title": "Select Groups",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-groups.tsx",
+      "content": "import {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst hair = [\n  { label: \"Haircut\", value: \"haircut\" },\n  { label: \"Colour\", value: \"colour\" },\n  { label: \"Blow-dry\", value: \"blow-dry\" },\n];\nconst nails = [\n  { label: \"Manicure\", value: \"manicure\" },\n  { label: \"Pedicure\", value: \"pedicure\" },\n];\n\nexport default function SelectGroups() {\n  return (\n    <Select items={[...hair, ...nails]}>\n      <SelectTrigger className=\"w-56\" aria-label=\"Service\">\n        <SelectValue placeholder=\"Select a service\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectGroup>\n          <SelectLabel>Hair</SelectLabel>\n          {hair.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n        <SelectSeparator />\n        <SelectGroup>\n          <SelectLabel>Nails</SelectLabel>\n          {nails.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n      </SelectContent>\n    </Select>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

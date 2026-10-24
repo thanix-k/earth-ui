@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-demo",
+  "title": "Empty Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/empty-demo.tsx",
+      "content": "import { CalendarXIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport default function EmptyDemo() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia>\n          <CalendarXIcon />\n        </EmptyMedia>\n        <EmptyTitle>No bookings yet</EmptyTitle>\n        <EmptyDescription>Share your booking page so customers can pick a time.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <div className=\"flex gap-2\">\n          <Button>Share booking page</Button>\n          <Button variant=\"outline\">Add a booking</Button>\n        </div>\n      </EmptyContent>\n    </Empty>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

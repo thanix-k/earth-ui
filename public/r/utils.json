@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "utils",
+  "title": "Utils",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/lib/utils.ts",
+      "content": "import { type ClassValue, clsx } from \"clsx\";\nimport { extendTailwindMerge } from \"tailwind-merge\";\n\n// Earth's theme keys, so cn() keeps `text-body-14` next to `text-eds-secondary`\n// instead of reading both as text colours.\nconst twMerge = extendTailwindMerge({\n  extend: {\n    theme: {\n      text: [\n        \"body-8\",\n        \"body-10\",\n        \"body-12\",\n        \"body-14\",\n        \"body-16\",\n        \"body-20\",\n        \"heading-12\",\n        \"heading-14\",\n        \"heading-16\",\n        \"heading-18\",\n        \"heading-20\",\n        \"heading-24\",\n        \"heading-28\",\n        \"heading-32\",\n      ],\n      shadow: [\"eds-10\", \"eds-20\", \"eds-30\", \"eds-40\", \"eds-50\"],\n      \"font-weight\": [\"eds-regular\", \"eds-strong\", \"eds-stronger\"],\n      ease: [\"eds-regular\", \"eds-entrance\"],\n    },\n  },\n});\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:lib"
+}

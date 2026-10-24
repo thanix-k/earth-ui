@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-line",
+  "title": "Tabs Line",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-line.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function TabsLine() {\n  return (\n    <Tabs defaultValue=\"services\" className=\"w-full max-w-sm\">\n      <TabsList variant=\"line\">\n        <TabsTrigger value=\"services\">Services</TabsTrigger>\n        <TabsTrigger value=\"staff\">Staff</TabsTrigger>\n        <TabsTrigger value=\"classes\">Classes</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"services\" className=\"text-eds-secondary\">\n        12 services are bookable online.\n      </TabsContent>\n      <TabsContent value=\"staff\" className=\"text-eds-secondary\">\n        5 staff members take bookings.\n      </TabsContent>\n      <TabsContent value=\"classes\" className=\"text-eds-secondary\">\n        3 group classes run every week.\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

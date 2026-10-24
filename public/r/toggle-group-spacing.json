@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-spacing",
+  "title": "Toggle Group Spacing",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-spacing.tsx",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport default function ToggleGroupSpacing() {\n  return (\n    <ToggleGroup variant=\"outline\" spacing={0} defaultValue={[\"list\"]} aria-label=\"Layout\">\n      <ToggleGroupItem value=\"list\">List</ToggleGroupItem>\n      <ToggleGroupItem value=\"calendar\">Calendar</ToggleGroupItem>\n      <ToggleGroupItem value=\"map\">Map</ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

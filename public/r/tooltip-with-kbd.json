@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-with-kbd",
+  "title": "Tooltip With Kbd",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/kbd",
+    "@earth/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-with-kbd.tsx",
+      "content": "import { CalendarPlusIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/default/ui/tooltip\";\n\nexport default function TooltipWithKbd() {\n  return (\n    <Tooltip>\n      <TooltipTrigger render={<Button variant=\"outline\" size=\"icon\" aria-label=\"Block time\" />}>\n        <CalendarPlusIcon />\n      </TooltipTrigger>\n      <TooltipContent>\n        Block time <Kbd>B</Kbd>\n      </TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

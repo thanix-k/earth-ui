@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-textarea",
+  "title": "Input Group Textarea",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-textarea.tsx",
+      "content": "import { ArrowUpIcon } from \"lucide-react\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function InputGroupTextareaExample() {\n  return (\n    <InputGroup className=\"max-w-sm\">\n      <InputGroupTextarea placeholder=\"Reply to Jamie Rivera\" aria-label=\"Message\" />\n      <InputGroupAddon align=\"block-end\">\n        <InputGroupText>Sent as SMS</InputGroupText>\n        <InputGroupButton size=\"icon-xs\" variant=\"default\" className=\"ml-auto\" aria-label=\"Send\">\n          <ArrowUpIcon />\n        </InputGroupButton>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

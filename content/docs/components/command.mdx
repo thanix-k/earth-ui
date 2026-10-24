@@ -1,0 +1,46 @@
+---
+title: Command
+description: A searchable list of commands or options, inline or as a ⌘K palette.
+---
+
+<ComponentPreview name="command-demo" />
+
+## Installation
+
+<Installation name="command" />
+
+## Usage
+
+```tsx
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Search…" />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>New appointment</CommandItem>
+      <CommandItem>Working hours</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+Built on [cmdk](https://github.com/pacocoursey/cmdk).
+
+## Examples
+
+### Dialog
+
+Put a `Command` inside `CommandDialog` for a palette that opens with a shortcut.
+
+<ComponentPreview name="command-dialog" />

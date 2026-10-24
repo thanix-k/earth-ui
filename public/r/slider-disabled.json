@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-disabled",
+  "title": "Slider Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-disabled.tsx",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderDisabled() {\n  return <Slider defaultValue={[40]} disabled className=\"max-w-xs\" aria-label=\"Capacity\" />;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

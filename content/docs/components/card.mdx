@@ -1,0 +1,50 @@
+---
+title: Card
+description: A bordered surface that groups related content and actions.
+---
+
+<ComponentPreview name="card-demo" />
+
+## Installation
+
+<Installation name="card" />
+
+## Usage
+
+```tsx
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+    <CardAction>Action</CardAction>
+  </CardHeader>
+  <CardContent>Content</CardContent>
+  <CardFooter>Footer</CardFooter>
+</Card>
+```
+
+## Examples
+
+### Small
+
+`size="sm"` tightens the padding from 16px to 12px and uses a smaller title.
+
+<ComponentPreview name="card-small" />
+
+### Image
+
+An image placed first in the card runs edge to edge.
+
+<ComponentPreview name="card-image" />

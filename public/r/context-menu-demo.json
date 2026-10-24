@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-demo",
+  "title": "Context Menu Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-demo.tsx",
+      "content": "\"use client\";\n\nimport { BanIcon, CalendarPlusIcon, ClipboardPasteIcon, UsersIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  ContextMenu,\n  ContextMenuCheckboxItem,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport default function ContextMenuDemo() {\n  const [showWeekends, setShowWeekends] = useState(true);\n  const [slot, setSlot] = useState(\"30\");\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-40 w-72 items-center justify-center rounded-lg border border-dashed border-eds-secondary text-body-14 text-eds-secondary lg:text-body-12\">\n        Right-click 10:00 am\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-56\">\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            <CalendarPlusIcon />\n            New appointment\n            <ContextMenuShortcut>N</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            <BanIcon />\n            Block time\n            <ContextMenuShortcut>B</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem disabled>\n            <ClipboardPasteIcon />\n            Paste appointment\n          </ContextMenuItem>\n          <ContextMenuSub>\n            <ContextMenuSubTrigger>\n              <UsersIcon />\n              Assign to\n            </ContextMenuSubTrigger>\n            <ContextMenuSubContent className=\"w-40\">\n              <ContextMenuItem>Jordan Lee</ContextMenuItem>\n              <ContextMenuItem>Maya Patel</ContextMenuItem>\n              <ContextMenuItem>Sam Rivera</ContextMenuItem>\n            </ContextMenuSubContent>\n          </ContextMenuSub>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuCheckboxItem checked={showWeekends} onCheckedChange={setShowWeekends}>\n          Show weekends\n        </ContextMenuCheckboxItem>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuLabel>Slot length</ContextMenuLabel>\n          <ContextMenuRadioGroup value={slot} onValueChange={setSlot}>\n            <ContextMenuRadioItem value=\"15\">15 minutes</ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"30\">30 minutes</ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"60\">1 hour</ContextMenuRadioItem>\n          </ContextMenuRadioGroup>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-variants",
+  "title": "Item Variants",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/item"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/item-variants.tsx",
+      "content": "import { Item, ItemContent, ItemDescription, ItemTitle } from \"@/registry/default/ui/item\";\n\nexport default function ItemVariants() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <Item>\n        <ItemContent>\n          <ItemTitle>Default</ItemTitle>\n          <ItemDescription>No border or fill.</ItemDescription>\n        </ItemContent>\n      </Item>\n      <Item variant=\"outline\">\n        <ItemContent>\n          <ItemTitle>Outline</ItemTitle>\n          <ItemDescription>A subtle border.</ItemDescription>\n        </ItemContent>\n      </Item>\n      <Item variant=\"muted\">\n        <ItemContent>\n          <ItemTitle>Muted</ItemTitle>\n          <ItemDescription>A secondary canvas fill.</ItemDescription>\n        </ItemContent>\n      </Item>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,37 @@
+---
+title: Menubar
+description: A horizontal bar of menus, like the File and Edit menus of a desktop app.
+links:
+  doc: https://base-ui.com/react/components/menubar
+  api: https://base-ui.com/react/components/menubar#api-reference
+---
+
+<ComponentPreview name="menubar-demo" />
+
+## Installation
+
+<Installation name="menubar" />
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>Booking</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New appointment</MenubarItem>
+      <MenubarItem>New class</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```

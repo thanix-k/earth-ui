@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-action",
+  "title": "Alert Action",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/alert",
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-action.tsx",
+      "content": "import { CalendarSyncIcon } from \"lucide-react\";\nimport { Alert, AlertAction, AlertDescription, AlertTitle } from \"@/registry/default/ui/alert\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function AlertActionExample() {\n  return (\n    <Alert className=\"max-w-md\">\n      <CalendarSyncIcon />\n      <AlertTitle>Sync paused</AlertTitle>\n      <AlertDescription>Bookings stopped syncing to Outlook yesterday.</AlertDescription>\n      <AlertAction>\n        <Button size=\"sm\" variant=\"outline\">\n          Reconnect\n        </Button>\n      </AlertAction>\n    </Alert>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

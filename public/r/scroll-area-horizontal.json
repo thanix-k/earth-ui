@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-horizontal",
+  "title": "Scroll Area Horizontal",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/scroll-area-horizontal.tsx",
+      "content": "import { ScrollArea, ScrollBar } from \"@/registry/default/ui/scroll-area\";\n\nconst services = [\n  \"Haircut\",\n  \"Beard trim\",\n  \"Colour\",\n  \"Blow dry\",\n  \"Manicure\",\n  \"Pedicure\",\n  \"Facial\",\n  \"Massage\",\n];\n\nexport default function ScrollAreaHorizontal() {\n  return (\n    <ScrollArea className=\"w-full max-w-sm rounded-lg border border-eds-secondary whitespace-nowrap\">\n      <div className=\"flex w-max gap-3 p-4\">\n        {services.map((service) => (\n          <div\n            key={service}\n            className=\"flex h-20 w-32 shrink-0 items-end rounded-lg bg-eds-canvas-tertiary p-3 text-body-14 font-medium text-eds-primary lg:text-body-12\"\n          >\n            {service}\n          </div>\n        ))}\n      </div>\n      <ScrollBar orientation=\"horizontal\" />\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

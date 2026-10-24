@@ -1,0 +1,53 @@
+---
+title: Radio Group
+description: Lets people pick exactly one option from a short list.
+links:
+  doc: https://base-ui.com/react/components/radio
+  api: https://base-ui.com/react/components/radio#api-reference
+---
+
+<ComponentPreview name="radio-group-demo" />
+
+## Installation
+
+<Installation name="radio-group" />
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="24h">
+  <Label>
+    <RadioGroupItem value="1h" />
+    1 hour before
+  </Label>
+  <Label>
+    <RadioGroupItem value="24h" />
+    24 hours before
+  </Label>
+</RadioGroup>
+```
+
+## Examples
+
+### Disabled
+
+Disable one item, or the whole group with `disabled` on `RadioGroup`.
+
+<ComponentPreview name="radio-group-disabled" />
+
+### Invalid
+
+Set `aria-invalid` on the items to show the error border.
+
+<ComponentPreview name="radio-group-invalid" />
+
+### With descriptions
+
+Use [Field](/docs/components/field) for a legend, descriptions or choice cards.
+
+<ComponentPreview name="field-choice-card" />

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-pie",
+  "title": "Chart Pie",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@earth/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/chart-pie.tsx",
+      "content": "\"use client\";\n\nimport { Pie, PieChart } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { service: \"haircut\", bookings: 275, fill: \"var(--color-haircut)\" },\n  { service: \"colour\", bookings: 200, fill: \"var(--color-colour)\" },\n  { service: \"beard\", bookings: 187, fill: \"var(--color-beard)\" },\n  { service: \"treatment\", bookings: 90, fill: \"var(--color-treatment)\" },\n];\n\nconst chartConfig = {\n  bookings: { label: \"Bookings\" },\n  haircut: { label: \"Haircut\", color: \"var(--chart-1)\" },\n  colour: { label: \"Colour\", color: \"var(--chart-2)\" },\n  beard: { label: \"Beard trim\", color: \"var(--chart-3)\" },\n  treatment: { label: \"Treatment\", color: \"var(--chart-5)\" },\n} satisfies ChartConfig;\n\nexport default function ChartPie() {\n  return (\n    <ChartContainer config={chartConfig} className=\"aspect-square w-full max-w-xs\">\n      <PieChart>\n        <ChartTooltip\n          cursor={false}\n          content={<ChartTooltipContent nameKey=\"service\" hideLabel />}\n        />\n        <Pie data={chartData} dataKey=\"bookings\" nameKey=\"service\" innerRadius={60} />\n        <ChartLegend content={<ChartLegendContent nameKey=\"service\" />} />\n      </PieChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

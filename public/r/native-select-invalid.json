@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-invalid",
+  "title": "Native Select Invalid",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/native-select-invalid.tsx",
+      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectInvalid() {\n  return (\n    <NativeSelect defaultValue=\"\" aria-label=\"Staff member\" aria-invalid>\n      <NativeSelectOption value=\"\" disabled>\n        Select staff\n      </NativeSelectOption>\n      <NativeSelectOption value=\"alex\">Alex Morgan</NativeSelectOption>\n      <NativeSelectOption value=\"sam\">Sam Patel</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

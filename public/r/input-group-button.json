@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-button",
+  "title": "Input Group Button",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-button.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon, InfoIcon } from \"lucide-react\";\nimport * as React from \"react\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function InputGroupButtonExample() {\n  const [copied, setCopied] = React.useState(false);\n\n  return (\n    <div className=\"grid w-full max-w-xs gap-4\">\n      <InputGroup>\n        <InputGroupInput\n          defaultValue=\"https://glowsalon.setmore.com\"\n          readOnly\n          aria-label=\"Booking page link\"\n        />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton\n            size=\"icon-xs\"\n            aria-label=\"Copy link\"\n            onClick={() => {\n              navigator.clipboard?.writeText(\"https://glowsalon.setmore.com\");\n              setCopied(true);\n            }}\n          >\n            {copied ? <CheckIcon /> : <CopyIcon />}\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupAddon>\n          <InputGroupButton size=\"icon-xs\" aria-label=\"About coupon codes\">\n            <InfoIcon />\n          </InputGroupButton>\n        </InputGroupAddon>\n        <InputGroupInput placeholder=\"Coupon code\" aria-label=\"Coupon code\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton variant=\"outline\">Apply</InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

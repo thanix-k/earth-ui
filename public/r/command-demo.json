@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-demo",
+  "title": "Command Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/command-demo.tsx",
+      "content": "import {\n  CalendarPlusIcon,\n  ClockIcon,\n  ScissorsIcon,\n  SettingsIcon,\n  UserRoundIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n  CommandShortcut,\n} from \"@/registry/default/ui/command\";\n\nexport default function CommandDemo() {\n  return (\n    <Command className=\"max-w-sm border border-eds-secondary shadow-eds-20\">\n      <CommandInput placeholder=\"Search bookings, staff, services…\" />\n      <CommandList>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandGroup heading=\"Suggestions\">\n          <CommandItem>\n            <CalendarPlusIcon />\n            New appointment\n          </CommandItem>\n          <CommandItem>\n            <ClockIcon />\n            Working hours\n          </CommandItem>\n          <CommandItem disabled>\n            <ScissorsIcon />\n            Services\n          </CommandItem>\n        </CommandGroup>\n        <CommandSeparator />\n        <CommandGroup heading=\"Settings\">\n          <CommandItem>\n            <UserRoundIcon />\n            Profile\n            <CommandShortcut>⌘P</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <UsersIcon />\n            Staff\n            <CommandShortcut>⌘T</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <SettingsIcon />\n            Booking page\n            <CommandShortcut>⌘S</CommandShortcut>\n          </CommandItem>\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

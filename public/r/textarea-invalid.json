@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-invalid",
+  "title": "Textarea Invalid",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/label",
+    "@earth/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/textarea-invalid.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaInvalid() {\n  return (\n    <div className=\"grid w-full max-w-xs gap-1\">\n      <Label htmlFor=\"cancellation-reason\">Cancellation reason</Label>\n      <Textarea id=\"cancellation-reason\" aria-invalid />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-demo",
+  "title": "Chart Demo",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@earth/card",
+    "@earth/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/chart-demo.tsx",
+      "content": "\"use client\";\n\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { month: \"May\", online: 186, phone: 80 },\n  { month: \"June\", online: 305, phone: 120 },\n  { month: \"July\", online: 237, phone: 96 },\n  { month: \"August\", online: 273, phone: 110 },\n  { month: \"September\", online: 309, phone: 132 },\n  { month: \"October\", online: 344, phone: 140 },\n];\n\nconst chartConfig = {\n  online: { label: \"Online\", color: \"var(--chart-1)\" },\n  phone: { label: \"Phone\", color: \"var(--chart-3)\" },\n} satisfies ChartConfig;\n\nexport default function ChartDemo() {\n  return (\n    <Card className=\"w-full max-w-lg\">\n      <CardHeader>\n        <CardTitle>Bookings</CardTitle>\n        <CardDescription>May – October 2026</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <ChartContainer config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value: string) => value.slice(0, 3)}\n            />\n            <ChartTooltip content={<ChartTooltipContent indicator=\"dashed\" />} />\n            <ChartLegend content={<ChartLegendContent />} />\n            <Bar dataKey=\"online\" fill=\"var(--color-online)\" radius={4} />\n            <Bar dataKey=\"phone\" fill=\"var(--color-phone)\" radius={4} />\n          </BarChart>\n        </ChartContainer>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

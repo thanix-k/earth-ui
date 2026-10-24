@@ -1,0 +1,69 @@
+---
+title: Select
+description: Lets people choose one option from a menu of options.
+links:
+  doc: https://base-ui.com/react/components/select
+  api: https://base-ui.com/react/components/select#api-reference
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<Installation name="select" />
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+```
+
+```tsx
+const items = [
+  { label: "Alex Morgan", value: "alex" },
+  { label: "Priya Shah", value: "priya" },
+]
+
+<Select items={items}>
+  <SelectTrigger className="w-56">
+    <SelectValue placeholder="Select staff" />
+  </SelectTrigger>
+  <SelectContent>
+    {items.map((item) => (
+      <SelectItem key={item.value} value={item.value}>
+        {item.label}
+      </SelectItem>
+    ))}
+  </SelectContent>
+</Select>
+```
+
+The menu opens below the trigger, as in Earth. Pass `alignItemWithTrigger` to `SelectContent` to overlay the selected item on the trigger instead.
+
+## Examples
+
+### Groups
+
+<ComponentPreview name="select-groups" />
+
+### Sizes
+
+<ComponentPreview name="select-sizes" />
+
+### Invalid
+
+Set `aria-invalid` on `SelectTrigger` to show the error border.
+
+<ComponentPreview name="select-invalid" />
+
+### Disabled
+
+Disable the whole select, or single items.
+
+<ComponentPreview name="select-disabled" />

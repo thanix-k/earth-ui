@@ -1,0 +1,29 @@
+---
+title: Checkbox
+description: Lets people turn an option on or off, or pick several options from a list.
+links:
+  doc: https://base-ui.com/react/components/checkbox
+  api: https://base-ui.com/react/components/checkbox#api-reference
+---
+
+<ComponentPreview name="checkbox-demo" />
+
+## Installation
+
+<Installation name="checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
+```
+
+```tsx
+<Label>
+  <Checkbox />
+  Send reminders
+</Label>
+```
+
+Pass `indeterminate` for a parent checkbox whose children are partly selected.

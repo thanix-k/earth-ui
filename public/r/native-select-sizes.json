@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-sizes",
+  "title": "Native Select Sizes",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/native-select-sizes.tsx",
+      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectSizes() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <NativeSelect size=\"sm\" defaultValue=\"week\" aria-label=\"Calendar view\">\n        <NativeSelectOption value=\"day\">Day</NativeSelectOption>\n        <NativeSelectOption value=\"week\">Week</NativeSelectOption>\n        <NativeSelectOption value=\"month\">Month</NativeSelectOption>\n      </NativeSelect>\n      <NativeSelect defaultValue=\"week\" aria-label=\"Calendar view\">\n        <NativeSelectOption value=\"day\">Day</NativeSelectOption>\n        <NativeSelectOption value=\"week\">Week</NativeSelectOption>\n        <NativeSelectOption value=\"month\">Month</NativeSelectOption>\n      </NativeSelect>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

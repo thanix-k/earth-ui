@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-demo",
+  "title": "Spinner Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/spinner-demo.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function SpinnerDemo() {\n  return (\n    <div className=\"flex items-center gap-2 text-body-14 text-eds-secondary lg:text-body-12\">\n      <Spinner />\n      Loading bookings…\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

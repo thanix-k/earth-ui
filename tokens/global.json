@@ -1,0 +1,247 @@
+{
+	"spacing": {
+		"0": {
+			"$value": "0px"
+		},
+		"2": {
+			"$value": "2px"
+		},
+		"4": {
+			"$value": "4px"
+		},
+		"6": {
+			"$value": "6px"
+		},
+		"8": {
+			"$value": "8px"
+		},
+		"12": {
+			"$value": "12px"
+		},
+		"14": {
+			"$value": "14px"
+		},
+		"16": {
+			"$value": "16px"
+		},
+		"20": {
+			"$value": "20px"
+		},
+		"24": {
+			"$value": "24px"
+		},
+		"32": {
+			"$value": "32px"
+		},
+		"40": {
+			"$value": "40px"
+		},
+		"48": {
+			"$value": "48px"
+		},
+		"56": {
+			"$value": "56px"
+		},
+		"64": {
+			"$value": "64px"
+		},
+		"72": {
+			"$value": "72px"
+		},
+		"80": {
+			"$value": "80px"
+		},
+		"88": {
+			"$value": "88px"
+		},
+		"96": {
+			"$value": "96px"
+		},
+		"$type": "dimension"
+	},
+	"sizing": {
+		"0": {
+			"$value": "0px"
+		},
+		"4": {
+			"$value": "4px"
+		},
+		"6": {
+			"$value": "6px"
+		},
+		"8": {
+			"$value": "8px"
+		},
+		"12": {
+			"$value": "12px"
+		},
+		"14": {
+			"$value": "14px"
+		},
+		"16": {
+			"$value": "16px"
+		},
+		"20": {
+			"$value": "20px"
+		},
+		"24": {
+			"$value": "24px"
+		},
+		"32": {
+			"$value": "32px"
+		},
+		"40": {
+			"$value": "40px"
+		},
+		"48": {
+			"$value": "48px"
+		},
+		"56": {
+			"$value": "56px"
+		},
+		"64": {
+			"$value": "64px"
+		},
+		"72": {
+			"$value": "72px"
+		},
+		"80": {
+			"$value": "80px"
+		},
+		"88": {
+			"$value": "88px"
+		},
+		"96": {
+			"$value": "96px"
+		},
+		"$type": "dimension",
+		"1/2": {
+			"$value": "50%"
+		},
+		"1/3": {
+			"$value": "33.333333%"
+		},
+		"2/3": {
+			"$value": "66.666667%"
+		},
+		"1/4": {
+			"$value": "25%"
+		},
+		"2/4": {
+			"$value": "50%"
+		},
+		"3/4": {
+			"$value": "75%"
+		},
+		"1/5": {
+			"$value": "20%"
+		},
+		"2/5": {
+			"$value": "40%"
+		},
+		"3/5": {
+			"$value": "60%"
+		},
+		"4/5": {
+			"$value": "80%"
+		},
+		"1/6": {
+			"$value": "16.666667%"
+		},
+		"2/6": {
+			"$value": "33.333333%"
+		},
+		"3/6": {
+			"$value": "50%"
+		},
+		"4/6": {
+			"$value": "66.666667%"
+		},
+		"5/6": {
+			"$value": "83.333333%"
+		},
+		"full": {
+			"$value": "100%"
+		}
+	},
+	"radius": {
+		"$type": "dimension",
+		"none": {
+			"$value": "0px"
+		},
+		"4px": {
+			"$value": "4px"
+		},
+		"6px": {
+			"$value": "6px"
+		},
+		"8px": {
+			"$value": "8px"
+		},
+		"12px": {
+			"$value": "12px"
+		},
+		"16px": {
+			"$value": "16px"
+		},
+		"full": {
+			"$value": "9999px"
+		}
+	},
+	"borderWidth": {
+		"$type": "dimension",
+		"regular": {
+			"$value": "1px"
+		},
+		"large": {
+			"$value": "2px"
+		}
+	},
+	"animation": {
+		"duration": {
+			"100": {
+				"$value": "100ms"
+			},
+			"200": {
+				"$value": "200ms"
+			},
+			"300": {
+				"$value": "300ms"
+			},
+			"400": {
+				"$value": "400ms"
+			},
+			"500": {
+				"$value": "500ms"
+			},
+			"$type": "duration"
+		},
+		"easing": {
+			"$type": "cubicBezier",
+			"regular": {
+				"$value": [0.5, 0, 0.5, 0.99]
+			},
+			"entrance": {
+				"$value": [0.2, 0, 0.44, 0.99]
+			}
+		}
+	},
+	"breakpoints": {
+		"$type": "dimension",
+		"sm": {
+			"$value": "640px"
+		},
+		"md": {
+			"$value": "768px"
+		},
+		"lg": {
+			"$value": "1024px"
+		},
+		"xl": {
+			"$value": "1280px"
+		},
+		"2xl": {
+			"$value": "1536px"
+		}
+	}
+}

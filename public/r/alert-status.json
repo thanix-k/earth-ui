@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-status",
+  "title": "Alert Status",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-status.tsx",
+      "content": "import { CircleCheckIcon, TriangleAlertIcon } from \"lucide-react\";\nimport { Alert, AlertTitle } from \"@/registry/default/ui/alert\";\n\nexport default function AlertStatus() {\n  return (\n    <div className=\"grid w-full max-w-md gap-3\">\n      <Alert variant=\"positive\">\n        <CircleCheckIcon />\n        <AlertTitle>Google Calendar connected</AlertTitle>\n      </Alert>\n      <Alert variant=\"caution\">\n        <TriangleAlertIcon />\n        <AlertTitle>Maya has no working hours on Sunday</AlertTitle>\n      </Alert>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

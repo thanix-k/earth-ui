@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-demo",
+  "title": "Drawer Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/drawer-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/registry/default/ui/drawer\";\n\nconst slots = [\"9:00 am\", \"9:30 am\", \"10:15 am\", \"11:00 am\", \"1:30 pm\", \"2:45 pm\"];\n\nexport default function DrawerDemo() {\n  return (\n    <Drawer showSwipeHandle>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Pick a time</DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-sm\">\n          <DrawerHeader>\n            <DrawerTitle>Haircut & style</DrawerTitle>\n            <DrawerDescription>Thursday, 6 November with Jordan Lee</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"grid grid-cols-3 gap-2 px-6 py-4\">\n            {slots.map((slot) => (\n              <Button key={slot} variant=\"outline\">\n                {slot}\n              </Button>\n            ))}\n          </div>\n          <DrawerFooter>\n            <Button>Continue</Button>\n            <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

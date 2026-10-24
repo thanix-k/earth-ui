@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-demo",
+  "title": "Toggle Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-demo.tsx",
+      "content": "import { StarIcon } from \"lucide-react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function ToggleDemo() {\n  return (\n    <Toggle defaultPressed>\n      <StarIcon data-icon=\"inline-start\" />\n      Favourite\n    </Toggle>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

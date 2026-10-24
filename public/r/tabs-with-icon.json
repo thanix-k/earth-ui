@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-with-icon",
+  "title": "Tabs With Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-with-icon.tsx",
+      "content": "import { CalendarDaysIcon, ListIcon } from \"lucide-react\";\nimport { Tabs, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function TabsWithIcon() {\n  return (\n    <Tabs defaultValue=\"calendar\">\n      <TabsList>\n        <TabsTrigger value=\"calendar\">\n          <CalendarDaysIcon data-icon=\"inline-start\" />\n          Calendar\n        </TabsTrigger>\n        <TabsTrigger value=\"list\">\n          <ListIcon data-icon=\"inline-start\" />\n          List\n        </TabsTrigger>\n      </TabsList>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-demo",
+  "title": "Select Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-demo.tsx",
+      "content": "import {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst staff = [\n  { label: \"Any available staff\", value: \"any\" },\n  { label: \"Alex Morgan\", value: \"alex\" },\n  { label: \"Priya Shah\", value: \"priya\" },\n  { label: \"Sam Patel\", value: \"sam\" },\n  { label: \"Jordan Lee\", value: \"jordan\" },\n];\n\nexport default function SelectDemo() {\n  return (\n    <Select items={staff} defaultValue=\"any\">\n      <SelectTrigger className=\"w-56\" aria-label=\"Staff member\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectGroup>\n          {staff.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n      </SelectContent>\n    </Select>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

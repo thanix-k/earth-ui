@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-ghost",
+  "title": "Button Ghost",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-ghost.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonGhost() {\n  return <Button variant=\"ghost\">Ghost</Button>;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

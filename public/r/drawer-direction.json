@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-direction",
+  "title": "Drawer Direction",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/drawer-direction.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/registry/default/ui/drawer\";\n\nconst directions = [\"up\", \"right\", \"down\", \"left\"] as const;\n\nexport default function DrawerDirection() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {directions.map((direction) => (\n        <Drawer key={direction} swipeDirection={direction}>\n          <DrawerTrigger render={<Button variant=\"outline\" className=\"capitalize\" />}>\n            {direction}\n          </DrawerTrigger>\n          <DrawerContent>\n            <DrawerHeader>\n              <DrawerTitle>Notifications</DrawerTitle>\n              <DrawerDescription>\n                3 new bookings and 1 cancellation since this morning.\n              </DrawerDescription>\n            </DrawerHeader>\n            <DrawerFooter className=\"pt-4\">\n              <DrawerClose render={<Button variant=\"outline\" />}>Close</DrawerClose>\n            </DrawerFooter>\n          </DrawerContent>\n        </Drawer>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

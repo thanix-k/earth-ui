@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-disabled",
+  "title": "Switch Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/label",
+    "@earth/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-disabled.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function SwitchDisabled() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Label>\n        <Switch disabled />\n        Take payments (connect Stripe first)\n      </Label>\n      <Label>\n        <Switch disabled defaultChecked />\n        Email confirmations (required)\n      </Label>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

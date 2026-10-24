@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "Names a form control. Clicking the label focuses or toggles its control.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/label.tsx",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nfunction Label({ className, ...props }: React.ComponentProps<\"label\">) {\n  return (\n    <label\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-3 text-body-14 text-eds-primary select-none lg:gap-2 lg:text-body-12\",\n        \"peer-disabled:cursor-default peer-disabled:text-eds-disabled peer-data-disabled:cursor-default peer-data-disabled:text-eds-disabled has-disabled:cursor-default has-disabled:text-eds-disabled has-data-disabled:cursor-default has-data-disabled:text-eds-disabled group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:text-eds-disabled\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

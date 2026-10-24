@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "A thin line that separates content, horizontally or vertically.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/separator.tsx",
+      "content": "\"use client\";\n\nimport { Separator as SeparatorPrimitive } from \"@base-ui/react/separator\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// EDS dividers are a 1px `border-tertiary` line, so the separator draws a\n// border rather than a background fill.\nfunction Separator({ className, orientation = \"horizontal\", ...props }: SeparatorPrimitive.Props) {\n  return (\n    <SeparatorPrimitive\n      data-slot=\"separator\"\n      orientation={orientation}\n      className={cn(\n        \"shrink-0 border-eds-tertiary data-[orientation=horizontal]:w-full data-[orientation=horizontal]:border-t data-[orientation=vertical]:self-stretch data-[orientation=vertical]:border-s\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Separator };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

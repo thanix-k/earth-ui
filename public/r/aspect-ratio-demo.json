@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-demo",
+  "title": "Aspect Ratio Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/aspect-ratio-demo.tsx",
+      "content": "import { AspectRatio } from \"@/registry/default/ui/aspect-ratio\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <AspectRatio ratio={16 / 9} className=\"rounded-lg bg-eds-neutral-disabled\">\n        {/* biome-ignore lint/performance/noImgElement: registry examples stay framework-agnostic. */}\n        <img\n          src=\"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80\"\n          alt=\"Salon interior with styling chairs\"\n          className=\"size-full rounded-lg object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

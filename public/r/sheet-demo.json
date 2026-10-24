@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-demo",
+  "title": "Sheet Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/input",
+    "@earth/label",
+    "@earth/sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sheet-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport {\n  Sheet,\n  SheetClose,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/registry/default/ui/sheet\";\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger render={<Button variant=\"outline\" />}>Edit staff</SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit staff</SheetTitle>\n          <SheetDescription>Update how Jordan appears on your booking page.</SheetDescription>\n        </SheetHeader>\n        <div className=\"grid flex-1 auto-rows-min gap-4 px-6\">\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"staff-name\">Name</Label>\n            <Input id=\"staff-name\" defaultValue=\"Jordan Lee\" />\n          </div>\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"staff-email\">Email</Label>\n            <Input id=\"staff-email\" type=\"email\" defaultValue=\"jordan@glowsalon.com\" />\n          </div>\n        </div>\n        <SheetFooter>\n          <SheetClose render={<Button variant=\"ghost\" />}>Cancel</SheetClose>\n          <Button type=\"submit\">Save changes</Button>\n        </SheetFooter>\n      </SheetContent>\n    </Sheet>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

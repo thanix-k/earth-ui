@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-demo",
+  "title": "Menubar Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/menubar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menubar-demo.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Menubar,\n  MenubarCheckboxItem,\n  MenubarContent,\n  MenubarGroup,\n  MenubarItem,\n  MenubarLabel,\n  MenubarMenu,\n  MenubarRadioGroup,\n  MenubarRadioItem,\n  MenubarSeparator,\n  MenubarShortcut,\n  MenubarSub,\n  MenubarSubContent,\n  MenubarSubTrigger,\n  MenubarTrigger,\n} from \"@/registry/default/ui/menubar\";\n\nexport default function MenubarDemo() {\n  const [showCancelled, setShowCancelled] = useState(false);\n  const [showWeekends, setShowWeekends] = useState(true);\n  const [view, setView] = useState(\"week\");\n\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>Booking</MenubarTrigger>\n        <MenubarContent>\n          <MenubarGroup>\n            <MenubarItem>\n              New appointment <MenubarShortcut>N</MenubarShortcut>\n            </MenubarItem>\n            <MenubarItem>\n              New class <MenubarShortcut>C</MenubarShortcut>\n            </MenubarItem>\n            <MenubarItem disabled>Duplicate</MenubarItem>\n          </MenubarGroup>\n          <MenubarSeparator />\n          <MenubarSub>\n            <MenubarSubTrigger>Share booking page</MenubarSubTrigger>\n            <MenubarSubContent>\n              <MenubarItem>Copy link</MenubarItem>\n              <MenubarItem>Email</MenubarItem>\n              <MenubarItem>QR code</MenubarItem>\n            </MenubarSubContent>\n          </MenubarSub>\n          <MenubarSeparator />\n          <MenubarItem>Print day sheet</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>View</MenubarTrigger>\n        <MenubarContent>\n          <MenubarCheckboxItem checked={showWeekends} onCheckedChange={setShowWeekends}>\n            Show weekends\n          </MenubarCheckboxItem>\n          <MenubarCheckboxItem checked={showCancelled} onCheckedChange={setShowCancelled}>\n            Show cancelled\n          </MenubarCheckboxItem>\n          <MenubarSeparator />\n          <MenubarGroup>\n            <MenubarLabel inset>Calendar</MenubarLabel>\n            <MenubarRadioGroup value={view} onValueChange={setView}>\n              <MenubarRadioItem value=\"day\">Day</MenubarRadioItem>\n              <MenubarRadioItem value=\"week\">Week</MenubarRadioItem>\n              <MenubarRadioItem value=\"month\">Month</MenubarRadioItem>\n            </MenubarRadioGroup>\n          </MenubarGroup>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Staff</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Jordan Lee</MenubarItem>\n          <MenubarItem>Maya Patel</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem inset>Manage staff</MenubarItem>\n          <MenubarItem variant=\"destructive\" inset>\n            Remove staff\n          </MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

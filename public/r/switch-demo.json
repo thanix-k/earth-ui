@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-demo",
+  "title": "Switch Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/label",
+    "@earth/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-demo.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function SwitchDemo() {\n  return (\n    <Label>\n      <Switch defaultChecked />\n      Accept online bookings\n    </Label>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

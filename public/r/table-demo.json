@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-demo",
+  "title": "Table Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/badge",
+    "@earth/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/table-demo.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  Table,\n  TableBody,\n  TableCaption,\n  TableCell,\n  TableFooter,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/default/ui/table\";\n\nconst bookings = [\n  {\n    id: \"BK-1042\",\n    customer: \"Ava Thompson\",\n    service: \"Haircut\",\n    staff: \"Maya Patel\",\n    status: \"Confirmed\",\n    amount: \"$45.00\",\n  },\n  {\n    id: \"BK-1043\",\n    customer: \"Liam Chen\",\n    service: \"Beard trim\",\n    staff: \"James Lee\",\n    status: \"Pending\",\n    amount: \"$25.00\",\n  },\n  {\n    id: \"BK-1044\",\n    customer: \"Sofia Rossi\",\n    service: \"Colour\",\n    staff: \"Maya Patel\",\n    status: \"Confirmed\",\n    amount: \"$120.00\",\n  },\n  {\n    id: \"BK-1045\",\n    customer: \"Noah Williams\",\n    service: \"Manicure\",\n    staff: \"Aisha Rahman\",\n    status: \"Cancelled\",\n    amount: \"$35.00\",\n  },\n] as const;\n\nconst statusVariant = {\n  Confirmed: \"positive\",\n  Pending: \"caution\",\n  Cancelled: \"destructive\",\n} as const;\n\nexport default function TableDemo() {\n  return (\n    <Table>\n      <TableCaption>Bookings for Thursday, 24 October.</TableCaption>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Booking</TableHead>\n          <TableHead>Customer</TableHead>\n          <TableHead>Service</TableHead>\n          <TableHead>Staff</TableHead>\n          <TableHead>Status</TableHead>\n          <TableHead className=\"text-right\">Amount</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {bookings.map((booking) => (\n          <TableRow key={booking.id}>\n            <TableCell className=\"font-medium\">{booking.id}</TableCell>\n            <TableCell>{booking.customer}</TableCell>\n            <TableCell>{booking.service}</TableCell>\n            <TableCell>{booking.staff}</TableCell>\n            <TableCell>\n              <Badge variant={statusVariant[booking.status]}>{booking.status}</Badge>\n            </TableCell>\n            <TableCell className=\"text-right\">{booking.amount}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n      <TableFooter>\n        <TableRow>\n          <TableCell colSpan={5}>Total</TableCell>\n          <TableCell className=\"text-right\">$225.00</TableCell>\n        </TableRow>\n      </TableFooter>\n    </Table>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

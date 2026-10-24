@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-sides",
+  "title": "Tooltip Sides",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-sides.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/default/ui/tooltip\";\n\nconst sides = [\"top\", \"right\", \"bottom\", \"left\"] as const;\n\nexport default function TooltipSides() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {sides.map((side) => (\n        <Tooltip key={side}>\n          <TooltipTrigger render={<Button variant=\"outline\" className=\"capitalize\" />}>\n            {side}\n          </TooltipTrigger>\n          <TooltipContent side={side}>Shown on the {side}</TooltipContent>\n        </Tooltip>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

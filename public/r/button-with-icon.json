@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-with-icon",
+  "title": "Button With Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-with-icon.tsx",
+      "content": "import { DownloadIcon, PlusIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Button>\n        <PlusIcon data-icon=\"inline-start\" />\n        New appointment\n      </Button>\n      <Button variant=\"outline\">\n        Export\n        <DownloadIcon data-icon=\"inline-end\" />\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

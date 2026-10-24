@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-invalid",
+  "title": "Radio Group Invalid",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/label",
+    "@earth/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-group-invalid.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport default function RadioGroupInvalid() {\n  return (\n    <RadioGroup aria-label=\"Payment\" className=\"w-fit\">\n      <Label>\n        <RadioGroupItem value=\"online\" aria-invalid />\n        Pay online\n      </Label>\n      <Label>\n        <RadioGroupItem value=\"in-store\" aria-invalid />\n        Pay in store\n      </Label>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

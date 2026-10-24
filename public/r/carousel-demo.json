@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-demo",
+  "title": "Carousel Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/carousel-demo.tsx",
+      "content": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nconst services = [\n  { name: \"Haircut & style\", duration: \"45 min\", price: \"$55\" },\n  { name: \"Colour refresh\", duration: \"90 min\", price: \"$120\" },\n  { name: \"Beard trim\", duration: \"20 min\", price: \"$25\" },\n  { name: \"Scalp treatment\", duration: \"30 min\", price: \"$40\" },\n  { name: \"Blow-dry\", duration: \"30 min\", price: \"$35\" },\n];\n\nexport default function CarouselDemo() {\n  return (\n    <Carousel className=\"w-full max-w-xs\">\n      <CarouselContent>\n        {services.map((service) => (\n          <CarouselItem key={service.name}>\n            <div className=\"flex aspect-square flex-col items-center justify-center gap-1 rounded-xl border border-eds-secondary bg-eds-canvas p-6\">\n              <span className=\"text-heading-20 text-eds-primary\">{service.name}</span>\n              <span className=\"text-body-14 text-eds-secondary\">\n                {service.duration} · {service.price}\n              </span>\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-vertical",
+  "title": "Resizable Vertical",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/resizable"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/resizable-vertical.tsx",
+      "content": "import {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/registry/default/ui/resizable\";\n\nexport default function ResizableVertical() {\n  return (\n    <ResizablePanelGroup\n      orientation=\"vertical\"\n      className=\"min-h-64 max-w-md rounded-lg border border-eds-secondary\"\n    >\n      <ResizablePanel defaultSize=\"30%\">\n        <div className=\"flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary\">\n          Appointment details\n        </div>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize=\"70%\">\n        <div className=\"flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary\">\n          Booking history\n        </div>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

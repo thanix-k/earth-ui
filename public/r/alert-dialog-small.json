@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-small",
+  "title": "Alert Dialog Small",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/alert-dialog",
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-small.tsx",
+      "content": "import { CalendarXIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogMedia,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function AlertDialogSmall() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"outline\" />}>Block the day</AlertDialogTrigger>\n      <AlertDialogContent size=\"sm\">\n        <AlertDialogHeader>\n          <AlertDialogMedia>\n            <CalendarXIcon />\n          </AlertDialogMedia>\n          <AlertDialogTitle>Block Friday?</AlertDialogTitle>\n          <AlertDialogDescription>\n            Customers won't be able to book you that day.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n          <AlertDialogAction>Block</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

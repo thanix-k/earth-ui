@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-demo",
+  "title": "Tabs Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-demo.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function TabsDemo() {\n  return (\n    <Tabs defaultValue=\"upcoming\" className=\"w-full max-w-sm\">\n      <TabsList>\n        <TabsTrigger value=\"upcoming\">Upcoming</TabsTrigger>\n        <TabsTrigger value=\"past\">Past</TabsTrigger>\n        <TabsTrigger value=\"cancelled\">Cancelled</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"upcoming\" className=\"text-eds-secondary\">\n        You have 4 appointments this week.\n      </TabsContent>\n      <TabsContent value=\"past\" className=\"text-eds-secondary\">\n        128 appointments completed in the last 30 days.\n      </TabsContent>\n      <TabsContent value=\"cancelled\" className=\"text-eds-secondary\">\n        2 appointments were cancelled this month.\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-demo",
+  "title": "Sonner Demo",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/sonner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sonner-demo.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Toaster } from \"@/registry/default/ui/sonner\";\n\nexport default function SonnerDemo() {\n  return (\n    <>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast(\"Appointment booked\", {\n            description: \"Haircut with Maya, Fri 7 Nov at 2:30 pm\",\n            action: {\n              label: \"Undo\",\n              onClick: () => {},\n            },\n          })\n        }\n      >\n        Book appointment\n      </Button>\n      <Toaster />\n    </>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,46 @@
+---
+title: Dropdown Menu
+description: A list of actions or options that opens from a button.
+links:
+  doc: https://base-ui.com/react/components/menu
+  api: https://base-ui.com/react/components/menu#api-reference
+---
+
+<ComponentPreview name="dropdown-menu-demo" />
+
+## Installation
+
+<Installation name="dropdown-menu" />
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Edit</DropdownMenuItem>
+    <DropdownMenuItem>Reschedule</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+Items are 14px with more padding on touch screens, and 12px from the `lg` breakpoint. Use `variant="destructive"` for actions that delete or cancel.
+
+## Examples
+
+### Checkboxes
+
+<ComponentPreview name="dropdown-menu-checkboxes" />
+
+### Radio group
+
+<ComponentPreview name="dropdown-menu-radio-group" />

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-demo",
+  "title": "Alert Dialog Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/alert-dialog",
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-demo.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function AlertDialogDemo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"outline\" />}>\n        Cancel appointment\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Cancel this appointment?</AlertDialogTitle>\n          <AlertDialogDescription>\n            Maya Patel will get a cancellation email and the slot opens up for new bookings.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogCancel>Keep appointment</AlertDialogCancel>\n          <AlertDialogAction>Cancel appointment</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

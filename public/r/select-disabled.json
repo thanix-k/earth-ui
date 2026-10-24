@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-disabled",
+  "title": "Select Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-disabled.tsx",
+      "content": "import {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst zones = [\n  { label: \"London (GMT)\", value: \"london\" },\n  { label: \"New York (EST)\", value: \"new-york\" },\n];\n\nexport default function SelectDisabled() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Select items={zones} defaultValue=\"london\" disabled>\n        <SelectTrigger className=\"w-56\" aria-label=\"Time zone\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectContent>\n          {zones.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectContent>\n      </Select>\n      <Select items={zones}>\n        <SelectTrigger className=\"w-56\" aria-label=\"Time zone\">\n          <SelectValue placeholder=\"Time zone\" />\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"london\">London (GMT)</SelectItem>\n          <SelectItem value=\"new-york\" disabled>\n            New York (EST)\n          </SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

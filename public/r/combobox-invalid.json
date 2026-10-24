@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-invalid",
+  "title": "Combobox Invalid",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/combobox",
+    "@earth/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-invalid.tsx",
+      "content": "\"use client\";\n\nimport {\n  Combobox,\n  ComboboxContent,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n} from \"@/registry/default/ui/combobox\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\n\nconst services = [\"Haircut\", \"Colour\", \"Manicure\", \"Pedicure\"];\n\nexport default function ComboboxInvalid() {\n  return (\n    <Field className=\"w-64\" data-invalid>\n      <FieldLabel htmlFor=\"combobox-service\">Service</FieldLabel>\n      <Combobox items={services}>\n        <ComboboxInput id=\"combobox-service\" placeholder=\"Select a service\" aria-invalid />\n        <ComboboxContent>\n          <ComboboxEmpty>No services found.</ComboboxEmpty>\n          <ComboboxList>\n            {(item: string) => (\n              <ComboboxItem key={item} value={item}>\n                {item}\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n      <FieldError>Choose a service to book.</FieldError>\n    </Field>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

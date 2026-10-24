@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-card",
+  "title": "Skeleton Card",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/card",
+    "@earth/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/skeleton-card.tsx",
+      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport default function SkeletonCard() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader>\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </CardHeader>\n      <CardContent>\n        <Skeleton className=\"aspect-video w-full\" />\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

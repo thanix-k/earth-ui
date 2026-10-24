@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-demo",
+  "title": "Toggle Group Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-demo.tsx",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport default function ToggleGroupDemo() {\n  return (\n    <ToggleGroup defaultValue={[\"week\"]} aria-label=\"Calendar view\">\n      <ToggleGroupItem value=\"day\">Day</ToggleGroupItem>\n      <ToggleGroupItem value=\"week\">Week</ToggleGroupItem>\n      <ToggleGroupItem value=\"month\">Month</ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

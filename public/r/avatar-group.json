@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-group",
+  "title": "Avatar Group",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-group.tsx",
+      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarGroup,\n  AvatarGroupCount,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\n\nexport default function AvatarGroupExample() {\n  return (\n    <AvatarGroup>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"Maya Patel\" />\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>JL</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>AR</AvatarFallback>\n      </Avatar>\n      <AvatarGroupCount>+4</AvatarGroupCount>\n    </AvatarGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

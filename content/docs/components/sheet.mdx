@@ -1,0 +1,50 @@
+---
+title: Sheet
+description: A panel that slides in from an edge of the screen, for side tasks and details.
+links:
+  doc: https://base-ui.com/react/components/dialog
+  api: https://base-ui.com/react/components/dialog#api-reference
+---
+
+<ComponentPreview name="sheet-demo" />
+
+## Installation
+
+<Installation name="sheet" />
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit staff</SheetTitle>
+      <SheetDescription>Update how Jordan appears on your booking page.</SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
+
+## Examples
+
+### Side
+
+Use `side` to choose the edge: `top`, `right` (default), `bottom` or `left`.
+
+<ComponentPreview name="sheet-side" />
+
+### Without close button
+
+<ComponentPreview name="sheet-no-close-button" />

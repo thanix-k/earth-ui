@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-orientation",
+  "title": "Carousel Orientation",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/carousel-orientation.tsx",
+      "content": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nconst slots = [\"9:00 am\", \"9:30 am\", \"10:00 am\", \"11:15 am\", \"2:00 pm\"];\n\nexport default function CarouselOrientation() {\n  return (\n    <Carousel opts={{ align: \"start\" }} orientation=\"vertical\" className=\"w-full max-w-xs\">\n      <CarouselContent className=\"-mt-2 h-48\">\n        {slots.map((slot) => (\n          <CarouselItem key={slot} className=\"basis-1/2 pt-2\">\n            <div className=\"flex h-full items-center justify-center rounded-xl border border-eds-secondary bg-eds-canvas p-4 text-heading-16 text-eds-primary\">\n              {slot}\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

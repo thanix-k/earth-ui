@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-disabled",
+  "title": "Field Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/field",
+    "@earth/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-disabled.tsx",
+      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function FieldDisabled() {\n  return (\n    <Field className=\"max-w-xs\" data-disabled>\n      <FieldLabel htmlFor=\"business-id\">Business ID</FieldLabel>\n      <Input id=\"business-id\" defaultValue=\"glow-salon-4821\" disabled />\n      <FieldDescription>Contact support to change your business ID.</FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

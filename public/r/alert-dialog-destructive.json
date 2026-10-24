@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-destructive",
+  "title": "Alert Dialog Destructive",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/alert-dialog",
+    "@earth/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-destructive.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function AlertDialogDestructive() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"destructive\" />}>\n        Remove staff\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Remove Jordan Lee?</AlertDialogTitle>\n          <AlertDialogDescription>\n            Their 12 upcoming appointments will be unassigned. This can't be undone.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n          <AlertDialogAction variant=\"destructive\">Remove</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

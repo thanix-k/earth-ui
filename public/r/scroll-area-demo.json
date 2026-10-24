@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-demo",
+  "title": "Scroll Area Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/scroll-area",
+    "@earth/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/scroll-area-demo.tsx",
+      "content": "import { Fragment } from \"react\";\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst times = Array.from({ length: 20 }, (_, index) => {\n  const minutes = 9 * 60 + index * 30;\n  const hour = Math.floor(minutes / 60);\n  const minute = String(minutes % 60).padStart(2, \"0\");\n  return `${hour > 12 ? hour - 12 : hour}:${minute} ${hour >= 12 ? \"pm\" : \"am\"}`;\n});\n\nexport default function ScrollAreaDemo() {\n  return (\n    <ScrollArea className=\"h-72 w-48 rounded-lg border border-eds-secondary\">\n      <div className=\"p-4 text-body-14 text-eds-primary lg:text-body-12\">\n        <div className=\"mb-4 text-heading-14 lg:text-heading-12\">Open slots</div>\n        {times.map((time) => (\n          <Fragment key={time}>\n            <div>{time}</div>\n            <Separator className=\"my-2\" />\n          </Fragment>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

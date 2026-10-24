@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-with-label",
+  "title": "Input With Label",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/input",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-with-label.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function InputWithLabel() {\n  return (\n    <div className=\"grid w-full max-w-xs gap-1\">\n      <Label htmlFor=\"business-name\">Business name</Label>\n      <Input id=\"business-name\" placeholder=\"Glow Salon\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

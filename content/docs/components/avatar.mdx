@@ -1,0 +1,44 @@
+---
+title: Avatar
+description: A person's photo, with their initials as a fallback.
+links:
+  doc: https://base-ui.com/react/components/avatar
+  api: https://base-ui.com/react/components/avatar#api-reference
+---
+
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+<Installation name="avatar" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="Maya Patel" />
+  <AvatarFallback>MP</AvatarFallback>
+</Avatar>
+```
+
+## Examples
+
+### Sizes
+
+`sm` is 24px, `default` 32px and `lg` 40px.
+
+<ComponentPreview name="avatar-sizes" />
+
+### Badge
+
+Show a status with `AvatarBadge`. Colour it with a status token such as `bg-eds-status-available`, `bg-eds-status-away`, `bg-eds-status-busy` or `bg-eds-status-offline`.
+
+<ComponentPreview name="avatar-badge" />
+
+### Group
+
+<ComponentPreview name="avatar-group" />

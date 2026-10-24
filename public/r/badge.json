@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "A short label for a status, count or category.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/badge.tsx",
+      "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// EDS Badge (standard size, square): 32px with 12px text on touch screens,\n// 24px with 10px text from lg, regular weight as EDS renders it. Interactive\n// badges (links, buttons) grow slightly on hover like EDS instead of\n// changing colour.\nconst badgeVariants = cva(\n  \"group/badge inline-flex h-8 w-fit min-w-8 shrink-0 items-center justify-center gap-1 overflow-hidden rounded-sm px-3 text-body-12 whitespace-nowrap outline-none has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 lg:h-6 lg:min-w-6 lg:px-2.5 lg:text-body-10 lg:has-data-[icon=inline-end]:pr-1.5 lg:has-data-[icon=inline-start]:pl-1.5 [&>svg]:pointer-events-none [&>svg]:size-4 [&:is(a,button)]:cursor-pointer [&:is(a,button)]:transition-transform [&:is(a,button)]:hover:scale-[103%] [&:is(a,button)]:focus-visible:focus-ring [&:is(a,button)]:active:scale-[101%]\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-eds-inverse text-eds-inverse\",\n        secondary: \"bg-eds-neutral-secondary text-eds-secondary\",\n        destructive: \"bg-eds-critical-secondary text-eds-critical-secondary\",\n        positive: \"bg-eds-positive-secondary text-eds-positive-secondary\",\n        caution: \"bg-eds-caution-secondary text-eds-caution-secondary\",\n        outline: \"text-eds-primary inset-ring inset-ring-eds-secondary\",\n        ghost: \"text-eds-secondary hover:bg-eds-neutral-hover\",\n        link: \"text-eds-link underline-offset-4 hover:text-eds-link-hover hover:underline\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nfunction Badge({\n  className,\n  variant = \"default\",\n  render,\n  ...props\n}: useRender.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants>) {\n  return useRender({\n    defaultTagName: \"span\",\n    props: mergeProps<\"span\">(\n      {\n        className: cn(badgeVariants({ variant }), className),\n      },\n      props,\n    ),\n    render,\n    state: {\n      slot: \"badge\",\n      variant,\n    },\n  });\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

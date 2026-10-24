@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-checkboxes",
+  "title": "Dropdown Menu Checkboxes",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dropdown-menu-checkboxes.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuLabel,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\";\n\nexport default function DropdownMenuCheckboxes() {\n  const [confirmed, setConfirmed] = useState(true);\n  const [pending, setPending] = useState(true);\n  const [cancelled, setCancelled] = useState(false);\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger render={<Button variant=\"outline\" />}>Status</DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-48\">\n        <DropdownMenuGroup>\n          <DropdownMenuLabel>Show bookings</DropdownMenuLabel>\n          <DropdownMenuCheckboxItem checked={confirmed} onCheckedChange={setConfirmed}>\n            Confirmed\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuCheckboxItem checked={pending} onCheckedChange={setPending}>\n            Pending\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuCheckboxItem checked={cancelled} onCheckedChange={setCancelled}>\n            Cancelled\n          </DropdownMenuCheckboxItem>\n          <DropdownMenuCheckboxItem disabled>No-shows</DropdownMenuCheckboxItem>\n        </DropdownMenuGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-vertical",
+  "title": "Slider Vertical",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-vertical.tsx",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderVertical() {\n  return (\n    <div className=\"flex h-40 items-center gap-8\">\n      <Slider defaultValue={[60]} orientation=\"vertical\" aria-label=\"Volume\" />\n      <Slider defaultValue={[20, 80]} orientation=\"vertical\" aria-label=\"Range\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

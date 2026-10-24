@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-demo",
+  "title": "Button Group Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-demo.tsx",
+      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { ButtonGroup } from \"@/registry/default/ui/button-group\";\n\nexport default function ButtonGroupDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <ButtonGroup aria-label=\"Change week\">\n        <Button variant=\"outline\" size=\"icon\" aria-label=\"Previous week\">\n          <ChevronLeftIcon />\n        </Button>\n        <Button variant=\"outline\">Today</Button>\n        <Button variant=\"outline\" size=\"icon\" aria-label=\"Next week\">\n          <ChevronRightIcon />\n        </Button>\n      </ButtonGroup>\n      <ButtonGroup aria-label=\"Calendar view\">\n        <Button variant=\"outline\">Day</Button>\n        <Button variant=\"outline\" aria-pressed>\n          Week\n        </Button>\n        <Button variant=\"outline\">Month</Button>\n      </ButtonGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

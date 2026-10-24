@@ -1,0 +1,48 @@
+---
+title: Carousel
+description: Scrolls through a row of slides with buttons, swipe or the arrow keys.
+links:
+  doc: https://www.embla-carousel.com/get-started/react
+  api: https://www.embla-carousel.com/api
+---
+
+<ComponentPreview name="carousel-demo" />
+
+## Installation
+
+<Installation name="carousel" />
+
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+```
+
+```tsx
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>Haircut</CarouselItem>
+    <CarouselItem>Colour</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Examples
+
+### Sizes
+
+Set `basis-*` on `CarouselItem` to show more than one slide at a time.
+
+<ComponentPreview name="carousel-size" />
+
+### Vertical
+
+<ComponentPreview name="carousel-orientation" />

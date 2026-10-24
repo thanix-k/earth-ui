@@ -1,0 +1,59 @@
+---
+title: Alert Dialog
+description: A modal that asks people to confirm an important or destructive action.
+links:
+  doc: https://base-ui.com/react/components/alert-dialog
+  api: https://base-ui.com/react/components/alert-dialog#api-reference
+---
+
+<ComponentPreview name="alert-dialog-demo" />
+
+## Installation
+
+<Installation name="alert-dialog" />
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Cancel appointment</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Cancel this appointment?</AlertDialogTitle>
+      <AlertDialogDescription>The customer will get a cancellation email.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep</AlertDialogCancel>
+      <AlertDialogAction>Cancel appointment</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+Unlike a dialog, it doesn't close when people click outside it.
+
+## Examples
+
+### Destructive
+
+<ComponentPreview name="alert-dialog-destructive" />
+
+### Small with media
+
+`size="sm"` makes a narrower, centred dialog. Put an icon in `AlertDialogMedia`.
+
+<ComponentPreview name="alert-dialog-small" />

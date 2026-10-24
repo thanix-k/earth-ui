@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-demo",
+  "title": "Separator Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/separator-demo.tsx",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport default function SeparatorDemo() {\n  return (\n    <div className=\"w-full max-w-sm text-body-14 text-eds-primary lg:text-body-12\">\n      <div className=\"flex flex-col gap-0.5\">\n        <div className=\"font-medium\">Glow Salon</div>\n        <div className=\"text-eds-secondary\">Hair, nails and skin care.</div>\n      </div>\n      <Separator className=\"my-4\" />\n      <div className=\"flex h-5 items-center gap-4\">\n        <div>Bookings</div>\n        <Separator orientation=\"vertical\" />\n        <div>Staff</div>\n        <Separator orientation=\"vertical\" />\n        <div>Services</div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,66 @@
+---
+title: Get Started
+description: Set up Earth UI in a new or existing React project and add your first component.
+---
+
+Earth UI works in any React 19 project with Tailwind CSS v4 that the shadcn CLI supports, such as Next.js, Vite, React Router or TanStack Start.
+
+## 1. Install the Earth base
+
+Run this in your project. It installs the Earth tokens, the Inter font, the `cn` utility and the shadcn aliases. It also registers the `@earth` namespace in `components.json`.
+
+<ShadcnCommand args="init {base}" />
+
+The base sets up your global CSS, so run it before adding components.
+
+## 2. Add components
+
+<ShadcnCommand args="add @earth/button @earth/input @earth/checkbox" />
+
+Each component also installs the Earth components and npm packages it depends on.
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function BookNow() {
+  return <Button>Book now</Button>
+}
+```
+
+## 3. Dark mode
+
+Earth ships light and dark values for every colour token. Add the `dark` class to `<html>` to switch. With Next.js, [next-themes](https://github.com/pacocoursey/next-themes) does this for you:
+
+```tsx
+<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  {children}
+</ThemeProvider>
+```
+
+## Styling your own code
+
+Use the stock shadcn classes (`bg-background`, `text-muted-foreground`, `bg-primary`) for general UI. When you need an exact Earth state or tier, use the `eds-` utilities:
+
+| Need | Use |
+| --- | --- |
+| Text tiers | `text-eds-primary`, `text-eds-secondary`, `text-eds-tertiary`, `text-eds-disabled` |
+| Surfaces | `bg-eds-canvas`, `bg-eds-canvas-secondary`, `bg-eds-menu` |
+| Interactive states | `bg-eds-neutral-hover`, `bg-eds-neutral-pressed`, `bg-eds-accent-hover` |
+| Status | `bg-eds-critical`, `text-eds-positive`, `bg-eds-caution-secondary` |
+| Form borders | `border-eds-input`, `border-eds-input-hover`, `border-eds-input-active` |
+| Type scale | `text-body-12` … `text-body-20`, `text-heading-12` … `text-heading-32` |
+| Elevation | `shadow-eds-10` … `shadow-eds-40` |
+| Keyboard focus | `focus-visible:focus-ring` |
+
+Earth's `eds-` names are scoped to one CSS property: `text-eds-secondary` exists but `bg-eds-secondary` does not. This keeps Earth's `accent`/`primary` separate from shadcn's, because the two systems use those words differently.
+
+## Use with AI tools
+
+Earth UI is a standard shadcn registry, so AI tools that understand shadcn can use it.
+
+- **shadcn MCP server.** Lets Claude, Cursor and other MCP clients browse and install `@earth` components:
+
+<ShadcnCommand args="mcp init --client claude" />
+
+- **llms.txt.** A plain-text index of these docs for language models is at [`/llms.txt`](/llms.txt).
+- **Registry index.** Every item is listed at [`/r/registry.json`](/r/registry.json). Each item lives at `/r/<name>.json`.

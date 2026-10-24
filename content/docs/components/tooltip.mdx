@@ -1,0 +1,38 @@
+---
+title: Tooltip
+description: A short label that appears when people hover or focus a control.
+links:
+  doc: https://base-ui.com/react/components/tooltip
+  api: https://base-ui.com/react/components/tooltip#api-reference
+---
+
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+<Installation name="tooltip" />
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger>Hover</TooltipTrigger>
+  <TooltipContent>New appointment</TooltipContent>
+</Tooltip>
+```
+
+Wrap your app in `TooltipProvider` to share the open delay between tooltips. Tooltips are at most 200px wide.
+
+## Examples
+
+### Side
+
+<ComponentPreview name="tooltip-sides" />
+
+### With keyboard shortcut
+
+<ComponentPreview name="tooltip-with-kbd" />

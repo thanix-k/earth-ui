@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-sizes",
+  "title": "Avatar Sizes",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-sizes.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\n\nexport default function AvatarSizes() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n      <Avatar size=\"lg\">\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

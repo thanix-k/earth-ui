@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-size",
+  "title": "Item Size",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/item"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/item-size.tsx",
+      "content": "import { CalendarIcon } from \"lucide-react\";\nimport {\n  Item,\n  ItemContent,\n  ItemDescription,\n  ItemMedia,\n  ItemTitle,\n} from \"@/registry/default/ui/item\";\n\nexport default function ItemSize() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      {([\"default\", \"sm\", \"xs\"] as const).map((size) => (\n        <Item key={size} variant=\"outline\" size={size}>\n          <ItemMedia variant=\"icon\">\n            <CalendarIcon />\n          </ItemMedia>\n          <ItemContent>\n            <ItemTitle>Haircut with Maya</ItemTitle>\n            <ItemDescription>Thu 24 Oct, 2:30 – 3:15 pm</ItemDescription>\n          </ItemContent>\n        </Item>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

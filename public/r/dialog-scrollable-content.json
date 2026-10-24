@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-scrollable-content",
+  "title": "Dialog Scrollable Content",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-scrollable-content.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\n\nconst policies = [\n  [\"Cancellations\", \"Customers can cancel up to 24 hours before their appointment at no cost.\"],\n  [\"Late arrivals\", \"Arriving more than 15 minutes late may shorten or reschedule the service.\"],\n  [\"No-shows\", \"Missed appointments without notice are charged 50% of the service price.\"],\n  [\"Deposits\", \"Services over 90 minutes need a deposit when booking online.\"],\n  [\"Rescheduling\", \"Appointments can be moved twice. After that, please call the front desk.\"],\n  [\"Refunds\", \"Deposits are refunded to the original payment method within 5 business days.\"],\n  [\"Gift cards\", \"Gift cards are valid for 12 months and can be used for any service.\"],\n  [\"Children\", \"Guests under 16 need a parent or guardian present during their appointment.\"],\n];\n\nexport default function DialogScrollableContent() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>Booking policy</DialogTrigger>\n      <DialogContent className=\"sm:max-w-120\">\n        <DialogHeader>\n          <DialogTitle>Booking policy</DialogTitle>\n          <DialogDescription>Shown to customers before they confirm a booking.</DialogDescription>\n        </DialogHeader>\n        <div className=\"-mx-6 max-h-72 overflow-y-auto px-6\">\n          {policies.map(([title, body]) => (\n            <div key={title} className=\"mb-4 last:mb-0\">\n              <p className=\"text-body-14 font-medium\">{title}</p>\n              <p className=\"text-body-14 text-eds-secondary\">{body}</p>\n            </div>\n          ))}\n        </div>\n        <DialogFooter>\n          <DialogClose render={<Button />}>Got it</DialogClose>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

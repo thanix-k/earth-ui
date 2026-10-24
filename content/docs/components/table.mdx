@@ -1,0 +1,44 @@
+---
+title: Table
+description: Rows and columns of data, such as bookings or payments.
+---
+
+<ComponentPreview name="table-demo" />
+
+## Installation
+
+<Installation name="table" />
+
+## Usage
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+```
+
+```tsx
+<Table>
+  <TableCaption>Today's bookings.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Customer</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Ava Thompson</TableCell>
+      <TableCell className="text-right">$45.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+Set `data-state="selected"` on a `TableRow` to highlight it.

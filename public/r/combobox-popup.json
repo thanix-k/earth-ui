@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-popup",
+  "title": "Combobox Popup",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-popup.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Combobox,\n  ComboboxContent,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxTrigger,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\n\nconst timeZones = [\n  \"London (GMT)\",\n  \"New York (EST)\",\n  \"Chicago (CST)\",\n  \"Los Angeles (PST)\",\n  \"Sydney (AEST)\",\n  \"Chennai (IST)\",\n];\n\nexport default function ComboboxPopup() {\n  return (\n    <Combobox items={timeZones} defaultValue={timeZones[0]}>\n      <ComboboxTrigger\n        render={<Button variant=\"outline\" className=\"w-56 justify-between font-normal\" />}\n      >\n        <ComboboxValue />\n      </ComboboxTrigger>\n      <ComboboxContent>\n        <ComboboxInput\n          showTrigger={false}\n          placeholder=\"Search time zones\"\n          aria-label=\"Search time zones\"\n        />\n        <ComboboxEmpty>No time zones found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item: string) => (\n            <ComboboxItem key={item} value={item}>\n              {item}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxContent>\n    </Combobox>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-demo",
+  "title": "Collapsible Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/collapsible-demo.tsx",
+      "content": "\"use client\";\n\nimport { ChevronsUpDownIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\n\nconst bookings = [\n  { time: \"9:00 am\", customer: \"Ava Thompson\", service: \"Haircut\" },\n  { time: \"10:30 am\", customer: \"Liam Chen\", service: \"Beard trim\" },\n  { time: \"1:00 pm\", customer: \"Sofia Rossi\", service: \"Colour\" },\n];\n\nexport default function CollapsibleDemo() {\n  return (\n    <Collapsible className=\"flex w-full max-w-xs flex-col gap-2\">\n      <div className=\"flex items-center justify-between gap-4 px-4\">\n        <div className=\"text-heading-14 text-eds-primary lg:text-heading-12\">Today's bookings</div>\n        <CollapsibleTrigger render={<Button variant=\"ghost\" size=\"icon-sm\" aria-label=\"Toggle\" />}>\n          <ChevronsUpDownIcon />\n        </CollapsibleTrigger>\n      </div>\n      <BookingRow {...bookings[0]} />\n      <CollapsibleContent className=\"flex flex-col gap-2\">\n        {bookings.slice(1).map((booking) => (\n          <BookingRow key={booking.time} {...booking} />\n        ))}\n      </CollapsibleContent>\n    </Collapsible>\n  );\n}\n\nfunction BookingRow({\n  time,\n  customer,\n  service,\n}: {\n  time: string;\n  customer: string;\n  service: string;\n}) {\n  return (\n    <div className=\"flex items-center justify-between rounded-lg border border-eds-secondary px-4 py-2 text-body-14 text-eds-primary lg:text-body-12\">\n      <span>\n        {customer} · {service}\n      </span>\n      <span className=\"text-eds-secondary\">{time}</span>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

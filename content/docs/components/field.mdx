@@ -1,0 +1,71 @@
+---
+title: Field
+description: Lays out a form control with its label, description and error message.
+---
+
+<ComponentPreview name="field-demo" />
+
+## Installation
+
+<Installation name="field" />
+
+## Usage
+
+```tsx
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
+} from "@/components/ui/field"
+```
+
+```tsx
+<Field>
+  <FieldLabel htmlFor="email">Email</FieldLabel>
+  <Input id="email" />
+  <FieldDescription>We send booking confirmations here.</FieldDescription>
+</Field>
+```
+
+Group fields with `FieldGroup`, and related fields under a legend with `FieldSet` and `FieldLegend`.
+
+## Examples
+
+### Description
+
+A description placed between the label and the control sits right under the label.
+
+<ComponentPreview name="field-input" />
+
+### Error
+
+Set `data-invalid` on the field and `aria-invalid` on the control, then add `FieldError`. It also accepts an `errors` array, such as the one from a form library.
+
+<ComponentPreview name="field-invalid" />
+
+### Disabled
+
+Set `data-disabled` on the field to dim its label and description.
+
+<ComponentPreview name="field-disabled" />
+
+### Checkbox
+
+Use `orientation="horizontal"` to place a control beside its label.
+
+<ComponentPreview name="field-checkbox" />
+
+### Radio
+
+<ComponentPreview name="field-radio" />
+
+### Switch
+
+<ComponentPreview name="field-switch" />
+
+### Choice card
+
+Wrap a whole `Field` in `FieldLabel` to make the row a selectable card.
+
+<ComponentPreview name="field-choice-card" />

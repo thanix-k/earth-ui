@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-disabled",
+  "title": "Radio Group Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/label",
+    "@earth/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-group-disabled.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport default function RadioGroupDisabled() {\n  return (\n    <RadioGroup defaultValue=\"in-person\" aria-label=\"Location\" className=\"w-fit\">\n      <Label>\n        <RadioGroupItem value=\"in-person\" />\n        In person\n      </Label>\n      <Label>\n        <RadioGroupItem value=\"video\" />\n        Video call\n      </Label>\n      <Label>\n        <RadioGroupItem value=\"phone\" disabled />\n        Phone call (not set up)\n      </Label>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

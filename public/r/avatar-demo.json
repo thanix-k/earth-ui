@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-demo",
+  "title": "Avatar Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-demo.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"Maya Patel\" />\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>JL</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

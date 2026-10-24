@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-demo",
+  "title": "Calendar Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/calendar-demo.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 10, 12));\n\n  return <Calendar mode=\"single\" selected={date} onSelect={setDate} defaultMonth={date} />;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

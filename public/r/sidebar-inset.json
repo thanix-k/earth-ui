@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-inset",
+  "title": "Sidebar Inset",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/sidebar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sidebar-inset.tsx",
+      "content": "\"use client\";\n\nimport { CalendarDaysIcon, SettingsIcon, UsersIcon } from \"lucide-react\";\nimport {\n  Sidebar,\n  SidebarContent,\n  SidebarGroup,\n  SidebarGroupContent,\n  SidebarInset,\n  SidebarMenu,\n  SidebarMenuButton,\n  SidebarMenuItem,\n  SidebarMenuSub,\n  SidebarMenuSubButton,\n  SidebarMenuSubItem,\n  SidebarProvider,\n  SidebarTrigger,\n} from \"@/registry/default/ui/sidebar\";\n\nconst settings = [\"Business details\", \"Working hours\", \"Booking page\", \"Notifications\"];\n\nexport default function SidebarInsetExample() {\n  return (\n    <SidebarProvider>\n      <Sidebar variant=\"inset\">\n        <SidebarContent>\n          <SidebarGroup>\n            <SidebarGroupContent>\n              <SidebarMenu>\n                <SidebarMenuItem>\n                  <SidebarMenuButton render={<a href=\"/calendar\" />}>\n                    <CalendarDaysIcon />\n                    <span>Calendar</span>\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton render={<a href=\"/staff\" />}>\n                    <UsersIcon />\n                    <span>Staff</span>\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>\n                    <SettingsIcon />\n                    <span>Settings</span>\n                  </SidebarMenuButton>\n                  <SidebarMenuSub>\n                    {settings.map((item) => (\n                      <SidebarMenuSubItem key={item}>\n                        <SidebarMenuSubButton href=\"#\" isActive={item === \"Working hours\"}>\n                          <span>{item}</span>\n                        </SidebarMenuSubButton>\n                      </SidebarMenuSubItem>\n                    ))}\n                  </SidebarMenuSub>\n                </SidebarMenuItem>\n              </SidebarMenu>\n            </SidebarGroupContent>\n          </SidebarGroup>\n        </SidebarContent>\n      </Sidebar>\n      <SidebarInset>\n        <header className=\"flex h-14 items-center gap-2 px-4\">\n          <SidebarTrigger className=\"-ms-1\" />\n          <h1 className=\"text-heading-16 text-eds-primary\">Working hours</h1>\n        </header>\n        <div className=\"flex-1 p-4 pt-0\">\n          <div className=\"h-full min-h-96 rounded-xl bg-eds-canvas-tertiary\" />\n        </div>\n      </SidebarInset>\n    </SidebarProvider>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

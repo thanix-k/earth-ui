@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "An animated indicator that shows something is loading.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/spinner.tsx",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// EDS Loading: a circle whose stroke grows and shrinks while it rotates\n// (1.7s). The dash is animated with SMIL so no extra keyframes are needed.\n// Like EDS it stays accent-coloured inside a disabled (loading) button;\n// change it with a text colour class.\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <svg\n      data-slot=\"spinner\"\n      role=\"status\"\n      aria-label=\"Loading\"\n      viewBox=\"0 0 50 50\"\n      fill=\"none\"\n      className={cn(\n        \"size-4 shrink-0 animate-[spin_1.7s_linear_infinite] stroke-current stroke-2 text-eds-accent\",\n        className,\n      )}\n      {...props}\n    >\n      <circle cx=\"25\" cy=\"25\" r=\"20\" strokeLinecap=\"round\">\n        <animate\n          attributeName=\"stroke-dasharray\"\n          values=\"1 150;90 150;90 150\"\n          dur=\"1.7s\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-dashoffset\"\n          values=\"0;-35;-124\"\n          dur=\"1.7s\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n    </svg>\n  );\n}\n\nexport { Spinner };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

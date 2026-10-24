@@ -1,0 +1,22 @@
+---
+title: Aspect Ratio
+description: Keeps content, such as an image or video, at a fixed width-to-height ratio.
+---
+
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Installation
+
+<Installation name="aspect-ratio" />
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+```
+
+```tsx
+<AspectRatio ratio={16 / 9}>
+  <img src="..." alt="..." className="size-full rounded-lg object-cover" />
+</AspectRatio>
+```

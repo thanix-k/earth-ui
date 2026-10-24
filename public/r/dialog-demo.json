@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-demo",
+  "title": "Dialog Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/dialog",
+    "@earth/input",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function DialogDemo() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>Edit service</DialogTrigger>\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Edit service</DialogTitle>\n          <DialogDescription>\n            Changes apply to new bookings. Existing appointments keep their details.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"grid gap-4\">\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"service-name\">Service name</Label>\n            <Input id=\"service-name\" defaultValue=\"Haircut & style\" />\n          </div>\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"service-duration\">Duration (minutes)</Label>\n            <Input id=\"service-duration\" type=\"number\" defaultValue=\"45\" />\n          </div>\n        </div>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"ghost\" />}>Cancel</DialogClose>\n          <Button type=\"submit\">Save changes</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

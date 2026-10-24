@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-status",
+  "title": "Badge Status",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-status.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function BadgeStatus() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge variant=\"positive\">Confirmed</Badge>\n      <Badge variant=\"caution\">Pending</Badge>\n      <Badge variant=\"destructive\">No-show</Badge>\n      <Badge variant=\"secondary\">Completed</Badge>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

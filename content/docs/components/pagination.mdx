@@ -1,0 +1,49 @@
+---
+title: Pagination
+description: Moves between pages of a long list, such as customers or past appointments.
+links:
+  doc: https://base-ui.com/react/components/button
+---
+
+<ComponentPreview name="pagination-demo" />
+
+## Installation
+
+<Installation name="pagination" />
+
+## Usage
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+```
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>
+        1
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Examples
+
+### Previous and next only
+
+<ComponentPreview name="pagination-simple" />

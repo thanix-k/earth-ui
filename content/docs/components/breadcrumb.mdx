@@ -1,0 +1,54 @@
+---
+title: Breadcrumb
+description: Shows where the current page sits in the app and links back to its parents.
+links:
+  doc: https://base-ui.com/react/utils/use-render
+---
+
+<ComponentPreview name="breadcrumb-demo" />
+
+## Installation
+
+<Installation name="breadcrumb" />
+
+## Usage
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/settings">Settings</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Services</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Examples
+
+### Custom separator
+
+Pass any content to `BreadcrumbSeparator` to replace the chevron.
+
+<ComponentPreview name="breadcrumb-separator" />
+
+### Collapsed
+
+Use `BreadcrumbEllipsis` to stand in for hidden levels.
+
+<ComponentPreview name="breadcrumb-collapsed" />
+

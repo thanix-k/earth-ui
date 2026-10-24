@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-demo",
+  "title": "Card Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/card",
+    "@earth/input",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function CardDemo() {\n  return (\n    <Card className=\"w-full max-w-sm\">\n      <CardHeader>\n        <CardTitle>Add a service</CardTitle>\n        <CardDescription>Customers can book it from your page.</CardDescription>\n        <CardAction>\n          <Button variant=\"link\" size=\"sm\" className=\"px-0\">\n            Import\n          </Button>\n        </CardAction>\n      </CardHeader>\n      <CardContent>\n        <form className=\"flex flex-col gap-4\">\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"service-name\">Service name</Label>\n            <Input id=\"service-name\" placeholder=\"Haircut and style\" />\n          </div>\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"service-duration\">Duration (minutes)</Label>\n            <Input id=\"service-duration\" type=\"number\" placeholder=\"45\" />\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter className=\"justify-end gap-2\">\n        <Button variant=\"outline\">Cancel</Button>\n        <Button>Save service</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

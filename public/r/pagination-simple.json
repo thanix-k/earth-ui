@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-simple",
+  "title": "Pagination Simple",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/pagination-simple.tsx",
+      "content": "import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/default/ui/pagination\";\n\nexport default function PaginationSimple() {\n  return (\n    <div className=\"flex w-full max-w-md items-center justify-between gap-4\">\n      <p className=\"text-body-12 text-eds-secondary\">Showing 21–40 of 128 customers</p>\n      <Pagination className=\"mx-0 w-auto\">\n        <PaginationContent>\n          <PaginationItem>\n            <PaginationPrevious href=\"#\" />\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationNext href=\"#\" />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

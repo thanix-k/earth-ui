@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-input",
+  "title": "Button Group Input",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/button-group",
+    "@earth/input",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-input.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ButtonGroup, ButtonGroupText } from \"@/registry/default/ui/button-group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function ButtonGroupInput() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-1\">\n      <Label htmlFor=\"booking-url\">Booking page URL</Label>\n      <ButtonGroup className=\"w-full\">\n        <ButtonGroupText>setmore.com/</ButtonGroupText>\n        <Input id=\"booking-url\" defaultValue=\"glowsalon\" />\n        <Button variant=\"outline\">Copy</Button>\n      </ButtonGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

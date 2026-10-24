@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-icon",
+  "title": "Empty Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/empty-icon.tsx",
+      "content": "import { UsersIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport default function EmptyIcon() {\n  return (\n    <Empty className=\"border\">\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <UsersIcon />\n        </EmptyMedia>\n        <EmptyTitle>No customers found</EmptyTitle>\n        <EmptyDescription>\n          Try another name or email, or <a href=\"#import\">import a list</a>.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button variant=\"outline\">Clear search</Button>\n      </EmptyContent>\n    </Empty>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

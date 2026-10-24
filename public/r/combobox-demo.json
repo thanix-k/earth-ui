@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-demo",
+  "title": "Combobox Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-demo.tsx",
+      "content": "\"use client\";\n\nimport {\n  Combobox,\n  ComboboxContent,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n} from \"@/registry/default/ui/combobox\";\n\nconst services = [\n  \"Haircut\",\n  \"Haircut and blow-dry\",\n  \"Colour\",\n  \"Highlights\",\n  \"Beard trim\",\n  \"Manicure\",\n  \"Pedicure\",\n  \"Deep tissue massage\",\n];\n\nexport default function ComboboxDemo() {\n  return (\n    <Combobox items={services}>\n      <ComboboxInput className=\"w-64\" placeholder=\"Select a service\" aria-label=\"Service\" />\n      <ComboboxContent>\n        <ComboboxEmpty>No services found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item: string) => (\n            <ComboboxItem key={item} value={item}>\n              {item}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxContent>\n    </Combobox>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

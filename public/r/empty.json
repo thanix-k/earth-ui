@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty",
+  "title": "Empty",
+  "description": "A placeholder for a view with no content yet, with a next step.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/empty.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// Spacing and type follow EDS StatusPanel: 24px icon, 12px (8px from lg)\n// to the text, title and description 4px (2px) apart, actions 24px (16px)\n// below.\nfunction Empty({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty\"\n      className={cn(\n        \"flex w-full min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-xl border-dashed border-eds-secondary p-6 text-center text-balance lg:gap-4\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction EmptyHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-header\"\n      className={cn(\"flex max-w-[420px] flex-col items-center gap-1 lg:gap-0.5\", className)}\n      {...props}\n    />\n  );\n}\n\nconst emptyMediaVariants = cva(\n  \"mb-2 flex shrink-0 items-center justify-center text-eds-icon-primary lg:mb-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-transparent [&_svg:not([class*='size-'])]:size-6\",\n        icon: \"flex size-10 shrink-0 items-center justify-center rounded-lg bg-eds-neutral-secondary [&_svg:not([class*='size-'])]:size-5\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nfunction EmptyMedia({\n  className,\n  variant = \"default\",\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof emptyMediaVariants>) {\n  return (\n    <div\n      data-slot=\"empty-icon\"\n      data-variant={variant}\n      className={cn(emptyMediaVariants({ variant, className }))}\n      {...props}\n    />\n  );\n}\n\nfunction EmptyTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-title\"\n      className={cn(\"text-heading-16 text-eds-primary lg:text-heading-14\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction EmptyDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <div\n      data-slot=\"empty-description\"\n      className={cn(\n        \"text-body-14 text-eds-secondary lg:text-body-12 [&>a]:text-eds-link [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-eds-link-hover\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction EmptyContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-content\"\n      className={cn(\n        \"flex w-full max-w-sm min-w-0 flex-col items-center gap-2 text-body-14 text-balance lg:text-body-12\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

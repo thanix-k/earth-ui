@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-separator",
+  "title": "Button Group Separator",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-separator.tsx",
+      "content": "import { ChevronDownIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { ButtonGroup, ButtonGroupSeparator } from \"@/registry/default/ui/button-group\";\n\nexport default function ButtonGroupWithSeparator() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"ghost\">New appointment</Button>\n      <ButtonGroupSeparator />\n      <Button variant=\"ghost\" size=\"icon\" aria-label=\"More booking options\">\n        <ChevronDownIcon />\n      </Button>\n    </ButtonGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

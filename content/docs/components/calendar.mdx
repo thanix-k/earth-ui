@@ -1,0 +1,55 @@
+---
+title: Calendar
+description: Lets people pick a date or a range of dates from a month grid.
+links:
+  doc: https://daypicker.dev
+  api: https://daypicker.dev/api
+---
+
+<ComponentPreview name="calendar-demo" />
+
+## Installation
+
+<Installation name="calendar" />
+
+## Usage
+
+```tsx
+import { Calendar } from "@/components/ui/calendar"
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar mode="single" selected={date} onSelect={setDate} />
+```
+
+The calendar reads the current date to mark today. In a Next.js app with `cacheComponents` enabled (the default for new apps), render it inside `<Suspense>` so that value is computed per request, not at build time:
+
+```tsx
+<Suspense>
+  <BookingCalendar />
+</Suspense>
+```
+
+## Examples
+
+### Range
+
+<ComponentPreview name="calendar-range" />
+
+### Disabled days
+
+Pass `disabled` matchers to block days, such as past dates and weekends.
+
+<ComponentPreview name="calendar-disabled" />
+
+### Month and year dropdowns
+
+<ComponentPreview name="calendar-dropdown" />
+
+### Small
+
+Set `--cell-size`, `--nav-size` and the text size to match EDS's small calendar.
+
+<ComponentPreview name="calendar-small" />

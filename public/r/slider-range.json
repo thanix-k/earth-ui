@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-range",
+  "title": "Slider Range",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-range.tsx",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderRange() {\n  return (\n    <Slider\n      defaultValue={[25, 75]}\n      max={150}\n      step={5}\n      className=\"max-w-xs\"\n      aria-label=\"Price range\"\n    />\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

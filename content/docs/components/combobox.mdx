@@ -1,0 +1,72 @@
+---
+title: Combobox
+description: A text input that filters a list of options as people type.
+links:
+  doc: https://base-ui.com/react/components/combobox
+  api: https://base-ui.com/react/components/combobox#api-reference
+---
+
+<ComponentPreview name="combobox-demo" />
+
+## Installation
+
+<Installation name="combobox" />
+
+## Usage
+
+```tsx
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox"
+```
+
+```tsx
+<Combobox items={services}>
+  <ComboboxInput placeholder="Select a service" />
+  <ComboboxContent>
+    <ComboboxEmpty>No services found.</ComboboxEmpty>
+    <ComboboxList>
+      {(item) => (
+        <ComboboxItem key={item} value={item}>
+          {item}
+        </ComboboxItem>
+      )}
+    </ComboboxList>
+  </ComboboxContent>
+</Combobox>
+```
+
+## Examples
+
+### Clear button
+
+<ComponentPreview name="combobox-clear" />
+
+### Groups
+
+<ComponentPreview name="combobox-groups" />
+
+### Multiple
+
+Selected items show as tags inside `ComboboxChips`. Pass its ref from `useComboboxAnchor` to `ComboboxContent` as the `anchor`.
+
+<ComponentPreview name="combobox-multiple" />
+
+### Popup
+
+Put the input inside the popup and open it from a button.
+
+<ComponentPreview name="combobox-popup" />
+
+### Invalid
+
+<ComponentPreview name="combobox-invalid" />
+
+### Disabled
+
+<ComponentPreview name="combobox-disabled" />

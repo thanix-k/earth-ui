@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-disabled",
+  "title": "Calendar Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/calendar-disabled.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDisabled() {\n  const [date, setDate] = React.useState<Date | undefined>();\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      defaultMonth={new Date(2026, 10)}\n      disabled={[{ before: new Date(2026, 10, 10) }, { dayOfWeek: [0, 6] }]}\n    />\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

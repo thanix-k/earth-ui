@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-align",
+  "title": "Popover Align",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-align.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Popover, PopoverContent, PopoverTrigger } from \"@/registry/default/ui/popover\";\n\nconst aligns = [\"start\", \"center\", \"end\"] as const;\n\nexport default function PopoverAlign() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {aligns.map((align) => (\n        <Popover key={align}>\n          <PopoverTrigger render={<Button variant=\"outline\" className=\"capitalize\" />}>\n            {align}\n          </PopoverTrigger>\n          <PopoverContent align={align} className=\"w-48\">\n            Aligned to the {align} of the trigger.\n          </PopoverContent>\n        </Popover>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

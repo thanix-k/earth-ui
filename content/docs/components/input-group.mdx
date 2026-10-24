@@ -1,0 +1,55 @@
+---
+title: Input Group
+description: Adds icons, text or buttons inside an input or textarea.
+---
+
+<ComponentPreview name="input-group-demo" />
+
+## Installation
+
+<Installation name="input-group" />
+
+## Usage
+
+```tsx
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
+```
+
+```tsx
+<InputGroup>
+  <InputGroupInput placeholder="Search customers" />
+  <InputGroupAddon>
+    <SearchIcon />
+  </InputGroupAddon>
+</InputGroup>
+```
+
+Set `align` on `InputGroupAddon` to `inline-start` (default), `inline-end`, `block-start` or `block-end`.
+
+## Examples
+
+### Text
+
+<ComponentPreview name="input-group-text" />
+
+### Button
+
+<ComponentPreview name="input-group-button" />
+
+### Textarea
+
+<ComponentPreview name="input-group-textarea" />
+
+### Invalid
+
+Set `aria-invalid` on the control.
+
+<ComponentPreview name="input-group-invalid" />
+
+### Disabled
+
+<ComponentPreview name="input-group-disabled" />

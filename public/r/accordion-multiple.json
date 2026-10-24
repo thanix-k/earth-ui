@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-multiple",
+  "title": "Accordion Multiple",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-multiple.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\n\nexport default function AccordionMultiple() {\n  return (\n    <Accordion multiple defaultValue={[\"hours\", \"breaks\"]} className=\"max-w-md\">\n      <AccordionItem value=\"hours\">\n        <AccordionTrigger>Working hours</AccordionTrigger>\n        <AccordionContent>Monday to Friday, 9:00 am – 6:00 pm.</AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"breaks\">\n        <AccordionTrigger>Breaks</AccordionTrigger>\n        <AccordionContent>Lunch, 1:00 pm – 1:45 pm.</AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"time-off\">\n        <AccordionTrigger>Time off</AccordionTrigger>\n        <AccordionContent>No time off scheduled.</AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

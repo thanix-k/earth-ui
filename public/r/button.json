@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Triggers an action. Use one default button per view for the main action.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/button.tsx",
+      "content": "import { Button as ButtonPrimitive } from \"@base-ui/react/button\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nconst buttonVariants = cva(\n  \"group/button inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent font-medium whitespace-nowrap transition-colors duration-300 ease-[ease] select-none focus-visible:focus-ring data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-eds-accent text-eds-onPrimary hover:bg-eds-accent-hover active:bg-eds-accent-pressed aria-expanded:bg-eds-accent-pressed aria-pressed:bg-eds-accent-pressed data-disabled:bg-eds-neutral-disabled data-disabled:text-eds-onPrimary-disabled\",\n        secondary:\n          \"border-eds-accent text-eds-accent hover:border-transparent hover:bg-eds-accent-hover hover:text-eds-onPrimary active:border-transparent active:bg-eds-accent-pressed active:text-eds-onPrimary aria-expanded:border-transparent aria-expanded:bg-eds-accent-pressed aria-expanded:text-eds-onPrimary data-disabled:border-eds-secondary data-disabled:bg-transparent data-disabled:text-eds-disabled\",\n        outline:\n          \"border-eds-secondary bg-eds-neutral text-eds-primary hover:border-transparent hover:bg-eds-neutral-hover active:border-transparent active:bg-eds-neutral-pressed aria-expanded:border-transparent aria-expanded:bg-eds-neutral-pressed aria-pressed:border-transparent aria-pressed:bg-eds-neutral-pressed data-disabled:border-eds-secondary data-disabled:bg-eds-neutral data-disabled:text-eds-disabled\",\n        ghost:\n          \"text-eds-secondary hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed aria-expanded:bg-eds-neutral-pressed aria-pressed:bg-eds-neutral-pressed data-disabled:bg-transparent data-disabled:text-eds-disabled\",\n        destructive:\n          \"bg-eds-critical text-eds-critical-onPrimary hover:bg-eds-critical-hover active:bg-eds-critical-pressed aria-expanded:bg-eds-critical-pressed aria-pressed:bg-eds-critical-pressed data-disabled:bg-eds-neutral-disabled data-disabled:text-eds-onPrimary-disabled\",\n        link: \"text-eds-link underline-offset-4 hover:text-eds-link-hover hover:underline active:text-eds-link-pressed data-disabled:text-eds-disabled data-disabled:no-underline\",\n      },\n      size: {\n        default:\n          \"h-8 gap-1 px-4 text-body-12 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3\",\n        xs: \"h-5 gap-1 px-2 text-body-10 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"h-6 gap-1 px-3 text-body-12 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2\",\n        lg: \"h-10 gap-1.5 px-5 text-body-14 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-5\",\n        icon: \"size-8\",\n        \"icon-xs\": \"size-5 [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-6\",\n        \"icon-lg\": \"size-10 [&_svg:not([class*='size-'])]:size-5\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {\n  return (\n    <ButtonPrimitive\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

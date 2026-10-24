@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-badge",
+  "title": "Avatar Badge",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-badge.tsx",
+      "content": "import { PlusIcon } from \"lucide-react\";\nimport { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\n\nexport default function AvatarBadgeExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarFallback>JL</AvatarFallback>\n        <AvatarBadge className=\"bg-eds-status-available\" />\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"Maya Patel\" />\n        <AvatarFallback>MP</AvatarFallback>\n        <AvatarBadge className=\"bg-eds-status-busy\" />\n      </Avatar>\n      <Avatar size=\"lg\">\n        <AvatarFallback>AR</AvatarFallback>\n        <AvatarBadge>\n          <PlusIcon />\n        </AvatarBadge>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

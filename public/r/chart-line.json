@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-line",
+  "title": "Chart Line",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@earth/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/chart-line.tsx",
+      "content": "\"use client\";\n\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { day: \"Mon\", appointments: 18 },\n  { day: \"Tue\", appointments: 24 },\n  { day: \"Wed\", appointments: 21 },\n  { day: \"Thu\", appointments: 30 },\n  { day: \"Fri\", appointments: 34 },\n  { day: \"Sat\", appointments: 41 },\n  { day: \"Sun\", appointments: 12 },\n];\n\nconst chartConfig = {\n  appointments: { label: \"Appointments\", color: \"var(--chart-1)\" },\n} satisfies ChartConfig;\n\nexport default function ChartLine() {\n  return (\n    <ChartContainer config={chartConfig} className=\"w-full max-w-lg\">\n      <LineChart accessibilityLayer data={chartData} margin={{ left: 12, right: 12 }}>\n        <CartesianGrid vertical={false} />\n        <XAxis dataKey=\"day\" tickLine={false} axisLine={false} tickMargin={8} />\n        <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n        <Line\n          dataKey=\"appointments\"\n          type=\"monotone\"\n          stroke=\"var(--color-appointments)\"\n          strokeWidth={2}\n          dot={false}\n        />\n      </LineChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

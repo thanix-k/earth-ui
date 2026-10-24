@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-types",
+  "title": "Sonner Types",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/sonner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sonner-types.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Toaster } from \"@/registry/default/ui/sonner\";\n\nexport default function SonnerTypes() {\n  return (\n    <div className=\"flex flex-wrap justify-center gap-2\">\n      <Button variant=\"outline\" onClick={() => toast(\"Reminder emails are on\")}>\n        Default\n      </Button>\n      <Button variant=\"outline\" onClick={() => toast.success(\"Booking page published\")}>\n        Success\n      </Button>\n      <Button variant=\"outline\" onClick={() => toast.info(\"Maya is away on Friday\")}>\n        Info\n      </Button>\n      <Button variant=\"outline\" onClick={() => toast.warning(\"2 appointments overlap on Monday\")}>\n        Warning\n      </Button>\n      <Button variant=\"outline\" onClick={() => toast.error(\"Payment could not be taken\")}>\n        Error\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.promise(new Promise((resolve) => setTimeout(resolve, 2000)), {\n            loading: \"Syncing your Google Calendar…\",\n            success: \"Calendar synced\",\n            error: \"Sync failed\",\n          })\n        }\n      >\n        Promise\n      </Button>\n      <Toaster />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-demo",
+  "title": "Field Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/checkbox",
+    "@earth/field",
+    "@earth/input",
+    "@earth/native-select",
+    "@earth/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport {\n  Field,\n  FieldDescription,\n  FieldGroup,\n  FieldLabel,\n  FieldLegend,\n  FieldSeparator,\n  FieldSet,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function FieldDemo() {\n  return (\n    <form className=\"w-full max-w-md\">\n      <FieldGroup>\n        <FieldSet>\n          <FieldLegend>New service</FieldLegend>\n          <FieldDescription>Customers see this on your booking page.</FieldDescription>\n          <FieldGroup>\n            <Field>\n              <FieldLabel htmlFor=\"service-name\">Service name</FieldLabel>\n              <Input id=\"service-name\" placeholder=\"Haircut and blow-dry\" required />\n            </Field>\n            <div className=\"grid grid-cols-2 gap-4\">\n              <Field>\n                <FieldLabel htmlFor=\"service-duration\">Duration</FieldLabel>\n                <NativeSelect id=\"service-duration\" defaultValue=\"45\" className=\"w-full\">\n                  <NativeSelectOption value=\"30\">30 minutes</NativeSelectOption>\n                  <NativeSelectOption value=\"45\">45 minutes</NativeSelectOption>\n                  <NativeSelectOption value=\"60\">1 hour</NativeSelectOption>\n                </NativeSelect>\n              </Field>\n              <Field>\n                <FieldLabel htmlFor=\"service-price\">Price</FieldLabel>\n                <Input id=\"service-price\" placeholder=\"$45.00\" />\n              </Field>\n            </div>\n            <Field>\n              <FieldLabel htmlFor=\"service-description\">Description</FieldLabel>\n              <Textarea id=\"service-description\" placeholder=\"What's included\" />\n            </Field>\n          </FieldGroup>\n        </FieldSet>\n        <FieldSeparator />\n        <FieldSet>\n          <FieldLegend>Booking</FieldLegend>\n          <FieldGroup>\n            <Field orientation=\"horizontal\">\n              <Checkbox id=\"service-online\" defaultChecked />\n              <FieldLabel htmlFor=\"service-online\">Customers can book this online</FieldLabel>\n            </Field>\n          </FieldGroup>\n        </FieldSet>\n        <Field orientation=\"horizontal\">\n          <Button type=\"submit\">Save service</Button>\n          <Button variant=\"outline\" type=\"button\">\n            Cancel\n          </Button>\n        </Field>\n      </FieldGroup>\n    </form>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

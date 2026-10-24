@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-demo",
+  "title": "Native Select Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/native-select-demo.tsx",
+      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectDemo() {\n  return (\n    <NativeSelect defaultValue=\"\" aria-label=\"Duration\">\n      <NativeSelectOption value=\"\" disabled>\n        Select duration\n      </NativeSelectOption>\n      <NativeSelectOption value=\"15\">15 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"30\">30 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"45\">45 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"60\">1 hour</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

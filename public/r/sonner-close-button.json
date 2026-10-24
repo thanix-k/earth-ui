@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-close-button",
+  "title": "Sonner Close Button",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/sonner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sonner-close-button.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Toaster } from \"@/registry/default/ui/sonner\";\n\nexport default function SonnerCloseButton() {\n  return (\n    <>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast(\"New booking from Jordan Lee\", {\n            description: \"Colour refresh, Sat 8 Nov at 10:00 am\",\n            duration: 10000,\n          })\n        }\n      >\n        Show notification\n      </Button>\n      <Toaster closeButton />\n    </>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

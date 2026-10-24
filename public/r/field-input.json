@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-input",
+  "title": "Field Input",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/field",
+    "@earth/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-input.tsx",
+      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function FieldInput() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"booking-url\">Booking page URL</FieldLabel>\n      <FieldDescription>Letters, numbers and dashes only.</FieldDescription>\n      <Input id=\"booking-url\" placeholder=\"glow-salon\" />\n    </Field>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

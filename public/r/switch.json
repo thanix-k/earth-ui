@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "Turns a single setting on or off, taking effect immediately.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/switch.tsx",
+      "content": "\"use client\";\n\nimport { Switch as SwitchPrimitive } from \"@base-ui/react/switch\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// EDS Toggle: 36×20 track on touch screens, 28×16 from lg. `sm` is always the\n// compact size.\nfunction Switch({\n  className,\n  size = \"default\",\n  ...props\n}: SwitchPrimitive.Root.Props & {\n  size?: \"sm\" | \"default\";\n}) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      data-size={size}\n      className={cn(\n        \"peer group/switch relative inline-flex shrink-0 cursor-pointer items-center rounded-full border border-transparent px-px transition-colors duration-300 ease-[ease] outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:focus-ring\",\n        \"data-[size=default]:h-5 data-[size=default]:w-9 data-[size=sm]:h-4 data-[size=sm]:w-7 lg:data-[size=default]:h-4 lg:data-[size=default]:w-7\",\n        \"bg-eds-neutral-tertiary text-eds-onPrimary data-checked:bg-eds-inverse\",\n        \"aria-invalid:border-eds-input-critical\",\n        \"data-disabled:cursor-default data-disabled:bg-eds-neutral-disabled data-disabled:text-eds-onPrimary-disabled\",\n        className,\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className=\"pointer-events-none block rounded-full bg-current transition-transform duration-300 ease-[ease] group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 data-checked:translate-x-full data-unchecked:translate-x-0 lg:group-data-[size=default]/switch:size-3\"\n      />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

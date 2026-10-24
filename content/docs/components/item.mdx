@@ -1,0 +1,51 @@
+---
+title: Item
+description: A row with media, a title, a description and actions, for lists of things like staff or services.
+---
+
+<ComponentPreview name="item-demo" />
+
+## Installation
+
+<Installation name="item" />
+
+## Usage
+
+```tsx
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
+```
+
+```tsx
+<Item variant="outline">
+  <ItemContent>
+    <ItemTitle>Online booking</ItemTitle>
+    <ItemDescription>Customers can book any open slot.</ItemDescription>
+  </ItemContent>
+  <ItemActions>
+    <Button variant="outline" size="sm">Settings</Button>
+  </ItemActions>
+</Item>
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="item-variants" />
+
+### Sizes
+
+<ComponentPreview name="item-size" />
+
+### List with avatars
+
+Wrap items in `ItemGroup` and divide them with `ItemSeparator`.
+
+<ComponentPreview name="item-avatar" />

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-ghost",
+  "title": "Badge Ghost",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-ghost.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function BadgeGhost() {\n  return <Badge variant=\"ghost\">Walk-in</Badge>;\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-demo",
+  "title": "Popover Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/input",
+    "@earth/label",
+    "@earth/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-demo.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverDescription,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function PopoverDemo() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\" />}>Reminders</PopoverTrigger>\n      <PopoverContent>\n        <PopoverHeader>\n          <PopoverTitle>Booking reminders</PopoverTitle>\n          <PopoverDescription>Customers get an email before each appointment.</PopoverDescription>\n        </PopoverHeader>\n        <div className=\"grid gap-1\">\n          <Label htmlFor=\"reminder-hours\">Hours before</Label>\n          <Input id=\"reminder-hours\" type=\"number\" defaultValue=\"24\" />\n        </div>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

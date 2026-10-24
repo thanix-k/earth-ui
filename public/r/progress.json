@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Shows how far a task such as an import or upload has got.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/progress.tsx",
+      "content": "\"use client\";\n\nimport { Progress as ProgressPrimitive } from \"@base-ui/react/progress\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nfunction Progress({ className, children, value, ...props }: ProgressPrimitive.Root.Props) {\n  return (\n    <ProgressPrimitive.Root\n      value={value}\n      data-slot=\"progress\"\n      className={cn(\"flex flex-wrap gap-2\", className)}\n      {...props}\n    >\n      {children}\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </ProgressPrimitive.Root>\n  );\n}\n\nfunction ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {\n  return (\n    <ProgressPrimitive.Track\n      className={cn(\n        \"relative flex h-[3px] w-full items-center overflow-x-hidden rounded-xl bg-eds-canvas-tertiary\",\n        className,\n      )}\n      data-slot=\"progress-track\"\n      {...props}\n    />\n  );\n}\n\nfunction ProgressIndicator({ className, ...props }: ProgressPrimitive.Indicator.Props) {\n  return (\n    <ProgressPrimitive.Indicator\n      data-slot=\"progress-indicator\"\n      className={cn(\n        \"h-full rounded-xl bg-eds-accent transition-[width] duration-300 ease-[ease]\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ProgressLabel({ className, ...props }: ProgressPrimitive.Label.Props) {\n  return (\n    <ProgressPrimitive.Label\n      className={cn(\"text-body-14 text-eds-primary lg:text-body-12\", className)}\n      data-slot=\"progress-label\"\n      {...props}\n    />\n  );\n}\n\nfunction ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {\n  return (\n    <ProgressPrimitive.Value\n      className={cn(\n        \"ml-auto text-body-14 text-eds-secondary tabular-nums lg:text-body-12\",\n        className,\n      )}\n      data-slot=\"progress-value\"\n      {...props}\n    />\n  );\n}\n\nexport { Progress, ProgressIndicator, ProgressLabel, ProgressTrack, ProgressValue };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

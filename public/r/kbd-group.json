@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-group",
+  "title": "Kbd Group",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-group.tsx",
+      "content": "import { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\nexport default function KbdGroupExample() {\n  return (\n    <p className=\"text-body-14 text-eds-secondary lg:text-body-12\">\n      Press{\" \"}\n      <KbdGroup>\n        <Kbd>⌘</Kbd>\n        <Kbd>K</Kbd>\n      </KbdGroup>{\" \"}\n      to search customers.\n    </p>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

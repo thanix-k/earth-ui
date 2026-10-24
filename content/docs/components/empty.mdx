@@ -1,0 +1,46 @@
+---
+title: Empty
+description: A placeholder for a view with no content yet, with a next step.
+---
+
+<ComponentPreview name="empty-demo" />
+
+## Installation
+
+<Installation name="empty" />
+
+## Usage
+
+```tsx
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty"
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia>
+      <CalendarXIcon />
+    </EmptyMedia>
+    <EmptyTitle>No bookings yet</EmptyTitle>
+    <EmptyDescription>Share your booking page.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button>Share booking page</Button>
+  </EmptyContent>
+</Empty>
+```
+
+## Examples
+
+### Icon and border
+
+`variant="icon"` puts the icon on a tile. Add `border` to the root for a dashed outline.
+
+<ComponentPreview name="empty-icon" />

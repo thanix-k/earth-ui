@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-demo",
+  "title": "Checkbox Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/checkbox",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-demo.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function CheckboxDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Label>\n        <Checkbox defaultChecked />\n        Send booking confirmations\n      </Label>\n      <Label>\n        <Checkbox />\n        Send reminders\n      </Label>\n      <Label>\n        <Checkbox indeterminate />\n        Some staff selected\n      </Label>\n      <Label>\n        <Checkbox disabled defaultChecked />\n        Managed by your admin\n      </Label>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

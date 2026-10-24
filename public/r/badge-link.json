@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-link",
+  "title": "Badge Link",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-link.tsx",
+      "content": "import { ArrowUpRightIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function BadgeLink() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge render={<a href=\"#bookings\" />}>\n        3 new bookings\n        <ArrowUpRightIcon data-icon=\"inline-end\" />\n      </Badge>\n      <Badge variant=\"link\" render={<a href=\"#services\" />}>\n        View services\n      </Badge>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-demo",
+  "title": "Hover Card Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/hover-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/hover-card-demo.tsx",
+      "content": "import { HoverCard, HoverCardContent, HoverCardTrigger } from \"@/registry/default/ui/hover-card\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger\n        href=\"#staff\"\n        className=\"text-body-14 text-eds-link underline-offset-4 hover:text-eds-link-hover hover:underline lg:text-body-12\"\n      >\n        Jordan Lee\n      </HoverCardTrigger>\n      <HoverCardContent>\n        <div className=\"flex flex-col gap-1\">\n          <p className=\"text-heading-14 lg:text-heading-12\">Jordan Lee</p>\n          <p>Senior stylist. Cuts, colour and bridal styling.</p>\n          <p className=\"text-eds-secondary\">Works Tue–Sat, 9:00 am – 6:00 pm</p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

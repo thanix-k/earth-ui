@@ -1,0 +1,41 @@
+---
+title: Toast
+description: Shows brief notifications with Base UI's toast manager, styled as an EDS snackbar.
+links:
+  doc: https://base-ui.com/react/components/toast
+  api: https://base-ui.com/react/components/toast#api-reference
+---
+
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+<Installation name="toast" />
+
+## Usage
+
+Wrap your app in `Toaster` once.
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast"
+```
+
+```tsx
+<Toaster>{children}</Toaster>
+```
+
+Then add toasts from anywhere.
+
+```tsx
+toast.add({ title: "Appointment booked", description: "Fri 7 Nov at 2:30 pm" })
+```
+
+## Examples
+
+### Types
+
+<ComponentPreview name="toast-types" />
+
+### With action
+
+<ComponentPreview name="toast-action" />

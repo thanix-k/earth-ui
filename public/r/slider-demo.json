@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-demo",
+  "title": "Slider Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-demo.tsx",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderDemo() {\n  return (\n    <Slider defaultValue={[30]} max={60} step={5} className=\"max-w-xs\" aria-label=\"Buffer time\" />\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

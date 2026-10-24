@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-sizes",
+  "title": "Spinner Sizes",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/spinner-sizes.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function SpinnerSizes() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <Spinner />\n      <Spinner className=\"size-5\" />\n      <Spinner className=\"size-6\" />\n      <Spinner className=\"size-12 stroke-1\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,4881 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "earth",
+  "homepage": "https://earthui.vercel.app",
+  "items": [
+    {
+      "name": "base",
+      "type": "registry:base",
+      "title": "Earth base",
+      "description": "Earth (setmore-black) tokens, shadcn aliases, focus ring and the Inter font. Install first.",
+      "extends": "none",
+      "config": {
+        "style": "earth",
+        "iconLibrary": "lucide",
+        "tailwind": {
+          "baseColor": "neutral"
+        },
+        "registries": {
+          "@earth": "https://earthui.vercel.app/r/{name}.json"
+        }
+      },
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react",
+        "shadcn",
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "@earth/utils",
+        "@earth/font-inter"
+      ],
+      "cssVars": {
+        "theme": {
+          "text-color-eds-accent": "var(--eds-text-accent)",
+          "text-color-eds-accent-hover": "var(--eds-text-accent-hover)",
+          "text-color-eds-accent-pressed": "var(--eds-text-accent-pressed)",
+          "text-color-eds-primary": "var(--eds-text-primary)",
+          "text-color-eds-primary-hover": "var(--eds-text-primary-hover)",
+          "text-color-eds-secondary": "var(--eds-text-secondary)",
+          "text-color-eds-secondary-hover": "var(--eds-text-secondary-hover)",
+          "text-color-eds-tertiary": "var(--eds-text-tertiary)",
+          "text-color-eds-disabled": "var(--eds-text-disabled)",
+          "text-color-eds-disabled-secondary": "var(--eds-text-disabled-secondary)",
+          "text-color-eds-onPrimary": "var(--eds-text-onPrimary)",
+          "text-color-eds-onPrimary-disabled": "var(--eds-text-onPrimary-disabled)",
+          "text-color-eds-positive": "var(--eds-text-positive)",
+          "text-color-eds-positive-secondary": "var(--eds-text-positive-secondary)",
+          "text-color-eds-caution": "var(--eds-text-caution)",
+          "text-color-eds-caution-secondary": "var(--eds-text-caution-secondary)",
+          "text-color-eds-inverse": "var(--eds-text-inverse)",
+          "text-color-eds-inverse-secondary": "var(--eds-text-inverse-secondary)",
+          "text-color-eds-inverse-caution": "var(--eds-text-inverse-caution)",
+          "text-color-eds-inverse-positive": "var(--eds-text-inverse-positive)",
+          "text-color-eds-inverse-critical": "var(--eds-text-inverse-critical)",
+          "text-color-eds-inverse-accent": "var(--eds-text-inverse-accent)",
+          "text-color-eds-link": "var(--eds-text-link)",
+          "text-color-eds-link-hover": "var(--eds-text-link-hover)",
+          "text-color-eds-link-pressed": "var(--eds-text-link-pressed)",
+          "text-color-eds-critical": "var(--eds-text-critical)",
+          "text-color-eds-critical-onPrimary": "var(--eds-text-critical-onPrimary)",
+          "text-color-eds-critical-secondary": "var(--eds-text-critical-secondary)",
+          "text-color-eds-icon-accent": "var(--eds-icon-accent)",
+          "text-color-eds-icon-critical": "var(--eds-icon-critical)",
+          "text-color-eds-icon-critical-onPrimary": "var(--eds-icon-critical-onPrimary)",
+          "text-color-eds-icon-onPrimary": "var(--eds-icon-onPrimary)",
+          "text-color-eds-icon-primary": "var(--eds-icon-primary)",
+          "text-color-eds-icon-secondary": "var(--eds-icon-secondary)",
+          "text-color-eds-icon-tertiary": "var(--eds-icon-tertiary)",
+          "text-color-eds-icon-positive": "var(--eds-icon-positive)",
+          "text-color-eds-icon-positive-hover": "var(--eds-icon-positive-hover)",
+          "text-color-eds-icon-caution": "var(--eds-icon-caution)",
+          "text-color-eds-icon-inverse": "var(--eds-icon-inverse)",
+          "background-color-eds-canvas": "var(--eds-background-canvas)",
+          "background-color-eds-canvas-secondary": "var(--eds-background-canvas-secondary)",
+          "background-color-eds-canvas-tertiary": "var(--eds-background-canvas-tertiary)",
+          "background-color-eds-menu": "var(--eds-background-menu)",
+          "background-color-eds-neutral": "var(--eds-background-neutral)",
+          "background-color-eds-neutral-hover": "var(--eds-background-neutral-hover)",
+          "background-color-eds-neutral-pressed": "var(--eds-background-neutral-pressed)",
+          "background-color-eds-neutral-active": "var(--eds-background-neutral-active)",
+          "background-color-eds-neutral-disabled": "var(--eds-background-neutral-disabled)",
+          "background-color-eds-neutral-secondary": "var(--eds-background-neutral-secondary)",
+          "background-color-eds-neutral-secondary-hover": "var(--eds-background-neutral-secondary-hover)",
+          "background-color-eds-neutral-secondary-pressed": "var(--eds-background-neutral-secondary-pressed)",
+          "background-color-eds-neutral-tertiary": "var(--eds-background-neutral-tertiary)",
+          "background-color-eds-neutral-tertiary-hover": "var(--eds-background-neutral-tertiary-hover)",
+          "background-color-eds-inverse": "var(--eds-background-inverse)",
+          "background-color-eds-inverse-hover": "var(--eds-background-inverse-hover)",
+          "background-color-eds-inverse-pressed": "var(--eds-background-inverse-pressed)",
+          "background-color-eds-inverse-secondary": "var(--eds-background-inverse-secondary)",
+          "background-color-eds-inverse-tertiary": "var(--eds-background-inverse-tertiary)",
+          "background-color-eds-inverse-tertiary-hover": "var(--eds-background-inverse-tertiary-hover)",
+          "background-color-eds-inverse-tertiary-pressed": "var(--eds-background-inverse-tertiary-pressed)",
+          "background-color-eds-critical": "var(--eds-background-critical)",
+          "background-color-eds-critical-hover": "var(--eds-background-critical-hover)",
+          "background-color-eds-critical-pressed": "var(--eds-background-critical-pressed)",
+          "background-color-eds-critical-secondary": "var(--eds-background-critical-secondary)",
+          "background-color-eds-critical-secondary-hover": "var(--eds-background-critical-secondary-hover)",
+          "background-color-eds-critical-secondary-pressed": "var(--eds-background-critical-secondary-pressed)",
+          "background-color-eds-accent": "var(--eds-background-accent)",
+          "background-color-eds-accent-hover": "var(--eds-background-accent-hover)",
+          "background-color-eds-accent-pressed": "var(--eds-background-accent-pressed)",
+          "background-color-eds-accent-secondary": "var(--eds-background-accent-secondary)",
+          "background-color-eds-accent-secondary-hover": "var(--eds-background-accent-secondary-hover)",
+          "background-color-eds-accent-secondary-pressed": "var(--eds-background-accent-secondary-pressed)",
+          "background-color-eds-accent-tertiary": "var(--eds-background-accent-tertiary)",
+          "background-color-eds-accent-tertiary-hover": "var(--eds-background-accent-tertiary-hover)",
+          "background-color-eds-accent-tertiary-pressed": "var(--eds-background-accent-tertiary-pressed)",
+          "background-color-eds-positive": "var(--eds-background-positive)",
+          "background-color-eds-positive-hover": "var(--eds-background-positive-hover)",
+          "background-color-eds-positive-pressed": "var(--eds-background-positive-pressed)",
+          "background-color-eds-positive-secondary": "var(--eds-background-positive-secondary)",
+          "background-color-eds-positive-secondary-hover": "var(--eds-background-positive-secondary-hover)",
+          "background-color-eds-positive-secondary-pressed": "var(--eds-background-positive-secondary-pressed)",
+          "background-color-eds-caution": "var(--eds-background-caution)",
+          "background-color-eds-caution-hover": "var(--eds-background-caution-hover)",
+          "background-color-eds-caution-pressed": "var(--eds-background-caution-pressed)",
+          "background-color-eds-caution-secondary": "var(--eds-background-caution-secondary)",
+          "background-color-eds-avatar": "var(--eds-background-avatar)",
+          "background-color-eds-avatar-hover": "var(--eds-background-avatar-hover)",
+          "background-color-eds-calendar": "var(--eds-background-calendar)",
+          "background-color-eds-calendar-disabled": "var(--eds-background-calendar-disabled)",
+          "background-color-eds-modal-overlay": "var(--eds-background-modal-overlay)",
+          "border-color-eds-secondary": "var(--eds-border-secondary)",
+          "ring-color-eds-secondary": "var(--eds-border-secondary)",
+          "border-color-eds-tertiary": "var(--eds-border-tertiary)",
+          "ring-color-eds-tertiary": "var(--eds-border-tertiary)",
+          "border-color-eds-hover": "var(--eds-border-hover)",
+          "ring-color-eds-hover": "var(--eds-border-hover)",
+          "border-color-eds-input": "var(--eds-border-input)",
+          "ring-color-eds-input": "var(--eds-border-input)",
+          "border-color-eds-input-hover": "var(--eds-border-input-hover)",
+          "ring-color-eds-input-hover": "var(--eds-border-input-hover)",
+          "border-color-eds-input-active": "var(--eds-border-input-active)",
+          "ring-color-eds-input-active": "var(--eds-border-input-active)",
+          "border-color-eds-input-active-hover": "var(--eds-border-input-active-hover)",
+          "ring-color-eds-input-active-hover": "var(--eds-border-input-active-hover)",
+          "border-color-eds-input-active-pressed": "var(--eds-border-input-active-pressed)",
+          "ring-color-eds-input-active-pressed": "var(--eds-border-input-active-pressed)",
+          "border-color-eds-input-disabled": "var(--eds-border-input-disabled)",
+          "ring-color-eds-input-disabled": "var(--eds-border-input-disabled)",
+          "border-color-eds-input-critical": "var(--eds-border-input-critical)",
+          "ring-color-eds-input-critical": "var(--eds-border-input-critical)",
+          "border-color-eds-input-critical-hover": "var(--eds-border-input-critical-hover)",
+          "ring-color-eds-input-critical-hover": "var(--eds-border-input-critical-hover)",
+          "border-color-eds-input-critical-pressed": "var(--eds-border-input-critical-pressed)",
+          "ring-color-eds-input-critical-pressed": "var(--eds-border-input-critical-pressed)",
+          "border-color-eds-input-caution": "var(--eds-border-input-caution)",
+          "ring-color-eds-input-caution": "var(--eds-border-input-caution)",
+          "border-color-eds-input-caution-hover": "var(--eds-border-input-caution-hover)",
+          "ring-color-eds-input-caution-hover": "var(--eds-border-input-caution-hover)",
+          "border-color-eds-input-caution-pressed": "var(--eds-border-input-caution-pressed)",
+          "ring-color-eds-input-caution-pressed": "var(--eds-border-input-caution-pressed)",
+          "border-color-eds-focus": "var(--eds-border-focus)",
+          "ring-color-eds-focus": "var(--eds-border-focus)",
+          "border-color-eds-accent": "var(--eds-border-accent)",
+          "ring-color-eds-accent": "var(--eds-border-accent)",
+          "border-color-eds-primary": "var(--eds-border-primary)",
+          "ring-color-eds-primary": "var(--eds-border-primary)",
+          "border-color-eds-calendar": "var(--eds-border-calendar)",
+          "ring-color-eds-calendar": "var(--eds-border-calendar)",
+          "color-eds-status-available": "var(--eds-status-available)",
+          "color-eds-status-away": "var(--eds-status-away)",
+          "color-eds-status-busy": "var(--eds-status-busy)",
+          "color-eds-status-offline": "var(--eds-status-offline)",
+          "color-eds-status-icon": "var(--eds-status-icon)",
+          "color-eds-status-border": "var(--eds-status-border)",
+          "color-eds-decoration-brand": "var(--eds-decoration-brand)",
+          "color-eds-decoration-facebook": "var(--eds-decoration-facebook)",
+          "color-eds-decoration-instagram": "var(--eds-decoration-instagram)",
+          "color-eds-decoration-teleport": "var(--eds-decoration-teleport)",
+          "color-eds-decoration-twitter": "var(--eds-decoration-twitter)",
+          "color-eds-decoration-whatsapp": "var(--eds-decoration-whatsapp)",
+          "color-eds-decoration-youtube": "var(--eds-decoration-youtube)",
+          "color-eds-general-constant-white": "var(--eds-general-constant-white)",
+          "color-eds-general-constant-black": "var(--eds-general-constant-black)",
+          "color-eds-chart-accent-100": "var(--eds-chart-accent-100)",
+          "color-eds-chart-accent-200": "var(--eds-chart-accent-200)",
+          "color-eds-chart-accent-300": "var(--eds-chart-accent-300)",
+          "color-eds-chart-accent-400": "var(--eds-chart-accent-400)",
+          "color-eds-chart-accent-500": "var(--eds-chart-accent-500)",
+          "color-eds-chart-accent-600": "var(--eds-chart-accent-600)",
+          "color-eds-chart-accent-700": "var(--eds-chart-accent-700)",
+          "color-eds-chart-accent-800": "var(--eds-chart-accent-800)",
+          "color-eds-chart-neutral-100": "var(--eds-chart-neutral-100)",
+          "color-eds-chart-neutral-200": "var(--eds-chart-neutral-200)",
+          "color-eds-chart-neutral-300": "var(--eds-chart-neutral-300)",
+          "color-eds-chart-neutral-400": "var(--eds-chart-neutral-400)",
+          "color-eds-chart-neutral-500": "var(--eds-chart-neutral-500)",
+          "color-eds-chart-neutral-600": "var(--eds-chart-neutral-600)",
+          "color-eds-chart-neutral-700": "var(--eds-chart-neutral-700)",
+          "color-eds-chart-neutral-800": "var(--eds-chart-neutral-800)",
+          "color-eds-palette-gray-background": "var(--eds-palette-gray-background)",
+          "color-eds-palette-gray-background-hover": "var(--eds-palette-gray-background-hover)",
+          "color-eds-palette-gray-background-active": "var(--eds-palette-gray-background-active)",
+          "color-eds-palette-gray-border": "var(--eds-palette-gray-border)",
+          "color-eds-palette-gray-text": "var(--eds-palette-gray-text)",
+          "color-eds-palette-gray-text-active": "var(--eds-palette-gray-text-active)",
+          "color-eds-palette-gray-text-secondary": "var(--eds-palette-gray-text-secondary)",
+          "color-eds-palette-dark-gray-background": "var(--eds-palette-dark-gray-background)",
+          "color-eds-palette-dark-gray-background-hover": "var(--eds-palette-dark-gray-background-hover)",
+          "color-eds-palette-dark-gray-background-active": "var(--eds-palette-dark-gray-background-active)",
+          "color-eds-palette-dark-gray-border": "var(--eds-palette-dark-gray-border)",
+          "color-eds-palette-dark-gray-text": "var(--eds-palette-dark-gray-text)",
+          "color-eds-palette-dark-gray-text-active": "var(--eds-palette-dark-gray-text-active)",
+          "color-eds-palette-dark-gray-text-secondary": "var(--eds-palette-dark-gray-text-secondary)",
+          "color-eds-palette-light-pink-background": "var(--eds-palette-light-pink-background)",
+          "color-eds-palette-light-pink-background-hover": "var(--eds-palette-light-pink-background-hover)",
+          "color-eds-palette-light-pink-background-active": "var(--eds-palette-light-pink-background-active)",
+          "color-eds-palette-light-pink-border": "var(--eds-palette-light-pink-border)",
+          "color-eds-palette-light-pink-text": "var(--eds-palette-light-pink-text)",
+          "color-eds-palette-light-pink-text-active": "var(--eds-palette-light-pink-text-active)",
+          "color-eds-palette-light-pink-text-secondary": "var(--eds-palette-light-pink-text-secondary)",
+          "color-eds-palette-pink-background": "var(--eds-palette-pink-background)",
+          "color-eds-palette-pink-background-hover": "var(--eds-palette-pink-background-hover)",
+          "color-eds-palette-pink-background-active": "var(--eds-palette-pink-background-active)",
+          "color-eds-palette-pink-border": "var(--eds-palette-pink-border)",
+          "color-eds-palette-pink-text": "var(--eds-palette-pink-text)",
+          "color-eds-palette-pink-text-active": "var(--eds-palette-pink-text-active)",
+          "color-eds-palette-pink-text-secondary": "var(--eds-palette-pink-text-secondary)",
+          "color-eds-palette-red-background": "var(--eds-palette-red-background)",
+          "color-eds-palette-red-background-hover": "var(--eds-palette-red-background-hover)",
+          "color-eds-palette-red-background-active": "var(--eds-palette-red-background-active)",
+          "color-eds-palette-red-border": "var(--eds-palette-red-border)",
+          "color-eds-palette-red-text": "var(--eds-palette-red-text)",
+          "color-eds-palette-red-text-active": "var(--eds-palette-red-text-active)",
+          "color-eds-palette-red-text-secondary": "var(--eds-palette-red-text-secondary)",
+          "color-eds-palette-maroon-background": "var(--eds-palette-maroon-background)",
+          "color-eds-palette-maroon-background-hover": "var(--eds-palette-maroon-background-hover)",
+          "color-eds-palette-maroon-background-active": "var(--eds-palette-maroon-background-active)",
+          "color-eds-palette-maroon-border": "var(--eds-palette-maroon-border)",
+          "color-eds-palette-maroon-text": "var(--eds-palette-maroon-text)",
+          "color-eds-palette-maroon-text-active": "var(--eds-palette-maroon-text-active)",
+          "color-eds-palette-maroon-text-secondary": "var(--eds-palette-maroon-text-secondary)",
+          "color-eds-palette-orange-background": "var(--eds-palette-orange-background)",
+          "color-eds-palette-orange-background-hover": "var(--eds-palette-orange-background-hover)",
+          "color-eds-palette-orange-background-active": "var(--eds-palette-orange-background-active)",
+          "color-eds-palette-orange-border": "var(--eds-palette-orange-border)",
+          "color-eds-palette-orange-text": "var(--eds-palette-orange-text)",
+          "color-eds-palette-orange-text-active": "var(--eds-palette-orange-text-active)",
+          "color-eds-palette-orange-text-secondary": "var(--eds-palette-orange-text-secondary)",
+          "color-eds-palette-violet-background": "var(--eds-palette-violet-background)",
+          "color-eds-palette-violet-background-hover": "var(--eds-palette-violet-background-hover)",
+          "color-eds-palette-violet-background-active": "var(--eds-palette-violet-background-active)",
+          "color-eds-palette-violet-border": "var(--eds-palette-violet-border)",
+          "color-eds-palette-violet-text": "var(--eds-palette-violet-text)",
+          "color-eds-palette-violet-text-active": "var(--eds-palette-violet-text-active)",
+          "color-eds-palette-violet-text-secondary": "var(--eds-palette-violet-text-secondary)",
+          "color-eds-palette-yellow-background": "var(--eds-palette-yellow-background)",
+          "color-eds-palette-yellow-background-hover": "var(--eds-palette-yellow-background-hover)",
+          "color-eds-palette-yellow-background-active": "var(--eds-palette-yellow-background-active)",
+          "color-eds-palette-yellow-border": "var(--eds-palette-yellow-border)",
+          "color-eds-palette-yellow-text": "var(--eds-palette-yellow-text)",
+          "color-eds-palette-yellow-text-active": "var(--eds-palette-yellow-text-active)",
+          "color-eds-palette-yellow-text-secondary": "var(--eds-palette-yellow-text-secondary)",
+          "color-eds-palette-green-background": "var(--eds-palette-green-background)",
+          "color-eds-palette-green-background-hover": "var(--eds-palette-green-background-hover)",
+          "color-eds-palette-green-background-active": "var(--eds-palette-green-background-active)",
+          "color-eds-palette-green-border": "var(--eds-palette-green-border)",
+          "color-eds-palette-green-text": "var(--eds-palette-green-text)",
+          "color-eds-palette-green-text-active": "var(--eds-palette-green-text-active)",
+          "color-eds-palette-green-text-secondary": "var(--eds-palette-green-text-secondary)",
+          "color-eds-palette-dark-green-background": "var(--eds-palette-dark-green-background)",
+          "color-eds-palette-dark-green-background-hover": "var(--eds-palette-dark-green-background-hover)",
+          "color-eds-palette-dark-green-background-active": "var(--eds-palette-dark-green-background-active)",
+          "color-eds-palette-dark-green-border": "var(--eds-palette-dark-green-border)",
+          "color-eds-palette-dark-green-text": "var(--eds-palette-dark-green-text)",
+          "color-eds-palette-dark-green-text-active": "var(--eds-palette-dark-green-text-active)",
+          "color-eds-palette-dark-green-text-secondary": "var(--eds-palette-dark-green-text-secondary)",
+          "color-eds-palette-blue-background": "var(--eds-palette-blue-background)",
+          "color-eds-palette-blue-background-hover": "var(--eds-palette-blue-background-hover)",
+          "color-eds-palette-blue-background-active": "var(--eds-palette-blue-background-active)",
+          "color-eds-palette-blue-border": "var(--eds-palette-blue-border)",
+          "color-eds-palette-blue-text": "var(--eds-palette-blue-text)",
+          "color-eds-palette-blue-text-active": "var(--eds-palette-blue-text-active)",
+          "color-eds-palette-blue-text-secondary": "var(--eds-palette-blue-text-secondary)",
+          "color-eds-palette-dark-blue-background": "var(--eds-palette-dark-blue-background)",
+          "color-eds-palette-dark-blue-background-hover": "var(--eds-palette-dark-blue-background-hover)",
+          "color-eds-palette-dark-blue-background-active": "var(--eds-palette-dark-blue-background-active)",
+          "color-eds-palette-dark-blue-border": "var(--eds-palette-dark-blue-border)",
+          "color-eds-palette-dark-blue-text": "var(--eds-palette-dark-blue-text)",
+          "color-eds-palette-dark-blue-text-active": "var(--eds-palette-dark-blue-text-active)",
+          "color-eds-palette-dark-blue-text-secondary": "var(--eds-palette-dark-blue-text-secondary)",
+          "shadow-eds-10": "var(--eds-shadow-10)",
+          "shadow-eds-20": "var(--eds-shadow-20)",
+          "shadow-eds-30": "var(--eds-shadow-30)",
+          "shadow-eds-40": "var(--eds-shadow-40)",
+          "shadow-eds-50": "var(--eds-shadow-50)",
+          "text-heading-12": "12px",
+          "text-heading-12--line-height": "20px",
+          "text-heading-12--letter-spacing": "0px",
+          "text-heading-12--font-weight": "600",
+          "text-heading-14": "14px",
+          "text-heading-14--line-height": "22px",
+          "text-heading-14--letter-spacing": "0px",
+          "text-heading-14--font-weight": "600",
+          "text-heading-16": "16px",
+          "text-heading-16--line-height": "24px",
+          "text-heading-16--letter-spacing": "0px",
+          "text-heading-16--font-weight": "600",
+          "text-heading-18": "18px",
+          "text-heading-18--line-height": "26px",
+          "text-heading-18--letter-spacing": "0px",
+          "text-heading-18--font-weight": "600",
+          "text-heading-20": "20px",
+          "text-heading-20--line-height": "28px",
+          "text-heading-20--letter-spacing": "0px",
+          "text-heading-20--font-weight": "600",
+          "text-heading-24": "24px",
+          "text-heading-24--line-height": "32px",
+          "text-heading-24--letter-spacing": "0px",
+          "text-heading-24--font-weight": "600",
+          "text-heading-28": "28px",
+          "text-heading-28--line-height": "40px",
+          "text-heading-28--letter-spacing": "0px",
+          "text-heading-28--font-weight": "600",
+          "text-heading-32": "32px",
+          "text-heading-32--line-height": "48px",
+          "text-heading-32--letter-spacing": "0px",
+          "text-heading-32--font-weight": "600",
+          "text-body-8": "8px",
+          "text-body-8--line-height": "12px",
+          "text-body-8--letter-spacing": "0px",
+          "text-body-8--font-weight": "400",
+          "text-body-10": "10px",
+          "text-body-10--line-height": "16px",
+          "text-body-10--letter-spacing": "0px",
+          "text-body-10--font-weight": "400",
+          "text-body-12": "12px",
+          "text-body-12--line-height": "20px",
+          "text-body-12--letter-spacing": "0px",
+          "text-body-12--font-weight": "400",
+          "text-body-14": "14px",
+          "text-body-14--line-height": "22px",
+          "text-body-14--letter-spacing": "0px",
+          "text-body-14--font-weight": "400",
+          "text-body-16": "16px",
+          "text-body-16--line-height": "24px",
+          "text-body-16--letter-spacing": "0px",
+          "text-body-16--font-weight": "400",
+          "text-body-20": "20px",
+          "text-body-20--line-height": "28px",
+          "text-body-20--letter-spacing": "0px",
+          "text-body-20--font-weight": "400",
+          "font-weight-eds-regular": "400",
+          "font-weight-eds-strong": "500",
+          "font-weight-eds-stronger": "600",
+          "radius-sm": "4px",
+          "radius-md": "6px",
+          "radius-lg": "8px",
+          "radius-xl": "12px",
+          "radius-2xl": "16px",
+          "ease-eds-regular": "cubic-bezier(0.5, 0, 0.5, 0.99)",
+          "ease-eds-entrance": "cubic-bezier(0.2, 0, 0.44, 0.99)"
+        },
+        "light": {
+          "background": "#ffffff",
+          "foreground": "#111111",
+          "card": "#ffffff",
+          "card-foreground": "#111111",
+          "popover": "#ffffff",
+          "popover-foreground": "#111111",
+          "primary": "#111111",
+          "primary-foreground": "#ffffff",
+          "secondary": "#f4f4f4",
+          "secondary-foreground": "#111111",
+          "muted": "#f4f4f4",
+          "muted-foreground": "#676767",
+          "accent": "#f1f1f1",
+          "accent-foreground": "#111111",
+          "destructive": "#c44c44",
+          "border": "#dbdbdb",
+          "input": "#dbdbdb",
+          "ring": "#111111",
+          "chart-1": "#111111",
+          "chart-2": "#666666",
+          "chart-3": "#999999",
+          "chart-4": "#b2b2b2",
+          "chart-5": "#c7c7c7",
+          "sidebar": "#fafafa",
+          "sidebar-foreground": "#111111",
+          "sidebar-primary": "#111111",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#f1f1f1",
+          "sidebar-accent-foreground": "#111111",
+          "sidebar-border": "#dbdbdb",
+          "sidebar-ring": "#111111"
+        },
+        "dark": {
+          "background": "#1a1a1a",
+          "foreground": "#eeeeee",
+          "card": "#1a1a1a",
+          "card-foreground": "#eeeeee",
+          "popover": "#1e1e1e",
+          "popover-foreground": "#eeeeee",
+          "primary": "#eeeeee",
+          "primary-foreground": "#1e1e1e",
+          "secondary": "#292929",
+          "secondary-foreground": "#eeeeee",
+          "muted": "#292929",
+          "muted-foreground": "#949494",
+          "accent": "#333333",
+          "accent-foreground": "#eeeeee",
+          "destructive": "#c44c44",
+          "border": "#3d3d3d",
+          "input": "#3d3d3d",
+          "ring": "#eeeeee",
+          "chart-1": "#eeeeee",
+          "chart-2": "#b2b2b2",
+          "chart-3": "#999999",
+          "chart-4": "#808080",
+          "chart-5": "#666666",
+          "sidebar": "#212121",
+          "sidebar-foreground": "#eeeeee",
+          "sidebar-primary": "#eeeeee",
+          "sidebar-primary-foreground": "#1e1e1e",
+          "sidebar-accent": "#333333",
+          "sidebar-accent-foreground": "#eeeeee",
+          "sidebar-border": "#3d3d3d",
+          "sidebar-ring": "#eeeeee"
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
+        ":root": {
+          "--eds-text-accent": "#111111",
+          "--eds-text-accent-hover": "#707070",
+          "--eds-text-accent-pressed": "#999999",
+          "--eds-text-primary": "#111111",
+          "--eds-text-primary-hover": "#6f6f71",
+          "--eds-text-secondary": "#676767",
+          "--eds-text-secondary-hover": "#323232",
+          "--eds-text-tertiary": "#9c9c9c",
+          "--eds-text-disabled": "#b2b2b2",
+          "--eds-text-disabled-secondary": "#676767",
+          "--eds-text-onPrimary": "#ffffff",
+          "--eds-text-onPrimary-disabled": "#9c9c9c",
+          "--eds-text-positive": "#57a57a",
+          "--eds-text-positive-secondary": "#0d442e",
+          "--eds-text-caution": "#e27e27",
+          "--eds-text-caution-secondary": "#523100",
+          "--eds-text-inverse": "#f0f0f0",
+          "--eds-text-inverse-secondary": "#dbdbdb",
+          "--eds-text-inverse-caution": "#ffc257",
+          "--eds-text-inverse-positive": "#83d3b2",
+          "--eds-text-inverse-critical": "#ce6b64",
+          "--eds-text-inverse-accent": "#eeeeee",
+          "--eds-text-link": "#1d90f5",
+          "--eds-text-link-hover": "#096cc3",
+          "--eds-text-link-pressed": "#075192",
+          "--eds-text-critical": "#c44c44",
+          "--eds-text-critical-onPrimary": "#ffffff",
+          "--eds-text-critical-secondary": "#470b0b",
+          "--eds-icon-accent": "#111111",
+          "--eds-icon-critical": "#c44c44",
+          "--eds-icon-critical-onPrimary": "#ffffff",
+          "--eds-icon-onPrimary": "#eeeeee",
+          "--eds-icon-primary": "#111111",
+          "--eds-icon-secondary": "#676767",
+          "--eds-icon-tertiary": "#9c9c9c",
+          "--eds-icon-positive": "#198057",
+          "--eds-icon-positive-hover": "#198057",
+          "--eds-icon-caution": "#e27e27",
+          "--eds-icon-inverse": "#eeeeee",
+          "--eds-background-canvas": "#ffffff",
+          "--eds-background-canvas-secondary": "#fafafa",
+          "--eds-background-canvas-tertiary": "#f2f2f2",
+          "--eds-background-menu": "#ffffff",
+          "--eds-background-neutral": "#ffffff",
+          "--eds-background-neutral-hover": "#f1f1f1",
+          "--eds-background-neutral-pressed": "#d9d9d9",
+          "--eds-background-neutral-active": "#f1f1f1",
+          "--eds-background-neutral-disabled": "#f0f0f0",
+          "--eds-background-neutral-secondary": "#f4f4f4",
+          "--eds-background-neutral-secondary-hover": "#e5e5e5",
+          "--eds-background-neutral-secondary-pressed": "#dbdbdb",
+          "--eds-background-neutral-tertiary": "#dbdbdb",
+          "--eds-background-neutral-tertiary-hover": "#c7c7c7",
+          "--eds-background-inverse": "#111111",
+          "--eds-background-inverse-hover": "#4d4d4d",
+          "--eds-background-inverse-pressed": "#707070",
+          "--eds-background-inverse-secondary": "#323232",
+          "--eds-background-inverse-tertiary": "#676767",
+          "--eds-background-inverse-tertiary-hover": "#5a5a5a",
+          "--eds-background-inverse-tertiary-pressed": "#4d4d4d",
+          "--eds-background-critical": "#c44c44",
+          "--eds-background-critical-hover": "#b01c1c",
+          "--eds-background-critical-pressed": "#841515",
+          "--eds-background-critical-secondary": "#ffece5",
+          "--eds-background-critical-secondary-hover": "#fceded",
+          "--eds-background-critical-secondary-pressed": "#f8d3d3",
+          "--eds-background-accent": "#111111",
+          "--eds-background-accent-hover": "#707070",
+          "--eds-background-accent-pressed": "#999999",
+          "--eds-background-accent-secondary": "#f4f4f4",
+          "--eds-background-accent-secondary-hover": "#f0f0f0",
+          "--eds-background-accent-secondary-pressed": "#dbdbdb",
+          "--eds-background-accent-tertiary": "#f4f4f4",
+          "--eds-background-accent-tertiary-hover": "#f0f0f0",
+          "--eds-background-accent-tertiary-pressed": "#dbdbdb",
+          "--eds-background-positive": "#57a57a",
+          "--eds-background-positive-hover": "#198057",
+          "--eds-background-positive-pressed": "#156b48",
+          "--eds-background-positive-secondary": "#d4f7e9",
+          "--eds-background-positive-secondary-hover": "#bbf2dc",
+          "--eds-background-positive-secondary-pressed": "#a1ecce",
+          "--eds-background-caution": "#e27e27",
+          "--eds-background-caution-hover": "#cc7c00",
+          "--eds-background-caution-pressed": "#995d00",
+          "--eds-background-caution-secondary": "#fdf6ed",
+          "--eds-background-avatar": "#e7e7e7",
+          "--eds-background-avatar-hover": "#dddddd",
+          "--eds-background-calendar": "#ffffff",
+          "--eds-background-calendar-disabled": "#f0f0f0",
+          "--eds-background-modal-overlay": "#11111199",
+          "--eds-border-secondary": "#dbdbdb",
+          "--eds-border-tertiary": "#f0f0f0",
+          "--eds-border-hover": "#c7c7c7",
+          "--eds-border-input": "#dbdbdb",
+          "--eds-border-input-hover": "#949494",
+          "--eds-border-input-active": "#111111",
+          "--eds-border-input-active-hover": "#424242",
+          "--eds-border-input-active-pressed": "#545454",
+          "--eds-border-input-disabled": "#dbdbdb",
+          "--eds-border-input-critical": "#c44c44",
+          "--eds-border-input-critical-hover": "#b01c1c",
+          "--eds-border-input-critical-pressed": "#841515",
+          "--eds-border-input-caution": "#e27e27",
+          "--eds-border-input-caution-hover": "#cb7024",
+          "--eds-border-input-caution-pressed": "#b4641f",
+          "--eds-border-focus": "#111111",
+          "--eds-border-accent": "#111111",
+          "--eds-border-primary": "#111111",
+          "--eds-border-calendar": "#e4e4e4",
+          "--eds-status-available": "#57a57a",
+          "--eds-status-away": "#e27e27",
+          "--eds-status-busy": "#c44c44",
+          "--eds-status-offline": "#c7c7c7",
+          "--eds-status-icon": "#ffffff",
+          "--eds-status-border": "#ffffff",
+          "--eds-decoration-brand": "#1d90f6",
+          "--eds-decoration-facebook": "#1877f2",
+          "--eds-decoration-instagram": "#e4405f",
+          "--eds-decoration-teleport": "#6285ff",
+          "--eds-decoration-twitter": "#1d9bf0",
+          "--eds-decoration-whatsapp": "#25d366",
+          "--eds-decoration-youtube": "#ff0000",
+          "--eds-general-constant-white": "#ffffff",
+          "--eds-general-constant-black": "#111111",
+          "--eds-chart-accent-100": "#ebebeb",
+          "--eds-chart-accent-200": "#dbdbdb",
+          "--eds-chart-accent-300": "#c7c7c7",
+          "--eds-chart-accent-400": "#b2b2b2",
+          "--eds-chart-accent-500": "#999999",
+          "--eds-chart-accent-600": "#666666",
+          "--eds-chart-accent-700": "#474747",
+          "--eds-chart-accent-800": "#111111",
+          "--eds-chart-neutral-100": "#ebebeb",
+          "--eds-chart-neutral-200": "#dbdbdb",
+          "--eds-chart-neutral-300": "#c7c7c7",
+          "--eds-chart-neutral-400": "#b2b2b2",
+          "--eds-chart-neutral-500": "#999999",
+          "--eds-chart-neutral-600": "#666666",
+          "--eds-chart-neutral-700": "#474747",
+          "--eds-chart-neutral-800": "#111111",
+          "--eds-palette-gray-background": "#f6f6f6",
+          "--eds-palette-gray-background-hover": "#efefef",
+          "--eds-palette-gray-background-active": "#c0c0c0",
+          "--eds-palette-gray-border": "#c0c0c0",
+          "--eds-palette-gray-text": "#202020",
+          "--eds-palette-gray-text-active": "#ffffff",
+          "--eds-palette-gray-text-secondary": "#404040",
+          "--eds-palette-dark-gray-background": "#f6f6f6",
+          "--eds-palette-dark-gray-background-hover": "#e7ebed",
+          "--eds-palette-dark-gray-background-active": "#9daeb6",
+          "--eds-palette-dark-gray-border": "#9daeb6",
+          "--eds-palette-dark-gray-text": "#202020",
+          "--eds-palette-dark-gray-text-active": "#ffffff",
+          "--eds-palette-dark-gray-text-secondary": "#404040",
+          "--eds-palette-light-pink-background": "#fef6f8",
+          "--eds-palette-light-pink-background-hover": "#fce6e9",
+          "--eds-palette-light-pink-background-active": "#ea556c",
+          "--eds-palette-light-pink-border": "#ea556c",
+          "--eds-palette-light-pink-text": "#421c21",
+          "--eds-palette-light-pink-text-active": "#ffffff",
+          "--eds-palette-light-pink-text-secondary": "#68494d",
+          "--eds-palette-pink-background": "#f8e2ef",
+          "--eds-palette-pink-background-hover": "#f3cee4",
+          "--eds-palette-pink-background-active": "#ce3b93",
+          "--eds-palette-pink-border": "#ce3b93",
+          "--eds-palette-pink-text": "#451231",
+          "--eds-palette-pink-text-active": "#ffffff",
+          "--eds-palette-pink-text-secondary": "#6a415a",
+          "--eds-palette-red-background": "#f9e1d9",
+          "--eds-palette-red-background-hover": "#f6cebf",
+          "--eds-palette-red-background-active": "#da3a00",
+          "--eds-palette-red-border": "#da3a00",
+          "--eds-palette-red-text": "#2d0c00",
+          "--eds-palette-red-text-active": "#ffffff",
+          "--eds-palette-red-text-secondary": "#573c33",
+          "--eds-palette-maroon-background": "#eee4dd",
+          "--eds-palette-maroon-background-hover": "#e3d2c6",
+          "--eds-palette-maroon-background-active": "#8e4c1b",
+          "--eds-palette-maroon-border": "#8e4c1b",
+          "--eds-palette-maroon-text": "#271407",
+          "--eds-palette-maroon-text-active": "#ffffff",
+          "--eds-palette-maroon-text-secondary": "#524339",
+          "--eds-palette-orange-background": "#ffede1",
+          "--eds-palette-orange-background-hover": "#ffe2cc",
+          "--eds-palette-orange-background-active": "#ff8a35",
+          "--eds-palette-orange-border": "#ff8a35",
+          "--eds-palette-orange-text": "#351600",
+          "--eds-palette-orange-text-active": "#ffffff",
+          "--eds-palette-orange-text-secondary": "#5d4533",
+          "--eds-palette-violet-background": "#e5e0f3",
+          "--eds-palette-violet-background-hover": "#d3cbeb",
+          "--eds-palette-violet-background-active": "#512fb1",
+          "--eds-palette-violet-border": "#512fb1",
+          "--eds-palette-violet-text": "#110837",
+          "--eds-palette-violet-text-active": "#ffffff",
+          "--eds-palette-violet-text-secondary": "#3f375e",
+          "--eds-palette-yellow-background": "#fff7d9",
+          "--eds-palette-yellow-background-hover": "#fff1bf",
+          "--eds-palette-yellow-background-active": "#ffc700",
+          "--eds-palette-yellow-border": "#ffc700",
+          "--eds-palette-yellow-text": "#2c2200",
+          "--eds-palette-yellow-text-active": "#ffffff",
+          "--eds-palette-yellow-text-secondary": "#564e33",
+          "--eds-palette-green-background": "#e2f3ed",
+          "--eds-palette-green-background-hover": "#cfebe1",
+          "--eds-palette-green-background-active": "#3ead85",
+          "--eds-palette-green-border": "#3ead85",
+          "--eds-palette-green-text": "#3b594e",
+          "--eds-palette-green-text-active": "#ffffff",
+          "--eds-palette-green-text-secondary": "#3b594e",
+          "--eds-palette-dark-green-background": "#d9eaeb",
+          "--eds-palette-dark-green-background-hover": "#bfdbdd",
+          "--eds-palette-dark-green-background-active": "#007178",
+          "--eds-palette-dark-green-border": "#007178",
+          "--eds-palette-dark-green-text": "#002022",
+          "--eds-palette-dark-green-text-active": "#ffffff",
+          "--eds-palette-dark-green-text-secondary": "#334d4e",
+          "--eds-palette-blue-background": "#e7f3fe",
+          "--eds-palette-blue-background-hover": "#d7ebfd",
+          "--eds-palette-blue-background-active": "#5eb0f8",
+          "--eds-palette-blue-border": "#5eb0f8",
+          "--eds-palette-blue-text": "#001d36",
+          "--eds-palette-blue-text-active": "#111111",
+          "--eds-palette-blue-text-secondary": "#31485c",
+          "--eds-palette-dark-blue-background": "#d9ebfc",
+          "--eds-palette-dark-blue-background-hover": "#bfdefa",
+          "--eds-palette-dark-blue-background-active": "#007cea",
+          "--eds-palette-dark-blue-border": "#1c8bec",
+          "--eds-palette-dark-blue-text": "#001f3a",
+          "--eds-palette-dark-blue-text-active": "#ffffff",
+          "--eds-palette-dark-blue-text-secondary": "#334c62",
+          "--eds-shadow-10": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 1px 4px 0px rgba(88, 104, 116, 0.12)",
+          "--eds-shadow-20": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 4px 12px 0px rgba(88, 104, 116, 0.16)",
+          "--eds-shadow-30": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 8px 16px 0px rgba(88, 104, 116, 0.16)",
+          "--eds-shadow-40": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 16px 32px 0px rgba(88, 104, 116, 0.20)",
+          "--eds-shadow-50": "0px 0px 0px 4px rgba(0, 0, 0, 0.15)"
+        },
+        ".dark": {
+          "--eds-text-primary": "#eeeeee",
+          "--eds-text-primary-hover": "#949494",
+          "--eds-text-secondary": "#949494",
+          "--eds-text-secondary-hover": "#a0a0a0",
+          "--eds-text-tertiary": "#737373",
+          "--eds-text-caution": "#ffc257",
+          "--eds-text-caution-secondary": "#e4c79b",
+          "--eds-text-critical": "#ce6b64",
+          "--eds-text-critical-onPrimary": "#ffffff",
+          "--eds-text-critical-secondary": "#ff8585",
+          "--eds-text-disabled": "#737373",
+          "--eds-text-disabled-secondary": "#949494",
+          "--eds-text-inverse": "#1e1e1e",
+          "--eds-text-inverse-accent": "#1e1e1e",
+          "--eds-text-inverse-caution": "#e78c00",
+          "--eds-text-inverse-critical": "#c44c44",
+          "--eds-text-inverse-positive": "#57a57a",
+          "--eds-text-inverse-secondary": "#666666",
+          "--eds-text-accent": "#eeeeee",
+          "--eds-text-accent-hover": "#a3a3a3",
+          "--eds-text-accent-pressed": "#737373",
+          "--eds-text-link": "#5eb0f8",
+          "--eds-text-link-hover": "#94cafa",
+          "--eds-text-link-pressed": "#a7d4fb",
+          "--eds-text-onPrimary": "#1e1e1e",
+          "--eds-text-onPrimary-disabled": "#666666",
+          "--eds-text-positive-secondary": "#58b285",
+          "--eds-text-positive": "#83d3b2",
+          "--eds-icon-accent": "#eeeeee",
+          "--eds-icon-critical": "#ce6b64",
+          "--eds-icon-critical-onPrimary": "#ffffff",
+          "--eds-icon-onPrimary": "#111111",
+          "--eds-icon-primary": "#eeeeee",
+          "--eds-icon-secondary": "#8c8c8c",
+          "--eds-icon-tertiary": "#737373",
+          "--eds-icon-positive": "#83d3b2",
+          "--eds-icon-positive-hover": "#198057",
+          "--eds-icon-caution": "#ffc257",
+          "--eds-icon-inverse": "#111111",
+          "--eds-background-canvas": "#1a1a1a",
+          "--eds-background-canvas-secondary": "#212121",
+          "--eds-background-canvas-tertiary": "#292929",
+          "--eds-background-menu": "#1e1e1e",
+          "--eds-background-neutral": "#1a1a1a",
+          "--eds-background-neutral-hover": "#333333",
+          "--eds-background-neutral-pressed": "#666666",
+          "--eds-background-neutral-active": "#333333",
+          "--eds-background-neutral-disabled": "#2e2e2e",
+          "--eds-background-neutral-secondary": "#292929",
+          "--eds-background-neutral-secondary-hover": "#333333",
+          "--eds-background-neutral-secondary-pressed": "#3d3d3d",
+          "--eds-background-neutral-tertiary": "#525252",
+          "--eds-background-neutral-tertiary-hover": "#5c5c5c",
+          "--eds-background-inverse": "#eeeeee",
+          "--eds-background-inverse-hover": "#e5e5e5",
+          "--eds-background-inverse-pressed": "#b2b2b2",
+          "--eds-background-inverse-secondary": "#eaeaea",
+          "--eds-background-inverse-tertiary": "#616161",
+          "--eds-background-inverse-tertiary-hover": "#585858",
+          "--eds-background-inverse-tertiary-pressed": "#4d4d4d",
+          "--eds-background-critical": "#c44c44",
+          "--eds-background-critical-hover": "#b01c1c",
+          "--eds-background-critical-pressed": "#841515",
+          "--eds-background-critical-secondary": "#421e1e",
+          "--eds-background-critical-secondary-hover": "#4e1818",
+          "--eds-background-critical-secondary-pressed": "#6e2121",
+          "--eds-background-accent": "#eeeeee",
+          "--eds-background-accent-hover": "#b2b2b2",
+          "--eds-background-accent-pressed": "#808080",
+          "--eds-background-accent-secondary": "#292929",
+          "--eds-background-accent-secondary-hover": "#2e2e2e",
+          "--eds-background-accent-secondary-pressed": "#3d3d3d",
+          "--eds-background-accent-tertiary": "#292929",
+          "--eds-background-accent-tertiary-hover": "#2e2e2e",
+          "--eds-background-accent-tertiary-pressed": "#3d3d3d",
+          "--eds-background-positive": "#57a57a",
+          "--eds-background-positive-hover": "#198057",
+          "--eds-background-positive-pressed": "#156b48",
+          "--eds-background-positive-secondary": "#19382e",
+          "--eds-background-positive-secondary-hover": "#234d40",
+          "--eds-background-positive-secondary-pressed": "#2e6151",
+          "--eds-background-caution": "#e27e27",
+          "--eds-background-caution-hover": "#cc7c00",
+          "--eds-background-caution-pressed": "#995d00",
+          "--eds-background-caution-secondary": "#302821",
+          "--eds-background-avatar": "#292929",
+          "--eds-background-avatar-hover": "#383838",
+          "--eds-background-calendar": "#1a1a1a",
+          "--eds-background-calendar-disabled": "#222222",
+          "--eds-background-modal-overlay": "#11111199",
+          "--eds-border-secondary": "#3d3d3d",
+          "--eds-border-tertiary": "#2a2a2a",
+          "--eds-border-hover": "#5c5c5c",
+          "--eds-border-input": "#3d3d3d",
+          "--eds-border-input-hover": "#5c5c5c",
+          "--eds-border-input-active": "#eeeeee",
+          "--eds-border-input-active-hover": "#dbdbdb",
+          "--eds-border-input-active-pressed": "#cacaca",
+          "--eds-border-input-disabled": "#3d3d3d",
+          "--eds-border-input-critical": "#ce6b64",
+          "--eds-border-input-critical-hover": "#e84a4a",
+          "--eds-border-input-critical-pressed": "#e42f2f",
+          "--eds-border-input-caution": "#ffc257",
+          "--eds-border-input-caution-hover": "#e2ac4d",
+          "--eds-border-input-caution-pressed": "#e2ac4d",
+          "--eds-border-focus": "#eeeeee",
+          "--eds-border-accent": "#eeeeee",
+          "--eds-border-primary": "#eeeeee",
+          "--eds-border-calendar": "#303030",
+          "--eds-status-available": "#83d3b2",
+          "--eds-status-away": "#ffc257",
+          "--eds-status-busy": "#ce6b64",
+          "--eds-status-offline": "#6b6b6b",
+          "--eds-status-icon": "#ffffff",
+          "--eds-status-border": "#1a1a1a",
+          "--eds-decoration-brand": "#1d90f6",
+          "--eds-decoration-facebook": "#1877f2",
+          "--eds-decoration-instagram": "#e4405f",
+          "--eds-decoration-teleport": "#6285ff",
+          "--eds-decoration-twitter": "#1d9bf0",
+          "--eds-decoration-whatsapp": "#25d366",
+          "--eds-decoration-youtube": "#ff0000",
+          "--eds-general-constant-white": "#ffffff",
+          "--eds-general-constant-black": "#111111",
+          "--eds-chart-accent-100": "#292929",
+          "--eds-chart-accent-200": "#3d3d3d",
+          "--eds-chart-accent-300": "#666666",
+          "--eds-chart-accent-400": "#808080",
+          "--eds-chart-accent-500": "#999999",
+          "--eds-chart-accent-600": "#b2b2b2",
+          "--eds-chart-accent-700": "#d4d4d4",
+          "--eds-chart-accent-800": "#eeeeee",
+          "--eds-chart-neutral-100": "#292929",
+          "--eds-chart-neutral-200": "#3d3d3d",
+          "--eds-chart-neutral-300": "#666666",
+          "--eds-chart-neutral-400": "#808080",
+          "--eds-chart-neutral-500": "#999999",
+          "--eds-chart-neutral-600": "#b2b2b2",
+          "--eds-chart-neutral-700": "#d4d4d4",
+          "--eds-chart-neutral-800": "#eeeeee",
+          "--eds-palette-gray-background": "#2e3337",
+          "--eds-palette-gray-background-hover": "#464d53",
+          "--eds-palette-gray-background-active": "#c0c0c0",
+          "--eds-palette-gray-border": "#c0c0c0",
+          "--eds-palette-gray-text": "#f2f2f2",
+          "--eds-palette-gray-text-active": "#ffffff",
+          "--eds-palette-gray-text-secondary": "#e5e5e5",
+          "--eds-palette-dark-gray-background": "#3d4449",
+          "--eds-palette-dark-gray-background-hover": "#586168",
+          "--eds-palette-dark-gray-background-active": "#d6d6d6",
+          "--eds-palette-dark-gray-border": "#d6d6d6",
+          "--eds-palette-dark-gray-text": "#f2f2f2",
+          "--eds-palette-dark-gray-text-active": "#111111",
+          "--eds-palette-dark-gray-text-secondary": "#e5e5e5",
+          "--eds-palette-light-pink-background": "#34232b",
+          "--eds-palette-light-pink-background-hover": "#523744",
+          "--eds-palette-light-pink-background-active": "#ea556c",
+          "--eds-palette-light-pink-border": "#ea556c",
+          "--eds-palette-light-pink-text": "#f0cfde",
+          "--eds-palette-light-pink-text-active": "#ffffff",
+          "--eds-palette-light-pink-text-secondary": "#ccb8c1",
+          "--eds-palette-pink-background": "#301f30",
+          "--eds-palette-pink-background-hover": "#4d324d",
+          "--eds-palette-pink-background-active": "#ce3b93",
+          "--eds-palette-pink-border": "#ce3b93",
+          "--eds-palette-pink-text": "#eedbee",
+          "--eds-palette-pink-text-active": "#ffffff",
+          "--eds-palette-pink-text-secondary": "#c8becb",
+          "--eds-palette-red-background": "#321f1a",
+          "--eds-palette-red-background-hover": "#54342c",
+          "--eds-palette-red-background-active": "#da3a00",
+          "--eds-palette-red-border": "#da3a00",
+          "--eds-palette-red-text": "#eecdc4",
+          "--eds-palette-red-text-active": "#ffffff",
+          "--eds-palette-red-text-secondary": "#cab5b0",
+          "--eds-palette-maroon-background": "#26221e",
+          "--eds-palette-maroon-background-hover": "#423834",
+          "--eds-palette-maroon-background-active": "#af6b39",
+          "--eds-palette-maroon-border": "#af6b39",
+          "--eds-palette-maroon-text": "#ead8cb",
+          "--eds-palette-maroon-text-active": "#ffffff",
+          "--eds-palette-maroon-text-secondary": "#c5bbb4",
+          "--eds-palette-orange-background": "#372b22",
+          "--eds-palette-orange-background-hover": "#554335",
+          "--eds-palette-orange-background-active": "#ff8a35",
+          "--eds-palette-orange-border": "#ff8a35",
+          "--eds-palette-orange-text": "#f7d8c1",
+          "--eds-palette-orange-text-active": "#111111",
+          "--eds-palette-orange-text-secondary": "#d1bfb3",
+          "--eds-palette-violet-background": "#22202f",
+          "--eds-palette-violet-background-hover": "#37344c",
+          "--eds-palette-violet-background-active": "#9c83e5",
+          "--eds-palette-violet-border": "#9c83e5",
+          "--eds-palette-violet-text": "#d6d0ee",
+          "--eds-palette-violet-text-active": "#ffffff",
+          "--eds-palette-violet-text-secondary": "#bcb9cb",
+          "--eds-palette-yellow-background": "#2d2b15",
+          "--eds-palette-yellow-background-hover": "#504c25",
+          "--eds-palette-yellow-background-active": "#ffc700",
+          "--eds-palette-yellow-border": "#ffc700",
+          "--eds-palette-yellow-text": "#f9efcc",
+          "--eds-palette-yellow-text-active": "#111111",
+          "--eds-palette-yellow-text-secondary": "#d0cab4",
+          "--eds-palette-green-background": "#1a302e",
+          "--eds-palette-green-background-hover": "#203c39",
+          "--eds-palette-green-background-active": "#3ead85",
+          "--eds-palette-green-border": "#3ead85",
+          "--eds-palette-green-text": "#c3ecde",
+          "--eds-palette-green-text-active": "#ffffff",
+          "--eds-palette-green-text-secondary": "#b0cac2",
+          "--eds-palette-dark-green-background": "#1e2c2c",
+          "--eds-palette-dark-green-background-hover": "#344c4c",
+          "--eds-palette-dark-green-background-active": "#53a9ae",
+          "--eds-palette-dark-green-border": "#53a9ae",
+          "--eds-palette-dark-green-text": "#b2dcdc",
+          "--eds-palette-dark-green-text-active": "#111111",
+          "--eds-palette-dark-green-text-secondary": "#a3bdbd",
+          "--eds-palette-blue-background": "#1f2830",
+          "--eds-palette-blue-background-hover": "#32414d",
+          "--eds-palette-blue-background-active": "#67adeb",
+          "--eds-palette-blue-border": "#67adeb",
+          "--eds-palette-blue-text": "#bdd3ea",
+          "--eds-palette-blue-text-active": "#111111",
+          "--eds-palette-blue-text-secondary": "#adb9c7",
+          "--eds-palette-dark-blue-background": "#152532",
+          "--eds-palette-dark-blue-background-hover": "#244056",
+          "--eds-palette-dark-blue-background-active": "#007cea",
+          "--eds-palette-dark-blue-border": "#1c8bec",
+          "--eds-palette-dark-blue-text": "#b2d5f2",
+          "--eds-palette-dark-blue-text-active": "#ffffff",
+          "--eds-palette-dark-blue-text-secondary": "#adb9c7",
+          "--eds-shadow-10": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
+          "--eds-shadow-20": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 12px 0px rgba(0, 0, 0, 0.12)",
+          "--eds-shadow-30": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.14)",
+          "--eds-shadow-40": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.20)",
+          "--eds-shadow-50": "0px 0px 0px 4px rgba(255, 255, 255, 0.20)"
+        },
+        "@utility focus-ring": {
+          "@apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background": {}
+        },
+        "@layer base": {
+          "*": {
+            "@apply border-border outline-ring": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground font-sans": {}
+          }
+        }
+      }
+    },
+    {
+      "name": "font-inter",
+      "type": "registry:font",
+      "title": "Inter",
+      "description": "Earth's typeface.",
+      "font": {
+        "family": "'Inter Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        "provider": "google",
+        "import": "Inter",
+        "variable": "--font-sans",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/inter"
+      }
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A stack of headings that each show or hide a section of content.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal that asks people to confirm an important or destructive action.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A tinted message inside the page that draws attention to information or a problem.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Keeps content, such as an image or video, at a fixed width-to-height ratio.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A person's photo, with their initials as a fallback.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A short label for a status, count or category.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Shows where the current page sits in the app and links back to its parents.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Joins related buttons, inputs and labels into one control.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/separator",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Triggers an action. Use one default button per view for the main action.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Lets people pick a date or a range of dates from a month grid.",
+      "dependencies": [
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A bordered surface that groups related content and actions.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Scrolls through a row of slides with buttons, swipe or the arrow keys.",
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Recharts charts with Earth's chart palette, tooltip and legend.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Lets people turn an option on or off, or pick several options from a list.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "A section that can be expanded and collapsed with a trigger.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A text input that filters a list of options as people type.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/input-group",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable list of commands or options, inline or as a ⌘K palette.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/dialog",
+        "@earth/input-group",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu of actions that opens on right-click or long press.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window over the page for a focused task, such as editing a record.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A panel that slides in from an edge and can be swiped away, built for touch screens.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "A list of actions or options that opens from a button.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "A placeholder for a view with no content yet, with a next step.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Lays out a form control with its label, description and error message.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/separator",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Previews the content behind a link when people hover or focus it.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Adds icons, text or buttons inside an input or textarea.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/input",
+        "@earth/textarea",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Collects a one-time passcode one character at a time.",
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single-line text field. Pair it with a Label, or a Field for descriptions and errors.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A row with media, a title, a description and actions, for lists of things like staff or services.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/separator",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Shows a keyboard key or shortcut.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Names a form control. Clicking the label focuses or toggles its control.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A horizontal bar of menus, like the File and Edit menus of a desktop app.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/dropdown-menu",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A styled native select element. Use it when the browser's own picker is preferred, such as on mobile.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A row of top-level links whose triggers open panels of related links.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Moves between pages of a long list, such as customers or past appointments.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Shows extra content or a small form in a floating panel next to its trigger.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Shows how far a task such as an import or upload has got.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Lets people pick exactly one option from a short list.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels that people can resize by dragging the handle between them.",
+      "dependencies": [
+        "react-resizable-panels"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A scrollable region with a slim, consistent scrollbar.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Lets people choose one option from a menu of options.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A thin line that separates content, horizontally or vertically.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A panel that slides in from an edge of the screen, for side tasks and details.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible app sidebar with groups, menus, badges and a mobile sheet.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/input",
+        "@earth/separator",
+        "@earth/sheet",
+        "@earth/skeleton",
+        "@earth/tooltip",
+        "@earth/use-mobile",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A pulsing placeholder shown while content loads.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Picks a value, or a range of values, by dragging along a track.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Shows brief notifications, such as a booking confirmation, at the edge of the screen.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An animated indicator that shows something is loading.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Turns a single setting on or off, taking effect immediately.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Rows and columns of data, such as bookings or payments.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Switches between related views that share one place on the page.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text field for notes, messages and descriptions.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Shows brief notifications with Base UI's toast manager, styled as an EDS snackbar.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of toggles where one, or several, can be pressed at a time.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/toggle",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A button that stays pressed or unpressed, such as a filter chip.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A short label that appears when people hover or focus a control.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Use Mobile",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:example",
+      "title": "Accordion Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-disabled",
+      "type": "registry:example",
+      "title": "Accordion Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-multiple",
+      "type": "registry:example",
+      "title": "Accordion Multiple",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-multiple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-action",
+      "type": "registry:example",
+      "title": "Alert Action",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/alert",
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-action.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-demo",
+      "type": "registry:example",
+      "title": "Alert Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/alert"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-destructive",
+      "type": "registry:example",
+      "title": "Alert Destructive",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/alert"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-destructive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-demo",
+      "type": "registry:example",
+      "title": "Alert Dialog Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/alert-dialog",
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-destructive",
+      "type": "registry:example",
+      "title": "Alert Dialog Destructive",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/alert-dialog",
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-destructive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-small",
+      "type": "registry:example",
+      "title": "Alert Dialog Small",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/alert-dialog",
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-small.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "alert-status",
+      "type": "registry:example",
+      "title": "Alert Status",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/alert"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-status.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio-demo",
+      "type": "registry:example",
+      "title": "Aspect Ratio Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/aspect-ratio"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/aspect-ratio-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-badge",
+      "type": "registry:example",
+      "title": "Avatar Badge",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-badge.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-demo",
+      "type": "registry:example",
+      "title": "Avatar Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:example",
+      "title": "Avatar Group",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-sizes",
+      "type": "registry:example",
+      "title": "Avatar Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-demo",
+      "type": "registry:example",
+      "title": "Badge Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-destructive",
+      "type": "registry:example",
+      "title": "Badge Destructive",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-destructive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-ghost",
+      "type": "registry:example",
+      "title": "Badge Ghost",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-ghost.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-link",
+      "type": "registry:example",
+      "title": "Badge Link",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-link.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-outline",
+      "type": "registry:example",
+      "title": "Badge Outline",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-secondary",
+      "type": "registry:example",
+      "title": "Badge Secondary",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-secondary.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-status",
+      "type": "registry:example",
+      "title": "Badge Status",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-status.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-with-icon",
+      "type": "registry:example",
+      "title": "Badge With Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/badge-with-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-collapsed",
+      "type": "registry:example",
+      "title": "Breadcrumb Collapsed",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/breadcrumb-collapsed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-demo",
+      "type": "registry:example",
+      "title": "Breadcrumb Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/breadcrumb-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-separator",
+      "type": "registry:example",
+      "title": "Breadcrumb Separator",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/breadcrumb-separator.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-as-link",
+      "type": "registry:example",
+      "title": "Button As Link",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-as-link.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-demo",
+      "type": "registry:example",
+      "title": "Button Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-destructive",
+      "type": "registry:example",
+      "title": "Button Destructive",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-destructive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-disabled",
+      "type": "registry:example",
+      "title": "Button Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-ghost",
+      "type": "registry:example",
+      "title": "Button Ghost",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-ghost.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-demo",
+      "type": "registry:example",
+      "title": "Button Group Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-input",
+      "type": "registry:example",
+      "title": "Button Group Input",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/button-group",
+        "@earth/input",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-separator",
+      "type": "registry:example",
+      "title": "Button Group Separator",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-separator.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-vertical",
+      "type": "registry:example",
+      "title": "Button Group Vertical",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-link",
+      "type": "registry:example",
+      "title": "Button Link",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-link.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-outline",
+      "type": "registry:example",
+      "title": "Button Outline",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-secondary",
+      "type": "registry:example",
+      "title": "Button Secondary",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-secondary.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-sizes",
+      "type": "registry:example",
+      "title": "Button Sizes",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-with-icon",
+      "type": "registry:example",
+      "title": "Button With Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/button-with-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-demo",
+      "type": "registry:example",
+      "title": "Calendar Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-disabled",
+      "type": "registry:example",
+      "title": "Calendar Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-dropdown",
+      "type": "registry:example",
+      "title": "Calendar Dropdown",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-dropdown.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-range",
+      "type": "registry:example",
+      "title": "Calendar Range",
+      "dependencies": [
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "@earth/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-range.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-small",
+      "type": "registry:example",
+      "title": "Calendar Small",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-small.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "card-demo",
+      "type": "registry:example",
+      "title": "Card Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/card",
+        "@earth/input",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "card-image",
+      "type": "registry:example",
+      "title": "Card Image",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge",
+        "@earth/button",
+        "@earth/card"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/card-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "card-small",
+      "type": "registry:example",
+      "title": "Card Small",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/card"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/card-small.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-demo",
+      "type": "registry:example",
+      "title": "Carousel Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/carousel-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-orientation",
+      "type": "registry:example",
+      "title": "Carousel Orientation",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/carousel-orientation.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-size",
+      "type": "registry:example",
+      "title": "Carousel Size",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/carousel-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-demo",
+      "type": "registry:example",
+      "title": "Chart Demo",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@earth/card",
+        "@earth/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/chart-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-line",
+      "type": "registry:example",
+      "title": "Chart Line",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@earth/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/chart-line.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie",
+      "type": "registry:example",
+      "title": "Chart Pie",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@earth/chart"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/chart-pie.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "title": "Checkbox Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/checkbox",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-demo",
+      "type": "registry:example",
+      "title": "Collapsible Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/collapsible-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-clear",
+      "type": "registry:example",
+      "title": "Combobox Clear",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-clear.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-demo",
+      "type": "registry:example",
+      "title": "Combobox Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-disabled",
+      "type": "registry:example",
+      "title": "Combobox Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-groups",
+      "type": "registry:example",
+      "title": "Combobox Groups",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-groups.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-invalid",
+      "type": "registry:example",
+      "title": "Combobox Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox",
+        "@earth/field"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-multiple",
+      "type": "registry:example",
+      "title": "Combobox Multiple",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-multiple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-popup",
+      "type": "registry:example",
+      "title": "Combobox Popup",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-popup.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "command-demo",
+      "type": "registry:example",
+      "title": "Command Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/command"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/command-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "command-dialog",
+      "type": "registry:example",
+      "title": "Command Dialog",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/command",
+        "@earth/kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/command-dialog.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-demo",
+      "type": "registry:example",
+      "title": "Context Menu Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/context-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dialog-close-button",
+      "type": "registry:example",
+      "title": "Dialog Close Button",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dialog",
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:example",
+      "title": "Dialog Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dialog",
+        "@earth/input",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dialog-scrollable-content",
+      "type": "registry:example",
+      "title": "Dialog Scrollable Content",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-scrollable-content.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "drawer-demo",
+      "type": "registry:example",
+      "title": "Drawer Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/drawer"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "drawer-direction",
+      "type": "registry:example",
+      "title": "Drawer Direction",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/drawer"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-direction.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-checkboxes",
+      "type": "registry:example",
+      "title": "Dropdown Menu Checkboxes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-checkboxes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-demo",
+      "type": "registry:example",
+      "title": "Dropdown Menu Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-radio-group",
+      "type": "registry:example",
+      "title": "Dropdown Menu Radio Group",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-radio-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-demo",
+      "type": "registry:example",
+      "title": "Empty Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/empty"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/empty-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-icon",
+      "type": "registry:example",
+      "title": "Empty Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/empty"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/empty-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-checkbox",
+      "type": "registry:example",
+      "title": "Field Checkbox",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/checkbox",
+        "@earth/field"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-checkbox.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-choice-card",
+      "type": "registry:example",
+      "title": "Field Choice Card",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-choice-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-demo",
+      "type": "registry:example",
+      "title": "Field Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/checkbox",
+        "@earth/field",
+        "@earth/input",
+        "@earth/native-select",
+        "@earth/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-disabled",
+      "type": "registry:example",
+      "title": "Field Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-input",
+      "type": "registry:example",
+      "title": "Field Input",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-invalid",
+      "type": "registry:example",
+      "title": "Field Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-radio",
+      "type": "registry:example",
+      "title": "Field Radio",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-radio.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-switch",
+      "type": "registry:example",
+      "title": "Field Switch",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/field-switch.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-card-demo",
+      "type": "registry:example",
+      "title": "Hover Card Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/hover-card"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/hover-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-demo",
+      "type": "registry:example",
+      "title": "Input Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-disabled",
+      "type": "registry:example",
+      "title": "Input Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-button",
+      "type": "registry:example",
+      "title": "Input Group Button",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-demo",
+      "type": "registry:example",
+      "title": "Input Group Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-disabled",
+      "type": "registry:example",
+      "title": "Input Group Disabled",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-invalid",
+      "type": "registry:example",
+      "title": "Input Group Invalid",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-text",
+      "type": "registry:example",
+      "title": "Input Group Text",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-text.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-textarea",
+      "type": "registry:example",
+      "title": "Input Group Textarea",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-textarea.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-invalid",
+      "type": "registry:example",
+      "title": "Input Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-demo",
+      "type": "registry:example",
+      "title": "Input Otp Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-disabled",
+      "type": "registry:example",
+      "title": "Input Otp Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-invalid",
+      "type": "registry:example",
+      "title": "Input Otp Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-pattern",
+      "type": "registry:example",
+      "title": "Input Otp Pattern",
+      "dependencies": [
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "@earth/input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-pattern.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-with-label",
+      "type": "registry:example",
+      "title": "Input With Label",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/input",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-with-label.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-avatar",
+      "type": "registry:example",
+      "title": "Item Avatar",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/avatar",
+        "@earth/button",
+        "@earth/item"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/item-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-demo",
+      "type": "registry:example",
+      "title": "Item Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/item"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/item-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-size",
+      "type": "registry:example",
+      "title": "Item Size",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/item"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/item-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-variants",
+      "type": "registry:example",
+      "title": "Item Variants",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/item"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/item-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-button",
+      "type": "registry:example",
+      "title": "Kbd Button",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-demo",
+      "type": "registry:example",
+      "title": "Kbd Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-group",
+      "type": "registry:example",
+      "title": "Kbd Group",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "label-demo",
+      "type": "registry:example",
+      "title": "Label Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/checkbox",
+        "@earth/label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/label-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menubar-demo",
+      "type": "registry:example",
+      "title": "Menubar Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/menubar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/menubar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-demo",
+      "type": "registry:example",
+      "title": "Native Select Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/native-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-disabled",
+      "type": "registry:example",
+      "title": "Native Select Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/native-select-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-groups",
+      "type": "registry:example",
+      "title": "Native Select Groups",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/native-select-groups.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-invalid",
+      "type": "registry:example",
+      "title": "Native Select Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/native-select-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-sizes",
+      "type": "registry:example",
+      "title": "Native Select Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/native-select-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-demo",
+      "type": "registry:example",
+      "title": "Navigation Menu Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/navigation-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pagination-demo",
+      "type": "registry:example",
+      "title": "Pagination Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/pagination"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/pagination-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pagination-simple",
+      "type": "registry:example",
+      "title": "Pagination Simple",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/pagination"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/pagination-simple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "popover-align",
+      "type": "registry:example",
+      "title": "Popover Align",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/popover-align.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "popover-demo",
+      "type": "registry:example",
+      "title": "Popover Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/input",
+        "@earth/label",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/popover-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progress-demo",
+      "type": "registry:example",
+      "title": "Progress Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/progress"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/progress-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progress-label",
+      "type": "registry:example",
+      "title": "Progress Label",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/progress"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/progress-label.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-demo",
+      "type": "registry:example",
+      "title": "Radio Group Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-disabled",
+      "type": "registry:example",
+      "title": "Radio Group Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-group-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-invalid",
+      "type": "registry:example",
+      "title": "Radio Group Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-group-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "resizable-demo",
+      "type": "registry:example",
+      "title": "Resizable Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/resizable"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/resizable-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "resizable-handle",
+      "type": "registry:example",
+      "title": "Resizable Handle",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/resizable"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/resizable-handle.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "resizable-vertical",
+      "type": "registry:example",
+      "title": "Resizable Vertical",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/resizable"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/resizable-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area-demo",
+      "type": "registry:example",
+      "title": "Scroll Area Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/scroll-area",
+        "@earth/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/scroll-area-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area-horizontal",
+      "type": "registry:example",
+      "title": "Scroll Area Horizontal",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/scroll-area-horizontal.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-demo",
+      "type": "registry:example",
+      "title": "Select Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-disabled",
+      "type": "registry:example",
+      "title": "Select Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-groups",
+      "type": "registry:example",
+      "title": "Select Groups",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-groups.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-invalid",
+      "type": "registry:example",
+      "title": "Select Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/field",
+        "@earth/select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-sizes",
+      "type": "registry:example",
+      "title": "Select Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "separator-demo",
+      "type": "registry:example",
+      "title": "Separator Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-demo",
+      "type": "registry:example",
+      "title": "Sheet Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/input",
+        "@earth/label",
+        "@earth/sheet"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sheet-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-no-close-button",
+      "type": "registry:example",
+      "title": "Sheet No Close Button",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/sheet"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sheet-no-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-side",
+      "type": "registry:example",
+      "title": "Sheet Side",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/sheet"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sheet-side.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-demo",
+      "type": "registry:example",
+      "title": "Sidebar Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/breadcrumb",
+        "@earth/separator",
+        "@earth/sidebar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sidebar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-inset",
+      "type": "registry:example",
+      "title": "Sidebar Inset",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/sidebar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sidebar-inset.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-card",
+      "type": "registry:example",
+      "title": "Skeleton Card",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/card",
+        "@earth/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/skeleton-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-demo",
+      "type": "registry:example",
+      "title": "Skeleton Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/skeleton-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-controlled",
+      "type": "registry:example",
+      "title": "Slider Controlled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-controlled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-demo",
+      "type": "registry:example",
+      "title": "Slider Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-disabled",
+      "type": "registry:example",
+      "title": "Slider Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-range",
+      "type": "registry:example",
+      "title": "Slider Range",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-range.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-vertical",
+      "type": "registry:example",
+      "title": "Slider Vertical",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-close-button",
+      "type": "registry:example",
+      "title": "Sonner Close Button",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sonner-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-demo",
+      "type": "registry:example",
+      "title": "Sonner Demo",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sonner-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-types",
+      "type": "registry:example",
+      "title": "Sonner Types",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sonner-types.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-button",
+      "type": "registry:example",
+      "title": "Spinner Button",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/spinner-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-demo",
+      "type": "registry:example",
+      "title": "Spinner Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/spinner-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-sizes",
+      "type": "registry:example",
+      "title": "Spinner Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/spinner-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-demo",
+      "type": "registry:example",
+      "title": "Switch Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-disabled",
+      "type": "registry:example",
+      "title": "Switch Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-sizes",
+      "type": "registry:example",
+      "title": "Switch Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "table-demo",
+      "type": "registry:example",
+      "title": "Table Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/badge",
+        "@earth/table"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/table-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-demo",
+      "type": "registry:example",
+      "title": "Tabs Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-disabled",
+      "type": "registry:example",
+      "title": "Tabs Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-line",
+      "type": "registry:example",
+      "title": "Tabs Line",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-line.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-vertical",
+      "type": "registry:example",
+      "title": "Tabs Vertical",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-with-icon",
+      "type": "registry:example",
+      "title": "Tabs With Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-with-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-demo",
+      "type": "registry:example",
+      "title": "Textarea Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-disabled",
+      "type": "registry:example",
+      "title": "Textarea Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/textarea-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-invalid",
+      "type": "registry:example",
+      "title": "Textarea Invalid",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/textarea-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-with-label",
+      "type": "registry:example",
+      "title": "Textarea With Label",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/label",
+        "@earth/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/textarea-with-label.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-action",
+      "type": "registry:example",
+      "title": "Toast Action",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toast-action.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-demo",
+      "type": "registry:example",
+      "title": "Toast Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toast-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-types",
+      "type": "registry:example",
+      "title": "Toast Types",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/toast"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toast-types.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-demo",
+      "type": "registry:example",
+      "title": "Toggle Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-disabled",
+      "type": "registry:example",
+      "title": "Toggle Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-demo",
+      "type": "registry:example",
+      "title": "Toggle Group Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-disabled",
+      "type": "registry:example",
+      "title": "Toggle Group Disabled",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-outline",
+      "type": "registry:example",
+      "title": "Toggle Group Outline",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-sizes",
+      "type": "registry:example",
+      "title": "Toggle Group Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-spacing",
+      "type": "registry:example",
+      "title": "Toggle Group Spacing",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-spacing.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-icon",
+      "type": "registry:example",
+      "title": "Toggle Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-outline",
+      "type": "registry:example",
+      "title": "Toggle Outline",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-sizes",
+      "type": "registry:example",
+      "title": "Toggle Sizes",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-demo",
+      "type": "registry:example",
+      "title": "Tooltip Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-sides",
+      "type": "registry:example",
+      "title": "Tooltip Sides",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-sides.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-with-kbd",
+      "type": "registry:example",
+      "title": "Tooltip With Kbd",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/kbd",
+        "@earth/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-with-kbd.tsx",
+          "type": "registry:example"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+---
+title: Navigation Menu
+description: A row of top-level links whose triggers open panels of related links.
+links:
+  doc: https://base-ui.com/react/components/navigation-menu
+  api: https://base-ui.com/react/components/navigation-menu#api-reference
+---
+
+<ComponentPreview name="navigation-menu-demo" />
+
+## Installation
+
+<Installation name="navigation-menu" />
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/booking-page">Booking page</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+Apply `navigationMenuTriggerStyle()` to a `NavigationMenuLink` to place a plain link next to the triggers, as with Pricing in the demo.

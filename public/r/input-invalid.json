@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-invalid",
+  "title": "Input Invalid",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/input",
+    "@earth/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-invalid.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function InputInvalid() {\n  return (\n    <div className=\"grid w-full max-w-xs gap-1\">\n      <Label htmlFor=\"phone\">Phone</Label>\n      <Input id=\"phone\" defaultValue=\"12\" aria-invalid />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

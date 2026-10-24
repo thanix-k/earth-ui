@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "A person's photo, with their initials as a fallback.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@earth/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/avatar.tsx",
+      "content": "\"use client\";\n\nimport { Avatar as AvatarPrimitive } from \"@base-ui/react/avatar\";\nimport type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\n// Sizes follow EDS: sm 24px, default 32px, lg 40px, each with EDS's initials\n// size and status badge size/offset.\nfunction Avatar({\n  className,\n  size = \"default\",\n  ...props\n}: AvatarPrimitive.Root.Props & {\n  size?: \"default\" | \"sm\" | \"lg\";\n}) {\n  return (\n    <AvatarPrimitive.Root\n      data-slot=\"avatar\"\n      data-size={size}\n      className={cn(\n        \"group/avatar relative flex size-8 shrink-0 rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {\n  return (\n    <AvatarPrimitive.Image\n      data-slot=\"avatar-image\"\n      className={cn(\n        \"aspect-square size-full rounded-full bg-eds-neutral-disabled object-cover\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarFallback({ className, ...props }: AvatarPrimitive.Fallback.Props) {\n  return (\n    <AvatarPrimitive.Fallback\n      data-slot=\"avatar-fallback\"\n      className={cn(\n        \"flex size-full items-center justify-center rounded-full bg-eds-avatar text-body-12 text-eds-primary uppercase group-data-[size=lg]/avatar:text-body-14 group-data-[size=sm]/avatar:text-body-10 [&>svg:not([class*='size-'])]:size-4 group-data-[size=lg]/avatar:[&>svg:not([class*='size-'])]:size-5 group-data-[size=sm]/avatar:[&>svg:not([class*='size-'])]:size-3\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarBadge({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"avatar-badge\"\n      className={cn(\n        \"absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full border-2 border-eds-status-border bg-eds-accent text-eds-onPrimary select-none\",\n        \"group-data-[size=sm]/avatar:-right-0.5 group-data-[size=sm]/avatar:-bottom-0.5 group-data-[size=sm]/avatar:size-2.5 group-data-[size=sm]/avatar:[&>svg]:hidden\",\n        \"group-data-[size=default]/avatar:size-3 group-data-[size=default]/avatar:[&>svg]:size-2\",\n        \"group-data-[size=lg]/avatar:size-3.5 group-data-[size=lg]/avatar:[&>svg]:size-2\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group\"\n      className={cn(\n        \"group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-eds-status-border\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarGroupCount({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group-count\"\n      className={cn(\n        \"relative flex size-8 shrink-0 items-center justify-center rounded-full bg-eds-avatar text-body-12 text-eds-primary ring-2 ring-eds-status-border group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=lg]/avatar-group:text-body-14 group-has-data-[size=sm]/avatar-group:size-6 group-has-data-[size=sm]/avatar-group:text-body-10 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Avatar, AvatarBadge, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

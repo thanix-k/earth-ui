@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-vertical",
+  "title": "Tabs Vertical",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-vertical.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function TabsVertical() {\n  return (\n    <Tabs defaultValue=\"general\" orientation=\"vertical\" className=\"w-full max-w-md gap-6\">\n      <TabsList variant=\"line\">\n        <TabsTrigger value=\"general\">General</TabsTrigger>\n        <TabsTrigger value=\"booking-page\">Booking page</TabsTrigger>\n        <TabsTrigger value=\"notifications\">Notifications</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"general\" className=\"text-eds-secondary\">\n        Business name, time zone and working hours.\n      </TabsContent>\n      <TabsContent value=\"booking-page\" className=\"text-eds-secondary\">\n        Your public booking page and its link.\n      </TabsContent>\n      <TabsContent value=\"notifications\" className=\"text-eds-secondary\">\n        Confirmation and reminder emails.\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-types",
+  "title": "Toast Types",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toast-types.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Toaster, toast } from \"@/registry/default/ui/toast\";\n\nconst examples = [\n  { type: \"success\", label: \"Success\", title: \"Booking page published\" },\n  { type: \"info\", label: \"Info\", title: \"Maya is away on Friday\" },\n  { type: \"warning\", label: \"Warning\", title: \"2 appointments overlap on Monday\" },\n  { type: \"error\", label: \"Error\", title: \"Payment could not be taken\" },\n];\n\nexport default function ToastTypes() {\n  return (\n    <Toaster>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {examples.map((example) => (\n          <Button\n            key={example.type}\n            variant=\"outline\"\n            onClick={() => toast.add({ type: example.type, title: example.title })}\n          >\n            {example.label}\n          </Button>\n        ))}\n        <Button\n          variant=\"outline\"\n          onClick={() =>\n            toast.promise(new Promise((resolve) => setTimeout(resolve, 2000)), {\n              loading: \"Syncing your Google Calendar…\",\n              success: \"Calendar synced\",\n              error: \"Sync failed\",\n            })\n          }\n        >\n          Promise\n        </Button>\n      </div>\n    </Toaster>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

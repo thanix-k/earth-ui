@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-choice-card",
+  "title": "Field Choice Card",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/field",
+    "@earth/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-choice-card.tsx",
+      "content": "import {\n  Field,\n  FieldContent,\n  FieldDescription,\n  FieldLabel,\n  FieldLegend,\n  FieldSet,\n  FieldTitle,\n} from \"@/registry/default/ui/field\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport default function FieldChoiceCard() {\n  return (\n    <FieldSet className=\"w-full max-w-sm\">\n      <FieldLegend variant=\"label\">Location</FieldLegend>\n      <RadioGroup defaultValue=\"in-person\">\n        <FieldLabel htmlFor=\"location-in-person\">\n          <Field orientation=\"horizontal\">\n            <RadioGroupItem value=\"in-person\" id=\"location-in-person\" />\n            <FieldContent>\n              <FieldTitle>In person</FieldTitle>\n              <FieldDescription>At 24 King Street, Brighton.</FieldDescription>\n            </FieldContent>\n          </Field>\n        </FieldLabel>\n        <FieldLabel htmlFor=\"location-video\">\n          <Field orientation=\"horizontal\">\n            <RadioGroupItem value=\"video\" id=\"location-video\" />\n            <FieldContent>\n              <FieldTitle>Video call</FieldTitle>\n              <FieldDescription>A meeting link is sent with the confirmation.</FieldDescription>\n            </FieldContent>\n          </Field>\n        </FieldLabel>\n        <FieldLabel htmlFor=\"location-phone\">\n          <Field orientation=\"horizontal\">\n            <RadioGroupItem value=\"phone\" id=\"location-phone\" disabled />\n            <FieldContent>\n              <FieldTitle>Phone call</FieldTitle>\n              <FieldDescription>Add a business phone number first.</FieldDescription>\n            </FieldContent>\n          </Field>\n        </FieldLabel>\n      </RadioGroup>\n    </FieldSet>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

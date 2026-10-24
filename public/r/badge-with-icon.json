@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-with-icon",
+  "title": "Badge With Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-with-icon.tsx",
+      "content": "import { BadgeCheckIcon, ClockIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function BadgeWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge variant=\"positive\">\n        <BadgeCheckIcon data-icon=\"inline-start\" />\n        Paid\n      </Badge>\n      <Badge variant=\"caution\">\n        <ClockIcon data-icon=\"inline-start\" />\n        Awaiting payment\n      </Badge>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

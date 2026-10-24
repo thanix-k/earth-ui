@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-demo",
+  "title": "Textarea Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/textarea-demo.tsx",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaDemo() {\n  return (\n    <Textarea\n      className=\"max-w-xs\"\n      placeholder=\"Add a note for your customer\"\n      aria-label=\"Booking note\"\n    />\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

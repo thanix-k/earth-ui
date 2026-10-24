@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-avatar",
+  "title": "Item Avatar",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/avatar",
+    "@earth/button",
+    "@earth/item"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/item-avatar.tsx",
+      "content": "import { PlusIcon } from \"lucide-react\";\nimport { Fragment } from \"react\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemGroup,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/registry/default/ui/item\";\n\nconst staff = [\n  {\n    name: \"Maya Patel\",\n    role: \"Senior stylist\",\n    initials: \"MP\",\n    image: \"https://github.com/shadcn.png\",\n  },\n  { name: \"James Lee\", role: \"Barber\", initials: \"JL\" },\n  { name: \"Aisha Rahman\", role: \"Nail technician\", initials: \"AR\" },\n];\n\nexport default function ItemAvatar() {\n  return (\n    <ItemGroup className=\"max-w-md gap-0\">\n      {staff.map((person, index) => (\n        <Fragment key={person.name}>\n          {index > 0 && <ItemSeparator />}\n          <Item>\n            <ItemMedia>\n              <Avatar>\n                {person.image && <AvatarImage src={person.image} alt={person.name} />}\n                <AvatarFallback>{person.initials}</AvatarFallback>\n              </Avatar>\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>{person.name}</ItemTitle>\n              <ItemDescription>{person.role}</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"icon-sm\" aria-label={`Assign ${person.name}`}>\n                <PlusIcon />\n              </Button>\n            </ItemActions>\n          </Item>\n        </Fragment>\n      ))}\n    </ItemGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,48 @@
+---
+title: Drawer
+description: A panel that slides in from an edge and can be swiped away, built for touch screens.
+links:
+  doc: https://base-ui.com/react/components/drawer
+  api: https://base-ui.com/react/components/drawer#api-reference
+---
+
+<ComponentPreview name="drawer-demo" />
+
+## Installation
+
+<Installation name="drawer" />
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Haircut & style</DrawerTitle>
+      <DrawerDescription>Pick a time for your appointment.</DrawerDescription>
+    </DrawerHeader>
+  </DrawerContent>
+</Drawer>
+```
+
+Set `showSwipeHandle` on `Drawer` to show the grab handle.
+
+## Examples
+
+### Direction
+
+Use `swipeDirection` to choose where the drawer comes from: `down` (default), `up`, `left` or `right`.
+
+<ComponentPreview name="drawer-direction" />

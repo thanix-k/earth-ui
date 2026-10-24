@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-button",
+  "title": "Kbd Button",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-button.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\n\nexport default function KbdButton() {\n  return (\n    <Button variant=\"outline\">\n      New booking <Kbd data-icon=\"inline-end\">N</Kbd>\n    </Button>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

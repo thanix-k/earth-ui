@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-disabled",
+  "title": "Accordion Disabled",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-disabled.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\n\nexport default function AccordionDisabled() {\n  return (\n    <Accordion className=\"max-w-md\">\n      <AccordionItem value=\"email\">\n        <AccordionTrigger>Email reminders</AccordionTrigger>\n        <AccordionContent>Sent 24 hours before each booking.</AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"sms\" disabled>\n        <AccordionTrigger>SMS reminders (Pro plan)</AccordionTrigger>\n        <AccordionContent>Sent 2 hours before each booking.</AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

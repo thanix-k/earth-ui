@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-outline",
+  "title": "Toggle Outline",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-outline.tsx",
+      "content": "import { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function ToggleOutline() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Toggle variant=\"outline\">Walk-ins</Toggle>\n      <Toggle variant=\"outline\" defaultPressed>\n        Online\n      </Toggle>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
