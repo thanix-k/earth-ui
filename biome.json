@@ -6,7 +6,14 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!public/r", "!registry.json", "!app/earth.css", "!tokens"]
+    "includes": [
+      "**",
+      "!public/r",
+      "!registry.json",
+      "!app/earth.css",
+      "!tokens",
+      "!pnpm-lock.yaml"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
