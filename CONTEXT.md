@@ -51,6 +51,17 @@ Get Started (incl. AI usage: shadcn MCP, v0, Lovable). Components: one page
 each (preview, code, install tabs, examples).
 No foundations pages, migration guide, particles or chat UI.
 
+**Epic**:
+The `/epic` showcase page: components composed into product moments from
+Full Creative's consumer products (full.io/tools), one card per moment.
+App-local code, not registry items; not customisable.
+_Avoid_: calling these blocks or templates.
+
+**Figma library**:
+The `EDS playground` Figma file, rebuilt from this repo (ADR-0004). Same
+components, parts, props and tokens as the registry; Code Connect on each.
+_Avoid_: treating Figma as the source; drawing components the registry lacks.
+
 **Base brand**:
 setmore-black. The only brand shipped. No brand switching. Ships both its
 light and dark colour schemes (`:root` / `.dark`), both generated.
