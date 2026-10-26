@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Toaster } from "@/registry/default/ui/sonner";
 import { AgendaCard } from "./cards/agenda";
 import { BookDeskCard } from "./cards/book-desk";
@@ -32,7 +33,10 @@ export default function EpicPage() {
         </p>
       </header>
       <div className="columns-1 gap-4 md:columns-2 xl:columns-3 2xl:columns-4 *:mb-4 *:break-inside-avoid">
-        <BookSlotCard />
+        {/* Streams: Calendar reads the time for "today". */}
+        <Suspense>
+          <BookSlotCard />
+        </Suspense>
         <CallLogCard />
         <TeamChatCard />
         <LeadPipelineCard />
