@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-input",
+  "title": "Date Picker Input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/calendar",
+    "@earth/field",
+    "@earth/input-group",
+    "@earth/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/date-picker-input.tsx",
+      "content": "\"use client\";\n\nimport { CalendarIcon } from \"lucide-react\";\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\nimport { Popover, PopoverContent, PopoverTrigger } from \"@/registry/default/ui/popover\";\n\nfunction formatDate(date: Date | undefined) {\n  if (!date) {\n    return \"\";\n  }\n\n  return date.toLocaleDateString(\"en-US\", {\n    day: \"2-digit\",\n    month: \"long\",\n    year: \"numeric\",\n  });\n}\n\nfunction isValidDate(date: Date | undefined) {\n  if (!date) {\n    return false;\n  }\n  return !Number.isNaN(date.getTime());\n}\n\nexport default function DatePickerInput() {\n  const [open, setOpen] = React.useState(false);\n  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 5, 1));\n  const [month, setMonth] = React.useState<Date | undefined>(date);\n  const [value, setValue] = React.useState(formatDate(date));\n\n  return (\n    <Field className=\"mx-auto w-48\">\n      <FieldLabel htmlFor=\"date-picker-input\">Subscription date</FieldLabel>\n      <InputGroup>\n        <InputGroupInput\n          id=\"date-picker-input\"\n          value={value}\n          placeholder=\"June 01, 2026\"\n          onChange={(e) => {\n            const date = new Date(e.target.value);\n            setValue(e.target.value);\n            if (isValidDate(date)) {\n              setDate(date);\n              setMonth(date);\n            }\n          }}\n          onKeyDown={(e) => {\n            if (e.key === \"ArrowDown\") {\n              e.preventDefault();\n              setOpen(true);\n            }\n          }}\n        />\n        <InputGroupAddon align=\"inline-end\">\n          <Popover open={open} onOpenChange={setOpen}>\n            <PopoverTrigger\n              render={<InputGroupButton variant=\"ghost\" size=\"icon-xs\" aria-label=\"Select date\" />}\n            >\n              <CalendarIcon />\n            </PopoverTrigger>\n            <PopoverContent\n              className=\"w-auto overflow-hidden p-0\"\n              align=\"end\"\n              alignOffset={-8}\n              sideOffset={10}\n            >\n              <Calendar\n                mode=\"single\"\n                selected={date}\n                month={month}\n                onMonthChange={setMonth}\n                onSelect={(date) => {\n                  setDate(date);\n                  setValue(formatDate(date));\n                  setOpen(false);\n                }}\n              />\n            </PopoverContent>\n          </Popover>\n        </InputGroupAddon>\n      </InputGroup>\n    </Field>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

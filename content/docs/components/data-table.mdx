@@ -1,0 +1,35 @@
+---
+title: Data Table
+description: A table with sorting, filtering, pagination, column visibility and row selection, built from Table and TanStack Table.
+links:
+  doc: https://tanstack.com/table
+  api: https://tanstack.com/table/latest/docs/api/core/table
+---
+
+<ComponentPreview name="data-table-demo" />
+
+## Installation
+
+There is no `DataTable` component. Every data table needs different columns, filters and actions, so start from the example and edit it:
+
+<Installation name="data-table-demo" />
+
+## Composition
+
+```text
+useTable({ features, data, columns })
+└── Table
+    ├── TableHeader
+    │   └── TableRow → TableHead → <table.FlexRender header />
+    └── TableBody
+        └── TableRow → TableCell → <table.FlexRender cell />
+```
+
+## Usage
+
+1. **Features.** Register only what the table uses with `tableFeatures({ … })`. Everything else is tree-shaken. The example registers sorting, filtering, pagination, column visibility and row selection.
+2. **Columns.** Define them with `createColumnHelper<typeof features, Row>()`. Use `columnHelper.accessor` for data columns and `columnHelper.display` for checkboxes and row actions.
+3. **State.** Keep `sorting`, `columnFilters`, `columnVisibility` and `rowSelection` in React state and pass them to `useTable`.
+4. **Render.** Map header groups and rows onto `Table` parts. Set `data-state="selected"` on selected rows to get Earth's selected background.
+
+See the [TanStack Table docs](https://tanstack.com/table) for server-side data, column pinning and other features.

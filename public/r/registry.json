@@ -3039,6 +3039,171 @@
       ]
     },
     {
+      "name": "data-table-demo",
+      "type": "registry:example",
+      "title": "Data Table Demo",
+      "dependencies": [
+        "@tanstack/react-table",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/checkbox",
+        "@earth/dropdown-menu",
+        "@earth/input",
+        "@earth/table"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/data-table-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-basic",
+      "type": "registry:example",
+      "title": "Date Picker Basic",
+      "dependencies": [
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-basic.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-demo",
+      "type": "registry:example",
+      "title": "Date Picker Demo",
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/calendar",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-dob",
+      "type": "registry:example",
+      "title": "Date Picker Dob",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-dob.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-input",
+      "type": "registry:example",
+      "title": "Date Picker Input",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/input-group",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-natural-language",
+      "type": "registry:example",
+      "title": "Date Picker Natural Language",
+      "dependencies": [
+        "chrono-node",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/input-group",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-natural-language.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-range",
+      "type": "registry:example",
+      "title": "Date Picker Range",
+      "dependencies": [
+        "date-fns",
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-range.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-time",
+      "type": "registry:example",
+      "title": "Date Picker Time",
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/calendar",
+        "@earth/field",
+        "@earth/input",
+        "@earth/popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-time.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dialog-close-button",
       "type": "registry:example",
       "title": "Dialog Close Button",
