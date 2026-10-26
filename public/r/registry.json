@@ -351,6 +351,7 @@
           "radius-lg": "8px",
           "radius-xl": "12px",
           "radius-2xl": "16px",
+          "radius-button": "8px",
           "ease-eds-regular": "cubic-bezier(0.5, 0, 0.5, 0.99)",
           "ease-eds-entrance": "cubic-bezier(0.2, 0, 0.44, 0.99)"
         },

@@ -46,6 +46,7 @@ const twMerge = extendTailwindMerge({
       shadow: ${list(keys.shadow)},
       "font-weight": ${list(keys.fontWeight)},
       ease: ${list(keys.ease)},
+      radius: ${list(keys.radius)},
     },
   },
 });

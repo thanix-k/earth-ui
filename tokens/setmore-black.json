@@ -1881,7 +1881,7 @@
 	},
 	"config": {
 		"buttonRadius": {
-			"$value": "full"
+			"$value": "8px"
 		}
 	}
 }
