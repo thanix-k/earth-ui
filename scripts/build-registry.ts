@@ -75,7 +75,11 @@ function dependenciesOf(file: string) {
   const npm = new Set<string>();
   const registry = new Set<string>();
   for (const { fileName: spec } of ts.preProcessFile(source).importedFiles) {
-    if (spec.startsWith("@/registry/default/")) {
+    // A block's own files, shipped in the same item.
+    if (spec.startsWith("@/registry/default/blocks/") || spec.startsWith("./")) {
+      if (!file.startsWith("registry/default/blocks/"))
+        throw new Error(`${file}: imports "${spec}"`);
+    } else if (spec.startsWith("@/registry/default/")) {
       registry.add(`${NS}/${path.basename(spec)}`);
     } else if (spec.startsWith(".") || spec.startsWith("@/")) {
       throw new Error(`${file}: import "${spec}" must go through @/registry/default/…`);
@@ -124,6 +128,30 @@ function discover(): Item[] {
     }
   }
   return items;
+}
+
+// ── Blocks: mirrored from shadcn by scripts/sync-blocks.ts ───────────────────
+
+function blocks(): Item[] {
+  const index = rel("registry/default/blocks/index.json");
+  if (!existsSync(index)) return [];
+  const manifest: Item[] = JSON.parse(readFileSync(index, "utf8"));
+  return manifest.map((block) => {
+    const npm = new Set<string>();
+    const registry = new Set<string>();
+    for (const { path: file } of block.files ?? []) {
+      if (!/\.tsx?$/.test(file)) continue;
+      const deps = dependenciesOf(file);
+      for (const d of deps.dependencies) npm.add(d);
+      for (const d of deps.registryDependencies) registry.add(d);
+    }
+    return {
+      ...block,
+      type: "registry:block",
+      dependencies: [...npm].sort(),
+      registryDependencies: [...registry].sort(),
+    };
+  });
 }
 
 // ── Base + font items ────────────────────────────────────────────────────────
@@ -219,7 +247,7 @@ writeUtils();
 bin("biome", "format", "--write", "registry/default/lib/utils.ts");
 writeDocsCss();
 
-const items = [...baseItems(), ...discover()];
+const items = [...baseItems(), ...discover(), ...blocks()];
 writeFileSync(
   rel("registry.json"),
   `${JSON.stringify(

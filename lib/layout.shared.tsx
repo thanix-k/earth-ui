@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 
 export const links = [
   { text: "Components", url: "/docs/components/button" },
+  { text: "Blocks", url: "/blocks" },
   { text: "Demo", url: "/demo" },
 ];
 

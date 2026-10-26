@@ -1,0 +1,60 @@
+name: Sync blocks
+
+# Weekly: re-mirror shadcn's Base UI blocks (scripts/sync-blocks.ts) and open
+# a PR when upstream changed. Failing checks on that PR mean an Earth
+# component has drifted from shadcn's API. ADR-0005.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm blocks:sync | tee "$RUNNER_TEMP/sync.log"
+      - run: pnpm registry:build
+      - id: diff
+        run: echo "changed=$([ -n "$(git status --porcelain)" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+      - if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C bot/sync-blocks
+          git add -A
+          git commit -m "chore: sync blocks from shadcn"
+      # PRs opened with GITHUB_TOKEN don't trigger CI, so the checks run here.
+      - if: steps.diff.outputs.changed == 'true'
+        id: verify
+        continue-on-error: true
+        run: pnpm check && pnpm next build
+      - if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERIFY: ${{ steps.verify.outcome }}
+        run: |
+          git push --force origin bot/sync-blocks
+          {
+            echo "Weekly mirror of shadcn's Base UI blocks."
+            echo
+            echo "Checks: **$VERIFY**. A failure usually means an Earth component has drifted from shadcn's API; see the [run log]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+            echo
+            echo '```'
+            tail -n 20 "$RUNNER_TEMP/sync.log"
+            echo '```'
+          } > "$RUNNER_TEMP/body.md"
+          gh pr create --head bot/sync-blocks --title "chore: sync blocks from shadcn" --body-file "$RUNNER_TEMP/body.md" \
+            || gh pr edit bot/sync-blocks --body-file "$RUNNER_TEMP/body.md"
+      - if: steps.verify.outcome == 'failure'
+        run: exit 1

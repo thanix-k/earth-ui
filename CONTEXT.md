@@ -54,8 +54,16 @@ No foundations pages, migration guide, particles or chat UI.
 **Demo**:
 The `/demo` showcase page: components composed into product moments from
 Full Creative's consumer products (full.io/tools), one card per moment.
-App-local code, not registry items; not customisable.
+App-local code, not registry items; not customisable. Earth's version of
+shadcn's `/create`.
 _Avoid_: calling these blocks or templates.
+
+**Block**:
+A page-level registry item (`@earth/login-03`, `@earth/sidebar-07`) mirrored
+from shadcn's Base UI blocks by `scripts/sync-blocks.ts` and kept current by a
+weekly CI job (ADR-0005). Generated, never hand-edited. The one thing in this
+repo that tracks shadcn upstream; components are seeded once.
+_Avoid_: editing block files; calling `/demo` cards blocks.
 
 **Figma library**:
 The `EDS playground` Figma file, rebuilt from this repo (ADR-0004). Same
