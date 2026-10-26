@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export const links = [
   { text: "Components", url: "/docs/components/button" },
-  { text: "Epic", url: "/epic" },
+  { text: "Demo", url: "/demo" },
 ];
 
 export function baseOptions(): BaseLayoutProps {

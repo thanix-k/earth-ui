@@ -51,8 +51,8 @@ Get Started (incl. AI usage: shadcn MCP, v0, Lovable). Components: one page
 each (preview, code, install tabs, examples).
 No foundations pages, migration guide, particles or chat UI.
 
-**Epic**:
-The `/epic` showcase page: components composed into product moments from
+**Demo**:
+The `/demo` showcase page: components composed into product moments from
 Full Creative's consumer products (full.io/tools), one card per moment.
 App-local code, not registry items; not customisable.
 _Avoid_: calling these blocks or templates.

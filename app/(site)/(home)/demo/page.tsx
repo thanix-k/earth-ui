@@ -17,16 +17,16 @@ import { TeamChatCard } from "./cards/team-chat";
 import { TimesheetCard } from "./cards/timesheet";
 
 export const metadata: Metadata = {
-  title: "Epic",
+  title: "Demo",
   description: "Earth UI components composed into real moments from Full Creative products.",
 };
 
 // Product moments from full.io/tools, one per card. Showcase only, not in the registry.
-export default function EpicPage() {
+export default function DemoPage() {
   return (
     <div className="container-wrapper flex flex-col gap-8 py-12">
       <header className="flex max-w-2xl flex-col gap-2">
-        <h1 className="text-heading-32 text-eds-primary">Epic</h1>
+        <h1 className="text-heading-32 text-eds-primary">Demo</h1>
         <p className="text-body-16 text-eds-secondary">
           Earth UI in the products it ships with: bookings, calls, chat, leads, learning and time
           tracking.
