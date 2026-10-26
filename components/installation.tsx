@@ -3,7 +3,7 @@ import { getRegistryItem, toConsumerPath, toConsumerSource } from "@/lib/registr
 import { site } from "@/lib/site";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 
-const RUNNERS = {
+export const RUNNERS = {
   pnpm: "pnpm dlx",
   npm: "npx",
   yarn: "yarn dlx",

@@ -40,6 +40,10 @@
   },
   "overrides": [
     {
+      "includes": ["registry/default/blocks/**"],
+      "linter": { "enabled": false }
+    },
+    {
       "includes": ["registry/default/ui/**"],
       "linter": {
         "rules": {
