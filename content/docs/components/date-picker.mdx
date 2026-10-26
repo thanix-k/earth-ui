@@ -1,0 +1,58 @@
+---
+title: Date Picker
+description: A date field built from Popover and Calendar, with range, input and time variants.
+links:
+  doc: https://daypicker.dev
+  api: https://daypicker.dev/api
+---
+
+<ComponentPreview name="date-picker-demo" />
+
+## Installation
+
+There is no `DatePicker` component. A date picker is a `Popover` with a `Calendar` inside, so add the example you want and edit it:
+
+<Installation name="date-picker-demo" />
+
+## Composition
+
+```text
+Popover
+├── PopoverTrigger
+└── PopoverContent
+    └── Calendar
+```
+
+Calendar reads the current date to mark today. In a Next.js app with `cacheComponents` enabled, render the picker inside `<Suspense>`. See [Calendar](/docs/components/calendar).
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="date-picker-basic" />
+
+### Range
+
+<ComponentPreview name="date-picker-range" />
+
+### Date of birth
+
+Month and year dropdowns, and the popover closes on select.
+
+<ComponentPreview name="date-picker-dob" />
+
+### Input
+
+A typed date with a calendar button. Press the down arrow in the input to open the calendar.
+
+<ComponentPreview name="date-picker-input" />
+
+### Time
+
+<ComponentPreview name="date-picker-time" />
+
+### Natural language
+
+Uses [`chrono-node`](https://github.com/wanasit/chrono) to parse dates like "next Friday".
+
+<ComponentPreview name="date-picker-natural-language" />
