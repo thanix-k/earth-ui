@@ -1,0 +1,73 @@
+---
+title: Build a Product
+description: Go from an empty project to a working, on-brand product screen in minutes.
+---
+
+Earth UI takes care of the parts that slow product teams down: accessibility, states, dark mode and visual consistency. You spend your time on what makes your product different.
+
+<ComponentPreview name="build-a-product-demo" />
+
+This booking dashboard uses seven Earth components and no custom CSS. Spacing, colour, type and focus states all come from Earth tokens, and it works in dark mode without changes.
+
+## Three steps to a real screen
+
+### 1. Set up once
+
+One command installs the Earth tokens, the font and the `@earth` registry.
+
+<ShadcnCommand args="init {base}" />
+
+### 2. Add what you need
+
+Pick only the components your screen uses. Each one is copied into your project, so you own and can edit the source.
+
+<ShadcnCommand args="add @earth/card @earth/avatar @earth/badge @earth/button @earth/switch @earth/separator @earth/label" />
+
+### 3. Compose
+
+Put the parts together like building blocks. You don't need to think about the design system: the defaults already follow it.
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+
+export function Bookings() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Today’s bookings</CardTitle>
+      </CardHeader>
+      <CardContent>
+        Maya Reed · 9:30 AM <Badge variant="positive">Confirmed</Badge>
+      </CardContent>
+      <CardFooter>
+        <Button>New booking</Button>
+      </CardFooter>
+    </Card>
+  )
+}
+```
+
+## Why it's fast
+
+| Instead of… | Earth UI gives you |
+| --- | --- |
+| Building keyboard and screen-reader support | Accessible behaviour from [Base UI](https://base-ui.com) |
+| Designing hover, pressed and disabled states | Every interactive state already styled |
+| Maintaining a light and a dark palette | Paired tokens that switch with one class |
+| Learning a new component API | The shadcn API your team and AI tools already know |
+| Fighting a locked-down library | Source code in your repo that you can change |
+
+## Build with AI
+
+Earth UI is a standard shadcn registry, so your AI tools can build screens like the one above for you. Connect the shadcn MCP server and describe what you want:
+
+<ShadcnCommand args="mcp init --client claude" />
+
+> "Build a bookings dashboard with a list of today's appointments, a status badge for each, and a toggle for online booking."
+
+## Next steps
+
+- Browse the [components](/docs/components/button) to see what's available.
+- Follow [Get Started](/docs/get-started) for setup details and dark mode.
