@@ -117,6 +117,10 @@ function themeVars() {
     "--radius-xl": radius["12px"],
     "--radius-2xl": radius["16px"],
   });
+  // Brand's button corner, a key of the global radius scale.
+  const buttonRadius = (brand.config as Dtcg).buttonRadius as { $value: string };
+  theme["--radius-button"] =
+    buttonRadius.$value === "full" ? "calc(infinity * 1px)" : String(radius[buttonRadius.$value]);
 
   for (const [name, curve] of Object.entries(flatten((global.animation as Dtcg).easing as Dtcg))) {
     theme[`--ease-eds-${name}`] = `cubic-bezier(${(curve as number[]).join(", ")})`;
@@ -185,6 +189,7 @@ export function mergeKeys() {
     shadow: named(color("light").shadow as Dtcg),
     fontWeight: named(typography.fontWeight as Dtcg),
     ease: named((global.animation as Dtcg).easing as Dtcg),
+    radius: ["button"],
   };
 }
 

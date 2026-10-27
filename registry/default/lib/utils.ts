@@ -25,6 +25,7 @@ const twMerge = extendTailwindMerge({
       shadow: ["eds-10", "eds-20", "eds-30", "eds-40", "eds-50"],
       "font-weight": ["eds-regular", "eds-strong", "eds-stronger"],
       ease: ["eds-regular", "eds-entrance"],
+      radius: ["button"],
     },
   },
 });
