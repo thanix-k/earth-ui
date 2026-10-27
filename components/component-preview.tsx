@@ -26,7 +26,7 @@ export async function ComponentPreview({
   );
   return (
     <Tabs defaultValue="preview" className="not-prose my-6 gap-3">
-      <TabsList>
+      <TabsList variant="line">
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
