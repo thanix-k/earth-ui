@@ -16,7 +16,7 @@ import {
   Settings2Icon,
   UsersIcon,
 } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { NavDocuments } from "@/registry/default/blocks/dashboard-01/components/nav-documents";
 import { NavMain } from "@/registry/default/blocks/dashboard-01/components/nav-main";
 import { NavSecondary } from "@/registry/default/blocks/dashboard-01/components/nav-secondary";
@@ -155,7 +155,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               className="data-[slot=sidebar-menu-button]:p-1.5!"
-              render={<a href="#" />}
+              render={<a href="#top" />}
             >
               <CommandIcon className="size-5!" />
               <span className="text-base font-semibold">Setmore</span>

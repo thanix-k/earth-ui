@@ -54,7 +54,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
 
 // EDS fields stack the label, control and message 4px apart. Horizontal
 // fields (a checkbox or switch next to its label) use an 8px gap.
-const fieldVariants = cva("group/field flex w-full", {
+const fieldVariants = cva("group/field flex w-full min-w-auto", {
   variants: {
     orientation: {
       vertical: "flex-col gap-1 *:w-full [&>.sr-only]:w-auto",
@@ -73,11 +73,9 @@ function Field({
   className,
   orientation = "vertical",
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof fieldVariants>) {
+}: React.ComponentProps<"fieldset"> & VariantProps<typeof fieldVariants>) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: a field is a group of label, control and message, not a fieldset
-    <div
-      role="group"
+    <fieldset
       data-slot="field"
       data-orientation={orientation}
       className={cn(fieldVariants({ orientation }), className)}

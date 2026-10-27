@@ -54,10 +54,8 @@ function BreadcrumbLink({ className, render, ...props }: useRender.ComponentProp
 
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements lint/a11y/useFocusableInteractive: shadcn marks the current page as a disabled link
     <span
       data-slot="breadcrumb-page"
-      role="link"
       aria-disabled="true"
       aria-current="page"
       className={cn("font-medium text-eds-primary", className)}

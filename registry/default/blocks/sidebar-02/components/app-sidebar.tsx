@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronRightIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { SearchForm } from "@/registry/default/blocks/sidebar-02/components/search-form";
 import { VersionSwitcher } from "@/registry/default/blocks/sidebar-02/components/version-switcher";
 import {
@@ -167,7 +167,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
+        <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0] ?? ""} />
         <SearchForm />
       </SidebarHeader>
       <SidebarContent className="gap-0">

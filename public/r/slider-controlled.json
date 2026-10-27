@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/slider-controlled.tsx",
-      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderControlled() {\n  const [value, setValue] = React.useState([15]);\n\n  return (\n    <div className=\"grid w-full max-w-xs gap-3\">\n      <div className=\"flex items-center justify-between gap-2\">\n        <Label htmlFor=\"booking-notice\">Minimum booking notice</Label>\n        <span className=\"text-body-14 text-eds-secondary lg:text-body-12\">{value[0]} hours</span>\n      </div>\n      <Slider\n        id=\"booking-notice\"\n        value={value}\n        onValueChange={(next) => setValue(next as number[])}\n        max={48}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderControlled() {\n  const [value, setValue] = React.useState([15]);\n\n  return (\n    <div className=\"grid w-full max-w-xs gap-3\">\n      <div className=\"flex items-center justify-between gap-2\">\n        <Label htmlFor=\"booking-notice\">Minimum booking notice</Label>\n        <span className=\"text-body-14 text-eds-secondary lg:text-body-12\">{value[0]} hours</span>\n      </div>\n      <Slider\n        id=\"booking-notice\"\n        value={value}\n        onValueChange={(next) => setValue(Array.isArray(next) ? [...next] : [next])}\n        max={48}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

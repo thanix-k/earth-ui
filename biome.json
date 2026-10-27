@@ -35,23 +35,16 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "preset": "recommended"
-    }
-  },
-  "overrides": [
-    {
-      "includes": ["registry/default/blocks/**"],
-      "linter": { "enabled": false }
-    },
-    {
-      "includes": ["registry/default/ui/**"],
-      "linter": {
-        "rules": {
-          "a11y": {
-            "noLabelWithoutControl": "off"
-          }
-        }
+      "preset": "recommended",
+      "nursery": {
+        "noUnsafeTypeAssertion": "error",
+        "useTailwindSortedClasses": "on"
       }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended",
+      "tailwind": "recommended"
     }
-  ]
+  }
 }

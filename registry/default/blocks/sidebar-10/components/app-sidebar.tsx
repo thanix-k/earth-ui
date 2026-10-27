@@ -13,7 +13,7 @@ import {
   SparklesIcon,
   Trash2Icon,
 } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { NavFavorites } from "@/registry/default/blocks/sidebar-10/components/nav-favorites";
 import { NavMain } from "@/registry/default/blocks/sidebar-10/components/nav-main";
 import { NavSecondary } from "@/registry/default/blocks/sidebar-10/components/nav-secondary";

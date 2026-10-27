@@ -25,6 +25,9 @@ const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 const SIDEBAR_WIDTH = "16rem";
 const SIDEBAR_WIDTH_MOBILE = "18rem";
 const SIDEBAR_WIDTH_ICON = "3rem";
+const mobileStyle: React.CSSProperties & Record<`--${string}`, string> = {
+  "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+};
 const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 
 type SidebarContextProps = {
@@ -56,7 +59,8 @@ function SidebarProvider({
   style,
   children,
   ...props
-}: React.ComponentProps<"div"> & {
+}: Omit<React.ComponentProps<"div">, "style"> & {
+  style?: React.CSSProperties | (React.CSSProperties & Record<`--${string}`, string>);
   defaultOpen?: boolean;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
@@ -78,7 +82,6 @@ function SidebarProvider({
       }
 
       // This sets the cookie to keep the sidebar state.
-      // biome-ignore lint/suspicious/noDocumentCookie: a plain cookie lets server layouts read the state
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
     },
     [setOpenProp, open],
@@ -118,18 +121,17 @@ function SidebarProvider({
     }),
     [state, open, setOpen, isMobile, openMobile, toggleSidebar],
   );
+  const wrapperStyle: React.CSSProperties & Record<`--${string}`, string> = {
+    "--sidebar-width": SIDEBAR_WIDTH,
+    "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
+    ...style,
+  };
 
   return (
     <SidebarContext.Provider value={contextValue}>
       <div
         data-slot="sidebar-wrapper"
-        style={
-          {
-            "--sidebar-width": SIDEBAR_WIDTH,
-            "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
-            ...style,
-          } as React.CSSProperties
-        }
+        style={wrapperStyle}
         className={cn(
           "group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-eds-canvas-secondary",
           className,
@@ -181,11 +183,7 @@ function Sidebar({
           data-slot="sidebar"
           data-mobile="true"
           className="w-(--sidebar-width) bg-eds-canvas-secondary p-0 text-eds-primary [&>button]:hidden"
-          style={
-            {
-              "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
-            } as React.CSSProperties
-          }
+          style={mobileStyle}
           side={side}
         >
           <SheetHeader className="sr-only">
@@ -485,7 +483,7 @@ function SidebarMenuButton({
   ...props
 }: useRender.ComponentProps<"button"> &
   React.ComponentProps<"button"> & {
-    isActive?: boolean;
+    isActive?: boolean | undefined;
     tooltip?: string | React.ComponentProps<typeof TooltipContent>;
   } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const { isMobile, state } = useSidebar();
@@ -584,6 +582,9 @@ function SidebarMenuSkeleton({
   // server and client (Math.random would cause a hydration mismatch).
   const id = React.useId();
   const width = `${50 + ([...id].reduce((n, c) => n + c.charCodeAt(0), 0) % 40)}%`;
+  const widthStyle: React.CSSProperties & Record<`--${string}`, string> = {
+    "--skeleton-width": width,
+  };
 
   return (
     <div
@@ -599,11 +600,7 @@ function SidebarMenuSkeleton({
       <Skeleton
         className="h-4 max-w-(--skeleton-width) flex-1"
         data-sidebar="menu-skeleton-text"
-        style={
-          {
-            "--skeleton-width": width,
-          } as React.CSSProperties
-        }
+        style={widthStyle}
       />
     </div>
   );
@@ -643,7 +640,7 @@ function SidebarMenuSubButton({
 }: useRender.ComponentProps<"a"> &
   React.ComponentProps<"a"> & {
     size?: "sm" | "md";
-    isActive?: boolean;
+    isActive?: boolean | undefined;
   }) {
   return useRender({
     defaultTagName: "a",

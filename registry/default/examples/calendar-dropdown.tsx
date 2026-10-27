@@ -11,7 +11,7 @@ export default function CalendarDropdown() {
       mode="single"
       selected={date}
       onSelect={setDate}
-      defaultMonth={date}
+      {...(date ? { defaultMonth: date } : {})}
       captionLayout="dropdown"
       startMonth={new Date(1930, 0)}
       endMonth={new Date(2026, 11)}

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/examples/calendar-demo.tsx",
-      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 10, 12));\n\n  return <Calendar mode=\"single\" selected={date} onSelect={setDate} defaultMonth={date} />;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 10, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      {...(date ? { defaultMonth: date } : {})}\n    />\n  );\n}\n",
       "type": "registry:example"
     }
   ],

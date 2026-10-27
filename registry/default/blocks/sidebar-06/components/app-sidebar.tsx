@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarDaysIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { NavMain } from "@/registry/default/blocks/sidebar-06/components/nav-main";
 import { SidebarOptInForm } from "@/registry/default/blocks/sidebar-06/components/sidebar-opt-in-form";
 import {
@@ -151,7 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<a href="#" />}>
+            <SidebarMenuButton size="lg" render={<a href="#top" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                 <CalendarDaysIcon className="size-4" />
               </div>

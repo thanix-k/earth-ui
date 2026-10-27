@@ -32,7 +32,8 @@ import {
   DrawerTrigger,
 } from "@/registry/default/ui/drawer";
 
-const spaces: { name: string; seats: string; price: number; icon: LucideIcon; tint: string }[] = [
+type Space = { name: string; seats: string; price: number; icon: LucideIcon; tint: string };
+const spaces: [Space, ...Space[]] = [
   {
     name: "Hot desk",
     seats: "1 seat",
@@ -59,9 +60,8 @@ const lengths = ["Half day", "Full day", "Week"] as const;
 const multiplier = { "Half day": 1, "Full day": 1.8, Week: 7 };
 
 export function BookDeskCard() {
-  const [space, setSpace] = React.useState(0);
+  const [s, setSpace] = React.useState(spaces[0]);
   const [length, setLength] = React.useState<(typeof lengths)[number]>("Full day");
-  const s = spaces[space];
   const total = Math.round(s.price * multiplier[length]);
 
   return (
@@ -73,15 +73,15 @@ export function BookDeskCard() {
       <CardContent className="flex flex-col gap-4">
         <Carousel className="mx-10">
           <CarouselContent>
-            {spaces.map((sp, i) => (
+            {spaces.map((sp) => (
               <CarouselItem key={sp.name}>
-                <button type="button" className="w-full text-left" onClick={() => setSpace(i)}>
+                <button type="button" className="w-full text-left" onClick={() => setSpace(sp)}>
                   <AspectRatio
                     ratio={16 / 9}
                     className={cn(
                       "flex items-center justify-center rounded-lg",
                       sp.tint,
-                      i === space && "ring-2 ring-eds-focus",
+                      sp === s && "ring-2 ring-eds-focus",
                     )}
                   >
                     <sp.icon className="size-10 text-eds-secondary" />

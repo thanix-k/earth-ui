@@ -1,47 +1,55 @@
 // Turns the DTCG token files in tokens/ into the CSS that the @earth/base
 // registry item installs. See docs/adr/0001 for the naming scheme.
 import { readFileSync } from "node:fs";
+import { z } from "zod";
 
 type Mode = "light" | "dark";
-type Dtcg = { [key: string]: Dtcg | unknown };
-type Shadow = {
-  offsetX: string;
-  offsetY: string;
-  blur: string;
-  spread: string;
-  color: string;
-  inset: boolean;
-};
-type TextStyle = {
-  fontSize: string;
-  fontWeight: number;
-  lineHeight: string;
-  letterSpacing: string;
-};
+const dtcg = z.record(z.string(), z.unknown());
+type Dtcg = z.infer<typeof dtcg>;
+const shadow = z.array(
+  z.object({
+    offsetX: z.string(),
+    offsetY: z.string(),
+    blur: z.string(),
+    spread: z.string(),
+    color: z.string(),
+    inset: z.boolean(),
+  }),
+);
+const textStyle = z.object({
+  fontSize: z.string(),
+  fontWeight: z.number(),
+  lineHeight: z.string(),
+  letterSpacing: z.string(),
+});
+const curve = z.array(z.number());
+
+/** A token group, read from a parsed DTCG file. */
+const group = (node: unknown): Dtcg => dtcg.parse(node);
 
 const read = (file: string) =>
-  JSON.parse(readFileSync(new URL(`../tokens/${file}`, import.meta.url), "utf8")) as Dtcg;
+  group(JSON.parse(readFileSync(new URL(`../tokens/${file}`, import.meta.url), "utf8")));
 
 const brand = read("setmore-black.json");
 const global = read("global.json");
-const typography = brand.typography as Dtcg;
+const typography = group(brand.typography);
 
 /** Flattens a DTCG group into `{ "a-b-c": $value }`, skipping `$` metadata. */
-function flatten(group: Dtcg, prefix = ""): Record<string, unknown> {
+function flatten(tokens: unknown, prefix = ""): Record<string, unknown> {
   const out: Record<string, unknown> = {};
-  for (const [key, node] of Object.entries(group)) {
+  for (const [key, node] of Object.entries(group(tokens))) {
     if (key.startsWith("$")) continue;
     const name = prefix ? `${prefix}-${key}` : key;
     if (node && typeof node === "object" && "$value" in node) {
-      out[name] = (node as { $value: unknown }).$value;
+      out[name] = node.$value;
     } else {
-      Object.assign(out, flatten(node as Dtcg, name));
+      Object.assign(out, flatten(node, name));
     }
   }
   return out;
 }
 
-const shadowCss = (layers: Shadow[]) =>
+const shadowCss = (layers: z.infer<typeof shadow>) =>
   layers
     .map((s) =>
       [s.inset && "inset", s.offsetX, s.offsetY, s.blur, s.spread, s.color]
@@ -50,7 +58,7 @@ const shadowCss = (layers: Shadow[]) =>
     )
     .join(", ");
 
-const color = (mode: Mode) => (brand.color as Dtcg)[mode] as Dtcg;
+const color = (mode: Mode) => group(group(brand.color)[mode]);
 
 // Logos and brand symbols are not part of the registry.
 const EXCLUDED_CATEGORIES = new Set(["symbol"]);
@@ -58,11 +66,11 @@ const EXCLUDED_CATEGORIES = new Set(["symbol"]);
 /** Every EDS colour + shadow token for one mode, as `--eds-<category>-<key>`. */
 function edsVars(mode: Mode) {
   const vars: Record<string, string> = {};
-  for (const [category, group] of Object.entries(color(mode))) {
+  for (const [category, tokens] of Object.entries(color(mode))) {
     if (category.startsWith("$") || EXCLUDED_CATEGORIES.has(category)) continue;
-    for (const [key, value] of Object.entries(flatten(group as Dtcg))) {
+    for (const [key, value] of Object.entries(flatten(tokens))) {
       vars[`--eds-${category}-${key}`] =
-        category === "shadow" ? shadowCss(value as Shadow[]) : String(value);
+        category === "shadow" ? shadowCss(shadow.parse(value)) : String(value);
     }
   }
   return vars;
@@ -86,7 +94,7 @@ const anyProperty = (category: string) => (k: string) => [`--color-eds-${categor
 function themeVars() {
   const theme: Record<string, string> = {};
   for (const name of Object.keys(edsVars("light"))) {
-    const [, category, ...rest] = name.slice(2).split("-");
+    const [, category = "", ...rest] = name.slice(2).split("-");
     const key = rest.join("-");
     for (const themeKey of (NAMESPACES[category] ?? anyProperty(category))(key)) {
       theme[themeKey] = `var(${name})`;
@@ -94,8 +102,8 @@ function themeVars() {
   }
 
   for (const kind of ["heading", "body"] as const) {
-    for (const [size, style] of Object.entries(flatten(typography[kind] as Dtcg))) {
-      const s = style as TextStyle;
+    for (const [size, style] of Object.entries(flatten(typography[kind]))) {
+      const s = textStyle.parse(style);
       const base = `--text-${kind}-${size}`;
       theme[base] = s.fontSize;
       theme[`${base}--line-height`] = s.lineHeight;
@@ -103,13 +111,13 @@ function themeVars() {
       theme[`${base}--font-weight`] = String(s.fontWeight);
     }
   }
-  for (const [name, weight] of Object.entries(flatten(typography.fontWeight as Dtcg))) {
+  for (const [name, weight] of Object.entries(flatten(typography.fontWeight))) {
     theme[`--font-weight-eds-${name}`] = String(weight);
   }
 
   // EDS radius scale (4/6/8/12/16) on shadcn's names. Spacing, sizing,
   // breakpoints and durations already match Tailwind's defaults.
-  const radius = flatten(global.radius as Dtcg);
+  const radius = flatten(global.radius);
   Object.assign(theme, {
     "--radius-sm": radius["4px"],
     "--radius-md": radius["6px"],
@@ -118,8 +126,8 @@ function themeVars() {
     "--radius-2xl": radius["16px"],
   });
 
-  for (const [name, curve] of Object.entries(flatten((global.animation as Dtcg).easing as Dtcg))) {
-    theme[`--ease-eds-${name}`] = `cubic-bezier(${(curve as number[]).join(", ")})`;
+  for (const [name, points] of Object.entries(flatten(group(global.animation).easing))) {
+    theme[`--ease-eds-${name}`] = `cubic-bezier(${curve.parse(points).join(", ")})`;
   }
   return theme;
 }
@@ -177,14 +185,13 @@ function shadcnVars(mode: Mode) {
 
 /** Theme keys tailwind-merge must know about (see registry/default/lib/utils.ts). */
 export function mergeKeys() {
-  const sizes = (kind: string) =>
-    Object.keys(flatten(typography[kind] as Dtcg)).map((s) => `${kind}-${s}`);
-  const named = (group: Dtcg) => Object.keys(flatten(group)).map((k) => `eds-${k}`);
+  const sizes = (kind: string) => Object.keys(flatten(typography[kind])).map((s) => `${kind}-${s}`);
+  const named = (tokens: unknown) => Object.keys(flatten(tokens)).map((k) => `eds-${k}`);
   return {
     text: [...sizes("body"), ...sizes("heading")],
-    shadow: named(color("light").shadow as Dtcg),
-    fontWeight: named(typography.fontWeight as Dtcg),
-    ease: named((global.animation as Dtcg).easing as Dtcg),
+    shadow: named(color("light").shadow),
+    fontWeight: named(typography.fontWeight),
+    ease: named(group(global.animation).easing),
   };
 }
 
@@ -199,7 +206,7 @@ const unprefixed = (vars: Record<string, string>) =>
  */
 export function baseStyle() {
   return {
-    fontFamily: `'Inter Variable', ${flatten(typography.fontFamily as Dtcg).fallback}`,
+    fontFamily: `'Inter Variable', ${flatten(typography.fontFamily).fallback}`,
     cssVars: {
       theme: unprefixed(themeVars()),
       light: shadcnVars("light"),

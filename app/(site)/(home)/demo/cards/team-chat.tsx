@@ -34,13 +34,14 @@ const people = {
   JW: { name: "Jess Walker", role: "Design · Portland", status: "bg-eds-status-away" },
 };
 type Who = keyof typeof people;
+const isWho = (v: unknown): v is Who => typeof v === "string" && Object.hasOwn(people, v);
 
-const seed: { from: Who; text: string }[] = [
-  { from: "PN", text: "Morning! Standup moved to 10:15 today." },
-  { from: "CM", text: "Works for me. Pushing the booking-page fix first." },
-  { from: "JW", text: "New empty states are in Figma, link in the thread." },
-  { from: "PN", text: "Lovely. Can we demo them Thursday?" },
-  { from: "CM", text: "Yep, I'll wire them up tomorrow." },
+const seed: { id: number; from: Who; text: string }[] = [
+  { id: 1, from: "PN", text: "Morning! Standup moved to 10:15 today." },
+  { id: 2, from: "CM", text: "Works for me. Pushing the booking-page fix first." },
+  { id: 3, from: "JW", text: "New empty states are in Figma, link in the thread." },
+  { id: 4, from: "PN", text: "Lovely. Can we demo them Thursday?" },
+  { id: 5, from: "CM", text: "Yep, I'll wire them up tomorrow." },
 ];
 const emoji = ["👍", "🎉", "👀", "🙏", "🔥", "✅"];
 
@@ -70,7 +71,7 @@ export function TeamChatCard() {
   const [draft, setDraft] = React.useState("");
   const send = () => {
     if (!draft.trim()) return;
-    setMessages((m) => [...m, { from: "JW", text: draft }]);
+    setMessages((m) => [...m, { id: m.length + 1, from: "JW", text: draft }]);
     setDraft("");
   };
 
@@ -81,11 +82,13 @@ export function TeamChatCard() {
         <CardDescription>Anywhere</CardDescription>
         <CardAction>
           <AvatarGroup>
-            {(Object.keys(people) as Who[]).map((w) => (
-              <Avatar key={w} size="sm">
-                <AvatarFallback>{w}</AvatarFallback>
-              </Avatar>
-            ))}
+            {Object.keys(people)
+              .filter(isWho)
+              .map((w) => (
+                <Avatar key={w} size="sm">
+                  <AvatarFallback>{w}</AvatarFallback>
+                </Avatar>
+              ))}
             <AvatarGroupCount>+6</AvatarGroupCount>
           </AvatarGroup>
         </CardAction>
@@ -93,9 +96,8 @@ export function TeamChatCard() {
       <CardContent className="flex flex-col gap-3">
         <ScrollArea className="h-56 rounded-lg border border-eds-tertiary">
           <div className="flex flex-col gap-3 p-3">
-            {messages.map((m, i) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: append-only list
-              <div key={i} className="flex gap-2">
+            {messages.map((m) => (
+              <div key={m.id} className="flex gap-2">
                 <Avatar size="sm">
                   <AvatarFallback>{m.from}</AvatarFallback>
                 </Avatar>

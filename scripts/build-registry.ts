@@ -84,8 +84,10 @@ function dependenciesOf(file: string) {
     } else if (spec.startsWith(".") || spec.startsWith("@/")) {
       throw new Error(`${file}: import "${spec}" must go through @/registry/default/…`);
     } else {
-      const parts = spec.split("/");
-      const pkg = spec.startsWith("@") ? parts.slice(0, 2).join("/") : parts[0];
+      const pkg = spec
+        .split("/")
+        .slice(0, spec.startsWith("@") ? 2 : 1)
+        .join("/");
       if (!PEERS.has(pkg)) npm.add(pkg);
     }
   }
@@ -97,7 +99,7 @@ function frontmatter(name: string) {
   const page = rel("content/docs/components", `${name}.mdx`);
   if (!existsSync(page)) return {};
   const head = readFileSync(page, "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1] ?? "";
-  const field = (key: string) => head.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1].trim();
+  const field = (key: string) => head.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim();
   return { title: field("title"), description: field("description") };
 }
 

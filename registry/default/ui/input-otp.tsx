@@ -69,11 +69,10 @@ function InputOTPSlot({
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: the separator holds an icon, which <hr> cannot
     <div
+      aria-hidden="true"
       data-slot="input-otp-separator"
       className="flex items-center text-eds-tertiary [&_svg:not([class*='size-'])]:size-4"
-      role="separator"
       {...props}
     >
       <MinusIcon />

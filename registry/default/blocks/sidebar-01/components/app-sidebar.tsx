@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { SearchForm } from "@/registry/default/blocks/sidebar-01/components/search-form";
 import { VersionSwitcher } from "@/registry/default/blocks/sidebar-01/components/version-switcher";
@@ -150,7 +150,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
+        <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0] ?? ""} />
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>

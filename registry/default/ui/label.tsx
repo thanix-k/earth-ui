@@ -1,9 +1,10 @@
 import type * as React from "react";
 import { cn } from "@/registry/default/lib/utils";
 
-function Label({ className, ...props }: React.ComponentProps<"label">) {
+function Label({ className, htmlFor, children, ...props }: React.ComponentProps<"label">) {
   return (
     <label
+      htmlFor={htmlFor}
       data-slot="label"
       className={cn(
         "flex items-center gap-3 text-body-14 text-eds-primary select-none lg:gap-2 lg:text-body-12",
@@ -11,7 +12,9 @@ function Label({ className, ...props }: React.ComponentProps<"label">) {
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+    </label>
   );
 }
 

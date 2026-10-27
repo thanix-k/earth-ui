@@ -14,6 +14,8 @@ import { Toaster as Sonner, type ToasterProps } from "sonner";
 // EDS snackbar: an inverse surface in both colour schemes. Toasts are unstyled
 // and painted with eds- tokens, which follow dark mode themselves, so Sonner's
 // theme stays "light" (its dark theme leaks description and close colours).
+const style: React.CSSProperties & Record<`--${string}`, string> = { "--width": "360px" };
+
 const Toaster = ({ toastOptions, ...props }: ToasterProps) => {
   return (
     <Sonner
@@ -26,7 +28,7 @@ const Toaster = ({ toastOptions, ...props }: ToasterProps) => {
         loading: <Loader2Icon className="size-5 animate-spin text-eds-inverse" />,
         close: <XIcon className="size-4" />,
       }}
-      style={{ "--width": "360px" } as React.CSSProperties}
+      style={style}
       toastOptions={{
         ...toastOptions,
         unstyled: true,

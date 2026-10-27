@@ -31,10 +31,12 @@ function isValidDate(date: Date | undefined) {
   return !Number.isNaN(date.getTime());
 }
 
+const INITIAL_DATE = new Date(2026, 5, 1);
+
 export default function DatePickerInput() {
   const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 5, 1));
-  const [month, setMonth] = React.useState<Date | undefined>(date);
+  const [date, setDate] = React.useState<Date | undefined>(INITIAL_DATE);
+  const [month, setMonth] = React.useState(INITIAL_DATE);
   const [value, setValue] = React.useState(formatDate(date));
 
   return (

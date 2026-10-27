@@ -25,7 +25,7 @@ export default function DatePickerDob() {
           <Calendar
             mode="single"
             selected={date}
-            defaultMonth={date}
+            {...(date ? { defaultMonth: date } : {})}
             captionLayout="dropdown"
             onSelect={(date) => {
               setDate(date);

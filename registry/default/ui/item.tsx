@@ -5,11 +5,9 @@ import type * as React from "react";
 import { cn } from "@/registry/default/lib/utils";
 import { Separator } from "@/registry/default/ui/separator";
 
-function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+function ItemGroup({ className, ...props }: React.ComponentProps<"ul">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: items can render as any element, so the group keeps role="list".
-    <div
-      role="list"
+    <ul
       data-slot="item-group"
       className={cn(
         "group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2",

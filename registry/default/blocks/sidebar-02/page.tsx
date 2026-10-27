@@ -24,7 +24,7 @@ export default function Page() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Manage Bookings</BreadcrumbLink>
+                <BreadcrumbLink href="#top">Manage Bookings</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
@@ -34,8 +34,8 @@ export default function Page() {
           </Breadcrumb>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
-          {Array.from({ length: 24 }).map((_, index) => (
-            <div key={index} className="aspect-video h-12 w-full rounded-lg bg-muted/50" />
+          {Array.from({ length: 24 }, (_, index) => `placeholder-${index}`).map((id) => (
+            <div key={id} className="aspect-video h-12 w-full rounded-lg bg-muted/50" />
           ))}
         </div>
       </SidebarInset>

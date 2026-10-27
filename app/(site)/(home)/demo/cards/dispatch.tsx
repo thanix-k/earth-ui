@@ -32,6 +32,7 @@ const jobs = [
 ];
 const techs = { MR: "Marco Ruiz", KD: "Kim Dao", BO: "Ben Osei" };
 type Tech = keyof typeof techs;
+const isTech = (v: unknown): v is Tech => typeof v === "string" && Object.hasOwn(techs, v);
 
 function DispatchBoard() {
   const [urgentOnly, setUrgentOnly] = React.useState(false);
@@ -84,12 +85,19 @@ function DispatchBoard() {
           <MenubarMenu>
             <MenubarTrigger>Technician</MenubarTrigger>
             <MenubarContent>
-              <MenubarRadioGroup value={tech} onValueChange={(v) => setTech(v as Tech)}>
-                {(Object.keys(techs) as Tech[]).map((t) => (
-                  <MenubarRadioItem key={t} value={t}>
-                    {techs[t]}
-                  </MenubarRadioItem>
-                ))}
+              <MenubarRadioGroup
+                value={tech}
+                onValueChange={(v) => {
+                  if (isTech(v)) setTech(v);
+                }}
+              >
+                {Object.keys(techs)
+                  .filter(isTech)
+                  .map((t) => (
+                    <MenubarRadioItem key={t} value={t}>
+                      {techs[t]}
+                    </MenubarRadioItem>
+                  ))}
               </MenubarRadioGroup>
             </MenubarContent>
           </MenubarMenu>

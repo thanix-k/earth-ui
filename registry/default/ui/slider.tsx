@@ -41,11 +41,10 @@ function Slider({
             className="bg-eds-inverse select-none data-disabled:bg-eds-neutral-tertiary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
           />
         </SliderPrimitive.Track>
-        {Array.from({ length: _values.length }, (_, index) => (
+        {Array.from({ length: _values.length }, (_, index) => `thumb-${index}`).map((thumbId) => (
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
-            // biome-ignore lint/suspicious/noArrayIndexKey: thumbs are positional
-            key={index}
+            key={thumbId}
             className="relative block size-3 shrink-0 cursor-pointer rounded-full bg-eds-inverse transition-[background-color,box-shadow] duration-300 ease-[ease] select-none after:absolute after:-inset-2 hover:bg-eds-inverse-hover hover:shadow-eds-50 active:bg-eds-inverse-pressed active:shadow-eds-50 has-focus-visible:bg-eds-inverse-pressed has-focus-visible:shadow-eds-50 has-focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:bg-eds-neutral-tertiary data-disabled:shadow-none"
           />
         ))}

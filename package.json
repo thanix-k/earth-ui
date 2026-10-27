@@ -12,7 +12,7 @@
     "start": "next start --port 4000",
     "registry:build": "node scripts/build-registry.ts",
     "blocks:sync": "node scripts/sync-blocks.ts",
-    "check": "pnpm registry:build && git diff --exit-code -- registry.json public/r app/earth.css registry/default/lib/utils.ts && biome check . && tsc --noEmit && node scripts/check-cn.ts",
+    "check": "pnpm registry:build && git diff --exit-code -- registry.json public/r app/earth.css registry/default/lib/utils.ts && biome check . && tsc --noEmit && node scripts/check-cn.ts && ! git grep -nE 'biome-ignore|@ts-(ignore|expect-error|nocheck)' -- '*.ts' '*.tsx'",
     "lint": "biome check .",
     "format": "biome check --write .",
     "typecheck": "tsc --noEmit",
