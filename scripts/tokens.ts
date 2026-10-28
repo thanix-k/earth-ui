@@ -129,8 +129,28 @@ function themeVars() {
   for (const [name, points] of Object.entries(flatten(group(global.animation).easing))) {
     theme[`--ease-eds-${name}`] = `cubic-bezier(${curve.parse(points).join(", ")})`;
   }
+  // App motion timings: `duration-eds-press`, `-popover`, `-panel` and the faster exits.
+  for (const [name, ms] of Object.entries(flatten(group(global.animation).motion))) {
+    theme[`--transition-duration-eds-${name}`] = String(ms);
+  }
+
+  // Compact 12/16 step. Set explicitly: badges and counters rely on the 16px line,
+  // whereas `text-body-12` has a 20px line.
+  theme["--text-xs"] = "0.75rem";
+  theme["--text-xs--line-height"] = "1rem";
   return theme;
 }
+
+/**
+ * Dark values for shadcn aliases that must differ from the EDS token they point
+ * at, so the EDS tokens themselves stay as designed. Owner's contrast raises:
+ * muted text 6.66:1 on the dark canvas (#949494 gave 5.74:1; 4.5:1 is needed on
+ * fields in popovers), input border 3.31:1 (#3d3d3d gave 1.60:1; 3:1 is needed).
+ */
+const DARK_ALIAS_OVERRIDES: Record<string, string> = {
+  "muted-foreground": "#a0a0a0",
+  input: "#6c6c6c",
+};
 
 /** shadcn variable → EDS token path (`<category>.<key>`). ADR-0001. */
 const SHADCN_ALIASES: Record<string, string> = {
@@ -176,6 +196,8 @@ function shadcnVars(mode: Mode) {
   const eds = edsVars(mode);
   return Object.fromEntries(
     Object.entries(SHADCN_ALIASES).map(([name, path]) => {
+      const override = mode === "dark" ? DARK_ALIAS_OVERRIDES[name] : undefined;
+      if (override) return [name, override];
       const value = eds[`--eds-${path.replace(".", "-")}`];
       if (!value) throw new Error(`Alias ${name} → ${path}: no such token`);
       return [name, value];
@@ -193,6 +215,23 @@ export function mergeKeys() {
     fontWeight: named(typography.fontWeight),
     ease: named(group(global.animation).easing),
   };
+}
+
+/**
+ * `color-scheme` makes native controls (date inputs, selects, scrollbars) follow
+ * the mode. `--shadow-10` … `--shadow-40` are the raw elevation values, for CSS
+ * that cannot use a `shadow-eds-*` class (FullCalendar, inline styles). Literals,
+ * not `var(--eds-shadow-N)`, so they stay right under a nested `.dark`.
+ */
+function rawVars(mode: Mode) {
+  const eds = edsVars(mode);
+  const vars: Record<string, string> = { "color-scheme": mode };
+  for (const n of [10, 20, 30, 40]) {
+    const value = eds[`--eds-shadow-${n}`];
+    if (!value) throw new Error(`No --eds-shadow-${n} token for ${mode}`);
+    vars[`--shadow-${n}`] = value;
+  }
+  return vars;
 }
 
 const unprefixed = (vars: Record<string, string>) =>
@@ -216,8 +255,8 @@ export function baseStyle() {
       '@import "tw-animate-css"': {},
       // shadcn's Base UI styles rely on its variants (data-horizontal, …).
       '@import "shadcn/tailwind.css"': {},
-      ":root": edsVars("light"),
-      ".dark": edsVars("dark"),
+      ":root": { ...edsVars("light"), ...rawVars("light") },
+      ".dark": { ...edsVars("dark"), ...rawVars("dark") },
       "@utility focus-ring": {
         // EDS focus ring: 1px gap in the canvas colour, then a 2px ring.
         // outline-hidden keeps a visible outline in forced-colors mode.

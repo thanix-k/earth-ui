@@ -49,8 +49,13 @@ Use the stock shadcn classes (`bg-background`, `text-muted-foreground`, `bg-prim
 | Status | `bg-eds-critical`, `text-eds-positive`, `bg-eds-caution-secondary` |
 | Form borders | `border-eds-input`, `border-eds-input-hover`, `border-eds-input-active` |
 | Type scale | `text-body-12` … `text-body-20`, `text-heading-12` … `text-heading-32` |
-| Elevation | `shadow-eds-10` … `shadow-eds-40` |
+| Elevation | `shadow-eds-10` … `shadow-eds-40`; raw `var(--shadow-10)` … `var(--shadow-40)` for CSS |
+| Compact type | `text-xs` (12px, 16px line) |
+| Motion | `duration-eds-press` (120ms), `duration-eds-popover` (180ms), `duration-eds-panel` (280ms); exits `duration-eds-popover-exit` (120ms), `duration-eds-panel-exit` (200ms) |
+| Event colours | `bg-eds-palette-purple-background`, `border-eds-palette-gold-border` (also `-text`, `-background-hover`, `-background-active`, `-text-active`, `-text-secondary`) |
 | Keyboard focus | `focus-visible:focus-ring` |
+
+Earth sets `color-scheme` with the mode (`light` on `:root`, `dark` on `.dark`), so native controls such as date inputs, selects and scrollbars render dark in dark mode. In dark mode, `--muted-foreground` is `#a0a0a0` (6.66:1 on the canvas) and `--input` is `#6c6c6c` (3.31:1), a step above the EDS `text-secondary` and `border-input` tokens, so muted text and field borders meet WCAG AA 4.5:1 and 3:1. Use `text-eds-secondary` and `border-eds-input` for the exact EDS values.
 
 Earth's `eds-` names are scoped to one CSS property: `text-eds-secondary` exists but `bg-eds-secondary` does not. This keeps Earth's `accent`/`primary` separate from shadcn's, because the two systems use those words differently.
 
