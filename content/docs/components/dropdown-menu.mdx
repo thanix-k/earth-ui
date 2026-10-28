@@ -35,6 +35,8 @@ import {
 
 Items are 14px with more padding on touch screens, and 12px from the `lg` breakpoint. Use `variant="destructive"` for actions that delete or cancel.
 
+Below 768px the menu opens as a bottom sheet over a dimmed page (`data-slot="dropdown-menu-backdrop"`), and its `data-layout` is `sheet` (`menu` otherwise). A submenu's sheet opens over its parent's. Pass `anchor` to `DropdownMenuContent` or `DropdownMenuSubContent` to position the popover against another element, such as the whole parent menu.
+
 ## Examples
 
 ### Checkboxes

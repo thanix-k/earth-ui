@@ -1013,10 +1013,12 @@
       "title": "Alert Dialog",
       "description": "A modal that asks people to confirm an important or destructive action.",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@earth/button",
+        "@earth/use-mobile",
         "@earth/utils"
       ],
       "files": [
@@ -1375,6 +1377,7 @@
       ],
       "registryDependencies": [
         "@earth/button",
+        "@earth/use-mobile",
         "@earth/utils"
       ],
       "files": [
@@ -1412,6 +1415,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "@earth/use-mobile",
         "@earth/utils"
       ],
       "files": [
@@ -3555,6 +3559,22 @@
       "files": [
         {
           "path": "registry/default/examples/dialog-scrollable-content.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dialog-sheet-on-phone",
+      "type": "registry:example",
+      "title": "Dialog Sheet On Phone",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-sheet-on-phone.tsx",
           "type": "registry:example"
         }
       ]

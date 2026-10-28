@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-sheet-on-phone",
+  "title": "Dialog Sheet On Phone",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/button",
+    "@earth/dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-sheet-on-phone.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\n\nexport default function DialogSheetOnPhone() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>Discard changes</DialogTrigger>\n      <DialogContent className=\"sm:max-w-120\" isSheetOnPhone>\n        <DialogHeader>\n          <DialogTitle>Discard changes?</DialogTitle>\n          <DialogDescription>\n            Your edits to Haircut &amp; style haven't been saved. Leave without saving them?\n          </DialogDescription>\n        </DialogHeader>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"ghost\" />}>Keep editing</DialogClose>\n          <DialogClose render={<Button />}>Discard</DialogClose>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

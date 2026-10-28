@@ -3,6 +3,7 @@
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import type * as React from "react";
+import { useIsMobile } from "@/registry/default/hooks/use-mobile";
 import { cn } from "@/registry/default/lib/utils";
 
 // EDS menu items (MenuItem): 14px text with 12px padding on touch screens,
@@ -12,7 +13,28 @@ const menuItemClasses =
   "relative flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none not-data-disabled:data-highlighted:bg-eds-neutral-secondary not-data-disabled:hover:data-highlighted:bg-eds-neutral-hover not-data-disabled:active:data-highlighted:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4";
 
 const menuPopupClasses =
-  "z-50 max-h-(--available-height) origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-lg border border-eds-secondary bg-eds-menu p-1 text-eds-primary shadow-eds-20 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95";
+  "z-50 overflow-x-hidden overflow-y-auto border border-eds-secondary bg-eds-menu p-1 text-eds-primary outline-none data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0";
+
+const menuPopoverClasses =
+  "max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) rounded-lg shadow-eds-20 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:zoom-in-95 data-closed:zoom-out-95";
+
+// EDS MobilePopover: below 768px a menu is a bottom sheet over a dimmed page,
+// rising like a bottom Sheet, its rows 46px (12px padding on a 22px line).
+// The sheet's classes go after the caller's, so a width or height meant for
+// the popover cannot shrink the sheet.
+const menuSheetClasses =
+  "max-h-[80dvh] w-full max-w-none min-w-0 rounded-t-lg rounded-b-none border-x-0 border-b-0 px-3 pt-5 pb-[calc(--spacing(2)+env(safe-area-inset-bottom))] shadow-eds-30 duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] data-open:slide-in-from-bottom data-closed:slide-out-to-bottom [&_[role^=menuitem]]:py-3";
+
+// The positioner's anchored coordinates give way to the bottom edge. Base UI
+// merges a caller's style last.
+const menuSheetPosition: React.CSSProperties = {
+  position: "fixed",
+  top: "auto",
+  right: 0,
+  bottom: 0,
+  left: 0,
+  transform: "none",
+};
 
 function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
@@ -26,31 +48,60 @@ function DropdownMenuTrigger({ ...props }: MenuPrimitive.Trigger.Props) {
   return <MenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />;
 }
 
-function DropdownMenuContent({
+type DropdownMenuContentProps = MenuPrimitive.Popup.Props &
+  Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset" | "anchor">;
+
+function DropdownMenuContent(props: DropdownMenuContentProps) {
+  return (
+    <MenuPrimitive.Portal>
+      <DropdownMenuPopup hasBackdrop {...props} />
+    </MenuPrimitive.Portal>
+  );
+}
+
+// The layout is read here, inside the portal, so a closed menu does not watch
+// the viewport. A submenu's sheet opens over its parent's, under one backdrop.
+function DropdownMenuPopup({
   align = "start",
   alignOffset = 0,
   side = "bottom",
   sideOffset = 4,
+  anchor,
+  hasBackdrop,
   className,
   ...props
-}: MenuPrimitive.Popup.Props &
-  Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">) {
+}: DropdownMenuContentProps & { hasBackdrop: boolean }) {
+  const isSheet = useIsMobile();
   return (
-    <MenuPrimitive.Portal>
+    <>
+      {isSheet && hasBackdrop && (
+        <MenuPrimitive.Backdrop
+          data-slot="dropdown-menu-backdrop"
+          className="fixed inset-0 isolate z-50 bg-eds-modal-overlay duration-100 data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
+        />
+      )}
       <MenuPrimitive.Positioner
         className="isolate z-50 outline-none"
         align={align}
         alignOffset={alignOffset}
         side={side}
         sideOffset={sideOffset}
+        anchor={anchor}
+        {...(isSheet && { style: menuSheetPosition })}
       >
         <MenuPrimitive.Popup
           data-slot="dropdown-menu-content"
-          className={cn(menuPopupClasses, "w-(--anchor-width) min-w-32", className)}
+          data-layout={isSheet ? "sheet" : "menu"}
+          className={cn(
+            menuPopupClasses,
+            !isSheet && menuPopoverClasses,
+            className,
+            isSheet && menuSheetClasses,
+          )}
           {...props}
         />
       </MenuPrimitive.Positioner>
-    </MenuPrimitive.Portal>
+    </>
   );
 }
 
@@ -140,17 +191,20 @@ function DropdownMenuSubContent({
   sideOffset = 0,
   className,
   ...props
-}: React.ComponentProps<typeof DropdownMenuContent>) {
+}: DropdownMenuContentProps) {
   return (
-    <DropdownMenuContent
-      data-slot="dropdown-menu-sub-content"
-      className={cn("w-auto min-w-24", className)}
-      align={align}
-      alignOffset={alignOffset}
-      side={side}
-      sideOffset={sideOffset}
-      {...props}
-    />
+    <MenuPrimitive.Portal>
+      <DropdownMenuPopup
+        hasBackdrop={false}
+        data-slot="dropdown-menu-sub-content"
+        className={cn("w-auto min-w-24", className)}
+        align={align}
+        alignOffset={alignOffset}
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </MenuPrimitive.Portal>
   );
 }
 
