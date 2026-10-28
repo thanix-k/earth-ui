@@ -1,0 +1,44 @@
+---
+title: Scheduler Views
+description: FullCalendar resource day and timeline views styled with Earth tokens.
+links:
+  doc: https://fullcalendar.io/docs/premium
+  api: https://fullcalendar.io/docs/react
+---
+
+## Installation
+
+<Installation name="scheduler-views" />
+
+This item installs `@fullcalendar/react` and `@fullcalendar/react-scheduler`, and adds [Event Calendar Views](/docs/components/event-calendar-views).
+
+## Licence
+
+The scheduler is FullCalendar Premium. FullCalendar licenses it under a commercial licence, a non-commercial licence or AGPLv3, so you need your own key. This page has no live demo for that reason: Earth UI is MIT, and none of those terms fit an MIT project's docs. No key ships in the registry, the source or these docs.
+
+## Usage
+
+```tsx
+import resourceTimeGridPlugin from "@fullcalendar/react-scheduler/resource-timegrid"
+import timeGridPlugin from "@fullcalendar/react/timegrid"
+import { ChevronRightIcon, XIcon } from "lucide-react"
+import { SchedulerViews } from "@/components/ui/scheduler-views"
+```
+
+```tsx
+<SchedulerViews
+  licenseKey={process.env.FULLCALENDAR_LICENSE_KEY}
+  plugins={[timeGridPlugin, resourceTimeGridPlugin]}
+  initialView="resourceTimeGridDay"
+  resources={[{ id: "ava", title: "Ava" }, { id: "ben", title: "Ben" }]}
+  events={events}
+  popoverCloseContent={() => <XIcon className="size-4" />}
+  resourceExpanderContent={() => <ChevronRightIcon className="size-4" />}
+/>
+```
+
+### `licenseKey`
+
+`licenseKey` is your FullCalendar Premium key. The component passes it to FullCalendar as `schedulerLicenseKey`, and passing `schedulerLicenseKey` yourself works too. Read the key from your own server environment. Omit it and FullCalendar shows its unlicensed notice.
+
+`SchedulerViews` takes every `EventCalendarViews` prop, and `resourceExpanderContent` is required. It also re-exports `ResourceInput` for typing `resources`.

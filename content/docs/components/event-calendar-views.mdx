@@ -1,0 +1,66 @@
+---
+title: Event Calendar Views
+description: FullCalendar month, week, day and list views styled with Earth tokens.
+links:
+  doc: https://fullcalendar.io/docs/react
+  api: https://fullcalendar.io/docs
+---
+
+<ComponentPreview name="event-calendar-views-demo" />
+
+## Installation
+
+<Installation name="event-calendar-views" />
+
+This item installs `@fullcalendar/react` and `temporal-polyfill`, which FullCalendar 7 needs. Apps that never add it never install FullCalendar.
+
+## Usage
+
+```tsx
+import dayGridPlugin from "@fullcalendar/react/daygrid"
+import timeGridPlugin from "@fullcalendar/react/timegrid"
+import { XIcon } from "lucide-react"
+import { EventCalendarViews } from "@/components/ui/event-calendar-views"
+```
+
+```tsx
+<EventCalendarViews
+  plugins={[dayGridPlugin, timeGridPlugin]}
+  initialView="timeGridWeek"
+  events={events}
+  popoverCloseContent={() => <XIcon className="size-4" />}
+/>
+```
+
+`EventCalendarViews` is FullCalendar's `<FullCalendar>` with Earth's class names on every part. It takes every FullCalendar option. Pass the plugins you use, since the item loads none. `popoverCloseContent` is required so the "+n more" popover has a close icon.
+
+### Event colours
+
+An event's fill is `--fc-event-color`, and its text is `--fc-event-contrast-color`. Set them with the `color` and `contrastColor` event fields. Earth's palette tokens work in light and dark:
+
+```tsx
+{
+  title: "Haircut",
+  start: "2026-11-10T10:00:00",
+  color: "var(--eds-palette-purple-background-active)",
+  contrastColor: "var(--eds-palette-purple-text-active)",
+}
+```
+
+Events with no colour use Earth's accent.
+
+### Exports
+
+- `EventCalendarViews`, and its props type `EventCalendarViewProps`.
+- `getDayClass(info)`, the class for a day cell or lane, so a calendar can add its own shading to it.
+- `blockEventClass(info)` and `isGhost(info)`, the class for a timed event and the test for its drag ghost, for a calendar that styles events itself.
+
+## Examples
+
+### Week
+
+<ComponentPreview name="event-calendar-views-week" />
+
+### List
+
+<ComponentPreview name="event-calendar-views-list" />
