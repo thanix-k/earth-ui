@@ -231,6 +231,13 @@
   --eds-palette-violet-text: #110837;
   --eds-palette-violet-text-active: #ffffff;
   --eds-palette-violet-text-secondary: #3f375e;
+  --eds-palette-purple-background: #eeeefe;
+  --eds-palette-purple-background-hover: #deddfd;
+  --eds-palette-purple-background-active: #918ef7;
+  --eds-palette-purple-border: #918ef7;
+  --eds-palette-purple-text: #161525;
+  --eds-palette-purple-text-active: #111111;
+  --eds-palette-purple-text-secondary: #2c2b4a;
   --eds-palette-yellow-background: #fff7d9;
   --eds-palette-yellow-background-hover: #fff1bf;
   --eds-palette-yellow-background-active: #ffc700;
@@ -238,6 +245,13 @@
   --eds-palette-yellow-text: #2c2200;
   --eds-palette-yellow-text-active: #ffffff;
   --eds-palette-yellow-text-secondary: #564e33;
+  --eds-palette-gold-background: #fef9e8;
+  --eds-palette-gold-background-hover: #fdf3d1;
+  --eds-palette-gold-background-active: #f9d667;
+  --eds-palette-gold-border: #f9d667;
+  --eds-palette-gold-text: #25200f;
+  --eds-palette-gold-text-active: #111111;
+  --eds-palette-gold-text-secondary: #4b401f;
   --eds-palette-green-background: #e2f3ed;
   --eds-palette-green-background-hover: #cfebe1;
   --eds-palette-green-background-active: #3ead85;
@@ -271,6 +285,11 @@
   --eds-shadow-30: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 8px 16px 0px rgba(88, 104, 116, 0.16);
   --eds-shadow-40: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 16px 32px 0px rgba(88, 104, 116, 0.20);
   --eds-shadow-50: 0px 0px 0px 4px rgba(0, 0, 0, 0.15);
+  color-scheme: light;
+  --shadow-10: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 1px 4px 0px rgba(88, 104, 116, 0.12);
+  --shadow-20: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 4px 12px 0px rgba(88, 104, 116, 0.16);
+  --shadow-30: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 8px 16px 0px rgba(88, 104, 116, 0.16);
+  --shadow-40: 0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 16px 32px 0px rgba(88, 104, 116, 0.20);
 }
 .dark {
   --background: #1a1a1a;
@@ -284,12 +303,12 @@
   --secondary: #292929;
   --secondary-foreground: #eeeeee;
   --muted: #292929;
-  --muted-foreground: #949494;
+  --muted-foreground: #a0a0a0;
   --accent: #333333;
   --accent-foreground: #eeeeee;
   --destructive: #c44c44;
   --border: #3d3d3d;
-  --input: #3d3d3d;
+  --input: #6c6c6c;
   --ring: #eeeeee;
   --chart-1: #eeeeee;
   --chart-2: #b2b2b2;
@@ -500,6 +519,13 @@
   --eds-palette-violet-text: #d6d0ee;
   --eds-palette-violet-text-active: #ffffff;
   --eds-palette-violet-text-secondary: #bcb9cb;
+  --eds-palette-purple-background: #282835;
+  --eds-palette-purple-background-hover: #383751;
+  --eds-palette-purple-background-active: #918ef7;
+  --eds-palette-purple-border: #918ef7;
+  --eds-palette-purple-text: #e4e3fd;
+  --eds-palette-purple-text-active: #111111;
+  --eds-palette-purple-text-secondary: #ceccfb;
   --eds-palette-yellow-background: #2d2b15;
   --eds-palette-yellow-background-hover: #504c25;
   --eds-palette-yellow-background-active: #ffc700;
@@ -507,6 +533,13 @@
   --eds-palette-yellow-text: #f9efcc;
   --eds-palette-yellow-text-active: #111111;
   --eds-palette-yellow-text-secondary: #d0cab4;
+  --eds-palette-gold-background: #353123;
+  --eds-palette-gold-background-hover: #52492d;
+  --eds-palette-gold-background-active: #f9d667;
+  --eds-palette-gold-border: #f9d667;
+  --eds-palette-gold-text: #fef5d9;
+  --eds-palette-gold-text-active: #111111;
+  --eds-palette-gold-text-secondary: #fcedbb;
   --eds-palette-green-background: #1a302e;
   --eds-palette-green-background-hover: #203c39;
   --eds-palette-green-background-active: #3ead85;
@@ -540,9 +573,27 @@
   --eds-shadow-30: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
   --eds-shadow-40: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.20);
   --eds-shadow-50: 0px 0px 0px 4px rgba(255, 255, 255, 0.20);
+  color-scheme: dark;
+  --shadow-10: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+  --shadow-20: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  --shadow-30: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
+  --shadow-40: 0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.20);
 }
 @utility focus-ring {
   @apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background;
+}
+@utility touch-target {
+  @media (pointer: coarse) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 @layer base {
   * {
@@ -769,6 +820,13 @@
   --color-eds-palette-violet-text: var(--eds-palette-violet-text);
   --color-eds-palette-violet-text-active: var(--eds-palette-violet-text-active);
   --color-eds-palette-violet-text-secondary: var(--eds-palette-violet-text-secondary);
+  --color-eds-palette-purple-background: var(--eds-palette-purple-background);
+  --color-eds-palette-purple-background-hover: var(--eds-palette-purple-background-hover);
+  --color-eds-palette-purple-background-active: var(--eds-palette-purple-background-active);
+  --color-eds-palette-purple-border: var(--eds-palette-purple-border);
+  --color-eds-palette-purple-text: var(--eds-palette-purple-text);
+  --color-eds-palette-purple-text-active: var(--eds-palette-purple-text-active);
+  --color-eds-palette-purple-text-secondary: var(--eds-palette-purple-text-secondary);
   --color-eds-palette-yellow-background: var(--eds-palette-yellow-background);
   --color-eds-palette-yellow-background-hover: var(--eds-palette-yellow-background-hover);
   --color-eds-palette-yellow-background-active: var(--eds-palette-yellow-background-active);
@@ -776,6 +834,13 @@
   --color-eds-palette-yellow-text: var(--eds-palette-yellow-text);
   --color-eds-palette-yellow-text-active: var(--eds-palette-yellow-text-active);
   --color-eds-palette-yellow-text-secondary: var(--eds-palette-yellow-text-secondary);
+  --color-eds-palette-gold-background: var(--eds-palette-gold-background);
+  --color-eds-palette-gold-background-hover: var(--eds-palette-gold-background-hover);
+  --color-eds-palette-gold-background-active: var(--eds-palette-gold-background-active);
+  --color-eds-palette-gold-border: var(--eds-palette-gold-border);
+  --color-eds-palette-gold-text: var(--eds-palette-gold-text);
+  --color-eds-palette-gold-text-active: var(--eds-palette-gold-text-active);
+  --color-eds-palette-gold-text-secondary: var(--eds-palette-gold-text-secondary);
   --color-eds-palette-green-background: var(--eds-palette-green-background);
   --color-eds-palette-green-background-hover: var(--eds-palette-green-background-hover);
   --color-eds-palette-green-background-active: var(--eds-palette-green-background-active);
@@ -875,6 +940,13 @@
   --radius-2xl: 16px;
   --ease-eds-regular: cubic-bezier(0.5, 0, 0.5, 0.99);
   --ease-eds-entrance: cubic-bezier(0.2, 0, 0.44, 0.99);
+  --transition-duration-eds-press: 120ms;
+  --transition-duration-eds-popover: 180ms;
+  --transition-duration-eds-panel: 280ms;
+  --transition-duration-eds-popover-exit: 120ms;
+  --transition-duration-eds-panel-exit: 200ms;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

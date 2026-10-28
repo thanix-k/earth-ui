@@ -1,3 +1,10 @@
 {
-  "pages": ["---Overview---", "index", "get-started", "build-a-product", "---Components---", "...components"]
+  "pages": [
+    "---Overview---",
+    "index",
+    "get-started",
+    "build-a-product",
+    "---Components---",
+    "...components"
+  ]
 }

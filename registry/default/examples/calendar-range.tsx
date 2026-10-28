@@ -13,7 +13,7 @@ export default function CalendarRange() {
   return (
     <Calendar
       mode="range"
-      defaultMonth={range?.from}
+      {...(range?.from ? { defaultMonth: range.from } : {})}
       selected={range}
       onSelect={setRange}
       numberOfMonths={2}

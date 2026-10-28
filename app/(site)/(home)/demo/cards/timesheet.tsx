@@ -36,6 +36,8 @@ const weeks = {
   "16": [7.5, 8, 6, 8.5, 7, 0, 0],
   "9": [8, 7.5, 8, 8, 6.5, 2, 0],
 };
+const isWeek = (v: unknown): v is keyof typeof weeks =>
+  typeof v === "string" && Object.hasOwn(weeks, v);
 const weekOptions = [
   { label: "Week of 16 Nov", value: "16" },
   { label: "Week of 9 Nov", value: "9" },
@@ -63,7 +65,9 @@ export function TimesheetCard() {
           <Select
             items={weekOptions}
             value={week}
-            onValueChange={(v) => setWeek(v as keyof typeof weeks)}
+            onValueChange={(v) => {
+              if (isWeek(v)) setWeek(v);
+            }}
           >
             <SelectTrigger size="sm" className="w-36" aria-label="Week">
               <SelectValue />

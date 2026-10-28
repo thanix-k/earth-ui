@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "attachment-group",
+  "title": "Attachment Group",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/attachment"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/attachment-group.tsx",
+      "content": "import { FileTextIcon } from \"lucide-react\";\nimport {\n  Attachment,\n  AttachmentContent,\n  AttachmentDescription,\n  AttachmentGroup,\n  AttachmentMedia,\n  AttachmentTitle,\n  AttachmentTrigger,\n} from \"@/registry/default/ui/attachment\";\n\nconst files = [\"price-list.pdf\", \"intake-form.pdf\", \"before-photos.zip\", \"invoice-1042.pdf\"];\n\nexport default function AttachmentGroupExample() {\n  return (\n    <AttachmentGroup className=\"w-full max-w-sm\">\n      {files.map((name) => (\n        <Attachment key={name} orientation=\"vertical\">\n          <AttachmentMedia>\n            <FileTextIcon />\n          </AttachmentMedia>\n          <AttachmentContent>\n            <AttachmentTitle>{name}</AttachmentTitle>\n            <AttachmentDescription>Tap to open</AttachmentDescription>\n          </AttachmentContent>\n          <AttachmentTrigger aria-label={`Open ${name}`} />\n        </Attachment>\n      ))}\n    </AttachmentGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

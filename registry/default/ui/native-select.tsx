@@ -19,7 +19,7 @@ function NativeSelect({ className, size = "default", ...props }: NativeSelectPro
         data-slot="native-select"
         data-size={size}
         className={cn(
-          "h-10 w-full min-w-0 cursor-pointer appearance-none rounded-lg border border-eds-input bg-eds-canvas py-0 pr-12 pl-3 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none lg:h-8 lg:pl-2 lg:text-body-12 data-[size=sm]:h-8 data-[size=sm]:pl-2 data-[size=sm]:text-body-12",
+          "h-10 w-full min-w-0 cursor-pointer pointer-coarse:min-h-11 appearance-none rounded-lg border border-eds-input bg-eds-canvas py-0 pr-12 pl-3 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none lg:h-8 lg:pl-2 lg:text-body-12 data-[size=sm]:h-8 data-[size=sm]:pl-2 data-[size=sm]:text-body-12",
           "hover:border-eds-input-hover focus-visible:border-eds-input-active focus-visible:inset-ring-1 focus-visible:inset-ring-eds-input-active",
           "aria-invalid:border-eds-input-critical aria-invalid:hover:border-eds-input-critical-hover aria-invalid:focus-visible:border-eds-input-active",
           "disabled:pointer-events-none disabled:cursor-default disabled:border-eds-input-disabled disabled:bg-eds-neutral-disabled disabled:text-eds-disabled",

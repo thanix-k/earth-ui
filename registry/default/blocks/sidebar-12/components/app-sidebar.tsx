@@ -1,7 +1,7 @@
 "use client";
 
 import { PlusIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { Calendars } from "@/registry/default/blocks/sidebar-12/components/calendars";
 import { DatePicker } from "@/registry/default/blocks/sidebar-12/components/date-picker";
 import { NavUser } from "@/registry/default/blocks/sidebar-12/components/nav-user";

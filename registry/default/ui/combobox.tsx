@@ -38,6 +38,7 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
   return (
     <ComboboxPrimitive.Clear
       data-slot="combobox-clear"
+      aria-label="Clear"
       render={<InputGroupButton variant="ghost" size="icon-xs" />}
       className={cn(className)}
       {...props}
@@ -64,6 +65,7 @@ function ComboboxInput({
       <InputGroupAddon align="inline-end">
         {showTrigger && (
           <InputGroupButton
+            aria-label="Show options"
             size="icon-xs"
             variant="ghost"
             render={<ComboboxTrigger />}
@@ -137,7 +139,7 @@ function ComboboxItem({ className, children, ...props }: ComboboxPrimitive.Item.
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       className={cn(
-        "relative flex w-full cursor-pointer items-center gap-3 rounded-sm py-2 pr-3 pl-9 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-hidden select-none lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-6 lg:text-body-12",
+        "relative flex w-full cursor-pointer items-center gap-3 rounded-sm py-2 pointer-coarse:min-h-11 pr-3 pl-9 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-hidden select-none lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-6 lg:text-body-12",
         "data-highlighted:bg-eds-neutral-hover active:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4",
         className,
@@ -209,7 +211,7 @@ function ComboboxChips({
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       className={cn(
-        "flex min-h-10 flex-wrap items-center gap-1 rounded-lg border border-eds-input bg-eds-canvas px-1 py-[3px] text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] hover:border-eds-input-hover lg:min-h-8 lg:text-body-12",
+        "flex min-h-10 flex-wrap items-center pointer-coarse:min-h-11 gap-1 rounded-lg border border-eds-input bg-eds-canvas px-1 py-[3px] text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] hover:border-eds-input-hover lg:min-h-8 lg:text-body-12",
         "has-aria-invalid:border-eds-input-critical has-aria-invalid:hover:border-eds-input-critical-hover",
         "focus-within:border-eds-input-active focus-within:inset-ring-1 focus-within:inset-ring-eds-input-active has-aria-invalid:focus-within:border-eds-input-active",
         "has-disabled:border-eds-input-disabled has-disabled:bg-eds-neutral-disabled",

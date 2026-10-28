@@ -35,7 +35,7 @@ export default function DatePickerTime() {
               mode="single"
               selected={date}
               captionLayout="dropdown"
-              defaultMonth={date}
+              {...(date ? { defaultMonth: date } : {})}
               onSelect={(date) => {
                 setDate(date);
                 setOpen(false);

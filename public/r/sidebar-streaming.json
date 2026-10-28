@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-streaming",
+  "title": "Sidebar Streaming",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/sidebar",
+    "@earth/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sidebar-streaming.tsx",
+      "content": "import { CalendarDaysIcon, UsersIcon } from \"lucide-react\";\nimport { connection } from \"next/server\";\nimport { Suspense } from \"react\";\nimport {\n  Sidebar,\n  SidebarContent,\n  SidebarGroup,\n  SidebarGroupContent,\n  SidebarInset,\n  SidebarMenu,\n  SidebarMenuButton,\n  SidebarMenuItem,\n  SidebarProvider,\n  SidebarTrigger,\n} from \"@/registry/default/ui/sidebar\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nconst appointments = [\n  { time: \"9:00 AM\", customer: \"Priya Raghavan\", service: \"Consultation\" },\n  { time: \"10:30 AM\", customer: \"Tom Okafor\", service: \"Follow-up\" },\n  { time: \"1:15 PM\", customer: \"Ana Lima\", service: \"Haircut\" },\n];\n\n// Stands in for a slow data read, so the list streams in after the shell.\nasync function Appointments() {\n  await connection();\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n  return (\n    <ul className=\"flex flex-col gap-2\">\n      {appointments.map((appointment) => (\n        <li\n          key={appointment.time}\n          className=\"rounded-lg bg-eds-canvas-tertiary p-3 text-body-14 text-eds-primary\"\n        >\n          {appointment.time} · {appointment.customer} · {appointment.service}\n        </li>\n      ))}\n    </ul>\n  );\n}\n\nexport default function SidebarStreamingExample() {\n  return (\n    <SidebarProvider>\n      <Sidebar>\n        <SidebarContent>\n          <SidebarGroup>\n            <SidebarGroupContent>\n              <SidebarMenu>\n                <SidebarMenuItem>\n                  <SidebarMenuButton isActive render={<a href=\"#calendar\" />}>\n                    <CalendarDaysIcon />\n                    <span>Calendar</span>\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton render={<a href=\"#customers\" />}>\n                    <UsersIcon />\n                    <span>Customers</span>\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n              </SidebarMenu>\n            </SidebarGroupContent>\n          </SidebarGroup>\n        </SidebarContent>\n      </Sidebar>\n      <SidebarInset>\n        <header className=\"flex h-14 items-center gap-2 px-4\">\n          <SidebarTrigger className=\"-ms-1\" />\n          <h1 className=\"text-heading-16 text-eds-primary\">Today</h1>\n        </header>\n        <div className=\"flex-1 p-4 pt-0\">\n          <Suspense fallback={<Skeleton className=\"h-40 w-full\" />}>\n            <Appointments />\n          </Suspense>\n        </div>\n      </SidebarInset>\n    </SidebarProvider>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

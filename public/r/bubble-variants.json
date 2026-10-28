@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-variants",
+  "title": "Bubble Variants",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-variants.tsx",
+      "content": "import { Bubble, BubbleContent, BubbleGroup } from \"@/registry/default/ui/bubble\";\n\nconst variants = [\n  \"default\",\n  \"secondary\",\n  \"muted\",\n  \"tinted\",\n  \"outline\",\n  \"ghost\",\n  \"destructive\",\n] as const;\n\nexport default function BubbleVariants() {\n  return (\n    <BubbleGroup className=\"w-full max-w-md\">\n      {variants.map((variant) => (\n        <Bubble key={variant} variant={variant}>\n          <BubbleContent>{variant}</BubbleContent>\n        </Bubble>\n      ))}\n    </BubbleGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

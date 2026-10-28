@@ -50,7 +50,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative flex h-12 w-10 items-center justify-center rounded-lg border border-eds-input bg-eds-canvas text-heading-16 text-eds-primary transition-colors duration-300 ease-[ease] outline-none lg:h-10 lg:w-9 lg:text-heading-14",
+        "relative flex h-12 w-10 items-center pointer-coarse:min-h-12 pointer-coarse:min-w-11 justify-center rounded-lg border border-eds-input bg-eds-canvas text-heading-16 text-eds-primary transition-colors duration-300 ease-[ease] outline-none lg:h-10 lg:w-9 lg:text-heading-14",
         "aria-invalid:border-eds-input-critical data-[active=true]:z-10 data-[active=true]:border-eds-input-active data-[active=true]:inset-ring-1 data-[active=true]:inset-ring-eds-input-active",
         "group-has-disabled/input-otp:border-eds-input-disabled group-has-disabled/input-otp:bg-eds-neutral-disabled group-has-disabled/input-otp:text-eds-disabled-secondary",
         className,
@@ -69,11 +69,10 @@ function InputOTPSlot({
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: the separator holds an icon, which <hr> cannot
     <div
+      aria-hidden="true"
       data-slot="input-otp-separator"
       className="flex items-center text-eds-tertiary [&_svg:not([class*='size-'])]:size-4"
-      role="separator"
       {...props}
     >
       <MinusIcon />

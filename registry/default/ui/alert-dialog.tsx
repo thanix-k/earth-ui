@@ -1,7 +1,9 @@
 "use client";
 
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog";
+import { XIcon } from "lucide-react";
 import type * as React from "react";
+import { useIsMobile } from "@/registry/default/hooks/use-mobile";
 import { cn } from "@/registry/default/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 
@@ -30,27 +32,66 @@ function AlertDialogOverlay({ className, ...props }: AlertDialogPrimitive.Backdr
   );
 }
 
-// EDS alert modal: 480px wide, the dialog's 24px side padding.
-function AlertDialogContent({
-  className,
-  size = "default",
-  ...props
-}: AlertDialogPrimitive.Popup.Props & {
+type AlertDialogContentProps = AlertDialogPrimitive.Popup.Props & {
   size?: "default" | "sm";
-}) {
+  /** Below 768px, open as a bottom sheet. On by default: confirmations are short. */
+  isSheetOnPhone?: boolean;
+  /** The sheet's close button. Turn it off when the content draws its own. */
+  showCloseButton?: boolean;
+};
+
+function AlertDialogContent(props: AlertDialogContentProps) {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
-      <AlertDialogPrimitive.Popup
-        data-slot="alert-dialog-content"
-        data-size={size}
-        className={cn(
-          "group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg bg-eds-menu px-6 pt-5 pb-6 text-eds-primary shadow-eds-30 duration-100 outline-none data-[size=default]:sm:max-w-120 data-[size=sm]:sm:max-w-80 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
-          className,
-        )}
-        {...props}
-      />
+      <AlertDialogPopup {...props} />
     </AlertDialogPortal>
+  );
+}
+
+const sheetClasses =
+  "inset-x-0 bottom-0 max-w-none rounded-t-lg rounded-b-none pb-[calc(--spacing(6)+env(safe-area-inset-bottom))] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] data-[size=default]:sm:max-w-none data-[size=sm]:sm:max-w-none data-open:slide-in-from-bottom data-closed:slide-out-to-bottom";
+
+// EDS alert modal: 480px wide, the dialog's 24px side padding. As a phone
+// sheet it rises like a bottom Sheet, with a close button. The sheet's classes
+// go after the caller's, so a width meant for the modal cannot narrow the
+// sheet. The layout is read here, inside the portal, so a closed alert dialog
+// does not watch the viewport.
+function AlertDialogPopup({
+  className,
+  size = "default",
+  isSheetOnPhone = true,
+  showCloseButton = true,
+  children,
+  ...props
+}: AlertDialogContentProps) {
+  const isMobile = useIsMobile();
+  const layout = isSheetOnPhone && isMobile ? "sheet" : "dialog";
+  return (
+    <AlertDialogPrimitive.Popup
+      data-slot="alert-dialog-content"
+      data-size={size}
+      data-layout={layout}
+      className={cn(
+        "group/alert-dialog-content fixed z-50 grid w-full gap-4 bg-eds-menu px-6 pt-5 pb-6 text-eds-primary shadow-eds-30 outline-none data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        layout === "dialog" &&
+          "top-1/2 left-1/2 max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 rounded-lg duration-100 data-[size=default]:sm:max-w-120 data-[size=sm]:sm:max-w-80 data-open:zoom-in-95 data-closed:zoom-out-95",
+        className,
+        layout === "sheet" && sheetClasses,
+      )}
+      {...props}
+    >
+      {children}
+      {layout === "sheet" && showCloseButton && (
+        <AlertDialogPrimitive.Close
+          data-slot="alert-dialog-close"
+          render={<Button variant="ghost" className="absolute top-3 right-3" size="icon" />}
+        >
+          <XIcon />
+          <span className="sr-only">Close</span>
+        </AlertDialogPrimitive.Close>
+      )}
+    </AlertDialogPrimitive.Popup>
   );
 }
 
@@ -72,7 +113,7 @@ function AlertDialogFooter({ className, ...props }: React.ComponentProps<"div">)
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        "flex flex-col-reverse gap-2 pt-2 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 md:flex-row md:items-center md:justify-end",
+        "flex flex-col-reverse gap-2 pt-2 pointer-coarse:gap-3 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 md:flex-row md:items-center md:justify-end",
         className,
       )}
       {...props}

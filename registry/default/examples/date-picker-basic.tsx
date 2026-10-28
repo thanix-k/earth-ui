@@ -26,7 +26,12 @@ export default function DatePickerBasic() {
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
-          <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={date} />
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            {...(date ? { defaultMonth: date } : {})}
+          />
         </PopoverContent>
       </Popover>
     </Field>

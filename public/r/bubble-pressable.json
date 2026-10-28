@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-pressable",
+  "title": "Bubble Pressable",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-pressable.tsx",
+      "content": "import { Bubble, BubbleContent } from \"@/registry/default/ui/bubble\";\n\nexport default function BubblePressable() {\n  return (\n    <Bubble variant=\"tinted\">\n      <BubbleContent render={<button type=\"button\" />}>Join the video call</BubbleContent>\n    </Bubble>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

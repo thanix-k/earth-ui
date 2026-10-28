@@ -15,9 +15,27 @@ import { Separator } from "@/registry/default/ui/separator";
 import { Switch } from "@/registry/default/ui/switch";
 
 const bookings = [
-  { initials: "MR", name: "Maya Reed", service: "Haircut and style", time: "9:30 AM", status: "Confirmed" },
-  { initials: "JO", name: "James Okafor", service: "Beard trim", time: "11:00 AM", status: "Pending" },
-  { initials: "SL", name: "Sofia Lind", service: "Colour consult", time: "2:15 PM", status: "Confirmed" },
+  {
+    initials: "MR",
+    name: "Maya Reed",
+    service: "Haircut and style",
+    time: "9:30 AM",
+    status: "Confirmed",
+  },
+  {
+    initials: "JO",
+    name: "James Okafor",
+    service: "Beard trim",
+    time: "11:00 AM",
+    status: "Pending",
+  },
+  {
+    initials: "SL",
+    name: "Sofia Lind",
+    service: "Colour consult",
+    time: "2:15 PM",
+    status: "Confirmed",
+  },
 ] as const;
 
 export default function BuildAProductDemo() {

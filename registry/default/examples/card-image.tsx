@@ -12,7 +12,6 @@ import {
 export default function CardImage() {
   return (
     <Card className="w-full max-w-sm">
-      {/* biome-ignore lint/performance/noImgElement: registry examples stay framework-agnostic. */}
       <img
         src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
         alt="Salon interior with styling chairs"

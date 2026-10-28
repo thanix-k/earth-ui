@@ -113,7 +113,7 @@ export function SettingsDialog() {
                       <SidebarMenuItem key={item.name}>
                         <SidebarMenuButton
                           isActive={item.name === "Messages & media"}
-                          render={<a href="#" />}
+                          render={<a href="#top" />}
                         >
                           {item.icon}
                           <span>{item.name}</span>
@@ -131,7 +131,7 @@ export function SettingsDialog() {
                 <Breadcrumb>
                   <BreadcrumbList>
                     <BreadcrumbItem className="hidden md:block">
-                      <BreadcrumbLink href="#">Settings</BreadcrumbLink>
+                      <BreadcrumbLink href="#top">Settings</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator className="hidden md:block" />
                     <BreadcrumbItem>
@@ -142,10 +142,8 @@ export function SettingsDialog() {
               </div>
             </header>
             <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 pt-0">
-              {Array.from({
-                length: 10,
-              }).map((_, i) => (
-                <div key={i} className="aspect-video max-w-3xl rounded-xl bg-muted/50" />
+              {Array.from({ length: 10 }, (_, i) => `placeholder-${i}`).map((id) => (
+                <div key={id} className="aspect-video max-w-3xl rounded-xl bg-muted/50" />
               ))}
             </div>
           </main>

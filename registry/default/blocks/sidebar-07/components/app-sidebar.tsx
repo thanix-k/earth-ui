@@ -12,7 +12,7 @@ import {
   Settings2Icon,
   StoreIcon,
 } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { NavMain } from "@/registry/default/blocks/sidebar-07/components/nav-main";
 import { NavProjects } from "@/registry/default/blocks/sidebar-07/components/nav-projects";
 import { NavUser } from "@/registry/default/blocks/sidebar-07/components/nav-user";

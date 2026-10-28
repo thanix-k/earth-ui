@@ -70,7 +70,7 @@ export default function DatePickerNaturalLanguage() {
                 mode="single"
                 selected={date}
                 captionLayout="dropdown"
-                defaultMonth={date}
+                {...(date ? { defaultMonth: date } : {})}
                 onSelect={(date) => {
                   setDate(date);
                   setValue(formatDate(date));

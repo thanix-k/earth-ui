@@ -16,7 +16,7 @@ export default function SliderControlled() {
       <Slider
         id="booking-notice"
         value={value}
-        onValueChange={(next) => setValue(next as number[])}
+        onValueChange={(next) => setValue(Array.isArray(next) ? [...next] : [next])}
         max={48}
       />
     </div>

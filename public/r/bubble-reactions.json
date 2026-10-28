@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-reactions",
+  "title": "Bubble Reactions",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-reactions.tsx",
+      "content": "import { Bubble, BubbleContent, BubbleReactions } from \"@/registry/default/ui/bubble\";\n\nexport default function BubbleReactionsExample() {\n  return (\n    <Bubble variant=\"secondary\" className=\"mb-4\">\n      <BubbleContent>See you Friday.</BubbleContent>\n      <BubbleReactions>\n        <span>👍</span>\n        <span>2</span>\n      </BubbleReactions>\n    </Bubble>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

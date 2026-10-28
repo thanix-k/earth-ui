@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "build-a-product-demo",
+  "title": "Build A Product Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/avatar",
+    "@earth/badge",
+    "@earth/button",
+    "@earth/card",
+    "@earth/label",
+    "@earth/separator",
+    "@earth/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/build-a-product-demo.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Separator } from \"@/registry/default/ui/separator\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nconst bookings = [\n  {\n    initials: \"MR\",\n    name: \"Maya Reed\",\n    service: \"Haircut and style\",\n    time: \"9:30 AM\",\n    status: \"Confirmed\",\n  },\n  {\n    initials: \"JO\",\n    name: \"James Okafor\",\n    service: \"Beard trim\",\n    time: \"11:00 AM\",\n    status: \"Pending\",\n  },\n  {\n    initials: \"SL\",\n    name: \"Sofia Lind\",\n    service: \"Colour consult\",\n    time: \"2:15 PM\",\n    status: \"Confirmed\",\n  },\n] as const;\n\nexport default function BuildAProductDemo() {\n  return (\n    <Card className=\"w-full max-w-md\">\n      <CardHeader>\n        <CardTitle>Today’s bookings</CardTitle>\n        <CardDescription>3 appointments · Thursday</CardDescription>\n        <CardAction>\n          <Button variant=\"outline\" size=\"sm\">\n            View calendar\n          </Button>\n        </CardAction>\n      </CardHeader>\n      <CardContent className=\"flex flex-col gap-3\">\n        {bookings.map((booking) => (\n          <div key={booking.name} className=\"flex items-center gap-3\">\n            <Avatar>\n              <AvatarFallback>{booking.initials}</AvatarFallback>\n            </Avatar>\n            <div className=\"flex min-w-0 flex-1 flex-col\">\n              <span className=\"truncate text-body-14 text-eds-primary\">{booking.name}</span>\n              <span className=\"truncate text-body-12 text-eds-secondary\">\n                {booking.service} · {booking.time}\n              </span>\n            </div>\n            <Badge variant={booking.status === \"Confirmed\" ? \"positive\" : \"caution\"}>\n              {booking.status}\n            </Badge>\n          </div>\n        ))}\n        <Separator className=\"my-1\" />\n        <div className=\"flex items-center justify-between gap-3\">\n          <Label htmlFor=\"online-booking\">Accept online bookings</Label>\n          <Switch id=\"online-booking\" defaultChecked />\n        </div>\n      </CardContent>\n      <CardFooter className=\"justify-end gap-2\">\n        <Button variant=\"outline\">Share link</Button>\n        <Button>New booking</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

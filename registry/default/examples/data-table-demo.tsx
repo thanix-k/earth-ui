@@ -165,13 +165,15 @@ export default function DataTableDemo() {
     state: { sorting, columnFilters, columnVisibility, rowSelection },
   });
 
+  const emailFilter = table.getColumn("email")?.getFilterValue();
+
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
           aria-label="Filter emails"
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          value={typeof emailFilter === "string" ? emailFilter : ""}
           onChange={(event) => table.getColumn("email")?.setFilterValue(event.target.value)}
           className="max-w-sm"
         />

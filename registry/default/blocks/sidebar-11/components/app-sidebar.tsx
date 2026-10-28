@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronRightIcon, FileIcon, MapPinIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -58,8 +58,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupLabel>Changes</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {data.changes.map((item, index) => (
-                <SidebarMenuItem key={index}>
+              {data.changes.map((item) => (
+                <SidebarMenuItem key={item.file}>
                   <SidebarMenuButton>
                     <FileIcon />
                     {item.file}
@@ -74,8 +74,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupLabel>Files</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {data.tree.map((item, index) => (
-                <Tree key={index} item={item} />
+              {data.tree.map((item) => (
+                <Tree key={String(item)} item={item} />
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -112,8 +112,8 @@ function Tree({ item }: { item: TreeItem }) {
         </SidebarMenuButton>
         <CollapsibleContent>
           <SidebarMenuSub>
-            {items.map((subItem, index) => (
-              <Tree key={index} item={subItem} />
+            {items.map((subItem) => (
+              <Tree key={String(subItem)} item={subItem} />
             ))}
           </SidebarMenuSub>
         </CollapsibleContent>

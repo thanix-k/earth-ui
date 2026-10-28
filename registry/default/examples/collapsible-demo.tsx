@@ -12,7 +12,7 @@ const bookings = [
   { time: "9:00 am", customer: "Ava Thompson", service: "Haircut" },
   { time: "10:30 am", customer: "Liam Chen", service: "Beard trim" },
   { time: "1:00 pm", customer: "Sofia Rossi", service: "Colour" },
-];
+] as const;
 
 export default function CollapsibleDemo() {
   return (

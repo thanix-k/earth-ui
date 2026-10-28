@@ -8,14 +8,14 @@ import { Separator } from "@/registry/default/ui/separator";
 // Only the inner corners are squared off, so each child keeps its own outer
 // radius: pill buttons stay pills, inputs keep their 8px corners.
 const buttonGroupVariants = cva(
-  "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
+  "flex w-fit min-w-auto items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
   {
     variants: {
       orientation: {
         horizontal:
-          "[&>[data-slot]:has(~[data-slot])]:rounded-e-none [&>[data-slot]~[data-slot]]:rounded-s-none [&>[data-slot]~[data-slot]:not([data-slot=button-group-separator])]:border-s-0",
+          "pointer-coarse:*:data-[slot=button]:min-w-11 [&>[data-slot]:has(~[data-slot])]:rounded-e-none [&>[data-slot]~[data-slot]]:rounded-s-none [&>[data-slot]~[data-slot]:not([data-slot=button-group-separator])]:border-s-0",
         vertical:
-          "flex-col [&>[data-slot]:has(~[data-slot])]:rounded-b-none [&>[data-slot]~[data-slot]]:rounded-t-none [&>[data-slot]~[data-slot]:not([data-slot=button-group-separator])]:border-t-0",
+          "flex-col pointer-coarse:*:data-[slot=button]:min-h-11 [&>[data-slot]:has(~[data-slot])]:rounded-b-none [&>[data-slot]~[data-slot]]:rounded-t-none [&>[data-slot]~[data-slot]:not([data-slot=button-group-separator])]:border-t-0",
       },
     },
     defaultVariants: {
@@ -28,11 +28,9 @@ function ButtonGroup({
   className,
   orientation,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof buttonGroupVariants>) {
+}: React.ComponentProps<"fieldset"> & VariantProps<typeof buttonGroupVariants>) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: a fieldset would add form semantics and default styles
-    <div
-      role="group"
+    <fieldset
       data-slot="button-group"
       data-orientation={orientation}
       className={cn(buttonGroupVariants({ orientation }), className)}

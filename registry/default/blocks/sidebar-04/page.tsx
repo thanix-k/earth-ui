@@ -13,11 +13,9 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/registry/defaul
 export default function Page() {
   return (
     <SidebarProvider
-      style={
-        {
-          "--sidebar-width": "19rem",
-        } as React.CSSProperties
-      }
+      style={{
+        "--sidebar-width": "19rem",
+      }}
     >
       <AppSidebar />
       <SidebarInset>
@@ -30,7 +28,7 @@ export default function Page() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Manage Bookings</BreadcrumbLink>
+                <BreadcrumbLink href="#top">Manage Bookings</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>

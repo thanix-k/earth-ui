@@ -12,7 +12,7 @@ const groups = Object.groupBy(blocks(), (b) => categoryOf(b.name));
 const categories = Object.keys(groups).sort(
   (a, b) => (groups[b]?.length ?? 0) - (groups[a]?.length ?? 0),
 );
-const titleCase = (s: string) => s[0].toUpperCase() + s.slice(1);
+const titleCase = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 type Props = { params: Promise<{ category?: string[] }> };
 

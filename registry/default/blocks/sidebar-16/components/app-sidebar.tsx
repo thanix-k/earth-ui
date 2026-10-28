@@ -12,7 +12,7 @@ import {
   Settings2Icon,
   StoreIcon,
 } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { NavMain } from "@/registry/default/blocks/sidebar-16/components/nav-main";
 import { NavProjects } from "@/registry/default/blocks/sidebar-16/components/nav-projects";
 import { NavSecondary } from "@/registry/default/blocks/sidebar-16/components/nav-secondary";
@@ -156,7 +156,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<a href="#" />}>
+            <SidebarMenuButton size="lg" render={<a href="#top" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                 <ClockIcon className="size-4" />
               </div>

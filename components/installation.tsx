@@ -9,11 +9,12 @@ export const RUNNERS = {
   yarn: "yarn dlx",
   bun: "bunx --bun",
 } as const;
+const isManager = (v: string): v is keyof typeof RUNNERS => Object.hasOwn(RUNNERS, v);
 
 const INSTALLERS = { pnpm: "pnpm add", npm: "npm install", yarn: "yarn add", bun: "bun add" };
 
 export function PackageManagerTabs({ command }: { command: (pm: keyof typeof RUNNERS) => string }) {
-  const managers = Object.keys(RUNNERS) as (keyof typeof RUNNERS)[];
+  const managers = Object.keys(RUNNERS).filter(isManager);
   return (
     <Tabs defaultValue="pnpm" className="gap-2">
       <TabsList variant="line">

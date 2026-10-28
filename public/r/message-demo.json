@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-demo",
+  "title": "Message Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/avatar",
+    "@earth/bubble",
+    "@earth/message"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/message-demo.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\nimport { Bubble, BubbleContent } from \"@/registry/default/ui/bubble\";\nimport {\n  Message,\n  MessageAvatar,\n  MessageContent,\n  MessageFooter,\n  MessageGroup,\n  MessageHeader,\n} from \"@/registry/default/ui/message\";\n\nexport default function MessageDemo() {\n  return (\n    <MessageGroup className=\"w-full max-w-md\">\n      <Message>\n        <MessageAvatar>\n          <Avatar>\n            <AvatarFallback>MP</AvatarFallback>\n          </Avatar>\n        </MessageAvatar>\n        <MessageContent>\n          <MessageHeader>Maya Patel</MessageHeader>\n          <Bubble variant=\"secondary\">\n            <BubbleContent>Hi, can I move my 3pm cut to Friday?</BubbleContent>\n          </Bubble>\n          <MessageFooter>10:42 AM</MessageFooter>\n        </MessageContent>\n      </Message>\n      <Message align=\"end\">\n        <MessageContent>\n          <Bubble align=\"end\">\n            <BubbleContent>Friday at 3pm is open. Booked.</BubbleContent>\n          </Bubble>\n          <MessageFooter>10:44 AM</MessageFooter>\n        </MessageContent>\n      </Message>\n    </MessageGroup>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

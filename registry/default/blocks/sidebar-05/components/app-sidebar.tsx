@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarDaysIcon, MinusIcon, PlusIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { SearchForm } from "@/registry/default/blocks/sidebar-05/components/search-form";
 import {
   Collapsible,
@@ -168,7 +168,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<a href="#" />}>
+            <SidebarMenuButton size="lg" render={<a href="#top" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                 <CalendarDaysIcon className="size-4" />
               </div>

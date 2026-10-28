@@ -9,14 +9,12 @@ import { Textarea } from "@/registry/default/ui/textarea";
 
 // The group draws the field chrome (EDS FocusContainer): border, background,
 // hover and the 2px focused border. The control inside is borderless.
-function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
+function InputGroup({ className, ...props }: React.ComponentProps<"fieldset">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: a fieldset would add form semantics to a single control
-    <div
+    <fieldset
       data-slot="input-group"
-      role="group"
       className={cn(
-        "group/input-group relative flex h-10 w-full min-w-0 items-center rounded-lg border border-eds-input bg-eds-canvas transition-colors duration-300 ease-[ease] outline-none hover:not-has-[[data-slot=input-group-control]:is(:disabled,:focus-visible)]:border-eds-input-hover lg:h-8",
+        "group/input-group relative flex h-10 pointer-coarse:min-h-11 w-full min-w-0 items-center rounded-lg border border-eds-input bg-eds-canvas transition-colors duration-300 ease-[ease] outline-none hover:not-has-[[data-slot=input-group-control]:is(:disabled,:focus-visible)]:border-eds-input-hover lg:h-8",
         "has-[[data-slot][aria-invalid=true]]:not-has-[[data-slot=input-group-control]:focus-visible]:border-eds-input-critical has-[[data-slot][aria-invalid=true]]:not-has-[[data-slot=input-group-control]:focus-visible]:hover:border-eds-input-critical-hover",
         "has-[[data-slot=input-group-control]:focus-visible]:border-eds-input-active has-[[data-slot=input-group-control]:focus-visible]:inset-ring-1 has-[[data-slot=input-group-control]:focus-visible]:inset-ring-eds-input-active",
         "in-data-[slot=combobox-content]:has-[[data-slot=input-group-control]:focus-visible]:border-eds-input in-data-[slot=combobox-content]:has-[[data-slot=input-group-control]:focus-visible]:inset-ring-0",
@@ -53,19 +51,17 @@ function InputGroupAddon({
   className,
   align = "inline-start",
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof inputGroupAddonVariants>) {
+}: React.ComponentProps<"fieldset"> & VariantProps<typeof inputGroupAddonVariants>) {
   return (
-    // biome-ignore lint/a11y/useKeyWithClickEvents: clicking the addon only forwards focus to the input, which is keyboard reachable itself
-    // biome-ignore lint/a11y/useSemanticElements: addons are decorative groups inside the field
-    <div
-      role="group"
+    <fieldset
       data-slot="input-group-addon"
       data-align={align}
       className={cn(inputGroupAddonVariants({ align }), className)}
-      onClick={(e) => {
-        if ((e.target as HTMLElement).closest("button")) {
+      onMouseDown={(e) => {
+        if (!(e.target instanceof Element) || e.target.closest("button")) {
           return;
         }
+        e.preventDefault();
         e.currentTarget.parentElement?.querySelector("input")?.focus();
       }}
       {...props}

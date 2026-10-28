@@ -28,7 +28,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "group/calendar bg-eds-canvas p-3 text-body-14 text-eds-primary [--cell-radius:var(--radius-sm)] [--cell-size:--spacing(11)] [--nav-size:--spacing(10)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent",
+        "group/calendar bg-eds-canvas p-3 text-body-14 text-eds-primary [--cell-radius:var(--radius-sm)] [--cell-size:--spacing(11)] [--nav-size:--spacing(10)] pointer-coarse:[--cell-size:--spacing(11)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className,
@@ -75,7 +75,7 @@ function Calendar({
           defaultClassNames.dropdown_root,
         ),
         dropdown: cn(
-          "absolute inset-0 cursor-pointer bg-eds-menu opacity-0",
+          "absolute inset-0 cursor-pointer bg-eds-menu opacity-0 pointer-coarse:-inset-y-1.5",
           defaultClassNames.dropdown,
         ),
         caption_label: cn(

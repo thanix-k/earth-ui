@@ -1,0 +1,40 @@
+---
+title: Bubble
+description: A chat bubble with seven fills, optional reactions and a pressable form.
+---
+
+<ComponentPreview name="bubble-demo" />
+
+## Installation
+
+<Installation name="bubble" />
+
+## Usage
+
+```tsx
+import { Bubble, BubbleContent, BubbleGroup, BubbleReactions } from "@/components/ui/bubble"
+```
+
+```tsx
+<Bubble variant="secondary" align="end">
+  <BubbleContent>Hello</BubbleContent>
+</Bubble>
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="bubble-variants" />
+
+### Reactions
+
+`BubbleReactions` takes `side` (`top` or `bottom`) and `align` (`start` or `end`).
+
+<ComponentPreview name="bubble-reactions" />
+
+### Pressable
+
+Use the `render` prop on `BubbleContent` to render a button or link. It takes the fill's hover step and Earth's focus ring.
+
+<ComponentPreview name="bubble-pressable" />

@@ -53,7 +53,7 @@ function MenubarTrigger({ className, ...props }: React.ComponentProps<typeof Dro
     <DropdownMenuTrigger
       data-slot="menubar-trigger"
       className={cn(
-        "flex h-full cursor-pointer items-center rounded-sm px-3 text-body-14 font-medium text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed aria-expanded:bg-eds-neutral-pressed lg:px-2 lg:text-body-12",
+        "relative flex h-full touch-target cursor-pointer items-center rounded-sm px-3 text-body-14 font-medium text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed aria-expanded:bg-eds-neutral-pressed lg:px-2 lg:text-body-12",
         className,
       )}
       {...props}
@@ -86,7 +86,7 @@ function MenubarItem({ ...props }: React.ComponentProps<typeof DropdownMenuItem>
 
 // Menubar check and radio items put the indicator on the leading edge.
 const menubarIndicatorItemClasses =
-  "relative flex cursor-pointer items-center gap-3 rounded-sm py-2 pr-3 pl-11 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none not-data-disabled:data-highlighted:bg-eds-neutral-secondary not-data-disabled:hover:data-highlighted:bg-eds-neutral-hover not-data-disabled:active:data-highlighted:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-8 lg:text-body-12 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4";
+  "relative flex cursor-pointer items-center gap-3 rounded-sm py-2 pointer-coarse:min-h-11 pr-3 pl-11 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none not-data-disabled:data-highlighted:bg-eds-neutral-secondary not-data-disabled:hover:data-highlighted:bg-eds-neutral-hover not-data-disabled:active:data-highlighted:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-8 lg:text-body-12 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4";
 
 const menubarIndicatorClasses =
   "pointer-events-none absolute left-3 flex items-center justify-center lg:left-2";

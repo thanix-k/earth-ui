@@ -69,6 +69,11 @@ const KINDS = [
 // Provided by the consumer's app, never installed by an item.
 const PEERS = new Set(["react", "react-dom", "next"]);
 
+// A package that needs a peer its importer never names (FullCalendar 7 needs temporal-polyfill).
+const REQUIRED_PEERS: Record<string, string[]> = {
+  "@fullcalendar/react": ["temporal-polyfill"],
+};
+
 /** npm + registry dependencies, read from the file's import specifiers. */
 function dependenciesOf(file: string) {
   const source = readFileSync(rel(file), "utf8");
@@ -84,9 +89,12 @@ function dependenciesOf(file: string) {
     } else if (spec.startsWith(".") || spec.startsWith("@/")) {
       throw new Error(`${file}: import "${spec}" must go through @/registry/default/…`);
     } else {
-      const parts = spec.split("/");
-      const pkg = spec.startsWith("@") ? parts.slice(0, 2).join("/") : parts[0];
+      const pkg = spec
+        .split("/")
+        .slice(0, spec.startsWith("@") ? 2 : 1)
+        .join("/");
       if (!PEERS.has(pkg)) npm.add(pkg);
+      for (const peer of REQUIRED_PEERS[pkg] ?? []) npm.add(peer);
     }
   }
   return { dependencies: [...npm].sort(), registryDependencies: [...registry].sort() };
@@ -97,7 +105,7 @@ function frontmatter(name: string) {
   const page = rel("content/docs/components", `${name}.mdx`);
   if (!existsSync(page)) return {};
   const head = readFileSync(page, "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1] ?? "";
-  const field = (key: string) => head.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1].trim();
+  const field = (key: string) => head.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim();
   return { title: field("title"), description: field("description") };
 }
 

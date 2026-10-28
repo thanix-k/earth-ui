@@ -46,6 +46,8 @@ import {
 
 Unlike a dialog, it doesn't close when people click outside it.
 
+Below 768px it opens as a bottom sheet with a close button, and its `data-layout` is `sheet` (`dialog` otherwise). Set `isSheetOnPhone={false}` on `AlertDialogContent` to keep it centred, or `showCloseButton={false}` when the content draws its own close button.
+
 ## Examples
 
 ### Destructive

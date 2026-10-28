@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker-demo",
+  "title": "Marker Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/marker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/marker-demo.tsx",
+      "content": "import { Marker, MarkerContent } from \"@/registry/default/ui/marker\";\n\nexport default function MarkerDemo() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <Marker variant=\"separator\">\n        <MarkerContent>Today</MarkerContent>\n      </Marker>\n      <Marker variant=\"border\">\n        <MarkerContent>3 unread messages</MarkerContent>\n      </Marker>\n      <Marker>\n        <MarkerContent>Maya joined the conversation</MarkerContent>\n      </Marker>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

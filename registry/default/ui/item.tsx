@@ -5,11 +5,9 @@ import type * as React from "react";
 import { cn } from "@/registry/default/lib/utils";
 import { Separator } from "@/registry/default/ui/separator";
 
-function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+function ItemGroup({ className, ...props }: React.ComponentProps<"ul">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: items can render as any element, so the group keeps role="list".
-    <div
-      role="list"
+    <ul
       data-slot="item-group"
       className={cn(
         "group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2",
@@ -35,7 +33,7 @@ function ItemSeparator({ className, ...props }: React.ComponentProps<typeof Sepa
 // `border-tertiary` edge, `canvas-secondary` fill, neutral hover/pressed
 // when the item is a link or button.
 const itemVariants = cva(
-  "group/item flex w-full flex-wrap items-center rounded-lg border text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none focus-visible:focus-ring lg:text-body-12 [a]:hover:bg-eds-neutral-hover [a]:active:bg-eds-neutral-pressed [button]:cursor-pointer [button]:text-left [button]:hover:bg-eds-neutral-hover [button]:active:bg-eds-neutral-pressed",
+  "group/item flex w-full flex-wrap items-center pointer-coarse:[a&]:min-h-11 rounded-lg border text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none focus-visible:focus-ring lg:text-body-12 [a]:hover:bg-eds-neutral-hover [a]:active:bg-eds-neutral-pressed [button]:cursor-pointer [button]:text-left [button]:hover:bg-eds-neutral-hover [button]:active:bg-eds-neutral-pressed",
   {
     variants: {
       variant: {

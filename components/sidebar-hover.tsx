@@ -18,7 +18,8 @@ export function SidebarHover() {
     list.prepend(pill);
 
     const onOver = (e: PointerEvent) => {
-      const item = (e.target as Element).closest("a, button");
+      if (!(e.target instanceof Element)) return;
+      const item = e.target.closest("a, button");
       if (!item) return;
       const r = item.getBoundingClientRect();
       const l = list.getBoundingClientRect();

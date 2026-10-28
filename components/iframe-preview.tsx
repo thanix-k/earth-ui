@@ -17,7 +17,9 @@ export function IframePreview({ name }: { name: string }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new ResizeObserver(([entry]) => setScale(entry.contentRect.width / WIDTH));
+    const observer = new ResizeObserver(([entry]) => {
+      if (entry) setScale(entry.contentRect.width / WIDTH);
+    });
     observer.observe(el);
     return () => observer.disconnect();
   }, []);

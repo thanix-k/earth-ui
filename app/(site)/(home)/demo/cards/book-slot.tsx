@@ -77,7 +77,7 @@ export function BookSlotCard() {
           mode="single"
           selected={date}
           onSelect={setDate}
-          defaultMonth={date}
+          {...(date ? { defaultMonth: date } : {})}
           className="mx-auto"
         />
         <ToggleGroup

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/examples/calendar-dropdown.tsx",
-      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDropdown() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date(1992, 4, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      defaultMonth={date}\n      captionLayout=\"dropdown\"\n      startMonth={new Date(1930, 0)}\n      endMonth={new Date(2026, 11)}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function CalendarDropdown() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date(1992, 4, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      {...(date ? { defaultMonth: date } : {})}\n      captionLayout=\"dropdown\"\n      startMonth={new Date(1930, 0)}\n      endMonth={new Date(2026, 11)}\n    />\n  );\n}\n",
       "type": "registry:example"
     }
   ],

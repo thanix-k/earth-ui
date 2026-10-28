@@ -10,7 +10,7 @@ export default function CalendarSmall() {
     <Calendar
       mode="single"
       selected={date}
-      defaultMonth={date}
+      {...(date ? { defaultMonth: date } : {})}
       onSelect={setDate}
       className="text-body-12 [--cell-size:--spacing(8)] [--nav-size:--spacing(8)]"
     />

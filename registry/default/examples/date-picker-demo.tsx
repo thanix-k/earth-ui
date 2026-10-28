@@ -25,7 +25,12 @@ export default function DatePickerDemo() {
         <ChevronDownIcon data-icon="inline-end" />
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
-        <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={date} />
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          {...(date ? { defaultMonth: date } : {})}
+        />
       </PopoverContent>
     </Popover>
   );

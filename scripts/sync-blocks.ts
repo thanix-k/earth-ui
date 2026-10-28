@@ -5,6 +5,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import ts from "typescript";
+import { z } from "zod";
 import { CONTENT, DATA } from "./blocks-content.ts";
 
 const UPSTREAM = "https://ui.shadcn.com/r/styles/base-nova";
@@ -15,20 +16,29 @@ const root = path.resolve(import.meta.dirname, "..");
 const rel = (...p: string[]) => path.join(root, ...p);
 const OUT = "registry/default/blocks";
 
-type UpstreamFile = { path: string; type: string; target?: string; content: string };
-type UpstreamItem = {
-  name: string;
-  type: string;
-  title?: string;
-  description?: string;
-  categories?: string[];
-  files: UpstreamFile[];
-};
+const upstreamIndex = z.object({
+  items: z.array(z.object({ name: z.string(), type: z.string() })),
+});
+const upstreamItem = z.object({
+  name: z.string(),
+  type: z.string(),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  categories: z.array(z.string()).optional(),
+  files: z.array(
+    z.object({
+      path: z.string(),
+      type: z.string(),
+      target: z.string().optional(),
+      content: z.string(),
+    }),
+  ),
+});
 
-async function get<T>(url: string): Promise<T> {
+async function get<T>(url: string, schema: z.ZodType<T>): Promise<T> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url}: ${res.status}`);
-  return res.json() as Promise<T>;
+  return schema.parse(await res.json());
 }
 
 /** `<IconPlaceholder lucide="BotIcon" tabler=… />` → `<BotIcon />` (Earth ships lucide only). */
@@ -128,7 +138,73 @@ const PATCHES: { file: string; find: string; replace: string; why: string }[] = 
     replace: "return new Date(String(value))",
     why: "recharts 3 types labelFormatter's value as ReactNode",
   },
+  ...["sidebar-01", "sidebar-02"].map((block) => ({
+    file: `registry/base-nova/blocks/${block}/components/app-sidebar.tsx`,
+    find: "defaultVersion={data.versions[0]}",
+    replace: 'defaultVersion={data.versions[0] ?? ""}',
+    why: "noUncheckedIndexedAccess types the first version as possibly undefined",
+  })),
+  {
+    file: "registry/base-nova/blocks/sidebar-10/components/nav-actions.tsx",
+    find: `{data.map((group, index) => (
+                <SidebarGroup key={index}`,
+    replace: `{data.map((group) => (
+                <SidebarGroup key={group[0]?.label}`,
+    why: "noArrayIndexKey: a group's first label is unique",
+  },
+  {
+    file: "registry/base-nova/blocks/sidebar-10/components/nav-actions.tsx",
+    find: `{group.map((item, index) => (
+                        <SidebarMenuItem key={index}>`,
+    replace: `{group.map((item) => (
+                        <SidebarMenuItem key={item.label}>`,
+    why: "noArrayIndexKey: labels are unique",
+  },
+  {
+    file: "registry/base-nova/blocks/sidebar-11/components/app-sidebar.tsx",
+    find: `{data.changes.map((item, index) => (
+                <SidebarMenuItem key={index}>`,
+    replace: `{data.changes.map((item) => (
+                <SidebarMenuItem key={item.file}>`,
+    why: "noArrayIndexKey: file paths are unique",
+  },
+  {
+    file: "registry/base-nova/blocks/sidebar-11/components/app-sidebar.tsx",
+    find: `{data.tree.map((item, index) => (
+                <Tree key={index} item={item} />`,
+    replace: `{data.tree.map((item) => (
+                <Tree key={String(item)} item={item} />`,
+    why: "noArrayIndexKey: sibling paths are unique",
+  },
+  {
+    file: "registry/base-nova/blocks/sidebar-11/components/app-sidebar.tsx",
+    find: `{items.map((subItem, index) => (
+              <Tree key={index} item={subItem} />`,
+    replace: `{items.map((subItem) => (
+              <Tree key={String(subItem)} item={subItem} />`,
+    why: "noArrayIndexKey: sibling paths are unique",
+  },
 ];
+
+/**
+ * Upstream patterns that fail the lint rules consumers run (Biome's
+ * recommended set), rewritten without changing behaviour.
+ */
+const lintClean = (source: string) =>
+  source
+    // `#top` scrolls to the top of the page exactly as `#` does (HTML spec).
+    .replaceAll('href="#"', 'href="#top"')
+    // Brand logos sit beside their visible or sr-only label.
+    .replace(/<svg(?![^>]*aria-hidden)/g, '<svg aria-hidden="true"')
+    .replaceAll('alt="Image"', 'alt=""')
+    // SidebarProvider's `style` accepts custom properties.
+    .replace(/\s+as React\.CSSProperties/g, "")
+    // Placeholder tiles keyed by an id rather than the array index.
+    .replace(
+      /Array\.from\(\{\s*length:\s*(\d+),?\s*\}\)\.map\(\(_, (\w+)\) => \(\s*<div\s+key=\{\2\}/g,
+      (_, length, index) =>
+        `Array.from({ length: ${length} }, (_, ${index}) => \`placeholder-\${${index}}\`).map((id) => (<div key={id}`,
+    );
 
 function rewrite(file: string, source: string) {
   let out = lucideIcons(file, earthContent(file, source))
@@ -138,12 +214,12 @@ function rewrite(file: string, source: string) {
     if (!out.includes(p.find)) throw new Error(`${file}: patch no longer applies (${p.why})`);
     out = out.replace(p.find, p.replace);
   }
-  return out;
+  return lintClean(out);
 }
 
 /** Earth items a file imports that Earth doesn't ship. */
 function missing(source: string) {
-  const specs = [...source.matchAll(/from "(@\/[^"]+)"/g)].map((m) => m[1]);
+  const specs = [...source.matchAll(/from "(@\/[^"]+)"/g)].flatMap((m) => m[1] ?? []);
   return specs.filter((spec) => {
     if (spec.startsWith("@/registry/default/blocks/")) return false;
     if (!/^@\/registry\/default\/(ui|hooks|lib)\//.test(spec)) return true;
@@ -152,7 +228,7 @@ function missing(source: string) {
   });
 }
 
-const index = await get<{ items: UpstreamItem[] }>(`${UPSTREAM}/registry.json`);
+const index = await get(`${UPSTREAM}/registry.json`, upstreamIndex);
 const names = index.items
   .filter((i) => i.type === "registry:block" && !SKIP.test(i.name))
   .map((i) => i.name);
@@ -161,7 +237,7 @@ rmSync(rel(OUT), { recursive: true, force: true });
 const manifest = [];
 const skipped: string[] = [];
 for (const name of names) {
-  const item = await get<UpstreamItem>(`${UPSTREAM}/${name}.json`);
+  const item = await get(`${UPSTREAM}/${name}.json`, upstreamItem);
   const files = item.files.map((f) => ({
     ...f,
     path: f.path.replace("registry/base-nova/", "registry/default/"),

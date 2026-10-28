@@ -19,8 +19,7 @@ export default async function PreviewPage({ params }: { params: Promise<{ name: 
   if (!Example) notFound();
   return (
     <>
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: static constant, no user input */}
-      <script dangerouslySetInnerHTML={{ __html: APPLY_QUERY }} />
+      <script>{APPLY_QUERY}</script>
       <div className="flex min-h-svh items-center justify-center bg-background p-10 text-foreground in-data-bleed:block in-data-bleed:p-0">
         {/* Streams examples that read the time (e.g. Calendar's "today"). */}
         <Suspense>

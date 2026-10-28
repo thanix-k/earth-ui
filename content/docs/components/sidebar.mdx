@@ -50,3 +50,9 @@ Below 768px the sidebar opens as a sheet. Press <kbd>⌘</kbd> <kbd>B</kbd> (or 
 ### Inset with sub-menu
 
 <ComponentPreview name="sidebar-inset" iframe />
+
+### Streaming content
+
+Page content can stream in under `<Suspense>` inside `SidebarProvider`. The provider's context never changes, so a boundary that is still streaming hydrates when the sidebar opens, closes or switches to the mobile sheet, instead of rendering a second copy on the client.
+
+<ComponentPreview name="sidebar-streaming" iframe />
