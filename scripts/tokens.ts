@@ -262,6 +262,21 @@ export function baseStyle() {
         // outline-hidden keeps a visible outline in forced-colors mode.
         "@apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background": {},
       },
+      "@utility touch-target": {
+        // A 44px hit area on touch screens, centred on a control drawn smaller, without changing
+        // its look. The control must be positioned (`relative`, `absolute`, …).
+        "@media (pointer: coarse)": {
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "max(100%, 44px)",
+            height: "max(100%, 44px)",
+            transform: "translate(-50%, -50%)",
+          },
+        },
+      },
       "@layer base": {
         "*": { "@apply border-border outline-ring": {} },
         body: { "@apply bg-background text-foreground font-sans": {} },

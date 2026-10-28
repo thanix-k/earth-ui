@@ -10,7 +10,7 @@ import { cn } from "@/registry/default/lib/utils";
 // 12px text and 8px padding from lg. Keyboard/pointer highlight is
 // neutral-secondary, press is neutral-pressed.
 const menuItemClasses =
-  "relative flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none not-data-disabled:data-highlighted:bg-eds-neutral-secondary not-data-disabled:hover:data-highlighted:bg-eds-neutral-hover not-data-disabled:active:data-highlighted:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4";
+  "relative flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 pointer-coarse:min-h-11 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none not-data-disabled:data-highlighted:bg-eds-neutral-secondary not-data-disabled:hover:data-highlighted:bg-eds-neutral-hover not-data-disabled:active:data-highlighted:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4";
 
 const menuPopupClasses =
   "z-50 overflow-x-hidden overflow-y-auto border border-eds-secondary bg-eds-menu p-1 text-eds-primary outline-none data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0";

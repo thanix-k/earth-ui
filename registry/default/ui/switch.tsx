@@ -17,7 +17,7 @@ function Switch({
       data-slot="switch"
       data-size={size}
       className={cn(
-        "peer group/switch relative inline-flex shrink-0 cursor-pointer items-center rounded-full border border-transparent px-px transition-colors duration-300 ease-[ease] outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:focus-ring",
+        "peer group/switch relative inline-flex touch-target shrink-0 cursor-pointer items-center rounded-full border border-transparent px-px transition-colors duration-300 ease-[ease] outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:focus-ring",
         "data-[size=default]:h-5 data-[size=default]:w-9 data-[size=sm]:h-4 data-[size=sm]:w-7 lg:data-[size=default]:h-4 lg:data-[size=default]:w-7",
         "bg-eds-neutral-tertiary text-eds-onPrimary data-checked:bg-eds-inverse",
         "aria-invalid:border-eds-input-critical",

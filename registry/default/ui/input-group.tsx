@@ -14,7 +14,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"fieldset">) {
     <fieldset
       data-slot="input-group"
       className={cn(
-        "group/input-group relative flex h-10 w-full min-w-0 items-center rounded-lg border border-eds-input bg-eds-canvas transition-colors duration-300 ease-[ease] outline-none hover:not-has-[[data-slot=input-group-control]:is(:disabled,:focus-visible)]:border-eds-input-hover lg:h-8",
+        "group/input-group relative flex h-10 pointer-coarse:min-h-11 w-full min-w-0 items-center rounded-lg border border-eds-input bg-eds-canvas transition-colors duration-300 ease-[ease] outline-none hover:not-has-[[data-slot=input-group-control]:is(:disabled,:focus-visible)]:border-eds-input-hover lg:h-8",
         "has-[[data-slot][aria-invalid=true]]:not-has-[[data-slot=input-group-control]:focus-visible]:border-eds-input-critical has-[[data-slot][aria-invalid=true]]:not-has-[[data-slot=input-group-control]:focus-visible]:hover:border-eds-input-critical-hover",
         "has-[[data-slot=input-group-control]:focus-visible]:border-eds-input-active has-[[data-slot=input-group-control]:focus-visible]:inset-ring-1 has-[[data-slot=input-group-control]:focus-visible]:inset-ring-eds-input-active",
         "in-data-[slot=combobox-content]:has-[[data-slot=input-group-control]:focus-visible]:border-eds-input in-data-[slot=combobox-content]:has-[[data-slot=input-group-control]:focus-visible]:inset-ring-0",

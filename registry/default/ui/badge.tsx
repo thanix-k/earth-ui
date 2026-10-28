@@ -8,7 +8,7 @@ import { cn } from "@/registry/default/lib/utils";
 // badges (links, buttons) grow slightly on hover like EDS instead of
 // changing colour.
 const badgeVariants = cva(
-  "group/badge inline-flex h-8 w-fit min-w-8 shrink-0 items-center justify-center gap-1 overflow-hidden rounded-sm px-3 text-body-12 whitespace-nowrap outline-none has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 lg:h-6 lg:min-w-6 lg:px-2.5 lg:text-body-10 lg:has-data-[icon=inline-end]:pr-1.5 lg:has-data-[icon=inline-start]:pl-1.5 [&>svg]:pointer-events-none [&>svg]:size-4 [&:is(a,button)]:cursor-pointer [&:is(a,button)]:transition-transform [&:is(a,button)]:hover:scale-[103%] [&:is(a,button)]:focus-visible:focus-ring [&:is(a,button)]:active:scale-[101%]",
+  "group/badge inline-flex h-8 w-fit min-w-8 pointer-coarse:[a&]:min-h-11 shrink-0 items-center justify-center gap-1 overflow-hidden rounded-sm px-3 text-body-12 whitespace-nowrap outline-none has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 lg:h-6 lg:min-w-6 lg:px-2.5 lg:text-body-10 lg:has-data-[icon=inline-end]:pr-1.5 lg:has-data-[icon=inline-start]:pl-1.5 [&>svg]:pointer-events-none [&>svg]:size-4 [&:is(a,button)]:cursor-pointer [&:is(a,button)]:transition-transform [&:is(a,button)]:hover:scale-[103%] [&:is(a,button)]:focus-visible:focus-ring [&:is(a,button)]:active:scale-[101%]",
   {
     variants: {
       variant: {

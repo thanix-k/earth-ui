@@ -53,7 +53,7 @@ function NavigationMenuItem({
 
 // EDS's tertiary (ghost) button: pill, secondary text, pressed fill while open.
 const navigationMenuTriggerStyle = cva(
-  "group/navigation-menu-trigger inline-flex h-8 w-max cursor-pointer items-center justify-center rounded-full px-3 py-0 text-body-12 font-medium text-eds-secondary lg:px-3 lg:py-0 lg:text-body-12 transition-colors duration-300 ease-[ease] outline-none hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:bg-transparent data-disabled:text-eds-disabled data-popup-open:bg-eds-neutral-pressed data-popup-open:text-eds-primary data-active:text-eds-primary",
+  "group/navigation-menu-trigger relative inline-flex h-8 touch-target w-max cursor-pointer items-center justify-center rounded-full px-3 py-0 text-body-12 font-medium text-eds-secondary lg:px-3 lg:py-0 lg:text-body-12 transition-colors duration-300 ease-[ease] outline-none hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:bg-transparent data-disabled:text-eds-disabled data-popup-open:bg-eds-neutral-pressed data-popup-open:text-eds-primary data-active:text-eds-primary",
 );
 
 function NavigationMenuTrigger({
@@ -126,7 +126,7 @@ function NavigationMenuLink({ className, ...props }: NavigationMenuPrimitive.Lin
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring data-active:bg-eds-neutral-active lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12 [&_svg]:shrink-0 [&_svg]:text-eds-icon-secondary [&_svg:not([class*='size-'])]:size-4",
+        "flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 pointer-coarse:min-h-11 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring data-active:bg-eds-neutral-active lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12 [&_svg]:shrink-0 [&_svg]:text-eds-icon-secondary [&_svg:not([class*='size-'])]:size-4",
         "in-data-[slot=navigation-menu-content]:focus-visible:bg-eds-neutral-secondary in-data-[slot=navigation-menu-content]:focus-visible:ring-0 in-data-[slot=navigation-menu-content]:focus-visible:ring-offset-0",
         className,
       )}

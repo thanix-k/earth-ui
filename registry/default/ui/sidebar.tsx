@@ -40,15 +40,90 @@ type SidebarContextProps = {
   toggleSidebar: () => void;
 };
 
-const SidebarContext = React.createContext<SidebarContextProps | null>(null);
+type SidebarSnapshot = { open: boolean; openMobile: boolean };
+type SetSidebarValue = boolean | ((value: boolean) => boolean);
 
-function useSidebar() {
-  const context = React.useContext(SidebarContext);
-  if (!context) {
+// The context holds a store that never changes, and `useSidebar()` subscribes to it. A context value that changed
+// (`isMobile` flipping below 768px, the rail toggling) reached every Suspense boundary under the provider, and React
+// client-rendered each one still streaming, leaving the server's copy hidden beside it. The server snapshot is the
+// first state, so a boundary that hydrates after a change still matches its HTML.
+type SidebarStore = {
+  subscribe: (onChange: () => void) => () => void;
+  getSnapshot: () => SidebarSnapshot;
+  getServerSnapshot: () => SidebarSnapshot;
+  setOpen: (value: SetSidebarValue) => void;
+  setOpenMobile: (value: SetSidebarValue) => void;
+  sync: (open: boolean) => void;
+};
+
+const SidebarContext = React.createContext<SidebarStore | null>(null);
+
+function toggle(store: SidebarStore, isMobile: boolean) {
+  if (isMobile) store.setOpenMobile((open) => !open);
+  else store.setOpen((open) => !open);
+}
+
+function createSidebarStore(
+  initial: SidebarSnapshot,
+  onOpenChange: React.RefObject<((open: boolean) => void) | undefined>,
+): SidebarStore {
+  let snapshot = initial;
+  const listeners = new Set<() => void>();
+  const update = (next: SidebarSnapshot) => {
+    if (next.open === snapshot.open && next.openMobile === snapshot.openMobile) return;
+    snapshot = next;
+    for (const listener of listeners) listener();
+  };
+  return {
+    subscribe: (onChange) => {
+      listeners.add(onChange);
+      return () => {
+        listeners.delete(onChange);
+      };
+    },
+    getSnapshot: () => snapshot,
+    getServerSnapshot: () => initial,
+    setOpen: (value) => {
+      const openState = typeof value === "function" ? value(snapshot.open) : value;
+      if (onOpenChange.current) {
+        onOpenChange.current(openState);
+      } else {
+        update({ ...snapshot, open: openState });
+      }
+
+      // This sets the cookie to keep the sidebar state.
+      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+    },
+    setOpenMobile: (value) =>
+      update({
+        ...snapshot,
+        openMobile: typeof value === "function" ? value(snapshot.openMobile) : value,
+      }),
+    sync: (open) => update({ ...snapshot, open }),
+  };
+}
+
+function useSidebar(): SidebarContextProps {
+  const store = React.useContext(SidebarContext);
+  if (!store) {
     throw new Error("useSidebar must be used within a SidebarProvider.");
   }
+  const { open, openMobile } = React.useSyncExternalStore(
+    store.subscribe,
+    store.getSnapshot,
+    store.getServerSnapshot,
+  );
+  const isMobile = useIsMobile();
 
-  return context;
+  return {
+    state: open ? "expanded" : "collapsed",
+    open,
+    setOpen: store.setOpen,
+    openMobile,
+    setOpenMobile: store.setOpenMobile,
+    isMobile,
+    toggleSidebar: () => toggle(store, isMobile),
+  };
 }
 
 function SidebarProvider({
@@ -66,61 +141,33 @@ function SidebarProvider({
   onOpenChange?: (open: boolean) => void;
 }) {
   const isMobile = useIsMobile();
-  const [openMobile, setOpenMobile] = React.useState(false);
 
   // This is the internal state of the sidebar.
   // We use openProp and setOpenProp for control from outside the component.
-  const [_open, _setOpen] = React.useState(defaultOpen);
-  const open = openProp ?? _open;
-  const setOpen = React.useCallback(
-    (value: boolean | ((value: boolean) => boolean)) => {
-      const openState = typeof value === "function" ? value(open) : value;
-      if (setOpenProp) {
-        setOpenProp(openState);
-      } else {
-        _setOpen(openState);
-      }
-
-      // This sets the cookie to keep the sidebar state.
-      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
-    },
-    [setOpenProp, open],
+  const onOpenChange = React.useRef(setOpenProp);
+  React.useLayoutEffect(() => {
+    onOpenChange.current = setOpenProp;
+  });
+  const [store] = React.useState(() =>
+    createSidebarStore({ open: openProp ?? defaultOpen, openMobile: false }, onOpenChange),
   );
-
-  // Helper to toggle the sidebar.
-  const toggleSidebar = React.useCallback(() => {
-    return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open);
-  }, [isMobile, setOpen]);
+  React.useLayoutEffect(() => {
+    if (openProp !== undefined) store.sync(openProp);
+  }, [openProp, store]);
 
   // Adds a keyboard shortcut to toggle the sidebar.
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === SIDEBAR_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
         event.preventDefault();
-        toggleSidebar();
+        toggle(store, isMobile);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [toggleSidebar]);
+  }, [store, isMobile]);
 
-  // We add a state so that we can do data-state="expanded" or "collapsed".
-  // This makes it easier to style the sidebar with Tailwind classes.
-  const state = open ? "expanded" : "collapsed";
-
-  const contextValue = React.useMemo<SidebarContextProps>(
-    () => ({
-      state,
-      open,
-      setOpen,
-      isMobile,
-      openMobile,
-      setOpenMobile,
-      toggleSidebar,
-    }),
-    [state, open, setOpen, isMobile, openMobile, toggleSidebar],
-  );
   const wrapperStyle: React.CSSProperties & Record<`--${string}`, string> = {
     "--sidebar-width": SIDEBAR_WIDTH,
     "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
@@ -128,7 +175,7 @@ function SidebarProvider({
   };
 
   return (
-    <SidebarContext.Provider value={contextValue}>
+    <SidebarContext.Provider value={store}>
       <div
         data-slot="sidebar-wrapper"
         style={wrapperStyle}
@@ -276,7 +323,7 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        "absolute inset-y-0 z-20 hidden w-4 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:start-1/2 after:w-[2px] hover:after:bg-eds-neutral-tertiary sm:flex ltr:-translate-x-1/2 rtl:-translate-x-1/2",
+        "absolute inset-y-0 z-20 hidden w-4 pointer-coarse:pointer-events-none transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:start-1/2 after:w-[2px] hover:after:bg-eds-neutral-tertiary sm:flex ltr:-translate-x-1/2 rtl:-translate-x-1/2",
         "in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize",
         "[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize",
         "group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full hover:group-data-[collapsible=offcanvas]:bg-eds-canvas-secondary",
@@ -405,7 +452,7 @@ function SidebarGroupAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute top-3.5 right-3 flex aspect-square w-5 cursor-pointer items-center justify-center rounded-sm p-0 text-eds-icon-secondary outline-hidden transition-colors duration-300 ease-[ease] group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "absolute top-3.5 right-3 flex aspect-square w-5 touch-target cursor-pointer items-center justify-center rounded-sm p-0 text-eds-icon-secondary outline-hidden transition-colors duration-300 ease-[ease] group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
           className,
         ),
       },
@@ -453,7 +500,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button group/menu-button flex w-full cursor-pointer items-center gap-3 overflow-hidden rounded-sm px-3 text-left text-eds-primary outline-hidden transition-[width,height,padding,background-color] duration-200 ease-[ease] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed disabled:pointer-events-none disabled:text-eds-disabled aria-disabled:pointer-events-none aria-disabled:text-eds-disabled data-active:bg-eds-neutral-active data-active:font-medium lg:gap-2 lg:px-2 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-eds-icon-secondary data-active:[&_svg]:text-eds-icon-primary [&>span:last-child]:truncate",
+  "peer/menu-button group/menu-button flex w-full pointer-coarse:min-h-11 cursor-pointer items-center gap-3 overflow-hidden rounded-sm px-3 text-left text-eds-primary outline-hidden transition-[width,height,padding,background-color] duration-200 ease-[ease] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed disabled:pointer-events-none disabled:text-eds-disabled aria-disabled:pointer-events-none aria-disabled:text-eds-disabled data-active:bg-eds-neutral-active data-active:font-medium lg:gap-2 lg:px-2 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-eds-icon-secondary data-active:[&_svg]:text-eds-icon-primary [&>span:last-child]:truncate",
   {
     variants: {
       variant: {
@@ -541,7 +588,7 @@ function SidebarMenuAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute end-1.5 top-1/2 flex aspect-square w-5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-sm p-0 text-eds-icon-secondary outline-hidden transition-colors duration-300 ease-[ease] group-data-[collapsible=icon]:hidden peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=lg]/menu-button:translate-y-0 after:absolute after:-inset-2 hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "absolute end-1.5 top-1/2 flex aspect-square w-5 touch-target -translate-y-1/2 cursor-pointer items-center justify-center rounded-sm p-0 text-eds-icon-secondary outline-hidden transition-colors duration-300 ease-[ease] group-data-[collapsible=icon]:hidden peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=lg]/menu-button:translate-y-0 after:absolute after:-inset-2 hover:bg-eds-neutral-hover active:bg-eds-neutral-pressed focus-visible:focus-ring md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
           showOnHover &&
             "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 aria-expanded:opacity-100 md:opacity-0",
           className,
@@ -647,7 +694,7 @@ function SidebarMenuSubButton({
     props: mergeProps<"a">(
       {
         className: cn(
-          "flex h-8 min-w-0 -translate-x-px cursor-pointer items-center gap-2 overflow-hidden rounded-sm px-2 text-eds-primary outline-hidden transition-colors duration-200 ease-[ease] group-data-[collapsible=icon]:hidden hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed disabled:pointer-events-none disabled:text-eds-disabled aria-disabled:pointer-events-none aria-disabled:text-eds-disabled data-[size=md]:text-body-14 data-[size=sm]:text-body-12 data-active:bg-eds-neutral-active data-active:font-medium lg:h-7 lg:data-[size=md]:text-body-12 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-eds-icon-secondary",
+          "flex h-8 min-w-0 -translate-x-px pointer-coarse:min-h-11 cursor-pointer items-center gap-2 overflow-hidden rounded-sm px-2 text-eds-primary outline-hidden transition-colors duration-200 ease-[ease] group-data-[collapsible=icon]:hidden hover:bg-eds-neutral-hover focus-visible:focus-ring active:bg-eds-neutral-pressed disabled:pointer-events-none disabled:text-eds-disabled aria-disabled:pointer-events-none aria-disabled:text-eds-disabled data-[size=md]:text-body-14 data-[size=sm]:text-body-12 data-active:bg-eds-neutral-active data-active:font-medium lg:h-7 lg:data-[size=md]:text-body-12 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-eds-icon-secondary",
           className,
         ),
       },

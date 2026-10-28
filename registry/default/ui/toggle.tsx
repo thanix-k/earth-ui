@@ -8,7 +8,7 @@ import { cn } from "@/registry/default/lib/utils";
 // EDS DaySelect day (bordered, pressed: inverse fill). Icon-only toggles
 // (a lone icon plus `aria-label`) are circles.
 const toggleVariants = cva(
-  "group/toggle inline-flex shrink-0 cursor-pointer items-center justify-center gap-1 rounded-full border border-transparent whitespace-nowrap text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:bg-transparent data-disabled:text-eds-disabled [&[aria-label]:has(>svg:only-child)]:px-0 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "group/toggle relative inline-flex touch-target shrink-0 cursor-pointer items-center justify-center gap-1 rounded-full border border-transparent whitespace-nowrap text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none focus-visible:focus-ring data-disabled:pointer-events-none data-disabled:bg-transparent data-disabled:text-eds-disabled [&[aria-label]:has(>svg:only-child)]:px-0 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {

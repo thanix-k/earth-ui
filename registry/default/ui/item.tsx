@@ -33,7 +33,7 @@ function ItemSeparator({ className, ...props }: React.ComponentProps<typeof Sepa
 // `border-tertiary` edge, `canvas-secondary` fill, neutral hover/pressed
 // when the item is a link or button.
 const itemVariants = cva(
-  "group/item flex w-full flex-wrap items-center rounded-lg border text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none focus-visible:focus-ring lg:text-body-12 [a]:hover:bg-eds-neutral-hover [a]:active:bg-eds-neutral-pressed [button]:cursor-pointer [button]:text-left [button]:hover:bg-eds-neutral-hover [button]:active:bg-eds-neutral-pressed",
+  "group/item flex w-full flex-wrap items-center pointer-coarse:[a&]:min-h-11 rounded-lg border text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none focus-visible:focus-ring lg:text-body-12 [a]:hover:bg-eds-neutral-hover [a]:active:bg-eds-neutral-pressed [button]:cursor-pointer [button]:text-left [button]:hover:bg-eds-neutral-hover [button]:active:bg-eds-neutral-pressed",
   {
     variants: {
       variant: {
