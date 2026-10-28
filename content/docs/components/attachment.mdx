@@ -1,0 +1,42 @@
+---
+title: Attachment
+description: A file card with media, title, description, actions and an upload state.
+---
+
+<ComponentPreview name="attachment-demo" />
+
+## Installation
+
+<Installation name="attachment" />
+
+## Usage
+
+```tsx
+import {
+  Attachment,
+  AttachmentAction,
+  AttachmentActions,
+  AttachmentContent,
+  AttachmentDescription,
+  AttachmentGroup,
+  AttachmentMedia,
+  AttachmentTitle,
+  AttachmentTrigger,
+} from "@/components/ui/attachment"
+```
+
+`Attachment` takes `state` (`idle`, `uploading`, `processing`, `error`, `done`), `size` (`default`, `sm`, `xs`) and `orientation` (`horizontal`, `vertical`). `AttachmentMedia` takes `variant="icon"` or `"image"`. `AttachmentAction` is a [Button](/docs/components/button), ghost and `icon-xs` by default.
+
+## Examples
+
+### States
+
+The title shimmers while `uploading` or `processing`.
+
+<ComponentPreview name="attachment-states" />
+
+### Group
+
+`AttachmentGroup` scrolls sideways and snaps. `AttachmentTrigger` covers the card; use `render` to make it a link.
+
+<ComponentPreview name="attachment-group" />

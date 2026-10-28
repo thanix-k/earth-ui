@@ -1,0 +1,38 @@
+---
+title: Message
+description: A chat row with an avatar, header, bubbles and footer.
+---
+
+<ComponentPreview name="message-demo" />
+
+## Installation
+
+<Installation name="message" />
+
+## Usage
+
+```tsx
+import {
+  Message,
+  MessageAvatar,
+  MessageContent,
+  MessageFooter,
+  MessageGroup,
+  MessageHeader,
+} from "@/components/ui/message"
+```
+
+```tsx
+<MessageGroup>
+  <Message align="end">
+    <MessageContent>
+      <Bubble align="end">
+        <BubbleContent>On my way</BubbleContent>
+      </Bubble>
+      <MessageFooter>10:44 AM</MessageFooter>
+    </MessageContent>
+  </Message>
+</MessageGroup>
+```
+
+Use `align="end"` for the sender's own messages. It flips the row and right-aligns its content. Compose the body with [Bubble](/docs/components/bubble) and [Attachment](/docs/components/attachment).

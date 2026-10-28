@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-demo",
+  "title": "Bubble Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "@earth/bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-demo.tsx",
+      "content": "import { Bubble, BubbleContent } from \"@/registry/default/ui/bubble\";\n\nexport default function BubbleDemo() {\n  return (\n    <Bubble>\n      <BubbleContent>Your appointment is confirmed for Friday.</BubbleContent>\n    </Bubble>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
