@@ -113,7 +113,7 @@ function AlertDialogFooter({ className, ...props }: React.ComponentProps<"div">)
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        "flex flex-col-reverse gap-2 pt-2 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 md:flex-row md:items-center md:justify-end",
+        "flex flex-col-reverse gap-2 pt-2 pointer-coarse:gap-3 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 md:flex-row md:items-center md:justify-end",
         className,
       )}
       {...props}

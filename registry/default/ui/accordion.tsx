@@ -33,7 +33,7 @@ function AccordionTrigger({ className, children, ...props }: AccordionPrimitive.
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger relative flex flex-1 cursor-pointer items-center justify-between gap-2 rounded-md border border-transparent px-4 py-2 text-left text-body-14 font-medium text-eds-primary outline-none focus-visible:focus-ring data-disabled:cursor-default data-disabled:text-eds-disabled lg:text-body-12 **:data-[slot=accordion-trigger-icon]:m-0.5 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-5 **:data-[slot=accordion-trigger-icon]:text-eds-icon-primary data-disabled:**:data-[slot=accordion-trigger-icon]:text-eds-disabled",
+          "group/accordion-trigger relative flex flex-1 pointer-coarse:min-h-11 cursor-pointer items-center justify-between gap-2 rounded-md border border-transparent px-4 py-2 text-left text-body-14 font-medium text-eds-primary outline-none focus-visible:focus-ring data-disabled:cursor-default data-disabled:text-eds-disabled lg:text-body-12 **:data-[slot=accordion-trigger-icon]:m-0.5 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-5 **:data-[slot=accordion-trigger-icon]:text-eds-icon-primary data-disabled:**:data-[slot=accordion-trigger-icon]:text-eds-disabled",
           className,
         )}
         {...props}

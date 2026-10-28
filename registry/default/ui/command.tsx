@@ -69,7 +69,7 @@ function CommandInput({
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
-            "h-full w-full min-w-0 bg-transparent pr-3 text-body-14 text-eds-primary outline-hidden placeholder:text-eds-secondary disabled:cursor-default disabled:text-eds-disabled lg:pr-2 lg:text-body-12",
+            "h-full w-full min-w-0 bg-transparent pr-3 pointer-coarse:min-h-11 text-body-14 text-eds-primary outline-hidden placeholder:text-eds-secondary disabled:cursor-default disabled:text-eds-disabled lg:pr-2 lg:text-body-12",
             className,
           )}
           {...props}
@@ -146,7 +146,7 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "group/command-item relative flex cursor-pointer items-center gap-3 rounded-sm px-3 py-2 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12",
+        "group/command-item relative flex cursor-pointer items-center pointer-coarse:min-h-11 gap-3 rounded-sm px-3 py-2 text-body-14 text-eds-primary outline-hidden transition-colors duration-300 ease-[ease] select-none lg:gap-2 lg:px-2 lg:py-1.5 lg:text-body-12",
         "data-[selected=true]:bg-eds-neutral-secondary active:bg-eds-neutral-pressed data-[disabled=true]:pointer-events-none data-[disabled=true]:cursor-default data-[disabled=true]:text-eds-disabled",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4",
         className,

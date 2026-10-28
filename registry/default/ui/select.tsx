@@ -42,7 +42,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "flex w-fit cursor-pointer items-center justify-between gap-2 rounded-lg border border-eds-input bg-eds-canvas px-3 text-body-14 whitespace-nowrap text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none data-[size=default]:h-10 data-[size=sm]:h-8 data-[size=sm]:px-2 data-[size=sm]:text-body-12 lg:px-2 lg:text-body-12 lg:data-[size=default]:h-8",
+        "flex w-fit cursor-pointer items-center justify-between gap-2 rounded-lg pointer-coarse:min-h-11 border border-eds-input bg-eds-canvas px-3 text-body-14 whitespace-nowrap text-eds-primary transition-colors duration-300 ease-[ease] outline-none select-none data-[size=default]:h-10 data-[size=sm]:h-8 data-[size=sm]:px-2 data-[size=sm]:text-body-12 lg:px-2 lg:text-body-12 lg:data-[size=default]:h-8",
         "hover:border-eds-input-hover active:bg-eds-neutral-secondary-pressed data-placeholder:text-eds-secondary",
         "focus-visible:border-eds-input-active focus-visible:inset-ring-1 focus-visible:inset-ring-eds-input-active data-popup-open:border-eds-input-active data-popup-open:inset-ring-1 data-popup-open:inset-ring-eds-input-active",
         "aria-invalid:border-eds-input-critical aria-invalid:hover:border-eds-input-critical-hover aria-invalid:focus-visible:border-eds-input-active aria-invalid:data-popup-open:border-eds-input-active",
@@ -123,7 +123,7 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "relative flex w-full cursor-pointer items-center gap-3 rounded-sm py-2 pr-3 pl-9 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-hidden select-none lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-6 lg:text-body-12",
+        "relative flex w-full cursor-pointer items-center gap-3 rounded-sm py-2 pointer-coarse:min-h-11 pr-3 pl-9 text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-hidden select-none lg:gap-2 lg:py-1.5 lg:pr-2 lg:pl-6 lg:text-body-12",
         "data-highlighted:bg-eds-neutral-hover active:bg-eds-neutral-pressed data-disabled:pointer-events-none data-disabled:cursor-default data-disabled:text-eds-disabled",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
         className,

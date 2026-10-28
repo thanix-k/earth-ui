@@ -39,7 +39,7 @@ function BreadcrumbLink({ className, render, ...props }: useRender.ComponentProp
     props: mergeProps<"a">(
       {
         className: cn(
-          "rounded-sm text-eds-secondary underline-offset-4 transition-colors duration-300 ease-[ease] outline-none hover:text-eds-secondary-hover active:text-eds-tertiary focus-visible:focus-ring",
+          "relative touch-target rounded-sm text-eds-secondary underline-offset-4 transition-colors duration-300 ease-[ease] outline-none hover:text-eds-secondary-hover active:text-eds-tertiary focus-visible:focus-ring",
           className,
         ),
       },

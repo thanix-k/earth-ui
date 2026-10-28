@@ -962,6 +962,19 @@
         "@utility focus-ring": {
           "@apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background": {}
         },
+        "@utility touch-target": {
+          "@media (pointer: coarse)": {
+            "&::before": {
+              "content": "\"\"",
+              "position": "absolute",
+              "top": "50%",
+              "left": "50%",
+              "width": "max(100%, 44px)",
+              "height": "max(100%, 44px)",
+              "transform": "translate(-50%, -50%)"
+            }
+          }
+        },
         "@layer base": {
           "*": {
             "@apply border-border outline-ring": {}
@@ -4804,6 +4817,24 @@
       "files": [
         {
           "path": "registry/default/examples/sidebar-inset.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-streaming",
+      "type": "registry:example",
+      "title": "Sidebar Streaming",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/sidebar",
+        "@earth/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sidebar-streaming.tsx",
           "type": "registry:example"
         }
       ]
