@@ -2394,6 +2394,27 @@
       ]
     },
     {
+      "name": "build-a-product-demo",
+      "type": "registry:example",
+      "title": "Build A Product Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/avatar",
+        "@earth/badge",
+        "@earth/button",
+        "@earth/card",
+        "@earth/label",
+        "@earth/separator",
+        "@earth/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/build-a-product-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "button-as-link",
       "type": "registry:example",
       "title": "Button As Link",
