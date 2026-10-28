@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker-with-icon",
+  "title": "Marker With Icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/marker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/marker-with-icon.tsx",
+      "content": "import { CalendarCheckIcon } from \"lucide-react\";\nimport { Marker, MarkerContent, MarkerIcon } from \"@/registry/default/ui/marker\";\n\nexport default function MarkerWithIcon() {\n  return (\n    <Marker className=\"w-full max-w-md\">\n      <MarkerIcon>\n        <CalendarCheckIcon />\n      </MarkerIcon>\n      <MarkerContent>Booked for Friday, 3pm</MarkerContent>\n    </Marker>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

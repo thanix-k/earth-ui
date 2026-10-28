@@ -1,0 +1,30 @@
+---
+title: Marker
+description: An inline note in a chat, such as a day label or an unread divider.
+---
+
+<ComponentPreview name="marker-demo" />
+
+## Installation
+
+<Installation name="marker" />
+
+## Usage
+
+```tsx
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
+```
+
+```tsx
+<Marker variant="separator">
+  <MarkerContent>Today</MarkerContent>
+</Marker>
+```
+
+`variant` is `default`, `separator` (a rule on each side) or `border` (a rule below). Use `render` to make the marker a link.
+
+## Examples
+
+### With icon
+
+<ComponentPreview name="marker-with-icon" />

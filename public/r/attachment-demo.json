@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "attachment-demo",
+  "title": "Attachment Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/attachment"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/attachment-demo.tsx",
+      "content": "import { FileTextIcon, XIcon } from \"lucide-react\";\nimport {\n  Attachment,\n  AttachmentAction,\n  AttachmentActions,\n  AttachmentContent,\n  AttachmentDescription,\n  AttachmentMedia,\n  AttachmentTitle,\n} from \"@/registry/default/ui/attachment\";\n\nexport default function AttachmentDemo() {\n  return (\n    <Attachment>\n      <AttachmentMedia>\n        <FileTextIcon />\n      </AttachmentMedia>\n      <AttachmentContent>\n        <AttachmentTitle>price-list.pdf</AttachmentTitle>\n        <AttachmentDescription>PDF, 240 KB</AttachmentDescription>\n      </AttachmentContent>\n      <AttachmentActions>\n        <AttachmentAction aria-label=\"Remove\">\n          <XIcon />\n        </AttachmentAction>\n      </AttachmentActions>\n    </Attachment>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "attachment-states",
+  "title": "Attachment States",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@earth/attachment"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/attachment-states.tsx",
+      "content": "import { FileTextIcon } from \"lucide-react\";\nimport {\n  Attachment,\n  AttachmentContent,\n  AttachmentDescription,\n  AttachmentMedia,\n  AttachmentTitle,\n} from \"@/registry/default/ui/attachment\";\n\nconst states = [\n  [\"idle\", \"Drop to upload\"],\n  [\"uploading\", \"Uploading\"],\n  [\"processing\", \"Processing\"],\n  [\"error\", \"Upload failed\"],\n  [\"done\", \"240 KB\"],\n] as const;\n\nexport default function AttachmentStates() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      {states.map(([state, caption]) => (\n        <Attachment key={state} state={state}>\n          <AttachmentMedia>\n            <FileTextIcon />\n          </AttachmentMedia>\n          <AttachmentContent>\n            <AttachmentTitle>price-list.pdf</AttachmentTitle>\n            <AttachmentDescription>{caption}</AttachmentDescription>\n          </AttachmentContent>\n        </Attachment>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

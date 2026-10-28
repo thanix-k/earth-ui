@@ -1061,6 +1061,26 @@
       ]
     },
     {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "A file card with media, title, description, actions and an upload state.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/button",
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
@@ -1112,6 +1132,25 @@
       "files": [
         {
           "path": "registry/default/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "A chat bubble with seven fills, optional reactions and a pressable form.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/bubble.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1569,6 +1608,25 @@
       ]
     },
     {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "An inline note in a chat, such as a day label or an unread divider.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
@@ -1584,6 +1642,22 @@
       "files": [
         {
           "path": "registry/default/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A chat row with an avatar, header, bubbles and footer.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/message.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2262,6 +2336,57 @@
       ]
     },
     {
+      "name": "attachment-demo",
+      "type": "registry:example",
+      "title": "Attachment Demo",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/attachment"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/attachment-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "attachment-group",
+      "type": "registry:example",
+      "title": "Attachment Group",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/attachment"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/attachment-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "attachment-states",
+      "type": "registry:example",
+      "title": "Attachment States",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/attachment"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/attachment-states.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "avatar-badge",
       "type": "registry:example",
       "title": "Avatar Badge",
@@ -2488,6 +2613,66 @@
       "files": [
         {
           "path": "registry/default/examples/breadcrumb-separator.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bubble-demo",
+      "type": "registry:example",
+      "title": "Bubble Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/bubble"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bubble-pressable",
+      "type": "registry:example",
+      "title": "Bubble Pressable",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/bubble"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-pressable.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bubble-reactions",
+      "type": "registry:example",
+      "title": "Bubble Reactions",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/bubble"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-reactions.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bubble-variants",
+      "type": "registry:example",
+      "title": "Bubble Variants",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/bubble"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-variants.tsx",
           "type": "registry:example"
         }
       ]
@@ -4053,6 +4238,38 @@
       ]
     },
     {
+      "name": "marker-demo",
+      "type": "registry:example",
+      "title": "Marker Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/marker"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/marker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "marker-with-icon",
+      "type": "registry:example",
+      "title": "Marker With Icon",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@earth/marker"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/marker-with-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "menubar-demo",
       "type": "registry:example",
       "title": "Menubar Demo",
@@ -4063,6 +4280,23 @@
       "files": [
         {
           "path": "registry/default/examples/menubar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "message-demo",
+      "type": "registry:example",
+      "title": "Message Demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth/avatar",
+        "@earth/bubble",
+        "@earth/message"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/message-demo.tsx",
           "type": "registry:example"
         }
       ]
