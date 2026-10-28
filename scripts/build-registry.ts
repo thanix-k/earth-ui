@@ -69,6 +69,11 @@ const KINDS = [
 // Provided by the consumer's app, never installed by an item.
 const PEERS = new Set(["react", "react-dom", "next"]);
 
+// A package that needs a peer its importer never names (FullCalendar 7 needs temporal-polyfill).
+const REQUIRED_PEERS: Record<string, string[]> = {
+  "@fullcalendar/react": ["temporal-polyfill"],
+};
+
 /** npm + registry dependencies, read from the file's import specifiers. */
 function dependenciesOf(file: string) {
   const source = readFileSync(rel(file), "utf8");
@@ -89,6 +94,7 @@ function dependenciesOf(file: string) {
         .slice(0, spec.startsWith("@") ? 2 : 1)
         .join("/");
       if (!PEERS.has(pkg)) npm.add(pkg);
+      for (const peer of REQUIRED_PEERS[pkg] ?? []) npm.add(peer);
     }
   }
   return { dependencies: [...npm].sort(), registryDependencies: [...registry].sort() };
