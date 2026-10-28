@@ -799,6 +799,29 @@
 						"$value": "#3f375e"
 					}
 				},
+				"purple": {
+					"background": {
+						"$value": "#eeeefe"
+					},
+					"background-hover": {
+						"$value": "#deddfd"
+					},
+					"background-active": {
+						"$value": "#918ef7"
+					},
+					"border": {
+						"$value": "#918ef7"
+					},
+					"text": {
+						"$value": "#161525"
+					},
+					"text-active": {
+						"$value": "#111111"
+					},
+					"text-secondary": {
+						"$value": "#2c2b4a"
+					}
+				},
 				"yellow": {
 					"background": {
 						"$value": "#fff7d9"
@@ -820,6 +843,29 @@
 					},
 					"text-secondary": {
 						"$value": "#564e33"
+					}
+				},
+				"gold": {
+					"background": {
+						"$value": "#fef9e8"
+					},
+					"background-hover": {
+						"$value": "#fdf3d1"
+					},
+					"background-active": {
+						"$value": "#f9d667"
+					},
+					"border": {
+						"$value": "#f9d667"
+					},
+					"text": {
+						"$value": "#25200f"
+					},
+					"text-active": {
+						"$value": "#111111"
+					},
+					"text-secondary": {
+						"$value": "#4b401f"
 					}
 				},
 				"green": {
@@ -1666,6 +1712,29 @@
 						"$value": "#bcb9cb"
 					}
 				},
+				"purple": {
+					"background": {
+						"$value": "#282835"
+					},
+					"background-hover": {
+						"$value": "#383751"
+					},
+					"background-active": {
+						"$value": "#918ef7"
+					},
+					"border": {
+						"$value": "#918ef7"
+					},
+					"text": {
+						"$value": "#e4e3fd"
+					},
+					"text-active": {
+						"$value": "#111111"
+					},
+					"text-secondary": {
+						"$value": "#ceccfb"
+					}
+				},
 				"yellow": {
 					"background": {
 						"$value": "#2d2b15"
@@ -1687,6 +1756,29 @@
 					},
 					"text-secondary": {
 						"$value": "#d0cab4"
+					}
+				},
+				"gold": {
+					"background": {
+						"$value": "#353123"
+					},
+					"background-hover": {
+						"$value": "#52492d"
+					},
+					"background-active": {
+						"$value": "#f9d667"
+					},
+					"border": {
+						"$value": "#f9d667"
+					},
+					"text": {
+						"$value": "#fef5d9"
+					},
+					"text-active": {
+						"$value": "#111111"
+					},
+					"text-secondary": {
+						"$value": "#fcedbb"
 					}
 				},
 				"green": {

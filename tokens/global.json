@@ -219,10 +219,38 @@
 		"easing": {
 			"$type": "cubicBezier",
 			"regular": {
-				"$value": [0.5, 0, 0.5, 0.99]
+				"$value": [
+					0.5,
+					0,
+					0.5,
+					0.99
+				]
 			},
 			"entrance": {
-				"$value": [0.2, 0, 0.44, 0.99]
+				"$value": [
+					0.2,
+					0,
+					0.44,
+					0.99
+				]
+			}
+		},
+		"motion": {
+			"$type": "duration",
+			"press": {
+				"$value": "120ms"
+			},
+			"popover": {
+				"$value": "180ms"
+			},
+			"panel": {
+				"$value": "280ms"
+			},
+			"popover-exit": {
+				"$value": "120ms"
+			},
+			"panel-exit": {
+				"$value": "200ms"
 			}
 		}
 	},
