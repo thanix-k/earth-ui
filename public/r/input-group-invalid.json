@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group-invalid",
   "title": "Input Group Invalid",
+  "description": "Input Group example: Invalid.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/input-group"
+    "@earth-ui/input-group"
   ],
   "files": [
     {

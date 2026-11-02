@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "skeleton-card",
   "title": "Skeleton Card",
+  "description": "Skeleton example: Card.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/card",
-    "@earth/skeleton"
+    "@earth-ui/card",
+    "@earth-ui/skeleton"
   ],
   "files": [
     {

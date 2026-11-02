@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "progress-label",
   "title": "Progress Label",
+  "description": "Progress example: Label and value.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/progress"
+    "@earth-ui/progress"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "aspect-ratio-demo",
   "title": "Aspect Ratio Demo",
+  "description": "Aspect Ratio example. Keeps content, such as an image or video, at a fixed width-to-height ratio.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/aspect-ratio"
+    "@earth-ui/aspect-ratio"
   ],
   "files": [
     {

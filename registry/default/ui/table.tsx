@@ -1,7 +1,7 @@
 "use client";
 
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS Table: 12px text at every breakpoint, 48px rows, `border-secondary`
 // under the header and `border-tertiary` between rows, regular-weight

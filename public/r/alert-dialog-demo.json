@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog-demo",
   "title": "Alert Dialog Demo",
+  "description": "Alert Dialog example. A modal that asks people to confirm an important or destructive action.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/alert-dialog",
-    "@earth/button"
+    "@earth-ui/alert-dialog",
+    "@earth-ui/button"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "separator-demo",
   "title": "Separator Demo",
+  "description": "Separator example. A thin line that separates content, horizontally or vertically.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/separator"
+    "@earth-ui/separator"
   ],
   "files": [
     {

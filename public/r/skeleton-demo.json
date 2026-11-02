@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "skeleton-demo",
   "title": "Skeleton Demo",
+  "description": "Skeleton example. A pulsing placeholder shown while content loads.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/skeleton"
+    "@earth-ui/skeleton"
   ],
   "files": [
     {

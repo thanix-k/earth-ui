@@ -1,6 +1,6 @@
 # Earth shadcn registry
 
-A public shadcn registry (`@earth`) that re-skins shadcn on Base UI with the
+A public shadcn registry (`@earth-ui`) that re-skins shadcn on Base UI with the
 Earth Design System's setmore-black tokens. This repo is the source of truth
 (ADR-0002): tokens are authored here as DTCG JSON, seeded once from
 `@adaptavant/eds-brands@1.12.0`. eds-core is being sunset and is reference only.
@@ -59,7 +59,7 @@ shadcn's `/create`.
 _Avoid_: calling these blocks or templates.
 
 **Block**:
-A page-level registry item (`@earth/login-03`, `@earth/sidebar-07`) mirrored
+A page-level registry item (`@earth-ui/login-03`, `@earth-ui/sidebar-07`) mirrored
 from shadcn's Base UI blocks by `scripts/sync-blocks.ts` and kept current by a
 weekly CI job (ADR-0005). Generated, never hand-edited. The one thing in this
 repo that tracks shadcn upstream; components are seeded once.

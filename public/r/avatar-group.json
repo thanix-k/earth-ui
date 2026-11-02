@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-group",
   "title": "Avatar Group",
+  "description": "Avatar example: Group.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/avatar"
+    "@earth-ui/avatar"
   ],
   "files": [
     {

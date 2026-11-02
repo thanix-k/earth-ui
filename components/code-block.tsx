@@ -1,6 +1,6 @@
 import { highlight } from "fumadocs-core/highlight";
 import { CopyButton } from "@/components/copy-button";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // Highlighting is pure, so cache it: it also keeps Shiki's internal clock reads
 // out of prerendering under cacheComponents.

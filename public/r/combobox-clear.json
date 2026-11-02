@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-clear",
   "title": "Combobox Clear",
+  "description": "Combobox example: Clear button.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/combobox"
+    "@earth-ui/combobox"
   ],
   "files": [
     {

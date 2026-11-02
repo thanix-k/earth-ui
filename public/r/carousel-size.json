@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel-size",
   "title": "Carousel Size",
+  "description": "Carousel example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/carousel"
+    "@earth-ui/carousel"
   ],
   "files": [
     {

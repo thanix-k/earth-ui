@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-close-button",
   "title": "Dialog Close Button",
+  "description": "Dialog example: Close button in the footer.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dialog",
-    "@earth/input"
+    "@earth-ui/button",
+    "@earth-ui/dialog",
+    "@earth-ui/input"
   ],
   "files": [
     {

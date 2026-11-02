@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-dropdown",
   "title": "Calendar Dropdown",
+  "description": "Calendar example: Month and year dropdowns.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/calendar"
+    "@earth-ui/calendar"
   ],
   "files": [
     {

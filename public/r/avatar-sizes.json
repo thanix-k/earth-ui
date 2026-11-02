@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-sizes",
   "title": "Avatar Sizes",
+  "description": "Avatar example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/avatar"
+    "@earth-ui/avatar"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-radio",
   "title": "Field Radio",
+  "description": "Field example: Radio.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/radio-group"
+    "@earth-ui/field",
+    "@earth-ui/radio-group"
   ],
   "files": [
     {

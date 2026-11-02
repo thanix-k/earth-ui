@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel-orientation",
   "title": "Carousel Orientation",
+  "description": "Carousel example: Vertical.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/carousel"
+    "@earth-ui/carousel"
   ],
   "files": [
     {

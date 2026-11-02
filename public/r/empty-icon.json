@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "empty-icon",
   "title": "Empty Icon",
+  "description": "Empty example: Icon and border.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/empty"
+    "@earth-ui/button",
+    "@earth-ui/empty"
   ],
   "files": [
     {

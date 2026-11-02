@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-sizes",
   "title": "Toggle Sizes",
+  "description": "Toggle example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle"
+    "@earth-ui/toggle"
   ],
   "files": [
     {

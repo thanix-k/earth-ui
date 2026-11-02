@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "resizable-vertical",
   "title": "Resizable Vertical",
+  "description": "Resizable example: Vertical.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/resizable"
+    "@earth-ui/resizable"
   ],
   "files": [
     {

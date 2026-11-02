@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-sizes",
   "title": "Spinner Sizes",
+  "description": "Spinner example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/spinner"
+    "@earth-ui/spinner"
   ],
   "files": [
     {

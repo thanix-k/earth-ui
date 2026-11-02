@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-outline",
   "title": "Badge Outline",
+  "description": "Badge example: Outline.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

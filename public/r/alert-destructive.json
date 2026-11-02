@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-destructive",
   "title": "Alert Destructive",
+  "description": "Alert example: Destructive.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/alert"
+    "@earth-ui/alert"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-controlled",
   "title": "Slider Controlled",
+  "description": "Slider example: Controlled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/slider"
+    "@earth-ui/label",
+    "@earth-ui/slider"
   ],
   "files": [
     {

@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/code-block";
 import { IframePreview } from "@/components/iframe-preview";
 import { loadExample } from "@/lib/examples";
 import { toConsumerSource } from "@/lib/registry";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 
 export async function ComponentPreview({

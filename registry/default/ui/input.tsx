@@ -1,6 +1,6 @@
 import { Input as InputPrimitive } from "@base-ui/react/input";
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS inputs are 40px with 14px text on touch screens and 32px with 12px text
 // from the lg breakpoint. Focus thickens the border to 2px (inset ring, so

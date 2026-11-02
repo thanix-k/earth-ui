@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hover-card-demo",
   "title": "Hover Card Demo",
+  "description": "Hover Card example. Previews the content behind a link when people hover or focus it.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/hover-card"
+    "@earth-ui/hover-card"
   ],
   "files": [
     {

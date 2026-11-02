@@ -1,5 +1,5 @@
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS Loading: a circle whose stroke grows and shrinks while it rotates
 // (1.7s). The dash is animated with SMIL so no extra keyframes are needed.

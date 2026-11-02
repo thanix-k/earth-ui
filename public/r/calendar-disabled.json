@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-disabled",
   "title": "Calendar Disabled",
+  "description": "Calendar example: Disabled days.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/calendar"
+    "@earth-ui/calendar"
   ],
   "files": [
     {

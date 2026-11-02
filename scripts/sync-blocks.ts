@@ -133,7 +133,7 @@ const PATCHES: { file: string; find: string; replace: string; why: string }[] = 
 function rewrite(file: string, source: string) {
   let out = lucideIcons(file, earthContent(file, source))
     .replaceAll("@/registry/base-nova/", "@/registry/default/")
-    .replaceAll('from "cn"', 'from "@/registry/default/lib/utils"');
+    .replaceAll('from "cn"', 'from "@/registry/default/lib/cn"');
   for (const p of PATCHES.filter((p) => p.file === file)) {
     if (!out.includes(p.find)) throw new Error(`${file}: patch no longer applies (${p.why})`);
     out = out.replace(p.find, p.replace);

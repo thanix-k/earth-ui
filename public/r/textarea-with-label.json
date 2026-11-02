@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-with-label",
   "title": "Textarea With Label",
+  "description": "Textarea example: With label.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/textarea"
+    "@earth-ui/label",
+    "@earth-ui/textarea"
   ],
   "files": [
     {

@@ -2,16 +2,17 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "data-table-demo",
   "title": "Data Table Demo",
+  "description": "Data Table example. A table with sorting, filtering, pagination, column visibility and row selection, built from Table and TanStack Table.",
   "dependencies": [
     "@tanstack/react-table",
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/checkbox",
-    "@earth/dropdown-menu",
-    "@earth/input",
-    "@earth/table"
+    "@earth-ui/button",
+    "@earth-ui/checkbox",
+    "@earth-ui/dropdown-menu",
+    "@earth-ui/input",
+    "@earth-ui/table"
   ],
   "files": [
     {

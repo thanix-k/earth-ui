@@ -3,7 +3,7 @@
 import { OTPInput, OTPInputContext } from "input-otp";
 import { MinusIcon } from "lucide-react";
 import * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS OTPInput draws each digit as its own text field (40×48, 36×40 from lg)
 // 12px apart, rather than one joined strip.

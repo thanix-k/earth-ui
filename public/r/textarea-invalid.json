@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-invalid",
   "title": "Textarea Invalid",
+  "description": "Textarea example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/textarea"
+    "@earth-ui/label",
+    "@earth-ui/textarea"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp-disabled",
   "title": "Input Otp Disabled",
+  "description": "Input OTP example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input-otp"
+    "@earth-ui/input-otp"
   ],
   "files": [
     {

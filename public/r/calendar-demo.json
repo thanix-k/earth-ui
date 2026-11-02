@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-demo",
   "title": "Calendar Demo",
+  "description": "Calendar example. Lets people pick a date or a range of dates from a month grid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/calendar"
+    "@earth-ui/calendar"
   ],
   "files": [
     {

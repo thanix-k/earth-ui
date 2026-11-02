@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-disabled",
   "title": "Textarea Disabled",
+  "description": "Textarea example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/textarea"
+    "@earth-ui/textarea"
   ],
   "files": [
     {

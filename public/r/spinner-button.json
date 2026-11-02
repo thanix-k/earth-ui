@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-button",
   "title": "Spinner Button",
+  "description": "Spinner example: In a button.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/spinner"
+    "@earth-ui/button",
+    "@earth-ui/spinner"
   ],
   "files": [
     {

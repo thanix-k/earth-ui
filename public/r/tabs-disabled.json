@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-disabled",
   "title": "Tabs Disabled",
+  "description": "Tabs example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/tabs"
+    "@earth-ui/tabs"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group-disabled",
   "title": "Radio Group Disabled",
+  "description": "Radio Group example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/radio-group"
+    "@earth-ui/label",
+    "@earth-ui/radio-group"
   ],
   "files": [
     {

@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog-small",
   "title": "Alert Dialog Small",
+  "description": "Alert Dialog example: Small with media.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/alert-dialog",
-    "@earth/button"
+    "@earth-ui/alert-dialog",
+    "@earth-ui/button"
   ],
   "files": [
     {

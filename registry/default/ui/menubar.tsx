@@ -4,7 +4,7 @@ import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 import { Menubar as MenubarPrimitive } from "@base-ui/react/menubar";
 import { CheckIcon } from "lucide-react";
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import {
   DropdownMenu,
   DropdownMenuContent,

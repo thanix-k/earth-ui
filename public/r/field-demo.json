@@ -2,14 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-demo",
   "title": "Field Demo",
+  "description": "Field example. Lays out a form control with its label, description and error message.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/checkbox",
-    "@earth/field",
-    "@earth/input",
-    "@earth/native-select",
-    "@earth/textarea"
+    "@earth-ui/button",
+    "@earth-ui/checkbox",
+    "@earth-ui/field",
+    "@earth-ui/input",
+    "@earth-ui/native-select",
+    "@earth-ui/textarea"
   ],
   "files": [
     {

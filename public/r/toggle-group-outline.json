@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group-outline",
   "title": "Toggle Group Outline",
+  "description": "Toggle Group example: Outline.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle-group"
+    "@earth-ui/toggle-group"
   ],
   "files": [
     {

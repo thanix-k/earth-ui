@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "kbd-demo",
   "title": "Kbd Demo",
+  "description": "Kbd example. Shows a keyboard key or shortcut.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/kbd"
+    "@earth-ui/kbd"
   ],
   "files": [
     {

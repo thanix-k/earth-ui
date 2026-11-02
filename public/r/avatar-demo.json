@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-demo",
   "title": "Avatar Demo",
+  "description": "Avatar example. A person's photo, with their initials as a fallback.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/avatar"
+    "@earth-ui/avatar"
   ],
   "files": [
     {

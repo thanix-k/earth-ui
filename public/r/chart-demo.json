@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chart-demo",
   "title": "Chart Demo",
+  "description": "Chart example. Recharts charts with Earth's chart palette, tooltip and legend.",
   "dependencies": [
     "recharts"
   ],
   "registryDependencies": [
-    "@earth/card",
-    "@earth/chart"
+    "@earth-ui/card",
+    "@earth-ui/chart"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dropdown-menu-radio-group",
   "title": "Dropdown Menu Radio Group",
+  "description": "Dropdown Menu example: Radio group.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dropdown-menu"
+    "@earth-ui/button",
+    "@earth-ui/dropdown-menu"
   ],
   "files": [
     {

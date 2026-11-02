@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-demo",
   "title": "Combobox Demo",
+  "description": "Combobox example. A text input that filters a list of options as people type.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/combobox"
+    "@earth-ui/combobox"
   ],
   "files": [
     {

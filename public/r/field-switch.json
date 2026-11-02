@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-switch",
   "title": "Field Switch",
+  "description": "Field example: Switch.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/switch"
+    "@earth-ui/field",
+    "@earth-ui/switch"
   ],
   "files": [
     {

@@ -2,13 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command-dialog",
   "title": "Command Dialog",
+  "description": "Command example: Dialog.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/command",
-    "@earth/kbd"
+    "@earth-ui/button",
+    "@earth-ui/command",
+    "@earth-ui/kbd"
   ],
   "files": [
     {

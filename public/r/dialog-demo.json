@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-demo",
   "title": "Dialog Demo",
+  "description": "Dialog example. A modal window over the page for a focused task, such as editing a record.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dialog",
-    "@earth/input",
-    "@earth/label"
+    "@earth-ui/button",
+    "@earth-ui/dialog",
+    "@earth-ui/input",
+    "@earth-ui/label"
   ],
   "files": [
     {

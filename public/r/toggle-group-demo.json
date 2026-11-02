@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group-demo",
   "title": "Toggle Group Demo",
+  "description": "Toggle Group example. A set of toggles where one, or several, can be pressed at a time.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle-group"
+    "@earth-ui/toggle-group"
   ],
   "files": [
     {

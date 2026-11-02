@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dropdown-menu-checkboxes",
   "title": "Dropdown Menu Checkboxes",
+  "description": "Dropdown Menu example: Checkboxes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dropdown-menu"
+    "@earth-ui/button",
+    "@earth-ui/dropdown-menu"
   ],
   "files": [
     {

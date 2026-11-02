@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group-demo",
   "title": "Input Group Demo",
+  "description": "Input Group example. Adds icons, text or buttons inside an input or textarea.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/input-group"
+    "@earth-ui/input-group"
   ],
   "files": [
     {

@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-group-separator",
   "title": "Button Group Separator",
+  "description": "Button Group example: Separator.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/button-group"
+    "@earth-ui/button",
+    "@earth-ui/button-group"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-sizes",
   "title": "Select Sizes",
+  "description": "Select example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/select"
+    "@earth-ui/select"
   ],
   "files": [
     {

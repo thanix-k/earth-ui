@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group-text",
   "title": "Input Group Text",
+  "description": "Input Group example: Text.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input-group"
+    "@earth-ui/input-group"
   ],
   "files": [
     {

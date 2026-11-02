@@ -1,7 +1,7 @@
 "use client";
 
 import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS Toggle: 36×20 track on touch screens, 28×16 from lg. `sm` is always the
 // compact size.

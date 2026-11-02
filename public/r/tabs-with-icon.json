@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-with-icon",
   "title": "Tabs With Icon",
+  "description": "Tabs example: With icon.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/tabs"
+    "@earth-ui/tabs"
   ],
   "files": [
     {

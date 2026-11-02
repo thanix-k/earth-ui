@@ -1,6 +1,6 @@
-// Guards the tailwind-merge config generated into registry/default/lib/utils.ts.
+// Guards the tailwind-merge config generated into registry/default/lib/cn.ts.
 import assert from "node:assert/strict";
-import { cn } from "../registry/default/lib/utils.ts";
+import { cn } from "../registry/default/lib/cn.ts";
 
 assert.equal(cn("text-body-14 text-eds-secondary"), "text-body-14 text-eds-secondary");
 assert.equal(cn("text-body-14 text-heading-24"), "text-heading-24");

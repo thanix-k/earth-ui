@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area-demo",
   "title": "Scroll Area Demo",
+  "description": "Scroll Area example. A scrollable region with a slim, consistent scrollbar.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/scroll-area",
-    "@earth/separator"
+    "@earth-ui/scroll-area",
+    "@earth-ui/separator"
   ],
   "files": [
     {

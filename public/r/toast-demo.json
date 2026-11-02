@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toast-demo",
   "title": "Toast Demo",
+  "description": "Toast example. Shows brief notifications with Base UI's toast manager, styled as an EDS snackbar.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/toast"
+    "@earth-ui/button",
+    "@earth-ui/toast"
   ],
   "files": [
     {

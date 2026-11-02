@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "resizable-demo",
   "title": "Resizable Demo",
+  "description": "Resizable example. Panels that people can resize by dragging the handle between them.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/resizable"
+    "@earth-ui/resizable"
   ],
   "files": [
     {

@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner-close-button",
   "title": "Sonner Close Button",
+  "description": "Sonner example: Close button.",
   "dependencies": [
     "sonner"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/sonner"
+    "@earth-ui/button",
+    "@earth-ui/sonner"
   ],
   "files": [
     {

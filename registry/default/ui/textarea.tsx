@@ -1,5 +1,5 @@
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // Same density and focus treatment as Input. The minimum height matches an
 // EDS textarea's default three rows.

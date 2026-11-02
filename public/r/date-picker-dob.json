@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-dob",
   "title": "Date Picker Dob",
+  "description": "Date Picker example: Date of birth.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/calendar",
-    "@earth/field",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/calendar",
+    "@earth-ui/field",
+    "@earth-ui/popover"
   ],
   "files": [
     {

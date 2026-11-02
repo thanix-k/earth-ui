@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "progress-demo",
   "title": "Progress Demo",
+  "description": "Progress example. Shows how far a task such as an import or upload has got.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/progress"
+    "@earth-ui/progress"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "native-select-sizes",
   "title": "Native Select Sizes",
+  "description": "Native Select example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/native-select"
+    "@earth-ui/native-select"
   ],
   "files": [
     {

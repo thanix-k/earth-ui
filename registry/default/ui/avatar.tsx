@@ -2,7 +2,7 @@
 
 import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar";
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // Sizes follow EDS: sm 24px, default 32px, lg 40px, each with EDS's initials
 // size and status badge size/offset.

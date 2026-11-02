@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer-demo",
   "title": "Drawer Demo",
+  "description": "Drawer example. A panel that slides in from an edge and can be swiped away, built for touch screens.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/drawer"
+    "@earth-ui/button",
+    "@earth-ui/drawer"
   ],
   "files": [
     {

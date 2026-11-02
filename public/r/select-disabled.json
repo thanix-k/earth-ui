@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-disabled",
   "title": "Select Disabled",
+  "description": "Select example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/select"
+    "@earth-ui/select"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-demo",
   "title": "Spinner Demo",
+  "description": "Spinner example. An animated indicator that shows something is loading.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/spinner"
+    "@earth-ui/spinner"
   ],
   "files": [
     {

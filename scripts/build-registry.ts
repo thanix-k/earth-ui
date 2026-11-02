@@ -1,6 +1,6 @@
 // Builds everything derived from tokens/ and registry/default/:
-//   registry/default/lib/utils.ts  (cn, taught Earth's theme keys)
-//   app/earth.css                   (what @earth/base installs, for the docs app)
+//   registry/default/lib/cn.ts      (cn, taught Earth's theme keys)
+//   app/earth.css                   (what @earth-ui/base installs, for the docs app)
 //   registry.json → public/r/*      (via `shadcn build`, then validated)
 // Nothing it writes is edited by hand. ADR-0003.
 import { execFileSync } from "node:child_process";
@@ -33,7 +33,7 @@ function writeUtils() {
   const keys = mergeKeys();
   const list = (values: string[]) => JSON.stringify(values);
   writeFileSync(
-    rel("registry/default/lib/utils.ts"),
+    rel("registry/default/lib/cn.ts"),
     `import { type ClassValue, clsx } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
@@ -104,7 +104,27 @@ function frontmatter(name: string) {
 const titleCase = (name: string) =>
   name.replace(/(^|-)(\w)/g, (_, dash, c) => (dash ? " " : "") + c.toUpperCase());
 
+/** Example descriptions from the docs page that shows them: "<Page> example: <heading>." */
+function exampleDescriptions() {
+  const out: Record<string, string> = {};
+  const dir = rel("content/docs/components");
+  for (const file of readdirSync(dir).filter((f) => f.endsWith(".mdx"))) {
+    const { title, description } = frontmatter(file.replace(/\.mdx$/, ""));
+    let heading: string | undefined;
+    for (const line of readFileSync(path.join(dir, file), "utf8").split("\n")) {
+      heading = line.match(/^#{2,4} (.+)/)?.[1] ?? heading;
+      const name = line.match(/<ComponentPreview name="([^"]+)"/)?.[1];
+      if (name)
+        out[name] ??= heading
+          ? `${title} example: ${heading}.`
+          : `${title} example. ${description}`;
+    }
+  }
+  return out;
+}
+
 function discover(): Item[] {
+  const examples = exampleDescriptions();
   const items: Item[] = [];
   for (const { dir, type } of KINDS) {
     const folder = rel("registry/default", dir);
@@ -117,12 +137,20 @@ function discover(): Item[] {
       if (type === "registry:ui" && !meta.description) {
         throw new Error(`${filePath}: add content/docs/components/${name}.mdx with a description`);
       }
+      const description =
+        type === "registry:example"
+          ? (examples[name] ?? `${titleCase(name)} example.`)
+          : meta.description;
+      const deps = dependenciesOf(filePath);
+      // Components are painted with Earth tokens, so they bring the theme with them.
+      if (type === "registry:ui") deps.registryDependencies.push(`${NS}/theme`);
       items.push({
         name,
         type,
         title: meta.title ?? titleCase(name),
-        ...(meta.description && { description: meta.description }),
-        ...dependenciesOf(filePath),
+        ...(description && { description }),
+        dependencies: deps.dependencies,
+        registryDependencies: deps.registryDependencies.sort(),
         files: [{ path: filePath, type }],
       });
     }
@@ -154,10 +182,11 @@ function blocks(): Item[] {
   });
 }
 
-// ── Base + font items ────────────────────────────────────────────────────────
+// ── Base, theme + font items ─────────────────────────────────────────────────
 
 function baseItems(): Item[] {
   const style = baseStyle();
+  const { "@layer base": layerBase, ...themeCss } = style.css;
   return [
     {
       name: "base",
@@ -167,21 +196,30 @@ function baseItems(): Item[] {
         "Earth (setmore-black) tokens, shadcn aliases, focus ring and the Inter font. Install first.",
       extends: "none",
       config: {
-        style: "earth",
+        // shadcn's own style id, so unscoped items (`shadcn add badge`) and
+        // third-party items that depend on them still resolve.
+        style: "base-nova",
         iconLibrary: "lucide",
         tailwind: { baseColor: "neutral" },
         registries: { [NS]: `${site.url}/r/{name}.json` },
       },
-      dependencies: [
-        "@base-ui/react",
-        "class-variance-authority",
-        "lucide-react",
-        "shadcn",
-        "tw-animate-css",
-      ],
-      registryDependencies: [`${NS}/utils`, `${NS}/font-inter`],
-      cssVars: style.cssVars,
-      css: style.css,
+      dependencies: ["@base-ui/react", "class-variance-authority", "lucide-react"],
+      registryDependencies: [`${NS}/cn`, `${NS}/font-inter`, `${NS}/theme`],
+      // Stock shadcn variables point at Earth values, so third-party code looks like Earth.
+      cssVars: { light: style.cssVars.light, dark: style.cssVars.dark },
+      css: { "@layer base": layerBase },
+    },
+    {
+      // What every component needs to render: EDS tokens, type scale, radius
+      // and focus ring. Leaves the project's own shadcn variables alone.
+      name: "theme",
+      type: "registry:theme",
+      title: "Earth theme",
+      description:
+        "Earth's eds- tokens, type scale, radius and focus ring, without the shadcn aliases.",
+      dependencies: ["shadcn", "tw-animate-css"],
+      cssVars: { theme: style.cssVars.theme },
+      css: themeCss,
     },
     {
       name: "font-inter",
@@ -200,7 +238,7 @@ function baseItems(): Item[] {
   ];
 }
 
-// ── Docs CSS: the same CSS a consumer gets from `shadcn init @earth/base` ─────
+// ── Docs CSS: the same CSS a consumer gets from `shadcn init @earth-ui/base` ──────
 
 function toCss(tree: CssTree, indent = ""): string {
   return Object.entries(tree)
@@ -244,7 +282,7 @@ const bin = (name: string, ...args: string[]) =>
 const shadcn = (...args: string[]) => bin("shadcn", ...args);
 
 writeUtils();
-bin("biome", "format", "--write", "registry/default/lib/utils.ts");
+bin("biome", "format", "--write", "registry/default/lib/cn.ts");
 writeDocsCss();
 
 const items = [...baseItems(), ...discover(), ...blocks()];
@@ -253,7 +291,7 @@ writeFileSync(
   `${JSON.stringify(
     {
       $schema: "https://ui.shadcn.com/schema/registry.json",
-      name: "earth",
+      name: "earth-ui",
       homepage: site.url,
       items,
     },

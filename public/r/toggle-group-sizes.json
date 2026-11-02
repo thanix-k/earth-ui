@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group-sizes",
   "title": "Toggle Group Sizes",
+  "description": "Toggle Group example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle-group"
+    "@earth-ui/toggle-group"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-checkbox",
   "title": "Field Checkbox",
+  "description": "Field example: Checkbox.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/checkbox",
-    "@earth/field"
+    "@earth-ui/checkbox",
+    "@earth-ui/field"
   ],
   "files": [
     {

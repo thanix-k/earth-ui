@@ -2,16 +2,17 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-time",
   "title": "Date Picker Time",
+  "description": "Date Picker example: Time.",
   "dependencies": [
     "date-fns",
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/calendar",
-    "@earth/field",
-    "@earth/input",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/calendar",
+    "@earth-ui/field",
+    "@earth-ui/input",
+    "@earth-ui/popover"
   ],
   "files": [
     {

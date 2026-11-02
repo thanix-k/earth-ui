@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-status",
   "title": "Alert Status",
+  "description": "Alert example: Status.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/alert"
+    "@earth-ui/alert"
   ],
   "files": [
     {

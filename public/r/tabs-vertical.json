@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-vertical",
   "title": "Tabs Vertical",
+  "description": "Tabs example: Vertical.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/tabs"
+    "@earth-ui/tabs"
   ],
   "files": [
     {

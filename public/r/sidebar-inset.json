@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar-inset",
   "title": "Sidebar Inset",
+  "description": "Sidebar example: Inset with sub-menu.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/sidebar"
+    "@earth-ui/sidebar"
   ],
   "files": [
     {

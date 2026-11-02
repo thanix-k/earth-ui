@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp-invalid",
   "title": "Input Otp Invalid",
+  "description": "Input OTP example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/input-otp"
+    "@earth-ui/field",
+    "@earth-ui/input-otp"
   ],
   "files": [
     {

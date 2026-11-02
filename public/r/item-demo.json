@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "item-demo",
   "title": "Item Demo",
+  "description": "Item example. A row with media, a title, a description and actions, for lists of things like staff or services.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/item"
+    "@earth-ui/button",
+    "@earth-ui/item"
   ],
   "files": [
     {

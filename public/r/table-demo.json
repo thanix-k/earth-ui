@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "table-demo",
   "title": "Table Demo",
+  "description": "Table example. Rows and columns of data, such as bookings or payments.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge",
-    "@earth/table"
+    "@earth-ui/badge",
+    "@earth-ui/table"
   ],
   "files": [
     {

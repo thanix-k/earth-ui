@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group-spacing",
   "title": "Toggle Group Spacing",
+  "description": "Toggle Group example: Spacing.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle-group"
+    "@earth-ui/toggle-group"
   ],
   "files": [
     {

@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-action",
   "title": "Alert Action",
+  "description": "Alert example: Action.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/alert",
-    "@earth/button"
+    "@earth-ui/alert",
+    "@earth-ui/button"
   ],
   "files": [
     {

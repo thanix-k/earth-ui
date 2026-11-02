@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sheet-demo",
   "title": "Sheet Demo",
+  "description": "Sheet example. A panel that slides in from an edge of the screen, for side tasks and details.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/input",
-    "@earth/label",
-    "@earth/sheet"
+    "@earth-ui/button",
+    "@earth-ui/input",
+    "@earth-ui/label",
+    "@earth-ui/sheet"
   ],
   "files": [
     {

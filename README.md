@@ -5,7 +5,7 @@ shadcn Base UI component, styled with Earth's setmore-black tokens.
 
 ```bash
 npx shadcn@latest init https://earthui.vercel.app/r/base.json
-npx shadcn@latest add @earth/button
+npx shadcn@latest add @earth-ui/button
 ```
 
 Docs: https://earthui.vercel.app
@@ -23,7 +23,7 @@ pnpm check        # what CI runs
 - `registry/default/`: components, examples and lib. These files are hand-written.
 - `content/docs/`: docs pages (Fumadocs MDX).
 - `scripts/build-registry.ts`: generates everything else, namely `registry.json`,
-  `public/r/*`, `app/earth.css` and `registry/default/lib/utils.ts`.
+  `public/r/*`, `app/earth.css` and `registry/default/lib/cn.ts`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a component,
 [CONTEXT.md](CONTEXT.md) for vocabulary and [docs/adr](docs/adr) for decisions.

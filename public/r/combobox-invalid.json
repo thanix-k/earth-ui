@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-invalid",
   "title": "Combobox Invalid",
+  "description": "Combobox example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/combobox",
-    "@earth/field"
+    "@earth-ui/combobox",
+    "@earth-ui/field"
   ],
   "files": [
     {
