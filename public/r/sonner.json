@@ -7,7 +7,9 @@
     "lucide-react",
     "sonner"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "@earth-ui/theme"
+  ],
   "files": [
     {
       "path": "registry/default/ui/sonner.tsx",

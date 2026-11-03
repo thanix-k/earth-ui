@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-small",
   "title": "Card Small",
+  "description": "Card example: Small.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/card"
+    "@earth-ui/button",
+    "@earth-ui/card"
   ],
   "files": [
     {

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog-destructive",
   "title": "Alert Dialog Destructive",
+  "description": "Alert Dialog example: Destructive.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/alert-dialog",
-    "@earth/button"
+    "@earth-ui/alert-dialog",
+    "@earth-ui/button"
   ],
   "files": [
     {

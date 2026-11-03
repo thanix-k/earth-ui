@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner-demo",
   "title": "Sonner Demo",
+  "description": "Sonner example. Shows brief notifications, such as a booking confirmation, at the edge of the screen.",
   "dependencies": [
     "sonner"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/sonner"
+    "@earth-ui/button",
+    "@earth-ui/sonner"
   ],
   "files": [
     {

@@ -2,7 +2,7 @@
 
 import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // `default` is the EDS Chip (pressed: neutral-secondary fill). `outline` is the
 // EDS DaySelect day (bordered, pressed: inverse fill). Icon-only toggles

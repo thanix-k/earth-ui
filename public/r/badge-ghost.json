@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-ghost",
   "title": "Badge Ghost",
+  "description": "Badge example: Ghost.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

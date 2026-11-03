@@ -2,14 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-input",
   "title": "Date Picker Input",
+  "description": "Date Picker example: Input.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/calendar",
-    "@earth/field",
-    "@earth/input-group",
-    "@earth/popover"
+    "@earth-ui/calendar",
+    "@earth-ui/field",
+    "@earth-ui/input-group",
+    "@earth-ui/popover"
   ],
   "files": [
     {

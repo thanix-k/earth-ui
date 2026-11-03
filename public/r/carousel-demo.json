@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel-demo",
   "title": "Carousel Demo",
+  "description": "Carousel example. Scrolls through a row of slides with buttons, swipe or the arrow keys.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/carousel"
+    "@earth-ui/carousel"
   ],
   "files": [
     {

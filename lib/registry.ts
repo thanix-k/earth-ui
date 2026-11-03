@@ -15,11 +15,9 @@ export function getRegistryItem(name: string): RegistryItem {
 
 /** Rewrites registry import paths to what a consumer sees after install. */
 export function toConsumerSource(source: string) {
-  return source
-    .replaceAll("@/registry/default/lib/utils", "@/lib/utils")
-    .replace(/@\/registry\/default\/(ui|hooks|lib)\//g, (_, dir) =>
-      dir === "ui" ? "@/components/ui/" : `@/${dir}/`,
-    );
+  return source.replace(/@\/registry\/default\/(ui|hooks|lib)\//g, (_, dir) =>
+    dir === "ui" ? "@/components/ui/" : `@/${dir}/`,
+  );
 }
 
 /** registry/default/ui/button.tsx → components/ui/button.tsx */

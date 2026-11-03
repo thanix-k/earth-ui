@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-link",
   "title": "Badge Link",
+  "description": "Badge example: Link.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

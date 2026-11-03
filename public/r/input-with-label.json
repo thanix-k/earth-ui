@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-with-label",
   "title": "Input With Label",
+  "description": "Input example: With label.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input",
-    "@earth/label"
+    "@earth-ui/input",
+    "@earth-ui/label"
   ],
   "files": [
     {

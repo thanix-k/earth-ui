@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip-sides",
   "title": "Tooltip Sides",
+  "description": "Tooltip example: Side.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/tooltip"
+    "@earth-ui/button",
+    "@earth-ui/tooltip"
   ],
   "files": [
     {

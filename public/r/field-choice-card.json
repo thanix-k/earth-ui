@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-choice-card",
   "title": "Field Choice Card",
+  "description": "Field example: Choice card.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/radio-group"
+    "@earth-ui/field",
+    "@earth-ui/radio-group"
   ],
   "files": [
     {

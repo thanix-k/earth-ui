@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command-demo",
   "title": "Command Demo",
+  "description": "Command example. A searchable list of commands or options, inline or as a ⌘K palette.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/command"
+    "@earth-ui/command"
   ],
   "files": [
     {

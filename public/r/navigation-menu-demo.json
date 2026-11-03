@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "navigation-menu-demo",
   "title": "Navigation Menu Demo",
+  "description": "Navigation Menu example. A row of top-level links whose triggers open panels of related links.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/navigation-menu"
+    "@earth-ui/navigation-menu"
   ],
   "files": [
     {

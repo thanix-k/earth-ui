@@ -1,4 +1,4 @@
-// Turns the DTCG token files in tokens/ into the CSS that the @earth/base
+// Turns the DTCG token files in tokens/ into the CSS that the @earth-ui/base
 // registry item installs. See docs/adr/0001 for the naming scheme.
 import { readFileSync } from "node:fs";
 
@@ -175,7 +175,7 @@ function shadcnVars(mode: Mode) {
   );
 }
 
-/** Theme keys tailwind-merge must know about (see registry/default/lib/utils.ts). */
+/** Theme keys tailwind-merge must know about (see registry/default/lib/cn.ts). */
 export function mergeKeys() {
   const sizes = (kind: string) =>
     Object.keys(flatten(typography[kind] as Dtcg)).map((s) => `${kind}-${s}`);
@@ -192,7 +192,7 @@ const unprefixed = (vars: Record<string, string>) =>
   Object.fromEntries(Object.entries(vars).map(([k, v]) => [k.slice(2), v]));
 
 /**
- * The @earth/base registry item's style fields, shaped for how `shadcn add`
+ * The @earth-ui/base registry item's style fields, shaped for how `shadcn add`
  * applies them: `cssVars.theme` is written verbatim into `@theme inline` (the
  * `css` field cannot hold bare declarations inside an at-rule), and the raw EDS
  * variables go through `css` so shadcn does not mint a `--color-*` for each.
@@ -214,7 +214,8 @@ export function baseStyle() {
       "@utility focus-ring": {
         // EDS focus ring: 1px gap in the canvas colour, then a 2px ring.
         // outline-hidden keeps a visible outline in forced-colors mode.
-        "@apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background": {},
+        "@apply outline-hidden ring-2 ring-eds-focus ring-offset-1 ring-offset-(--eds-background-canvas)":
+          {},
       },
       "@layer base": {
         "*": { "@apply border-border outline-ring": {} },

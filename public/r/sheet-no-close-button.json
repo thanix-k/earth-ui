@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sheet-no-close-button",
   "title": "Sheet No Close Button",
+  "description": "Sheet example: Without close button.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/sheet"
+    "@earth-ui/button",
+    "@earth-ui/sheet"
   ],
   "files": [
     {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "earth",
+  "name": "earth-ui",
   "homepage": "https://earthui.vercel.app",
   "items": [
     {
@@ -10,25 +10,112 @@
       "description": "Earth (setmore-black) tokens, shadcn aliases, focus ring and the Inter font. Install first.",
       "extends": "none",
       "config": {
-        "style": "earth",
+        "style": "base-nova",
         "iconLibrary": "lucide",
         "tailwind": {
           "baseColor": "neutral"
         },
         "registries": {
-          "@earth": "https://earthui.vercel.app/r/{name}.json"
+          "@earth-ui": "https://earthui.vercel.app/r/{name}.json"
         }
       },
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority",
-        "lucide-react",
-        "shadcn",
-        "tw-animate-css"
+        "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils",
-        "@earth/font-inter"
+        "@earth-ui/cn",
+        "@earth-ui/font-inter",
+        "@earth-ui/theme"
+      ],
+      "cssVars": {
+        "light": {
+          "background": "#ffffff",
+          "foreground": "#111111",
+          "card": "#ffffff",
+          "card-foreground": "#111111",
+          "popover": "#ffffff",
+          "popover-foreground": "#111111",
+          "primary": "#111111",
+          "primary-foreground": "#ffffff",
+          "secondary": "#f4f4f4",
+          "secondary-foreground": "#111111",
+          "muted": "#f4f4f4",
+          "muted-foreground": "#676767",
+          "accent": "#f1f1f1",
+          "accent-foreground": "#111111",
+          "destructive": "#c44c44",
+          "border": "#dbdbdb",
+          "input": "#dbdbdb",
+          "ring": "#111111",
+          "chart-1": "#111111",
+          "chart-2": "#666666",
+          "chart-3": "#999999",
+          "chart-4": "#b2b2b2",
+          "chart-5": "#c7c7c7",
+          "sidebar": "#fafafa",
+          "sidebar-foreground": "#111111",
+          "sidebar-primary": "#111111",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#f1f1f1",
+          "sidebar-accent-foreground": "#111111",
+          "sidebar-border": "#dbdbdb",
+          "sidebar-ring": "#111111"
+        },
+        "dark": {
+          "background": "#1a1a1a",
+          "foreground": "#eeeeee",
+          "card": "#1a1a1a",
+          "card-foreground": "#eeeeee",
+          "popover": "#1e1e1e",
+          "popover-foreground": "#eeeeee",
+          "primary": "#eeeeee",
+          "primary-foreground": "#1e1e1e",
+          "secondary": "#292929",
+          "secondary-foreground": "#eeeeee",
+          "muted": "#292929",
+          "muted-foreground": "#949494",
+          "accent": "#333333",
+          "accent-foreground": "#eeeeee",
+          "destructive": "#c44c44",
+          "border": "#3d3d3d",
+          "input": "#3d3d3d",
+          "ring": "#eeeeee",
+          "chart-1": "#eeeeee",
+          "chart-2": "#b2b2b2",
+          "chart-3": "#999999",
+          "chart-4": "#808080",
+          "chart-5": "#666666",
+          "sidebar": "#212121",
+          "sidebar-foreground": "#eeeeee",
+          "sidebar-primary": "#eeeeee",
+          "sidebar-primary-foreground": "#1e1e1e",
+          "sidebar-accent": "#333333",
+          "sidebar-accent-foreground": "#eeeeee",
+          "sidebar-border": "#3d3d3d",
+          "sidebar-ring": "#eeeeee"
+        }
+      },
+      "css": {
+        "@layer base": {
+          "*": {
+            "@apply border-border outline-ring": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground font-sans": {}
+          }
+        }
+      }
+    },
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Earth theme",
+      "description": "Earth's eds- tokens, type scale, radius and focus ring, without the shadcn aliases.",
+      "dependencies": [
+        "shadcn",
+        "tw-animate-css"
       ],
       "cssVars": {
         "theme": {
@@ -353,72 +440,6 @@
           "radius-2xl": "16px",
           "ease-eds-regular": "cubic-bezier(0.5, 0, 0.5, 0.99)",
           "ease-eds-entrance": "cubic-bezier(0.2, 0, 0.44, 0.99)"
-        },
-        "light": {
-          "background": "#ffffff",
-          "foreground": "#111111",
-          "card": "#ffffff",
-          "card-foreground": "#111111",
-          "popover": "#ffffff",
-          "popover-foreground": "#111111",
-          "primary": "#111111",
-          "primary-foreground": "#ffffff",
-          "secondary": "#f4f4f4",
-          "secondary-foreground": "#111111",
-          "muted": "#f4f4f4",
-          "muted-foreground": "#676767",
-          "accent": "#f1f1f1",
-          "accent-foreground": "#111111",
-          "destructive": "#c44c44",
-          "border": "#dbdbdb",
-          "input": "#dbdbdb",
-          "ring": "#111111",
-          "chart-1": "#111111",
-          "chart-2": "#666666",
-          "chart-3": "#999999",
-          "chart-4": "#b2b2b2",
-          "chart-5": "#c7c7c7",
-          "sidebar": "#fafafa",
-          "sidebar-foreground": "#111111",
-          "sidebar-primary": "#111111",
-          "sidebar-primary-foreground": "#ffffff",
-          "sidebar-accent": "#f1f1f1",
-          "sidebar-accent-foreground": "#111111",
-          "sidebar-border": "#dbdbdb",
-          "sidebar-ring": "#111111"
-        },
-        "dark": {
-          "background": "#1a1a1a",
-          "foreground": "#eeeeee",
-          "card": "#1a1a1a",
-          "card-foreground": "#eeeeee",
-          "popover": "#1e1e1e",
-          "popover-foreground": "#eeeeee",
-          "primary": "#eeeeee",
-          "primary-foreground": "#1e1e1e",
-          "secondary": "#292929",
-          "secondary-foreground": "#eeeeee",
-          "muted": "#292929",
-          "muted-foreground": "#949494",
-          "accent": "#333333",
-          "accent-foreground": "#eeeeee",
-          "destructive": "#c44c44",
-          "border": "#3d3d3d",
-          "input": "#3d3d3d",
-          "ring": "#eeeeee",
-          "chart-1": "#eeeeee",
-          "chart-2": "#b2b2b2",
-          "chart-3": "#999999",
-          "chart-4": "#808080",
-          "chart-5": "#666666",
-          "sidebar": "#212121",
-          "sidebar-foreground": "#eeeeee",
-          "sidebar-primary": "#eeeeee",
-          "sidebar-primary-foreground": "#1e1e1e",
-          "sidebar-accent": "#333333",
-          "sidebar-accent-foreground": "#eeeeee",
-          "sidebar-border": "#3d3d3d",
-          "sidebar-ring": "#eeeeee"
         }
       },
       "css": {
@@ -901,15 +922,7 @@
           "--eds-shadow-50": "0px 0px 0px 4px rgba(255, 255, 255, 0.20)"
         },
         "@utility focus-ring": {
-          "@apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background": {}
-        },
-        "@layer base": {
-          "*": {
-            "@apply border-border outline-ring": {}
-          },
-          "body": {
-            "@apply bg-background text-foreground font-sans": {}
-          }
+          "@apply outline-hidden ring-2 ring-eds-focus ring-offset-1 ring-offset-(--eds-background-canvas)": {}
         }
       }
     },
@@ -939,7 +952,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -957,8 +971,9 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -976,7 +991,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -992,7 +1008,8 @@
       "description": "Keeps content, such as an image or video, at a fixed width-to-height ratio.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1010,7 +1027,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1029,7 +1047,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1048,7 +1067,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1067,8 +1087,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/separator",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/separator",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1087,7 +1108,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1106,8 +1128,9 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1123,7 +1146,8 @@
       "description": "A bordered surface that groups related content and actions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1142,8 +1166,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1161,7 +1186,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1180,7 +1206,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1197,7 +1224,9 @@
       "dependencies": [
         "@base-ui/react"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@earth-ui/theme"
+      ],
       "files": [
         {
           "path": "registry/default/ui/collapsible.tsx",
@@ -1215,9 +1244,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/input-group",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/input-group",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1236,9 +1266,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/dialog",
-        "@earth/input-group",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/dialog",
+        "@earth-ui/input-group",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1257,7 +1288,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1276,8 +1308,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1295,7 +1328,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1314,7 +1348,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1332,7 +1367,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1351,9 +1387,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/separator",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1371,7 +1408,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1389,10 +1427,11 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/input",
-        "@earth/textarea",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/input",
+        "@earth-ui/textarea",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1411,7 +1450,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1429,7 +1469,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1448,8 +1489,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/separator",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/separator",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1465,7 +1507,8 @@
       "description": "Shows a keyboard key or shortcut.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1481,7 +1524,8 @@
       "description": "Names a form control. Clicking the label focuses or toggles its control.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1500,8 +1544,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/dropdown-menu",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1519,7 +1564,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1539,7 +1585,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1557,8 +1604,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1576,7 +1624,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1594,7 +1643,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1612,7 +1662,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1630,7 +1681,8 @@
         "react-resizable-panels"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1648,7 +1700,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1667,7 +1720,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1685,7 +1739,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1704,8 +1759,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1725,14 +1781,15 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/input",
-        "@earth/separator",
-        "@earth/sheet",
-        "@earth/skeleton",
-        "@earth/tooltip",
-        "@earth/use-mobile",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/input",
+        "@earth-ui/separator",
+        "@earth-ui/sheet",
+        "@earth-ui/skeleton",
+        "@earth-ui/theme",
+        "@earth-ui/tooltip",
+        "@earth-ui/use-mobile"
       ],
       "files": [
         {
@@ -1748,7 +1805,8 @@
       "description": "A pulsing placeholder shown while content loads.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1766,7 +1824,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1784,7 +1843,9 @@
         "lucide-react",
         "sonner"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@earth-ui/theme"
+      ],
       "files": [
         {
           "path": "registry/default/ui/sonner.tsx",
@@ -1799,7 +1860,8 @@
       "description": "An animated indicator that shows something is loading.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1817,7 +1879,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1833,7 +1896,8 @@
       "description": "Rows and columns of data, such as bookings or payments.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1852,7 +1916,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1868,7 +1933,8 @@
       "description": "A multi-line text field for notes, messages and descriptions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1887,8 +1953,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1907,8 +1974,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/toggle",
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme",
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -1927,7 +1995,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1945,7 +2014,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth/utils"
+        "@earth-ui/cn",
+        "@earth-ui/theme"
       ],
       "files": [
         {
@@ -1955,9 +2025,9 @@
       ]
     },
     {
-      "name": "utils",
+      "name": "cn",
       "type": "registry:lib",
-      "title": "Utils",
+      "title": "Cn",
       "dependencies": [
         "clsx",
         "tailwind-merge"
@@ -1965,7 +2035,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/default/lib/utils.ts",
+          "path": "registry/default/lib/cn.ts",
           "type": "registry:lib"
         }
       ]
@@ -1987,9 +2057,10 @@
       "name": "accordion-demo",
       "type": "registry:example",
       "title": "Accordion Demo",
+      "description": "Accordion example. A stack of headings that each show or hide a section of content.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/accordion"
+        "@earth-ui/accordion"
       ],
       "files": [
         {
@@ -2002,9 +2073,10 @@
       "name": "accordion-disabled",
       "type": "registry:example",
       "title": "Accordion Disabled",
+      "description": "Accordion example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/accordion"
+        "@earth-ui/accordion"
       ],
       "files": [
         {
@@ -2017,9 +2089,10 @@
       "name": "accordion-multiple",
       "type": "registry:example",
       "title": "Accordion Multiple",
+      "description": "Accordion example: Multiple.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/accordion"
+        "@earth-ui/accordion"
       ],
       "files": [
         {
@@ -2032,12 +2105,13 @@
       "name": "alert-action",
       "type": "registry:example",
       "title": "Alert Action",
+      "description": "Alert example: Action.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/alert",
-        "@earth/button"
+        "@earth-ui/alert",
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2050,11 +2124,12 @@
       "name": "alert-demo",
       "type": "registry:example",
       "title": "Alert Demo",
+      "description": "Alert example. A tinted message inside the page that draws attention to information or a problem.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/alert"
+        "@earth-ui/alert"
       ],
       "files": [
         {
@@ -2067,11 +2142,12 @@
       "name": "alert-destructive",
       "type": "registry:example",
       "title": "Alert Destructive",
+      "description": "Alert example: Destructive.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/alert"
+        "@earth-ui/alert"
       ],
       "files": [
         {
@@ -2084,10 +2160,11 @@
       "name": "alert-dialog-demo",
       "type": "registry:example",
       "title": "Alert Dialog Demo",
+      "description": "Alert Dialog example. A modal that asks people to confirm an important or destructive action.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/alert-dialog",
-        "@earth/button"
+        "@earth-ui/alert-dialog",
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2100,10 +2177,11 @@
       "name": "alert-dialog-destructive",
       "type": "registry:example",
       "title": "Alert Dialog Destructive",
+      "description": "Alert Dialog example: Destructive.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/alert-dialog",
-        "@earth/button"
+        "@earth-ui/alert-dialog",
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2116,12 +2194,13 @@
       "name": "alert-dialog-small",
       "type": "registry:example",
       "title": "Alert Dialog Small",
+      "description": "Alert Dialog example: Small with media.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/alert-dialog",
-        "@earth/button"
+        "@earth-ui/alert-dialog",
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2134,11 +2213,12 @@
       "name": "alert-status",
       "type": "registry:example",
       "title": "Alert Status",
+      "description": "Alert example: Status.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/alert"
+        "@earth-ui/alert"
       ],
       "files": [
         {
@@ -2151,9 +2231,10 @@
       "name": "aspect-ratio-demo",
       "type": "registry:example",
       "title": "Aspect Ratio Demo",
+      "description": "Aspect Ratio example. Keeps content, such as an image or video, at a fixed width-to-height ratio.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/aspect-ratio"
+        "@earth-ui/aspect-ratio"
       ],
       "files": [
         {
@@ -2166,11 +2247,12 @@
       "name": "avatar-badge",
       "type": "registry:example",
       "title": "Avatar Badge",
+      "description": "Avatar example: Badge.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar"
+        "@earth-ui/avatar"
       ],
       "files": [
         {
@@ -2183,9 +2265,10 @@
       "name": "avatar-demo",
       "type": "registry:example",
       "title": "Avatar Demo",
+      "description": "Avatar example. A person's photo, with their initials as a fallback.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/avatar"
+        "@earth-ui/avatar"
       ],
       "files": [
         {
@@ -2198,9 +2281,10 @@
       "name": "avatar-group",
       "type": "registry:example",
       "title": "Avatar Group",
+      "description": "Avatar example: Group.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/avatar"
+        "@earth-ui/avatar"
       ],
       "files": [
         {
@@ -2213,9 +2297,10 @@
       "name": "avatar-sizes",
       "type": "registry:example",
       "title": "Avatar Sizes",
+      "description": "Avatar example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/avatar"
+        "@earth-ui/avatar"
       ],
       "files": [
         {
@@ -2228,9 +2313,10 @@
       "name": "badge-demo",
       "type": "registry:example",
       "title": "Badge Demo",
+      "description": "Badge example. A short label for a status, count or category.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2243,9 +2329,10 @@
       "name": "badge-destructive",
       "type": "registry:example",
       "title": "Badge Destructive",
+      "description": "Badge example: Destructive.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2258,9 +2345,10 @@
       "name": "badge-ghost",
       "type": "registry:example",
       "title": "Badge Ghost",
+      "description": "Badge example: Ghost.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2273,11 +2361,12 @@
       "name": "badge-link",
       "type": "registry:example",
       "title": "Badge Link",
+      "description": "Badge example: Link.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2290,9 +2379,10 @@
       "name": "badge-outline",
       "type": "registry:example",
       "title": "Badge Outline",
+      "description": "Badge example: Outline.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2305,9 +2395,10 @@
       "name": "badge-secondary",
       "type": "registry:example",
       "title": "Badge Secondary",
+      "description": "Badge example: Secondary.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2320,9 +2411,10 @@
       "name": "badge-status",
       "type": "registry:example",
       "title": "Badge Status",
+      "description": "Badge example: Status.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2335,11 +2427,12 @@
       "name": "badge-with-icon",
       "type": "registry:example",
       "title": "Badge With Icon",
+      "description": "Badge example: With icon.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/badge"
+        "@earth-ui/badge"
       ],
       "files": [
         {
@@ -2352,9 +2445,10 @@
       "name": "breadcrumb-collapsed",
       "type": "registry:example",
       "title": "Breadcrumb Collapsed",
+      "description": "Breadcrumb example: Collapsed.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/breadcrumb"
+        "@earth-ui/breadcrumb"
       ],
       "files": [
         {
@@ -2367,9 +2461,10 @@
       "name": "breadcrumb-demo",
       "type": "registry:example",
       "title": "Breadcrumb Demo",
+      "description": "Breadcrumb example. Shows where the current page sits in the app and links back to its parents.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/breadcrumb"
+        "@earth-ui/breadcrumb"
       ],
       "files": [
         {
@@ -2382,9 +2477,10 @@
       "name": "breadcrumb-separator",
       "type": "registry:example",
       "title": "Breadcrumb Separator",
+      "description": "Breadcrumb example: Custom separator.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/breadcrumb"
+        "@earth-ui/breadcrumb"
       ],
       "files": [
         {
@@ -2394,12 +2490,35 @@
       ]
     },
     {
+      "name": "build-a-product-demo",
+      "type": "registry:example",
+      "title": "Build A Product Demo",
+      "description": "Build A Product Demo example.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@earth-ui/avatar",
+        "@earth-ui/badge",
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/build-a-product-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "button-as-link",
       "type": "registry:example",
       "title": "Button As Link",
+      "description": "Button example: As a link.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2412,9 +2531,10 @@
       "name": "button-demo",
       "type": "registry:example",
       "title": "Button Demo",
+      "description": "Button example. Triggers an action. Use one default button per view for the main action.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2427,9 +2547,10 @@
       "name": "button-destructive",
       "type": "registry:example",
       "title": "Button Destructive",
+      "description": "Button example: Destructive.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2442,9 +2563,10 @@
       "name": "button-disabled",
       "type": "registry:example",
       "title": "Button Disabled",
+      "description": "Button example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2457,9 +2579,10 @@
       "name": "button-ghost",
       "type": "registry:example",
       "title": "Button Ghost",
+      "description": "Button example: Ghost.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2472,12 +2595,13 @@
       "name": "button-group-demo",
       "type": "registry:example",
       "title": "Button Group Demo",
+      "description": "Button Group example. Joins related buttons, inputs and labels into one control.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/button-group"
+        "@earth-ui/button",
+        "@earth-ui/button-group"
       ],
       "files": [
         {
@@ -2490,12 +2614,13 @@
       "name": "button-group-input",
       "type": "registry:example",
       "title": "Button Group Input",
+      "description": "Button Group example: With input.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/button-group",
-        "@earth/input",
-        "@earth/label"
+        "@earth-ui/button",
+        "@earth-ui/button-group",
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -2508,12 +2633,13 @@
       "name": "button-group-separator",
       "type": "registry:example",
       "title": "Button Group Separator",
+      "description": "Button Group example: Separator.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/button-group"
+        "@earth-ui/button",
+        "@earth-ui/button-group"
       ],
       "files": [
         {
@@ -2526,12 +2652,13 @@
       "name": "button-group-vertical",
       "type": "registry:example",
       "title": "Button Group Vertical",
+      "description": "Button Group example: Vertical.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/button-group"
+        "@earth-ui/button",
+        "@earth-ui/button-group"
       ],
       "files": [
         {
@@ -2544,9 +2671,10 @@
       "name": "button-link",
       "type": "registry:example",
       "title": "Button Link",
+      "description": "Button example: Link.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2559,9 +2687,10 @@
       "name": "button-outline",
       "type": "registry:example",
       "title": "Button Outline",
+      "description": "Button example: Outline.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2574,9 +2703,10 @@
       "name": "button-secondary",
       "type": "registry:example",
       "title": "Button Secondary",
+      "description": "Button example: Secondary.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2589,11 +2719,12 @@
       "name": "button-sizes",
       "type": "registry:example",
       "title": "Button Sizes",
+      "description": "Button example: Sizes.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2606,11 +2737,12 @@
       "name": "button-with-icon",
       "type": "registry:example",
       "title": "Button With Icon",
+      "description": "Button example: With icon.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button"
+        "@earth-ui/button"
       ],
       "files": [
         {
@@ -2623,9 +2755,10 @@
       "name": "calendar-demo",
       "type": "registry:example",
       "title": "Calendar Demo",
+      "description": "Calendar example. Lets people pick a date or a range of dates from a month grid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/calendar"
+        "@earth-ui/calendar"
       ],
       "files": [
         {
@@ -2638,9 +2771,10 @@
       "name": "calendar-disabled",
       "type": "registry:example",
       "title": "Calendar Disabled",
+      "description": "Calendar example: Disabled days.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/calendar"
+        "@earth-ui/calendar"
       ],
       "files": [
         {
@@ -2653,9 +2787,10 @@
       "name": "calendar-dropdown",
       "type": "registry:example",
       "title": "Calendar Dropdown",
+      "description": "Calendar example: Month and year dropdowns.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/calendar"
+        "@earth-ui/calendar"
       ],
       "files": [
         {
@@ -2668,11 +2803,12 @@
       "name": "calendar-range",
       "type": "registry:example",
       "title": "Calendar Range",
+      "description": "Calendar example: Range.",
       "dependencies": [
         "react-day-picker"
       ],
       "registryDependencies": [
-        "@earth/calendar"
+        "@earth-ui/calendar"
       ],
       "files": [
         {
@@ -2685,9 +2821,10 @@
       "name": "calendar-small",
       "type": "registry:example",
       "title": "Calendar Small",
+      "description": "Calendar example: Small.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/calendar"
+        "@earth-ui/calendar"
       ],
       "files": [
         {
@@ -2700,12 +2837,13 @@
       "name": "card-demo",
       "type": "registry:example",
       "title": "Card Demo",
+      "description": "Card example. A bordered surface that groups related content and actions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/input",
-        "@earth/label"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -2718,11 +2856,12 @@
       "name": "card-image",
       "type": "registry:example",
       "title": "Card Image",
+      "description": "Card example: Image.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge",
-        "@earth/button",
-        "@earth/card"
+        "@earth-ui/badge",
+        "@earth-ui/button",
+        "@earth-ui/card"
       ],
       "files": [
         {
@@ -2735,10 +2874,11 @@
       "name": "card-small",
       "type": "registry:example",
       "title": "Card Small",
+      "description": "Card example: Small.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card"
+        "@earth-ui/button",
+        "@earth-ui/card"
       ],
       "files": [
         {
@@ -2751,9 +2891,10 @@
       "name": "carousel-demo",
       "type": "registry:example",
       "title": "Carousel Demo",
+      "description": "Carousel example. Scrolls through a row of slides with buttons, swipe or the arrow keys.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/carousel"
+        "@earth-ui/carousel"
       ],
       "files": [
         {
@@ -2766,9 +2907,10 @@
       "name": "carousel-orientation",
       "type": "registry:example",
       "title": "Carousel Orientation",
+      "description": "Carousel example: Vertical.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/carousel"
+        "@earth-ui/carousel"
       ],
       "files": [
         {
@@ -2781,9 +2923,10 @@
       "name": "carousel-size",
       "type": "registry:example",
       "title": "Carousel Size",
+      "description": "Carousel example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/carousel"
+        "@earth-ui/carousel"
       ],
       "files": [
         {
@@ -2796,12 +2939,13 @@
       "name": "chart-demo",
       "type": "registry:example",
       "title": "Chart Demo",
+      "description": "Chart example. Recharts charts with Earth's chart palette, tooltip and legend.",
       "dependencies": [
         "recharts"
       ],
       "registryDependencies": [
-        "@earth/card",
-        "@earth/chart"
+        "@earth-ui/card",
+        "@earth-ui/chart"
       ],
       "files": [
         {
@@ -2814,11 +2958,12 @@
       "name": "chart-line",
       "type": "registry:example",
       "title": "Chart Line",
+      "description": "Chart example: Line.",
       "dependencies": [
         "recharts"
       ],
       "registryDependencies": [
-        "@earth/chart"
+        "@earth-ui/chart"
       ],
       "files": [
         {
@@ -2831,11 +2976,12 @@
       "name": "chart-pie",
       "type": "registry:example",
       "title": "Chart Pie",
+      "description": "Chart example: Pie.",
       "dependencies": [
         "recharts"
       ],
       "registryDependencies": [
-        "@earth/chart"
+        "@earth-ui/chart"
       ],
       "files": [
         {
@@ -2848,10 +2994,11 @@
       "name": "checkbox-demo",
       "type": "registry:example",
       "title": "Checkbox Demo",
+      "description": "Checkbox example. Lets people turn an option on or off, or pick several options from a list.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/checkbox",
-        "@earth/label"
+        "@earth-ui/checkbox",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -2864,12 +3011,13 @@
       "name": "collapsible-demo",
       "type": "registry:example",
       "title": "Collapsible Demo",
+      "description": "Collapsible example. A section that can be expanded and collapsed with a trigger.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/collapsible"
+        "@earth-ui/button",
+        "@earth-ui/collapsible"
       ],
       "files": [
         {
@@ -2882,9 +3030,10 @@
       "name": "combobox-clear",
       "type": "registry:example",
       "title": "Combobox Clear",
+      "description": "Combobox example: Clear button.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2897,9 +3046,10 @@
       "name": "combobox-demo",
       "type": "registry:example",
       "title": "Combobox Demo",
+      "description": "Combobox example. A text input that filters a list of options as people type.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2912,9 +3062,10 @@
       "name": "combobox-disabled",
       "type": "registry:example",
       "title": "Combobox Disabled",
+      "description": "Combobox example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2927,9 +3078,10 @@
       "name": "combobox-groups",
       "type": "registry:example",
       "title": "Combobox Groups",
+      "description": "Combobox example: Groups.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2942,10 +3094,11 @@
       "name": "combobox-invalid",
       "type": "registry:example",
       "title": "Combobox Invalid",
+      "description": "Combobox example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox",
-        "@earth/field"
+        "@earth-ui/combobox",
+        "@earth-ui/field"
       ],
       "files": [
         {
@@ -2958,9 +3111,10 @@
       "name": "combobox-multiple",
       "type": "registry:example",
       "title": "Combobox Multiple",
+      "description": "Combobox example: Multiple.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/combobox"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2973,10 +3127,11 @@
       "name": "combobox-popup",
       "type": "registry:example",
       "title": "Combobox Popup",
+      "description": "Combobox example: Popup.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/combobox"
+        "@earth-ui/button",
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -2989,11 +3144,12 @@
       "name": "command-demo",
       "type": "registry:example",
       "title": "Command Demo",
+      "description": "Command example. A searchable list of commands or options, inline or as a ⌘K palette.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/command"
+        "@earth-ui/command"
       ],
       "files": [
         {
@@ -3006,13 +3162,14 @@
       "name": "command-dialog",
       "type": "registry:example",
       "title": "Command Dialog",
+      "description": "Command example: Dialog.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/command",
-        "@earth/kbd"
+        "@earth-ui/button",
+        "@earth-ui/command",
+        "@earth-ui/kbd"
       ],
       "files": [
         {
@@ -3025,11 +3182,12 @@
       "name": "context-menu-demo",
       "type": "registry:example",
       "title": "Context Menu Demo",
+      "description": "Context Menu example. A menu of actions that opens on right-click or long press.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/context-menu"
+        "@earth-ui/context-menu"
       ],
       "files": [
         {
@@ -3042,16 +3200,17 @@
       "name": "data-table-demo",
       "type": "registry:example",
       "title": "Data Table Demo",
+      "description": "Data Table example. A table with sorting, filtering, pagination, column visibility and row selection, built from Table and TanStack Table.",
       "dependencies": [
         "@tanstack/react-table",
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/checkbox",
-        "@earth/dropdown-menu",
-        "@earth/input",
-        "@earth/table"
+        "@earth-ui/button",
+        "@earth-ui/checkbox",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/input",
+        "@earth-ui/table"
       ],
       "files": [
         {
@@ -3064,14 +3223,15 @@
       "name": "date-picker-basic",
       "type": "registry:example",
       "title": "Date Picker Basic",
+      "description": "Date Picker example: Basic.",
       "dependencies": [
         "date-fns"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3084,14 +3244,15 @@
       "name": "date-picker-demo",
       "type": "registry:example",
       "title": "Date Picker Demo",
+      "description": "Date Picker example. A date field built from Popover and Calendar, with range, input and time variants.",
       "dependencies": [
         "date-fns",
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/calendar",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/calendar",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3104,12 +3265,13 @@
       "name": "date-picker-dob",
       "type": "registry:example",
       "title": "Date Picker Dob",
+      "description": "Date Picker example: Date of birth.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3122,14 +3284,15 @@
       "name": "date-picker-input",
       "type": "registry:example",
       "title": "Date Picker Input",
+      "description": "Date Picker example: Input.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/input-group",
-        "@earth/popover"
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/input-group",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3142,15 +3305,16 @@
       "name": "date-picker-natural-language",
       "type": "registry:example",
       "title": "Date Picker Natural Language",
+      "description": "Date Picker example: Natural language.",
       "dependencies": [
         "chrono-node",
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/input-group",
-        "@earth/popover"
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/input-group",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3163,16 +3327,17 @@
       "name": "date-picker-range",
       "type": "registry:example",
       "title": "Date Picker Range",
+      "description": "Date Picker example: Range.",
       "dependencies": [
         "date-fns",
         "lucide-react",
         "react-day-picker"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3185,16 +3350,17 @@
       "name": "date-picker-time",
       "type": "registry:example",
       "title": "Date Picker Time",
+      "description": "Date Picker example: Time.",
       "dependencies": [
         "date-fns",
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/calendar",
-        "@earth/field",
-        "@earth/input",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/calendar",
+        "@earth-ui/field",
+        "@earth-ui/input",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -3207,11 +3373,12 @@
       "name": "dialog-close-button",
       "type": "registry:example",
       "title": "Dialog Close Button",
+      "description": "Dialog example: Close button in the footer.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dialog",
-        "@earth/input"
+        "@earth-ui/button",
+        "@earth-ui/dialog",
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3224,12 +3391,13 @@
       "name": "dialog-demo",
       "type": "registry:example",
       "title": "Dialog Demo",
+      "description": "Dialog example. A modal window over the page for a focused task, such as editing a record.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dialog",
-        "@earth/input",
-        "@earth/label"
+        "@earth-ui/button",
+        "@earth-ui/dialog",
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -3242,10 +3410,11 @@
       "name": "dialog-scrollable-content",
       "type": "registry:example",
       "title": "Dialog Scrollable Content",
+      "description": "Dialog example: Scrollable content.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dialog"
+        "@earth-ui/button",
+        "@earth-ui/dialog"
       ],
       "files": [
         {
@@ -3258,10 +3427,11 @@
       "name": "drawer-demo",
       "type": "registry:example",
       "title": "Drawer Demo",
+      "description": "Drawer example. A panel that slides in from an edge and can be swiped away, built for touch screens.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/drawer"
+        "@earth-ui/button",
+        "@earth-ui/drawer"
       ],
       "files": [
         {
@@ -3274,10 +3444,11 @@
       "name": "drawer-direction",
       "type": "registry:example",
       "title": "Drawer Direction",
+      "description": "Drawer example: Direction.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/drawer"
+        "@earth-ui/button",
+        "@earth-ui/drawer"
       ],
       "files": [
         {
@@ -3290,10 +3461,11 @@
       "name": "dropdown-menu-checkboxes",
       "type": "registry:example",
       "title": "Dropdown Menu Checkboxes",
+      "description": "Dropdown Menu example: Checkboxes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dropdown-menu"
+        "@earth-ui/button",
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -3306,12 +3478,13 @@
       "name": "dropdown-menu-demo",
       "type": "registry:example",
       "title": "Dropdown Menu Demo",
+      "description": "Dropdown Menu example. A list of actions or options that opens from a button.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dropdown-menu"
+        "@earth-ui/button",
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -3324,10 +3497,11 @@
       "name": "dropdown-menu-radio-group",
       "type": "registry:example",
       "title": "Dropdown Menu Radio Group",
+      "description": "Dropdown Menu example: Radio group.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/dropdown-menu"
+        "@earth-ui/button",
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -3340,12 +3514,13 @@
       "name": "empty-demo",
       "type": "registry:example",
       "title": "Empty Demo",
+      "description": "Empty example. A placeholder for a view with no content yet, with a next step.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/empty"
+        "@earth-ui/button",
+        "@earth-ui/empty"
       ],
       "files": [
         {
@@ -3358,12 +3533,13 @@
       "name": "empty-icon",
       "type": "registry:example",
       "title": "Empty Icon",
+      "description": "Empty example: Icon and border.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/empty"
+        "@earth-ui/button",
+        "@earth-ui/empty"
       ],
       "files": [
         {
@@ -3376,10 +3552,11 @@
       "name": "field-checkbox",
       "type": "registry:example",
       "title": "Field Checkbox",
+      "description": "Field example: Checkbox.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/checkbox",
-        "@earth/field"
+        "@earth-ui/checkbox",
+        "@earth-ui/field"
       ],
       "files": [
         {
@@ -3392,10 +3569,11 @@
       "name": "field-choice-card",
       "type": "registry:example",
       "title": "Field Choice Card",
+      "description": "Field example: Choice card.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/radio-group"
+        "@earth-ui/field",
+        "@earth-ui/radio-group"
       ],
       "files": [
         {
@@ -3408,14 +3586,15 @@
       "name": "field-demo",
       "type": "registry:example",
       "title": "Field Demo",
+      "description": "Field example. Lays out a form control with its label, description and error message.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/checkbox",
-        "@earth/field",
-        "@earth/input",
-        "@earth/native-select",
-        "@earth/textarea"
+        "@earth-ui/button",
+        "@earth-ui/checkbox",
+        "@earth-ui/field",
+        "@earth-ui/input",
+        "@earth-ui/native-select",
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -3428,10 +3607,11 @@
       "name": "field-disabled",
       "type": "registry:example",
       "title": "Field Disabled",
+      "description": "Field example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/input"
+        "@earth-ui/field",
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3444,10 +3624,11 @@
       "name": "field-input",
       "type": "registry:example",
       "title": "Field Input",
+      "description": "Field example: Description.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/input"
+        "@earth-ui/field",
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3460,10 +3641,11 @@
       "name": "field-invalid",
       "type": "registry:example",
       "title": "Field Invalid",
+      "description": "Field example: Error.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/input"
+        "@earth-ui/field",
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3476,10 +3658,11 @@
       "name": "field-radio",
       "type": "registry:example",
       "title": "Field Radio",
+      "description": "Field example: Radio.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/radio-group"
+        "@earth-ui/field",
+        "@earth-ui/radio-group"
       ],
       "files": [
         {
@@ -3492,10 +3675,11 @@
       "name": "field-switch",
       "type": "registry:example",
       "title": "Field Switch",
+      "description": "Field example: Switch.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/switch"
+        "@earth-ui/field",
+        "@earth-ui/switch"
       ],
       "files": [
         {
@@ -3508,9 +3692,10 @@
       "name": "hover-card-demo",
       "type": "registry:example",
       "title": "Hover Card Demo",
+      "description": "Hover Card example. Previews the content behind a link when people hover or focus it.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/hover-card"
+        "@earth-ui/hover-card"
       ],
       "files": [
         {
@@ -3523,9 +3708,10 @@
       "name": "input-demo",
       "type": "registry:example",
       "title": "Input Demo",
+      "description": "Input example. A single-line text field. Pair it with a Label, or a Field for descriptions and errors.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input"
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3538,9 +3724,10 @@
       "name": "input-disabled",
       "type": "registry:example",
       "title": "Input Disabled",
+      "description": "Input example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input"
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3553,11 +3740,12 @@
       "name": "input-group-button",
       "type": "registry:example",
       "title": "Input Group Button",
+      "description": "Input Group example: Button.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3570,11 +3758,12 @@
       "name": "input-group-demo",
       "type": "registry:example",
       "title": "Input Group Demo",
+      "description": "Input Group example. Adds icons, text or buttons inside an input or textarea.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3587,11 +3776,12 @@
       "name": "input-group-disabled",
       "type": "registry:example",
       "title": "Input Group Disabled",
+      "description": "Input Group example: Disabled.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3604,11 +3794,12 @@
       "name": "input-group-invalid",
       "type": "registry:example",
       "title": "Input Group Invalid",
+      "description": "Input Group example: Invalid.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3621,9 +3812,10 @@
       "name": "input-group-text",
       "type": "registry:example",
       "title": "Input Group Text",
+      "description": "Input Group example: Text.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3636,11 +3828,12 @@
       "name": "input-group-textarea",
       "type": "registry:example",
       "title": "Input Group Textarea",
+      "description": "Input Group example: Textarea.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/input-group"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -3653,10 +3846,11 @@
       "name": "input-invalid",
       "type": "registry:example",
       "title": "Input Invalid",
+      "description": "Input example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input",
-        "@earth/label"
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -3669,9 +3863,10 @@
       "name": "input-otp-demo",
       "type": "registry:example",
       "title": "Input Otp Demo",
+      "description": "Input OTP example. Collects a one-time passcode one character at a time.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input-otp"
+        "@earth-ui/input-otp"
       ],
       "files": [
         {
@@ -3684,9 +3879,10 @@
       "name": "input-otp-disabled",
       "type": "registry:example",
       "title": "Input Otp Disabled",
+      "description": "Input OTP example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input-otp"
+        "@earth-ui/input-otp"
       ],
       "files": [
         {
@@ -3699,10 +3895,11 @@
       "name": "input-otp-invalid",
       "type": "registry:example",
       "title": "Input Otp Invalid",
+      "description": "Input OTP example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/input-otp"
+        "@earth-ui/field",
+        "@earth-ui/input-otp"
       ],
       "files": [
         {
@@ -3715,11 +3912,12 @@
       "name": "input-otp-pattern",
       "type": "registry:example",
       "title": "Input Otp Pattern",
+      "description": "Input OTP example: Pattern.",
       "dependencies": [
         "input-otp"
       ],
       "registryDependencies": [
-        "@earth/input-otp"
+        "@earth-ui/input-otp"
       ],
       "files": [
         {
@@ -3732,10 +3930,11 @@
       "name": "input-with-label",
       "type": "registry:example",
       "title": "Input With Label",
+      "description": "Input example: With label.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/input",
-        "@earth/label"
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -3748,13 +3947,14 @@
       "name": "item-avatar",
       "type": "registry:example",
       "title": "Item Avatar",
+      "description": "Item example: List with avatars.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/button",
-        "@earth/item"
+        "@earth-ui/avatar",
+        "@earth-ui/button",
+        "@earth-ui/item"
       ],
       "files": [
         {
@@ -3767,12 +3967,13 @@
       "name": "item-demo",
       "type": "registry:example",
       "title": "Item Demo",
+      "description": "Item example. A row with media, a title, a description and actions, for lists of things like staff or services.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/item"
+        "@earth-ui/button",
+        "@earth-ui/item"
       ],
       "files": [
         {
@@ -3785,11 +3986,12 @@
       "name": "item-size",
       "type": "registry:example",
       "title": "Item Size",
+      "description": "Item example: Sizes.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/item"
+        "@earth-ui/item"
       ],
       "files": [
         {
@@ -3802,9 +4004,10 @@
       "name": "item-variants",
       "type": "registry:example",
       "title": "Item Variants",
+      "description": "Item example: Variants.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/item"
+        "@earth-ui/item"
       ],
       "files": [
         {
@@ -3817,10 +4020,11 @@
       "name": "kbd-button",
       "type": "registry:example",
       "title": "Kbd Button",
+      "description": "Kbd example: In a button.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/kbd"
+        "@earth-ui/button",
+        "@earth-ui/kbd"
       ],
       "files": [
         {
@@ -3833,9 +4037,10 @@
       "name": "kbd-demo",
       "type": "registry:example",
       "title": "Kbd Demo",
+      "description": "Kbd example. Shows a keyboard key or shortcut.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/kbd"
+        "@earth-ui/kbd"
       ],
       "files": [
         {
@@ -3848,9 +4053,10 @@
       "name": "kbd-group",
       "type": "registry:example",
       "title": "Kbd Group",
+      "description": "Kbd example: In text.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/kbd"
+        "@earth-ui/kbd"
       ],
       "files": [
         {
@@ -3863,10 +4069,11 @@
       "name": "label-demo",
       "type": "registry:example",
       "title": "Label Demo",
+      "description": "Label example. Names a form control. Clicking the label focuses or toggles its control.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/checkbox",
-        "@earth/label"
+        "@earth-ui/checkbox",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -3879,9 +4086,10 @@
       "name": "menubar-demo",
       "type": "registry:example",
       "title": "Menubar Demo",
+      "description": "Menubar example. A horizontal bar of menus, like the File and Edit menus of a desktop app.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/menubar"
+        "@earth-ui/menubar"
       ],
       "files": [
         {
@@ -3894,9 +4102,10 @@
       "name": "native-select-demo",
       "type": "registry:example",
       "title": "Native Select Demo",
+      "description": "Native Select example. A styled native select element. Use it when the browser's own picker is preferred, such as on mobile.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/native-select"
+        "@earth-ui/native-select"
       ],
       "files": [
         {
@@ -3909,9 +4118,10 @@
       "name": "native-select-disabled",
       "type": "registry:example",
       "title": "Native Select Disabled",
+      "description": "Native Select example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/native-select"
+        "@earth-ui/native-select"
       ],
       "files": [
         {
@@ -3924,9 +4134,10 @@
       "name": "native-select-groups",
       "type": "registry:example",
       "title": "Native Select Groups",
+      "description": "Native Select example: Groups.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/native-select"
+        "@earth-ui/native-select"
       ],
       "files": [
         {
@@ -3939,9 +4150,10 @@
       "name": "native-select-invalid",
       "type": "registry:example",
       "title": "Native Select Invalid",
+      "description": "Native Select example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/native-select"
+        "@earth-ui/native-select"
       ],
       "files": [
         {
@@ -3954,9 +4166,10 @@
       "name": "native-select-sizes",
       "type": "registry:example",
       "title": "Native Select Sizes",
+      "description": "Native Select example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/native-select"
+        "@earth-ui/native-select"
       ],
       "files": [
         {
@@ -3969,11 +4182,12 @@
       "name": "navigation-menu-demo",
       "type": "registry:example",
       "title": "Navigation Menu Demo",
+      "description": "Navigation Menu example. A row of top-level links whose triggers open panels of related links.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/navigation-menu"
+        "@earth-ui/navigation-menu"
       ],
       "files": [
         {
@@ -3986,9 +4200,10 @@
       "name": "pagination-demo",
       "type": "registry:example",
       "title": "Pagination Demo",
+      "description": "Pagination example. Moves between pages of a long list, such as customers or past appointments.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/pagination"
+        "@earth-ui/pagination"
       ],
       "files": [
         {
@@ -4001,9 +4216,10 @@
       "name": "pagination-simple",
       "type": "registry:example",
       "title": "Pagination Simple",
+      "description": "Pagination example: Previous and next only.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/pagination"
+        "@earth-ui/pagination"
       ],
       "files": [
         {
@@ -4016,10 +4232,11 @@
       "name": "popover-align",
       "type": "registry:example",
       "title": "Popover Align",
+      "description": "Popover example: Align.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -4032,12 +4249,13 @@
       "name": "popover-demo",
       "type": "registry:example",
       "title": "Popover Demo",
+      "description": "Popover example. Shows extra content or a small form in a floating panel next to its trigger.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/input",
-        "@earth/label",
-        "@earth/popover"
+        "@earth-ui/button",
+        "@earth-ui/input",
+        "@earth-ui/label",
+        "@earth-ui/popover"
       ],
       "files": [
         {
@@ -4050,9 +4268,10 @@
       "name": "progress-demo",
       "type": "registry:example",
       "title": "Progress Demo",
+      "description": "Progress example. Shows how far a task such as an import or upload has got.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/progress"
+        "@earth-ui/progress"
       ],
       "files": [
         {
@@ -4065,9 +4284,10 @@
       "name": "progress-label",
       "type": "registry:example",
       "title": "Progress Label",
+      "description": "Progress example: Label and value.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/progress"
+        "@earth-ui/progress"
       ],
       "files": [
         {
@@ -4080,10 +4300,11 @@
       "name": "radio-group-demo",
       "type": "registry:example",
       "title": "Radio Group Demo",
+      "description": "Radio Group example. Lets people pick exactly one option from a short list.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/radio-group"
+        "@earth-ui/label",
+        "@earth-ui/radio-group"
       ],
       "files": [
         {
@@ -4096,10 +4317,11 @@
       "name": "radio-group-disabled",
       "type": "registry:example",
       "title": "Radio Group Disabled",
+      "description": "Radio Group example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/radio-group"
+        "@earth-ui/label",
+        "@earth-ui/radio-group"
       ],
       "files": [
         {
@@ -4112,10 +4334,11 @@
       "name": "radio-group-invalid",
       "type": "registry:example",
       "title": "Radio Group Invalid",
+      "description": "Radio Group example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/radio-group"
+        "@earth-ui/label",
+        "@earth-ui/radio-group"
       ],
       "files": [
         {
@@ -4128,9 +4351,10 @@
       "name": "resizable-demo",
       "type": "registry:example",
       "title": "Resizable Demo",
+      "description": "Resizable example. Panels that people can resize by dragging the handle between them.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/resizable"
+        "@earth-ui/resizable"
       ],
       "files": [
         {
@@ -4143,9 +4367,10 @@
       "name": "resizable-handle",
       "type": "registry:example",
       "title": "Resizable Handle",
+      "description": "Resizable example: With handle.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/resizable"
+        "@earth-ui/resizable"
       ],
       "files": [
         {
@@ -4158,9 +4383,10 @@
       "name": "resizable-vertical",
       "type": "registry:example",
       "title": "Resizable Vertical",
+      "description": "Resizable example: Vertical.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/resizable"
+        "@earth-ui/resizable"
       ],
       "files": [
         {
@@ -4173,10 +4399,11 @@
       "name": "scroll-area-demo",
       "type": "registry:example",
       "title": "Scroll Area Demo",
+      "description": "Scroll Area example. A scrollable region with a slim, consistent scrollbar.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/scroll-area",
-        "@earth/separator"
+        "@earth-ui/scroll-area",
+        "@earth-ui/separator"
       ],
       "files": [
         {
@@ -4189,9 +4416,10 @@
       "name": "scroll-area-horizontal",
       "type": "registry:example",
       "title": "Scroll Area Horizontal",
+      "description": "Scroll Area example: Horizontal.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/scroll-area"
+        "@earth-ui/scroll-area"
       ],
       "files": [
         {
@@ -4204,9 +4432,10 @@
       "name": "select-demo",
       "type": "registry:example",
       "title": "Select Demo",
+      "description": "Select example. Lets people choose one option from a menu of options.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/select"
+        "@earth-ui/select"
       ],
       "files": [
         {
@@ -4219,9 +4448,10 @@
       "name": "select-disabled",
       "type": "registry:example",
       "title": "Select Disabled",
+      "description": "Select example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/select"
+        "@earth-ui/select"
       ],
       "files": [
         {
@@ -4234,9 +4464,10 @@
       "name": "select-groups",
       "type": "registry:example",
       "title": "Select Groups",
+      "description": "Select example: Groups.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/select"
+        "@earth-ui/select"
       ],
       "files": [
         {
@@ -4249,10 +4480,11 @@
       "name": "select-invalid",
       "type": "registry:example",
       "title": "Select Invalid",
+      "description": "Select example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/field",
-        "@earth/select"
+        "@earth-ui/field",
+        "@earth-ui/select"
       ],
       "files": [
         {
@@ -4265,9 +4497,10 @@
       "name": "select-sizes",
       "type": "registry:example",
       "title": "Select Sizes",
+      "description": "Select example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/select"
+        "@earth-ui/select"
       ],
       "files": [
         {
@@ -4280,9 +4513,10 @@
       "name": "separator-demo",
       "type": "registry:example",
       "title": "Separator Demo",
+      "description": "Separator example. A thin line that separates content, horizontally or vertically.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/separator"
+        "@earth-ui/separator"
       ],
       "files": [
         {
@@ -4295,12 +4529,13 @@
       "name": "sheet-demo",
       "type": "registry:example",
       "title": "Sheet Demo",
+      "description": "Sheet example. A panel that slides in from an edge of the screen, for side tasks and details.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/input",
-        "@earth/label",
-        "@earth/sheet"
+        "@earth-ui/button",
+        "@earth-ui/input",
+        "@earth-ui/label",
+        "@earth-ui/sheet"
       ],
       "files": [
         {
@@ -4313,10 +4548,11 @@
       "name": "sheet-no-close-button",
       "type": "registry:example",
       "title": "Sheet No Close Button",
+      "description": "Sheet example: Without close button.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/sheet"
+        "@earth-ui/button",
+        "@earth-ui/sheet"
       ],
       "files": [
         {
@@ -4329,10 +4565,11 @@
       "name": "sheet-side",
       "type": "registry:example",
       "title": "Sheet Side",
+      "description": "Sheet example: Side.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/sheet"
+        "@earth-ui/button",
+        "@earth-ui/sheet"
       ],
       "files": [
         {
@@ -4345,13 +4582,14 @@
       "name": "sidebar-demo",
       "type": "registry:example",
       "title": "Sidebar Demo",
+      "description": "Sidebar example. A collapsible app sidebar with groups, menus, badges and a mobile sheet.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ],
       "files": [
         {
@@ -4364,11 +4602,12 @@
       "name": "sidebar-inset",
       "type": "registry:example",
       "title": "Sidebar Inset",
+      "description": "Sidebar example: Inset with sub-menu.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/sidebar"
+        "@earth-ui/sidebar"
       ],
       "files": [
         {
@@ -4381,10 +4620,11 @@
       "name": "skeleton-card",
       "type": "registry:example",
       "title": "Skeleton Card",
+      "description": "Skeleton example: Card.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/card",
-        "@earth/skeleton"
+        "@earth-ui/card",
+        "@earth-ui/skeleton"
       ],
       "files": [
         {
@@ -4397,9 +4637,10 @@
       "name": "skeleton-demo",
       "type": "registry:example",
       "title": "Skeleton Demo",
+      "description": "Skeleton example. A pulsing placeholder shown while content loads.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/skeleton"
+        "@earth-ui/skeleton"
       ],
       "files": [
         {
@@ -4412,10 +4653,11 @@
       "name": "slider-controlled",
       "type": "registry:example",
       "title": "Slider Controlled",
+      "description": "Slider example: Controlled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/slider"
+        "@earth-ui/label",
+        "@earth-ui/slider"
       ],
       "files": [
         {
@@ -4428,9 +4670,10 @@
       "name": "slider-demo",
       "type": "registry:example",
       "title": "Slider Demo",
+      "description": "Slider example. Picks a value, or a range of values, by dragging along a track.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/slider"
+        "@earth-ui/slider"
       ],
       "files": [
         {
@@ -4443,9 +4686,10 @@
       "name": "slider-disabled",
       "type": "registry:example",
       "title": "Slider Disabled",
+      "description": "Slider example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/slider"
+        "@earth-ui/slider"
       ],
       "files": [
         {
@@ -4458,9 +4702,10 @@
       "name": "slider-range",
       "type": "registry:example",
       "title": "Slider Range",
+      "description": "Slider example: Range.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/slider"
+        "@earth-ui/slider"
       ],
       "files": [
         {
@@ -4473,9 +4718,10 @@
       "name": "slider-vertical",
       "type": "registry:example",
       "title": "Slider Vertical",
+      "description": "Slider example: Vertical.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/slider"
+        "@earth-ui/slider"
       ],
       "files": [
         {
@@ -4488,12 +4734,13 @@
       "name": "sonner-close-button",
       "type": "registry:example",
       "title": "Sonner Close Button",
+      "description": "Sonner example: Close button.",
       "dependencies": [
         "sonner"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/sonner"
+        "@earth-ui/button",
+        "@earth-ui/sonner"
       ],
       "files": [
         {
@@ -4506,12 +4753,13 @@
       "name": "sonner-demo",
       "type": "registry:example",
       "title": "Sonner Demo",
+      "description": "Sonner example. Shows brief notifications, such as a booking confirmation, at the edge of the screen.",
       "dependencies": [
         "sonner"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/sonner"
+        "@earth-ui/button",
+        "@earth-ui/sonner"
       ],
       "files": [
         {
@@ -4524,12 +4772,13 @@
       "name": "sonner-types",
       "type": "registry:example",
       "title": "Sonner Types",
+      "description": "Sonner example: Types.",
       "dependencies": [
         "sonner"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/sonner"
+        "@earth-ui/button",
+        "@earth-ui/sonner"
       ],
       "files": [
         {
@@ -4542,10 +4791,11 @@
       "name": "spinner-button",
       "type": "registry:example",
       "title": "Spinner Button",
+      "description": "Spinner example: In a button.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/spinner"
+        "@earth-ui/button",
+        "@earth-ui/spinner"
       ],
       "files": [
         {
@@ -4558,9 +4808,10 @@
       "name": "spinner-demo",
       "type": "registry:example",
       "title": "Spinner Demo",
+      "description": "Spinner example. An animated indicator that shows something is loading.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/spinner"
+        "@earth-ui/spinner"
       ],
       "files": [
         {
@@ -4573,9 +4824,10 @@
       "name": "spinner-sizes",
       "type": "registry:example",
       "title": "Spinner Sizes",
+      "description": "Spinner example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/spinner"
+        "@earth-ui/spinner"
       ],
       "files": [
         {
@@ -4588,10 +4840,11 @@
       "name": "switch-demo",
       "type": "registry:example",
       "title": "Switch Demo",
+      "description": "Switch example. Turns a single setting on or off, taking effect immediately.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/switch"
+        "@earth-ui/label",
+        "@earth-ui/switch"
       ],
       "files": [
         {
@@ -4604,10 +4857,11 @@
       "name": "switch-disabled",
       "type": "registry:example",
       "title": "Switch Disabled",
+      "description": "Switch example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/switch"
+        "@earth-ui/label",
+        "@earth-ui/switch"
       ],
       "files": [
         {
@@ -4620,10 +4874,11 @@
       "name": "switch-sizes",
       "type": "registry:example",
       "title": "Switch Sizes",
+      "description": "Switch example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/switch"
+        "@earth-ui/label",
+        "@earth-ui/switch"
       ],
       "files": [
         {
@@ -4636,10 +4891,11 @@
       "name": "table-demo",
       "type": "registry:example",
       "title": "Table Demo",
+      "description": "Table example. Rows and columns of data, such as bookings or payments.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/badge",
-        "@earth/table"
+        "@earth-ui/badge",
+        "@earth-ui/table"
       ],
       "files": [
         {
@@ -4652,9 +4908,10 @@
       "name": "tabs-demo",
       "type": "registry:example",
       "title": "Tabs Demo",
+      "description": "Tabs example. Switches between related views that share one place on the page.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/tabs"
+        "@earth-ui/tabs"
       ],
       "files": [
         {
@@ -4667,9 +4924,10 @@
       "name": "tabs-disabled",
       "type": "registry:example",
       "title": "Tabs Disabled",
+      "description": "Tabs example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/tabs"
+        "@earth-ui/tabs"
       ],
       "files": [
         {
@@ -4682,9 +4940,10 @@
       "name": "tabs-line",
       "type": "registry:example",
       "title": "Tabs Line",
+      "description": "Tabs example: Line.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/tabs"
+        "@earth-ui/tabs"
       ],
       "files": [
         {
@@ -4697,9 +4956,10 @@
       "name": "tabs-vertical",
       "type": "registry:example",
       "title": "Tabs Vertical",
+      "description": "Tabs example: Vertical.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/tabs"
+        "@earth-ui/tabs"
       ],
       "files": [
         {
@@ -4712,11 +4972,12 @@
       "name": "tabs-with-icon",
       "type": "registry:example",
       "title": "Tabs With Icon",
+      "description": "Tabs example: With icon.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/tabs"
+        "@earth-ui/tabs"
       ],
       "files": [
         {
@@ -4729,9 +4990,10 @@
       "name": "textarea-demo",
       "type": "registry:example",
       "title": "Textarea Demo",
+      "description": "Textarea example. A multi-line text field for notes, messages and descriptions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/textarea"
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -4744,9 +5006,10 @@
       "name": "textarea-disabled",
       "type": "registry:example",
       "title": "Textarea Disabled",
+      "description": "Textarea example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/textarea"
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -4759,10 +5022,11 @@
       "name": "textarea-invalid",
       "type": "registry:example",
       "title": "Textarea Invalid",
+      "description": "Textarea example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/textarea"
+        "@earth-ui/label",
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -4775,10 +5039,11 @@
       "name": "textarea-with-label",
       "type": "registry:example",
       "title": "Textarea With Label",
+      "description": "Textarea example: With label.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/label",
-        "@earth/textarea"
+        "@earth-ui/label",
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -4791,10 +5056,11 @@
       "name": "toast-action",
       "type": "registry:example",
       "title": "Toast Action",
+      "description": "Toast example: With action.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/toast"
+        "@earth-ui/button",
+        "@earth-ui/toast"
       ],
       "files": [
         {
@@ -4807,10 +5073,11 @@
       "name": "toast-demo",
       "type": "registry:example",
       "title": "Toast Demo",
+      "description": "Toast example. Shows brief notifications with Base UI's toast manager, styled as an EDS snackbar.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/toast"
+        "@earth-ui/button",
+        "@earth-ui/toast"
       ],
       "files": [
         {
@@ -4823,10 +5090,11 @@
       "name": "toast-types",
       "type": "registry:example",
       "title": "Toast Types",
+      "description": "Toast example: Types.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/toast"
+        "@earth-ui/button",
+        "@earth-ui/toast"
       ],
       "files": [
         {
@@ -4839,11 +5107,12 @@
       "name": "toggle-demo",
       "type": "registry:example",
       "title": "Toggle Demo",
+      "description": "Toggle example. A button that stays pressed or unpressed, such as a filter chip.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/toggle"
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -4856,9 +5125,10 @@
       "name": "toggle-disabled",
       "type": "registry:example",
       "title": "Toggle Disabled",
+      "description": "Toggle example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle"
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -4871,9 +5141,10 @@
       "name": "toggle-group-demo",
       "type": "registry:example",
       "title": "Toggle Group Demo",
+      "description": "Toggle Group example. A set of toggles where one, or several, can be pressed at a time.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle-group"
+        "@earth-ui/toggle-group"
       ],
       "files": [
         {
@@ -4886,9 +5157,10 @@
       "name": "toggle-group-disabled",
       "type": "registry:example",
       "title": "Toggle Group Disabled",
+      "description": "Toggle Group example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle-group"
+        "@earth-ui/toggle-group"
       ],
       "files": [
         {
@@ -4901,9 +5173,10 @@
       "name": "toggle-group-outline",
       "type": "registry:example",
       "title": "Toggle Group Outline",
+      "description": "Toggle Group example: Outline.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle-group"
+        "@earth-ui/toggle-group"
       ],
       "files": [
         {
@@ -4916,9 +5189,10 @@
       "name": "toggle-group-sizes",
       "type": "registry:example",
       "title": "Toggle Group Sizes",
+      "description": "Toggle Group example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle-group"
+        "@earth-ui/toggle-group"
       ],
       "files": [
         {
@@ -4931,9 +5205,10 @@
       "name": "toggle-group-spacing",
       "type": "registry:example",
       "title": "Toggle Group Spacing",
+      "description": "Toggle Group example: Spacing.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle-group"
+        "@earth-ui/toggle-group"
       ],
       "files": [
         {
@@ -4946,11 +5221,12 @@
       "name": "toggle-icon",
       "type": "registry:example",
       "title": "Toggle Icon",
+      "description": "Toggle example: Icon.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/toggle"
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -4963,9 +5239,10 @@
       "name": "toggle-outline",
       "type": "registry:example",
       "title": "Toggle Outline",
+      "description": "Toggle example: Outline.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle"
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -4978,9 +5255,10 @@
       "name": "toggle-sizes",
       "type": "registry:example",
       "title": "Toggle Sizes",
+      "description": "Toggle example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/toggle"
+        "@earth-ui/toggle"
       ],
       "files": [
         {
@@ -4993,12 +5271,13 @@
       "name": "tooltip-demo",
       "type": "registry:example",
       "title": "Tooltip Demo",
+      "description": "Tooltip example. A short label that appears when people hover or focus a control.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/tooltip"
+        "@earth-ui/button",
+        "@earth-ui/tooltip"
       ],
       "files": [
         {
@@ -5011,10 +5290,11 @@
       "name": "tooltip-sides",
       "type": "registry:example",
       "title": "Tooltip Sides",
+      "description": "Tooltip example: Side.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/tooltip"
+        "@earth-ui/button",
+        "@earth-ui/tooltip"
       ],
       "files": [
         {
@@ -5027,13 +5307,14 @@
       "name": "tooltip-with-kbd",
       "type": "registry:example",
       "title": "Tooltip With Kbd",
+      "description": "Tooltip example: With keyboard shortcut.",
       "dependencies": [
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/kbd",
-        "@earth/tooltip"
+        "@earth-ui/button",
+        "@earth-ui/kbd",
+        "@earth-ui/tooltip"
       ],
       "files": [
         {
@@ -5064,11 +5345,11 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5095,10 +5376,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5125,11 +5406,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5154,11 +5435,11 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5185,10 +5466,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5213,10 +5494,10 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5243,10 +5524,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5273,11 +5554,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5302,11 +5583,11 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/card",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5333,10 +5614,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/button",
-        "@earth/field",
-        "@earth/input",
-        "@earth/utils"
+        "@earth-ui/button",
+        "@earth-ui/cn",
+        "@earth-ui/field",
+        "@earth-ui/input"
       ]
     },
     {
@@ -5407,23 +5688,23 @@
         "zod"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/badge",
-        "@earth/button",
-        "@earth/card",
-        "@earth/chart",
-        "@earth/checkbox",
-        "@earth/drawer",
-        "@earth/dropdown-menu",
-        "@earth/input",
-        "@earth/label",
-        "@earth/select",
-        "@earth/separator",
-        "@earth/sidebar",
-        "@earth/table",
-        "@earth/tabs",
-        "@earth/toggle-group",
-        "@earth/use-mobile"
+        "@earth-ui/avatar",
+        "@earth-ui/badge",
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/chart",
+        "@earth-ui/checkbox",
+        "@earth-ui/drawer",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/input",
+        "@earth-ui/label",
+        "@earth-ui/select",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar",
+        "@earth-ui/table",
+        "@earth-ui/tabs",
+        "@earth-ui/toggle-group",
+        "@earth-ui/use-mobile"
       ]
     },
     {
@@ -5458,11 +5739,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/dropdown-menu",
-        "@earth/label",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5497,12 +5778,12 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/label",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5529,9 +5810,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5558,9 +5839,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5591,11 +5872,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/collapsible",
-        "@earth/label",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/collapsible",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5630,12 +5911,12 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/button",
-        "@earth/card",
-        "@earth/dropdown-menu",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/button",
+        "@earth-ui/card",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5678,12 +5959,12 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5726,12 +6007,12 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5762,13 +6043,13 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/dropdown-menu",
-        "@earth/label",
-        "@earth/separator",
-        "@earth/sidebar",
-        "@earth/switch"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar",
+        "@earth-ui/switch"
       ]
     },
     {
@@ -5819,13 +6100,13 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/button",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/popover",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/button",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/popover",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5852,10 +6133,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/collapsible",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/collapsible",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5894,13 +6175,13 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/calendar",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/calendar",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5927,10 +6208,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/button",
-        "@earth/dialog",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/button",
+        "@earth-ui/dialog",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -5955,8 +6236,8 @@
       "type": "registry:block",
       "dependencies": [],
       "registryDependencies": [
-        "@earth/breadcrumb",
-        "@earth/sidebar"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -6019,13 +6300,13 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/calendar",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/calendar",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     },
     {
@@ -6076,14 +6357,14 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth/avatar",
-        "@earth/breadcrumb",
-        "@earth/button",
-        "@earth/collapsible",
-        "@earth/dropdown-menu",
-        "@earth/label",
-        "@earth/separator",
-        "@earth/sidebar"
+        "@earth-ui/avatar",
+        "@earth-ui/breadcrumb",
+        "@earth-ui/button",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
+        "@earth-ui/label",
+        "@earth-ui/separator",
+        "@earth-ui/sidebar"
       ]
     }
   ]

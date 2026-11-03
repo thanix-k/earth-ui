@@ -542,7 +542,7 @@
   --eds-shadow-50: 0px 0px 0px 4px rgba(255, 255, 255, 0.20);
 }
 @utility focus-ring {
-  @apply outline-hidden ring-2 ring-ring ring-offset-1 ring-offset-background;
+  @apply outline-hidden ring-2 ring-eds-focus ring-offset-1 ring-offset-(--eds-background-canvas);
 }
 @layer base {
   * {

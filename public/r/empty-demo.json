@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "empty-demo",
   "title": "Empty Demo",
+  "description": "Empty example. A placeholder for a view with no content yet, with a next step.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/empty"
+    "@earth-ui/button",
+    "@earth-ui/empty"
   ],
   "files": [
     {

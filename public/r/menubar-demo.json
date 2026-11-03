@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "menubar-demo",
   "title": "Menubar Demo",
+  "description": "Menubar example. A horizontal bar of menus, like the File and Edit menus of a desktop app.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/menubar"
+    "@earth-ui/menubar"
   ],
   "files": [
     {

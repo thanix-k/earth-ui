@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "label-demo",
   "title": "Label Demo",
+  "description": "Label example. Names a form control. Clicking the label focuses or toggles its control.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/checkbox",
-    "@earth/label"
+    "@earth-ui/checkbox",
+    "@earth-ui/label"
   ],
   "files": [
     {

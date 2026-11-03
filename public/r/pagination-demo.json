@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination-demo",
   "title": "Pagination Demo",
+  "description": "Pagination example. Moves between pages of a long list, such as customers or past appointments.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/pagination"
+    "@earth-ui/pagination"
   ],
   "files": [
     {

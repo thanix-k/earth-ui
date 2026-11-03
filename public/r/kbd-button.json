@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "kbd-button",
   "title": "Kbd Button",
+  "description": "Kbd example: In a button.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/kbd"
+    "@earth-ui/button",
+    "@earth-ui/kbd"
   ],
   "files": [
     {

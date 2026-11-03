@@ -2,13 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "item-avatar",
   "title": "Item Avatar",
+  "description": "Item example: List with avatars.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/avatar",
-    "@earth/button",
-    "@earth/item"
+    "@earth-ui/avatar",
+    "@earth-ui/button",
+    "@earth-ui/item"
   ],
   "files": [
     {

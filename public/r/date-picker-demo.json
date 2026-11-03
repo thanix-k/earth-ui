@@ -2,14 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-demo",
   "title": "Date Picker Demo",
+  "description": "Date Picker example. A date field built from Popover and Calendar, with range, input and time variants.",
   "dependencies": [
     "date-fns",
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/calendar",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/calendar",
+    "@earth-ui/popover"
   ],
   "files": [
     {

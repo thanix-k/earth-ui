@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group-invalid",
   "title": "Radio Group Invalid",
+  "description": "Radio Group example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/radio-group"
+    "@earth-ui/label",
+    "@earth-ui/radio-group"
   ],
   "files": [
     {

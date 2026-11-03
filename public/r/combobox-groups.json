@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-groups",
   "title": "Combobox Groups",
+  "description": "Combobox example: Groups.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/combobox"
+    "@earth-ui/combobox"
   ],
   "files": [
     {

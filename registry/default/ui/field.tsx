@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { CircleAlertIcon } from "lucide-react";
 import type * as React from "react";
 import { useMemo } from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Label } from "@/registry/default/ui/label";
 import { Separator } from "@/registry/default/ui/separator";
 

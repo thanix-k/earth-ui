@@ -1,7 +1,7 @@
 "use client";
 
 import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 function Progress({ className, children, value, ...props }: ProgressPrimitive.Root.Props) {
   return (

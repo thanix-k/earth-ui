@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dropdown-menu-demo",
   "title": "Dropdown Menu Demo",
+  "description": "Dropdown Menu example. A list of actions or options that opens from a button.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dropdown-menu"
+    "@earth-ui/button",
+    "@earth-ui/dropdown-menu"
   ],
   "files": [
     {

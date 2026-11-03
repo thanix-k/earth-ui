@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb-collapsed",
   "title": "Breadcrumb Collapsed",
+  "description": "Breadcrumb example: Collapsed.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/breadcrumb"
+    "@earth-ui/breadcrumb"
   ],
   "files": [
     {

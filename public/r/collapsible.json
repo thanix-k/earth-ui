@@ -6,7 +6,9 @@
   "dependencies": [
     "@base-ui/react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "@earth-ui/theme"
+  ],
   "files": [
     {
       "path": "registry/default/ui/collapsible.tsx",

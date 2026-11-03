@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "native-select-invalid",
   "title": "Native Select Invalid",
+  "description": "Native Select example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/native-select"
+    "@earth-ui/native-select"
   ],
   "files": [
     {

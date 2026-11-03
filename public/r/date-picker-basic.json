@@ -2,14 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-basic",
   "title": "Date Picker Basic",
+  "description": "Date Picker example: Basic.",
   "dependencies": [
     "date-fns"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/calendar",
-    "@earth/field",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/calendar",
+    "@earth-ui/field",
+    "@earth-ui/popover"
   ],
   "files": [
     {

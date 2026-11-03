@@ -2,13 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar-demo",
   "title": "Sidebar Demo",
+  "description": "Sidebar example. A collapsible app sidebar with groups, menus, badges and a mobile sheet.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/breadcrumb",
-    "@earth/separator",
-    "@earth/sidebar"
+    "@earth-ui/breadcrumb",
+    "@earth-ui/separator",
+    "@earth-ui/sidebar"
   ],
   "files": [
     {

@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS Alert: a tinted panel with no border. Text is 14px on touch screens and
 // 12px from lg; the icon is 20px then 16px, nudged to sit on the first line.

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb-separator",
   "title": "Breadcrumb Separator",
+  "description": "Breadcrumb example: Custom separator.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/breadcrumb"
+    "@earth-ui/breadcrumb"
   ],
   "files": [
     {

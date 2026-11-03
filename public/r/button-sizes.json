@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-sizes",
   "title": "Button Sizes",
+  "description": "Button example: Sizes.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

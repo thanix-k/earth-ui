@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-demo",
   "title": "Textarea Demo",
+  "description": "Textarea example. A multi-line text field for notes, messages and descriptions.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/textarea"
+    "@earth-ui/textarea"
   ],
   "files": [
     {

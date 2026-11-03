@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-image",
   "title": "Card Image",
+  "description": "Card example: Image.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge",
-    "@earth/button",
-    "@earth/card"
+    "@earth-ui/badge",
+    "@earth-ui/button",
+    "@earth-ui/card"
   ],
   "files": [
     {

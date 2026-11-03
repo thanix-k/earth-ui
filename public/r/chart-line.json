@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chart-line",
   "title": "Chart Line",
+  "description": "Chart example: Line.",
   "dependencies": [
     "recharts"
   ],
   "registryDependencies": [
-    "@earth/chart"
+    "@earth-ui/chart"
   ],
   "files": [
     {

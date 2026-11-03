@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion-demo",
   "title": "Accordion Demo",
+  "description": "Accordion example. A stack of headings that each show or hide a section of content.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/accordion"
+    "@earth-ui/accordion"
   ],
   "files": [
     {

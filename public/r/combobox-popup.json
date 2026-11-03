@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-popup",
   "title": "Combobox Popup",
+  "description": "Combobox example: Popup.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/combobox"
+    "@earth-ui/button",
+    "@earth-ui/combobox"
   ],
   "files": [
     {

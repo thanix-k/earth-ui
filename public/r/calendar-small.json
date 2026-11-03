@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-small",
   "title": "Calendar Small",
+  "description": "Calendar example: Small.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/calendar"
+    "@earth-ui/calendar"
   ],
   "files": [
     {

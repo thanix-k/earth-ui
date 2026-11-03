@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-demo",
   "title": "Button Demo",
+  "description": "Button example. Triggers an action. Use one default button per view for the main action.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

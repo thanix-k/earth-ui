@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "kbd-group",
   "title": "Kbd Group",
+  "description": "Kbd example: In text.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/kbd"
+    "@earth-ui/kbd"
   ],
   "files": [
     {

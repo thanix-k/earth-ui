@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination-simple",
   "title": "Pagination Simple",
+  "description": "Pagination example: Previous and next only.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/pagination"
+    "@earth-ui/pagination"
   ],
   "files": [
     {

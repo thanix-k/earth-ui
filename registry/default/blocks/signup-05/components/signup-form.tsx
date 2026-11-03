@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarDaysIcon } from "lucide-react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Button } from "@/registry/default/ui/button";
 import {
   Field,

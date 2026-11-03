@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "native-select-demo",
   "title": "Native Select Demo",
+  "description": "Native Select example. A styled native select element. Use it when the browser's own picker is preferred, such as on mobile.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/native-select"
+    "@earth-ui/native-select"
   ],
   "files": [
     {

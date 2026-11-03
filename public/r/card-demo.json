@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-demo",
   "title": "Card Demo",
+  "description": "Card example. A bordered surface that groups related content and actions.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/card",
-    "@earth/input",
-    "@earth/label"
+    "@earth-ui/button",
+    "@earth-ui/card",
+    "@earth-ui/input",
+    "@earth-ui/label"
   ],
   "files": [
     {

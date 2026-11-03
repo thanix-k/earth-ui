@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area-horizontal",
   "title": "Scroll Area Horizontal",
+  "description": "Scroll Area example: Horizontal.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/scroll-area"
+    "@earth-ui/scroll-area"
   ],
   "files": [
     {

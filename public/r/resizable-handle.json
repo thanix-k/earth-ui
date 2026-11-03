@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "resizable-handle",
   "title": "Resizable Handle",
+  "description": "Resizable example: With handle.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/resizable"
+    "@earth-ui/resizable"
   ],
   "files": [
     {

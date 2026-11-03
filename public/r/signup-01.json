@@ -5,10 +5,10 @@
   "description": "A simple signup form.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/card",
-    "@earth/field",
-    "@earth/input"
+    "@earth-ui/button",
+    "@earth-ui/card",
+    "@earth-ui/field",
+    "@earth-ui/input"
   ],
   "files": [
     {

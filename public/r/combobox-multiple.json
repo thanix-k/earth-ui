@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-multiple",
   "title": "Combobox Multiple",
+  "description": "Combobox example: Multiple.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/combobox"
+    "@earth-ui/combobox"
   ],
   "files": [
     {

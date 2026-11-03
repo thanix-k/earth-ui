@@ -3,7 +3,7 @@
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import * as React from "react";
 import { type DayButton, DayPicker, getDefaultClassNames, type Locale } from "react-day-picker";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Button, buttonVariants } from "@/registry/default/ui/button";
 
 // Sizes follow EDS's standard calendar: 44px days, 40px nav buttons, 14px

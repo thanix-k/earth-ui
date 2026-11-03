@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group-demo",
   "title": "Radio Group Demo",
+  "description": "Radio Group example. Lets people pick exactly one option from a short list.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/radio-group"
+    "@earth-ui/label",
+    "@earth-ui/radio-group"
   ],
   "files": [
     {

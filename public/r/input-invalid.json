@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-invalid",
   "title": "Input Invalid",
+  "description": "Input example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input",
-    "@earth/label"
+    "@earth-ui/input",
+    "@earth-ui/label"
   ],
   "files": [
     {

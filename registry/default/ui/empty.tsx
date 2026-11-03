@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // Spacing and type follow EDS StatusPanel: 24px icon, 12px (8px from lg)
 // to the text, title and description 4px (2px) apart, actions 24px (16px)

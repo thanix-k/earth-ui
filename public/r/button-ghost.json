@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-ghost",
   "title": "Button Ghost",
+  "description": "Button example: Ghost.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

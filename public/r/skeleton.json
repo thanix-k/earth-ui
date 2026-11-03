@@ -5,12 +5,13 @@
   "description": "A pulsing placeholder shown while content loads.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/utils"
+    "@earth-ui/cn",
+    "@earth-ui/theme"
   ],
   "files": [
     {
       "path": "registry/default/ui/skeleton.tsx",
-      "content": "import type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\"animate-pulse rounded-md bg-eds-neutral-disabled\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton };\n",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/cn\";\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\"animate-pulse rounded-md bg-eds-neutral-disabled\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton };\n",
       "type": "registry:ui"
     }
   ],

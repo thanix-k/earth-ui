@@ -2,7 +2,7 @@
 
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Button } from "@/registry/default/ui/button";
 
 export function CopyButton({ value, className }: { value: string; className?: string }) {

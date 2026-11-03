@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp-pattern",
   "title": "Input Otp Pattern",
+  "description": "Input OTP example: Pattern.",
   "dependencies": [
     "input-otp"
   ],
   "registryDependencies": [
-    "@earth/input-otp"
+    "@earth-ui/input-otp"
   ],
   "files": [
     {

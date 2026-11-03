@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator as SeparatorPrimitive } from "@base-ui/react/separator";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // EDS dividers are a 1px `border-tertiary` line, so the separator draws a
 // border rather than a background fill.

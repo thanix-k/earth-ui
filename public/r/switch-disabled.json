@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch-disabled",
   "title": "Switch Disabled",
+  "description": "Switch example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/label",
-    "@earth/switch"
+    "@earth-ui/label",
+    "@earth-ui/switch"
   ],
   "files": [
     {

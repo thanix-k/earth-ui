@@ -2,13 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip-with-kbd",
   "title": "Tooltip With Kbd",
+  "description": "Tooltip example: With keyboard shortcut.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/kbd",
-    "@earth/tooltip"
+    "@earth-ui/button",
+    "@earth-ui/kbd",
+    "@earth-ui/tooltip"
   ],
   "files": [
     {

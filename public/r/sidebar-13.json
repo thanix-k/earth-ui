@@ -7,10 +7,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/breadcrumb",
-    "@earth/button",
-    "@earth/dialog",
-    "@earth/sidebar"
+    "@earth-ui/breadcrumb",
+    "@earth-ui/button",
+    "@earth-ui/dialog",
+    "@earth-ui/sidebar"
   ],
   "files": [
     {

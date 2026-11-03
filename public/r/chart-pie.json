@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chart-pie",
   "title": "Chart Pie",
+  "description": "Chart example: Pie.",
   "dependencies": [
     "recharts"
   ],
   "registryDependencies": [
-    "@earth/chart"
+    "@earth-ui/chart"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-demo",
   "title": "Tabs Demo",
+  "description": "Tabs example. Switches between related views that share one place on the page.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/tabs"
+    "@earth-ui/tabs"
   ],
   "files": [
     {

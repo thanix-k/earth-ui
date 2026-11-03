@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox-demo",
   "title": "Checkbox Demo",
+  "description": "Checkbox example. Lets people turn an option on or off, or pick several options from a list.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/checkbox",
-    "@earth/label"
+    "@earth-ui/checkbox",
+    "@earth-ui/label"
   ],
   "files": [
     {

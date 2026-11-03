@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-vertical",
   "title": "Slider Vertical",
+  "description": "Slider example: Vertical.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/slider"
+    "@earth-ui/slider"
   ],
   "files": [
     {

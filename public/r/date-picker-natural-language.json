@@ -2,15 +2,16 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-natural-language",
   "title": "Date Picker Natural Language",
+  "description": "Date Picker example: Natural language.",
   "dependencies": [
     "chrono-node",
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/calendar",
-    "@earth/field",
-    "@earth/input-group",
-    "@earth/popover"
+    "@earth-ui/calendar",
+    "@earth-ui/field",
+    "@earth-ui/input-group",
+    "@earth-ui/popover"
   ],
   "files": [
     {

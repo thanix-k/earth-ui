@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "item-variants",
   "title": "Item Variants",
+  "description": "Item example: Variants.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/item"
+    "@earth-ui/item"
   ],
   "files": [
     {

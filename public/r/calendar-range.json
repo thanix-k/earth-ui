@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-range",
   "title": "Calendar Range",
+  "description": "Calendar example: Range.",
   "dependencies": [
     "react-day-picker"
   ],
   "registryDependencies": [
-    "@earth/calendar"
+    "@earth-ui/calendar"
   ],
   "files": [
     {

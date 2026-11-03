@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-demo",
   "title": "Input Demo",
+  "description": "Input example. A single-line text field. Pair it with a Label, or a Field for descriptions and errors.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input"
+    "@earth-ui/input"
   ],
   "files": [
     {

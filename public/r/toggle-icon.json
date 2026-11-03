@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-icon",
   "title": "Toggle Icon",
+  "description": "Toggle example: Icon.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/toggle"
+    "@earth-ui/toggle"
   ],
   "files": [
     {

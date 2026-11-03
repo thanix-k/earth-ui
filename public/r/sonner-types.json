@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner-types",
   "title": "Sonner Types",
+  "description": "Sonner example: Types.",
   "dependencies": [
     "sonner"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/sonner"
+    "@earth-ui/button",
+    "@earth-ui/sonner"
   ],
   "files": [
     {

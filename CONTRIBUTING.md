@@ -23,7 +23,7 @@ Preview any example at `/preview/<example-name>` (`?theme=dark` for dark).
 
 - Registry files import each other only via `@/registry/default/{ui,lib,hooks}/<name>`.
   The shadcn CLI rewrites these to the consumer's aliases on install.
-- `cn` comes from `@/registry/default/lib/utils` (it knows Earth's classes).
+- `cn` comes from `@/registry/default/lib/cn` (it knows Earth's classes).
 - Icons: `lucide-react` only.
 - Never relative imports.
 

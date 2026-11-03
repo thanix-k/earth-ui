@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-with-icon",
   "title": "Badge With Icon",
+  "description": "Badge example: With icon.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

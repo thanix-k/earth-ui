@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-disabled",
   "title": "Input Disabled",
+  "description": "Input example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input"
+    "@earth-ui/input"
   ],
   "files": [
     {

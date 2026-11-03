@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer-direction",
   "title": "Drawer Direction",
+  "description": "Drawer example: Direction.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/drawer"
+    "@earth-ui/button",
+    "@earth-ui/drawer"
   ],
   "files": [
     {

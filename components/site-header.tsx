@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
 import { links } from "@/lib/layout.shared";
 import { site } from "@/lib/site";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 
 // Same header on every page (coss.com/ui pattern): logo left, everything else right.
 export function SiteHeader({

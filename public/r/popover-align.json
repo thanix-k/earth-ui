@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover-align",
   "title": "Popover Align",
+  "description": "Popover example: Align.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/popover"
   ],
   "files": [
     {

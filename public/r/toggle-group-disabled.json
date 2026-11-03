@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group-disabled",
   "title": "Toggle Group Disabled",
+  "description": "Toggle Group example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/toggle-group"
+    "@earth-ui/toggle-group"
   ],
   "files": [
     {

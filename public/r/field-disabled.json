@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field-disabled",
   "title": "Field Disabled",
+  "description": "Field example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/input"
+    "@earth-ui/field",
+    "@earth-ui/input"
   ],
   "files": [
     {

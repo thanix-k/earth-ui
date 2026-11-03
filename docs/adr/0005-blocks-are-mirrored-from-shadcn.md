@@ -7,7 +7,7 @@ Status: accepted (2026-10-27)
 Earth UI should build any kind of UI, not only Full Creative's booking and
 calling products. shadcn ships page-level blocks (login, signup, sidebar,
 dashboard), but they name their components by bare names (`button`, `card`).
-Installed next to `@earth`, they resolve to shadcn's own components, not
+Installed next to `@earth-ui`, they resolve to shadcn's own components, not
 Earth's.
 
 shadcn adds, removes and redesigns blocks over time. A hand-made copy would

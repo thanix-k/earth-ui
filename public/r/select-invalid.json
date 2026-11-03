@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-invalid",
   "title": "Select Invalid",
+  "description": "Select example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/field",
-    "@earth/select"
+    "@earth-ui/field",
+    "@earth-ui/select"
   ],
   "files": [
     {

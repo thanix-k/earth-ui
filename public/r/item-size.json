@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "item-size",
   "title": "Item Size",
+  "description": "Item example: Sizes.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/item"
+    "@earth-ui/item"
   ],
   "files": [
     {

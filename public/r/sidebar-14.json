@@ -5,8 +5,8 @@
   "description": "A sidebar on the right.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/breadcrumb",
-    "@earth/sidebar"
+    "@earth-ui/breadcrumb",
+    "@earth-ui/sidebar"
   ],
   "files": [
     {

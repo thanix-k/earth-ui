@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-outline",
   "title": "Button Outline",
+  "description": "Button example: Outline.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

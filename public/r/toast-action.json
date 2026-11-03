@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toast-action",
   "title": "Toast Action",
+  "description": "Toast example: With action.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/toast"
+    "@earth-ui/button",
+    "@earth-ui/toast"
   ],
   "files": [
     {

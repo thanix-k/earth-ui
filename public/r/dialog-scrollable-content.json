@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-scrollable-content",
   "title": "Dialog Scrollable Content",
+  "description": "Dialog example: Scrollable content.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/dialog"
+    "@earth-ui/button",
+    "@earth-ui/dialog"
   ],
   "files": [
     {

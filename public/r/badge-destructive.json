@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-destructive",
   "title": "Badge Destructive",
+  "description": "Badge example: Destructive.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

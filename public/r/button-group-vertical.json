@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-group-vertical",
   "title": "Button Group Vertical",
+  "description": "Button Group example: Vertical.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/button-group"
+    "@earth-ui/button",
+    "@earth-ui/button-group"
   ],
   "files": [
     {

@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb-demo",
   "title": "Breadcrumb Demo",
+  "description": "Breadcrumb example. Shows where the current page sits in the app and links back to its parents.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/breadcrumb"
+    "@earth-ui/breadcrumb"
   ],
   "files": [
     {

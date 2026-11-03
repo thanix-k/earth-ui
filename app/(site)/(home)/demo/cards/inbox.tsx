@@ -2,7 +2,7 @@
 
 import { InboxIcon, ZapIcon } from "lucide-react";
 import * as React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/cn";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Card,

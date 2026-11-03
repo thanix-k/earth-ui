@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "context-menu-demo",
   "title": "Context Menu Demo",
+  "description": "Context Menu example. A menu of actions that opens on right-click or long press.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/context-menu"
+    "@earth-ui/context-menu"
   ],
   "files": [
     {

@@ -7,11 +7,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/breadcrumb",
-    "@earth/dropdown-menu",
-    "@earth/label",
-    "@earth/separator",
-    "@earth/sidebar"
+    "@earth-ui/breadcrumb",
+    "@earth-ui/dropdown-menu",
+    "@earth-ui/label",
+    "@earth-ui/separator",
+    "@earth-ui/sidebar"
   ],
   "files": [
     {

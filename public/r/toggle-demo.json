@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-demo",
   "title": "Toggle Demo",
+  "description": "Toggle example. A button that stays pressed or unpressed, such as a filter chip.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/toggle"
+    "@earth-ui/toggle"
   ],
   "files": [
     {

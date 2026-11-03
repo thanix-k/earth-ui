@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-secondary",
   "title": "Badge Secondary",
+  "description": "Badge example: Secondary.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/badge"
+    "@earth-ui/badge"
   ],
   "files": [
     {

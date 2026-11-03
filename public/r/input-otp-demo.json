@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp-demo",
   "title": "Input Otp Demo",
+  "description": "Input OTP example. Collects a one-time passcode one character at a time.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/input-otp"
+    "@earth-ui/input-otp"
   ],
   "files": [
     {

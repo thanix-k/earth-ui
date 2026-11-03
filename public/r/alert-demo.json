@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-demo",
   "title": "Alert Demo",
+  "description": "Alert example. A tinted message inside the page that draws attention to information or a problem.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/alert"
+    "@earth-ui/alert"
   ],
   "files": [
     {

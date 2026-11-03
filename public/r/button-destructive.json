@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-destructive",
   "title": "Button Destructive",
+  "description": "Button example: Destructive.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

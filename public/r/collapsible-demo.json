@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible-demo",
   "title": "Collapsible Demo",
+  "description": "Collapsible example. A section that can be expanded and collapsed with a trigger.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/collapsible"
+    "@earth-ui/button",
+    "@earth-ui/collapsible"
   ],
   "files": [
     {

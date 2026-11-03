@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-with-icon",
   "title": "Button With Icon",
+  "description": "Button example: With icon.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button"
+    "@earth-ui/button"
   ],
   "files": [
     {

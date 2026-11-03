@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-groups",
   "title": "Select Groups",
+  "description": "Select example: Groups.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/select"
+    "@earth-ui/select"
   ],
   "files": [
     {

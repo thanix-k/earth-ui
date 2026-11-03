@@ -7,15 +7,15 @@ Earth UI works in any React 19 project with Tailwind CSS v4 that the shadcn CLI 
 
 ## 1. Install the Earth base
 
-Run this in your project. It installs the Earth tokens, the Inter font, the `cn` utility and the shadcn aliases. It also registers the `@earth` namespace in `components.json`.
+Run this in your project. It installs the Earth tokens, the Inter font, the `cn` utility and the shadcn aliases. It also registers the `@earth-ui` namespace in `components.json`.
 
 <ShadcnCommand args="init {base}" />
 
-The base sets up your global CSS, so run it before adding components.
+Components bring the Earth tokens with them, so they also work in a project that skipped this step. The base adds what they don't: the shadcn aliases, so your own shadcn code looks like Earth, the Inter font and the global styles.
 
 ## 2. Add components
 
-<ShadcnCommand args="add @earth/button @earth/input @earth/checkbox" />
+<ShadcnCommand args="add @earth-ui/button @earth-ui/input @earth-ui/checkbox" />
 
 Each component also installs the Earth components and npm packages it depends on.
 
@@ -58,7 +58,7 @@ Earth's `eds-` names are scoped to one CSS property: `text-eds-secondary` exists
 
 Earth UI is a standard shadcn registry, so AI tools that understand shadcn can use it.
 
-- **shadcn MCP server.** Lets Claude, Cursor and other MCP clients browse and install `@earth` components:
+- **shadcn MCP server.** Lets Claude, Cursor and other MCP clients browse and install `@earth-ui` components:
 
 <ShadcnCommand args="mcp init --client claude" />
 

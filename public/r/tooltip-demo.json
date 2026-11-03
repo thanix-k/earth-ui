@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip-demo",
   "title": "Tooltip Demo",
+  "description": "Tooltip example. A short label that appears when people hover or focus a control.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/tooltip"
+    "@earth-ui/button",
+    "@earth-ui/tooltip"
   ],
   "files": [
     {

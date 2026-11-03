@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-group-demo",
   "title": "Button Group Demo",
+  "description": "Button Group example. Joins related buttons, inputs and labels into one control.",
   "dependencies": [
     "lucide-react"
   ],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/button-group"
+    "@earth-ui/button",
+    "@earth-ui/button-group"
   ],
   "files": [
     {

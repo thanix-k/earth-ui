@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover-demo",
   "title": "Popover Demo",
+  "description": "Popover example. Shows extra content or a small form in a floating panel next to its trigger.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth/button",
-    "@earth/input",
-    "@earth/label",
-    "@earth/popover"
+    "@earth-ui/button",
+    "@earth-ui/input",
+    "@earth-ui/label",
+    "@earth-ui/popover"
   ],
   "files": [
     {
