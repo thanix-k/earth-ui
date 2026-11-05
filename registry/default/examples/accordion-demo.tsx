@@ -5,34 +5,29 @@ import {
   AccordionTrigger,
 } from "@/registry/default/ui/accordion";
 
-const faqs = [
-  {
-    value: "reschedule",
-    question: "Can customers reschedule a booking?",
-    answer:
-      "Yes. Each confirmation email has a link to pick a new time, up to 24 hours before the booking.",
-  },
-  {
-    value: "deposits",
-    question: "Can I take a deposit?",
-    answer: "Connect a payment provider, then set a deposit amount on any service.",
-  },
-  {
-    value: "staff",
-    question: "How many staff can I add?",
-    answer: "As many as your plan allows. Each one gets their own calendar.",
-  },
-];
-
 export default function AccordionDemo() {
   return (
-    <Accordion defaultValue={["reschedule"]} className="max-w-md">
-      {faqs.map((faq) => (
-        <AccordionItem key={faq.value} value={faq.value}>
-          <AccordionTrigger>{faq.question}</AccordionTrigger>
-          <AccordionContent>{faq.answer}</AccordionContent>
-        </AccordionItem>
-      ))}
+    <Accordion defaultValue={["shipping"]} className="max-w-lg">
+      <AccordionItem value="shipping">
+        <AccordionTrigger>What are your shipping options?</AccordionTrigger>
+        <AccordionContent>
+          We offer standard (5-7 days), express (2-3 days), and overnight shipping. Free shipping on
+          international orders.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="returns">
+        <AccordionTrigger>What is your return policy?</AccordionTrigger>
+        <AccordionContent>
+          Returns accepted within 30 days. Items must be unused and in original packaging. Refunds
+          processed within 5-7 business days.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="support">
+        <AccordionTrigger>How can I contact customer support?</AccordionTrigger>
+        <AccordionContent>
+          Reach us via email, live chat, or phone. We respond within 24 hours during business days.
+        </AccordionContent>
+      </AccordionItem>
     </Accordion>
   );
 }

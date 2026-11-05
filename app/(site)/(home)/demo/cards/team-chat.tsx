@@ -29,9 +29,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/p
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const people = {
-  PN: { name: "Priya Nair", role: "Product lead · Chennai", status: "bg-eds-status-available" },
-  CM: { name: "Callum McLeod", role: "Engineer · Edinburgh", status: "bg-eds-status-busy" },
-  JW: { name: "Jess Walker", role: "Design · Portland", status: "bg-eds-status-away" },
+  PN: { name: "Priya Nair", role: "Product lead · Chennai", status: "bg-green-500" },
+  CM: { name: "Callum McLeod", role: "Engineer · Edinburgh", status: "bg-red-500" },
+  JW: { name: "Jess Walker", role: "Design · Portland", status: "bg-amber-500" },
 };
 type Who = keyof typeof people;
 
@@ -48,7 +48,7 @@ function Person({ who }: { who: Who }) {
   const p = people[who];
   return (
     <HoverCard>
-      <HoverCardTrigger href="#team" className="text-heading-14 hover:underline lg:text-heading-12">
+      <HoverCardTrigger href="#team" className="text-sm font-semibold hover:underline lg:text-xs">
         {p.name}
       </HoverCardTrigger>
       <HoverCardContent className="flex items-center gap-3">
@@ -57,8 +57,8 @@ function Person({ who }: { who: Who }) {
           <AvatarBadge className={p.status} />
         </Avatar>
         <div>
-          <p className="text-heading-14 lg:text-heading-12">{p.name}</p>
-          <p className="text-eds-secondary">{p.role}</p>
+          <p className="text-sm font-semibold lg:text-xs">{p.name}</p>
+          <p className="text-muted-foreground">{p.role}</p>
         </div>
       </HoverCardContent>
     </HoverCard>
@@ -91,7 +91,7 @@ export function TeamChatCard() {
         </CardAction>
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
-        <ScrollArea className="h-56 rounded-lg border border-eds-tertiary">
+        <ScrollArea className="h-56 rounded-lg border border-border">
           <div className="flex flex-col gap-3 p-3">
             {messages.map((m, i) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: append-only list
@@ -101,7 +101,7 @@ export function TeamChatCard() {
                 </Avatar>
                 <div className="flex flex-col">
                   <Person who={m.from} />
-                  <span className="text-eds-secondary">{m.text}</span>
+                  <span className="text-muted-foreground">{m.text}</span>
                 </div>
               </div>
             ))}
@@ -125,7 +125,7 @@ export function TeamChatCard() {
                   <button
                     key={e}
                     type="button"
-                    className="rounded-md p-1 text-lg hover:bg-eds-neutral-hover"
+                    className="rounded-md p-1 text-lg hover:bg-accent"
                     onClick={() => setDraft((d) => d + e)}
                   >
                     {e}
@@ -138,7 +138,7 @@ export function TeamChatCard() {
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <p className="text-body-12 text-eds-secondary">
+        <p className="text-xs text-muted-foreground">
           <Kbd>Enter</Kbd> to send
         </p>
       </CardContent>

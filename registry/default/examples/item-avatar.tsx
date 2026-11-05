@@ -1,5 +1,5 @@
-import { PlusIcon } from "lucide-react";
-import { Fragment } from "react";
+import { Plus } from "lucide-react";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -7,48 +7,57 @@ import {
   ItemActions,
   ItemContent,
   ItemDescription,
-  ItemGroup,
   ItemMedia,
-  ItemSeparator,
   ItemTitle,
 } from "@/registry/default/ui/item";
 
-const staff = [
-  {
-    name: "Maya Patel",
-    role: "Senior stylist",
-    initials: "MP",
-    image: "https://github.com/shadcn.png",
-  },
-  { name: "James Lee", role: "Barber", initials: "JL" },
-  { name: "Aisha Rahman", role: "Nail technician", initials: "AR" },
-];
-
-export default function ItemAvatar() {
+export function ItemAvatar() {
   return (
-    <ItemGroup className="max-w-md gap-0">
-      {staff.map((person, index) => (
-        <Fragment key={person.name}>
-          {index > 0 && <ItemSeparator />}
-          <Item>
-            <ItemMedia>
-              <Avatar>
-                {person.image && <AvatarImage src={person.image} alt={person.name} />}
-                <AvatarFallback>{person.initials}</AvatarFallback>
-              </Avatar>
-            </ItemMedia>
-            <ItemContent>
-              <ItemTitle>{person.name}</ItemTitle>
-              <ItemDescription>{person.role}</ItemDescription>
-            </ItemContent>
-            <ItemActions>
-              <Button variant="outline" size="icon-sm" aria-label={`Assign ${person.name}`}>
-                <PlusIcon />
-              </Button>
-            </ItemActions>
-          </Item>
-        </Fragment>
-      ))}
-    </ItemGroup>
+    <div className="flex w-full max-w-lg flex-col gap-6">
+      <Item variant="outline">
+        <ItemMedia>
+          <Avatar className="size-10">
+            <AvatarImage src="https://github.com/evilrabbit.png" />
+            <AvatarFallback>ER</AvatarFallback>
+          </Avatar>
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Evil Rabbit</ItemTitle>
+          <ItemDescription>Last seen 5 months ago</ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button size="icon-sm" variant="outline" className="rounded-full" aria-label="Invite">
+            <Plus />
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline">
+        <ItemMedia>
+          <div className="flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale">
+            <Avatar className="hidden sm:flex">
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <Avatar className="hidden sm:flex">
+              <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
+              <AvatarFallback>LR</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+              <AvatarFallback>ER</AvatarFallback>
+            </Avatar>
+          </div>
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>No Team Members</ItemTitle>
+          <ItemDescription>Invite your team to collaborate on this project.</ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm" variant="outline">
+            Invite
+          </Button>
+        </ItemActions>
+      </Item>
+    </div>
   );
 }

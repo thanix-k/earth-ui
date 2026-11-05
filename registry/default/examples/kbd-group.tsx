@@ -2,13 +2,15 @@ import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 
 export default function KbdGroupExample() {
   return (
-    <p className="text-body-14 text-eds-secondary lg:text-body-12">
-      Press{" "}
-      <KbdGroup>
-        <Kbd>⌘</Kbd>
-        <Kbd>K</Kbd>
-      </KbdGroup>{" "}
-      to search customers.
-    </p>
+    <div className="flex flex-col items-center gap-4">
+      <p className="text-sm text-muted-foreground">
+        Use{" "}
+        <KbdGroup>
+          <Kbd>Ctrl + B</Kbd>
+          <Kbd>Ctrl + K</Kbd>
+        </KbdGroup>{" "}
+        to open the command palette
+      </p>
+    </div>
   );
 }

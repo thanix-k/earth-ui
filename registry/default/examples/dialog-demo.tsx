@@ -9,35 +9,38 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
+import { Field, FieldGroup } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 
-export default function DialogDemo() {
+export function DialogDemo() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Edit service</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Edit service</DialogTitle>
-          <DialogDescription>
-            Changes apply to new bookings. Existing appointments keep their details.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4">
-          <div className="grid gap-1">
-            <Label htmlFor="service-name">Service name</Label>
-            <Input id="service-name" defaultValue="Haircut & style" />
-          </div>
-          <div className="grid gap-1">
-            <Label htmlFor="service-duration">Duration (minutes)</Label>
-            <Input id="service-duration" type="number" defaultValue="45" />
-          </div>
-        </div>
-        <DialogFooter>
-          <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
-      </DialogContent>
+      <form>
+        <DialogTrigger render={<Button variant="outline" />}>Open Dialog</DialogTrigger>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>Edit profile</DialogTitle>
+            <DialogDescription>
+              Make changes to your profile here. Click save when you&apos;re done.
+            </DialogDescription>
+          </DialogHeader>
+          <FieldGroup>
+            <Field>
+              <Label htmlFor="name-1">Name</Label>
+              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+            </Field>
+            <Field>
+              <Label htmlFor="username-1">Username</Label>
+              <Input id="username-1" name="username" defaultValue="@peduarte" />
+            </Field>
+          </FieldGroup>
+          <DialogFooter>
+            <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+            <Button type="submit">Save changes</Button>
+          </DialogFooter>
+        </DialogContent>
+      </form>
     </Dialog>
   );
 }

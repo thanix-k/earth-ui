@@ -5,13 +5,13 @@
   "description": "Switch example: Sizes.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth-ui/label",
+    "@earth-ui/field",
     "@earth-ui/switch"
   ],
   "files": [
     {
       "path": "registry/default/examples/switch-sizes.tsx",
-      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function SwitchSizes() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Label>\n        <Switch size=\"sm\" defaultChecked />\n        Small\n      </Label>\n      <Label>\n        <Switch defaultChecked />\n        Default\n      </Label>\n    </div>\n  );\n}\n",
+      "content": "import { Field, FieldGroup, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport function SwitchSizes() {\n  return (\n    <FieldGroup className=\"w-full max-w-[10rem]\">\n      <Field orientation=\"horizontal\">\n        <Switch id=\"switch-size-sm\" size=\"sm\" />\n        <FieldLabel htmlFor=\"switch-size-sm\">Small</FieldLabel>\n      </Field>\n      <Field orientation=\"horizontal\">\n        <Switch id=\"switch-size-default\" size=\"default\" />\n        <FieldLabel htmlFor=\"switch-size-default\">Default</FieldLabel>\n      </Field>\n    </FieldGroup>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

@@ -1,4 +1,3 @@
-import type * as React from "react";
 import { cn } from "@/registry/default/lib/cn";
 
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
@@ -6,7 +5,7 @@ function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
     <kbd
       data-slot="kbd"
       className={cn(
-        "pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm bg-eds-neutral-secondary px-1 font-sans text-body-12 font-medium text-eds-secondary select-none in-data-[slot=tooltip-content]:bg-eds-inverse-secondary in-data-[slot=tooltip-content]:text-eds-inverse-secondary [&_svg:not([class*='size-'])]:size-3",
+        "pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm bg-muted px-1 font-sans text-xs font-medium text-muted-foreground select-none in-data-[slot=tooltip-content]:bg-background/20 in-data-[slot=tooltip-content]:text-background dark:in-data-[slot=tooltip-content]:bg-background/10 [&_svg:not([class*='size-'])]:size-3",
         className,
       )}
       {...props}

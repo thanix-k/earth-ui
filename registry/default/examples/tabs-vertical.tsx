@@ -1,22 +1,13 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 
-export default function TabsVertical() {
+export function TabsVertical() {
   return (
-    <Tabs defaultValue="general" orientation="vertical" className="w-full max-w-md gap-6">
-      <TabsList variant="line">
-        <TabsTrigger value="general">General</TabsTrigger>
-        <TabsTrigger value="booking-page">Booking page</TabsTrigger>
+    <Tabs defaultValue="account" orientation="vertical">
+      <TabsList>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
         <TabsTrigger value="notifications">Notifications</TabsTrigger>
       </TabsList>
-      <TabsContent value="general" className="text-eds-secondary">
-        Business name, time zone and working hours.
-      </TabsContent>
-      <TabsContent value="booking-page" className="text-eds-secondary">
-        Your public booking page and its link.
-      </TabsContent>
-      <TabsContent value="notifications" className="text-eds-secondary">
-        Confirmation and reminder emails.
-      </TabsContent>
     </Tabs>
   );
 }

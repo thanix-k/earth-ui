@@ -1,17 +1,17 @@
 import { Button } from "@/registry/default/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/registry/default/ui/tooltip";
 
-const sides = ["top", "right", "bottom", "left"] as const;
-
-export default function TooltipSides() {
+export function TooltipSides() {
   return (
     <div className="flex flex-wrap gap-2">
-      {sides.map((side) => (
+      {(["left", "top", "bottom", "right"] as const).map((side) => (
         <Tooltip key={side}>
-          <TooltipTrigger render={<Button variant="outline" className="capitalize" />}>
+          <TooltipTrigger render={<Button variant="outline" className="w-fit capitalize" />}>
             {side}
           </TooltipTrigger>
-          <TooltipContent side={side}>Shown on the {side}</TooltipContent>
+          <TooltipContent side={side}>
+            <p>Add to library</p>
+          </TooltipContent>
         </Tooltip>
       ))}
     </div>

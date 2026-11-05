@@ -1,21 +1,27 @@
-import { Label } from "@/registry/default/ui/label";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
-export default function RadioGroupDisabled() {
+export function RadioGroupDisabled() {
   return (
-    <RadioGroup defaultValue="in-person" aria-label="Location" className="w-fit">
-      <Label>
-        <RadioGroupItem value="in-person" />
-        In person
-      </Label>
-      <Label>
-        <RadioGroupItem value="video" />
-        Video call
-      </Label>
-      <Label>
-        <RadioGroupItem value="phone" disabled />
-        Phone call (not set up)
-      </Label>
+    <RadioGroup defaultValue="option2" className="w-fit">
+      <Field orientation="horizontal" data-disabled>
+        <RadioGroupItem value="option1" id="disabled-1" disabled />
+        <FieldLabel htmlFor="disabled-1" className="font-normal">
+          Disabled
+        </FieldLabel>
+      </Field>
+      <Field orientation="horizontal">
+        <RadioGroupItem value="option2" id="disabled-2" />
+        <FieldLabel htmlFor="disabled-2" className="font-normal">
+          Option 2
+        </FieldLabel>
+      </Field>
+      <Field orientation="horizontal">
+        <RadioGroupItem value="option3" id="disabled-3" />
+        <FieldLabel htmlFor="disabled-3" className="font-normal">
+          Option 3
+        </FieldLabel>
+      </Field>
     </RadioGroup>
   );
 }

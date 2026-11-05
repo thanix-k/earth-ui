@@ -15,9 +15,9 @@ export default async function HomePage() {
   return (
     <div className="container-wrapper flex flex-col gap-16 py-16 lg:py-24">
       <section className="flex max-w-2xl flex-col gap-4">
-        <p className="text-body-14 font-medium text-eds-secondary">Earth Design System</p>
-        <h1 className="text-heading-32 text-eds-primary">{site.description}</h1>
-        <p className="text-body-16 text-eds-secondary">
+        <p className="text-sm font-medium text-muted-foreground">Earth Design System</p>
+        <h1 className="text-3xl font-semibold text-foreground">{site.description}</h1>
+        <p className="text-base text-muted-foreground">
           Every shadcn component, styled with Earth's setmore-black tokens. Install with the shadcn
           CLI and own the code.
         </p>
@@ -41,7 +41,7 @@ export default async function HomePage() {
           Example ? (
             <div
               key={name}
-              className="flex min-h-56 items-center justify-center rounded-2xl border border-eds-tertiary bg-eds-canvas p-8"
+              className="flex min-h-56 items-center justify-center rounded-2xl border border-border bg-background p-8"
             >
               <Suspense>
                 <Example />

@@ -22,7 +22,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"form">)
         </div>
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input id="email" type="email" placeholder="riley@anywhere.co" required />
+          <Input id="email" type="email" placeholder="m@example.com" required />
         </Field>
         <Field>
           <div className="flex items-center">

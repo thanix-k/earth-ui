@@ -6,28 +6,24 @@ import {
 
 export default function ResizableDemo() {
   return (
-    <ResizablePanelGroup
-      orientation="horizontal"
-      className="max-w-lg rounded-lg border border-eds-secondary"
-    >
-      <ResizablePanel defaultSize="40%">
-        <div className="flex h-56 flex-col gap-1 p-4">
-          <span className="text-heading-14 text-eds-primary">Staff</span>
-          <span className="text-body-12 text-eds-secondary">Maya, Jordan, Priya</span>
+    <ResizablePanelGroup orientation="horizontal" className="max-w-sm rounded-lg border">
+      <ResizablePanel defaultSize="50%">
+        <div className="flex h-[200px] items-center justify-center p-6">
+          <span className="font-semibold">One</span>
         </div>
       </ResizablePanel>
-      <ResizableHandle />
-      <ResizablePanel defaultSize="60%">
+      <ResizableHandle withHandle />
+      <ResizablePanel defaultSize="50%">
         <ResizablePanelGroup orientation="vertical">
-          <ResizablePanel defaultSize="50%">
-            <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-              Today’s appointments
+          <ResizablePanel defaultSize="25%">
+            <div className="flex h-full items-center justify-center p-6">
+              <span className="font-semibold">Two</span>
             </div>
           </ResizablePanel>
-          <ResizableHandle />
-          <ResizablePanel defaultSize="50%">
-            <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-              Customer notes
+          <ResizableHandle withHandle />
+          <ResizablePanel defaultSize="75%">
+            <div className="flex h-full items-center justify-center p-6">
+              <span className="font-semibold">Three</span>
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>

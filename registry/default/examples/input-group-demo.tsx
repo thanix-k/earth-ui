@@ -1,21 +1,15 @@
-import { SearchIcon } from "lucide-react";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-  InputGroupText,
-} from "@/registry/default/ui/input-group";
+import { Search } from "lucide-react";
 
-export default function InputGroupDemo() {
+import { InputGroup, InputGroupAddon, InputGroupInput } from "@/registry/default/ui/input-group";
+
+export function InputGroupDemo() {
   return (
     <InputGroup className="max-w-xs">
-      <InputGroupInput placeholder="Search customers" aria-label="Search customers" />
+      <InputGroupInput placeholder="Search..." />
       <InputGroupAddon>
-        <SearchIcon />
+        <Search />
       </InputGroupAddon>
-      <InputGroupAddon align="inline-end">
-        <InputGroupText>12 results</InputGroupText>
-      </InputGroupAddon>
+      <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
     </InputGroup>
   );
 }

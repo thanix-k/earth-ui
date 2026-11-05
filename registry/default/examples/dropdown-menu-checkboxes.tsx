@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
@@ -11,27 +12,33 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
 
-export default function DropdownMenuCheckboxes() {
-  const [confirmed, setConfirmed] = useState(true);
-  const [pending, setPending] = useState(true);
-  const [cancelled, setCancelled] = useState(false);
+export function DropdownMenuCheckboxes() {
+  const [showStatusBar, setShowStatusBar] = React.useState(true);
+  const [showActivityBar, setShowActivityBar] = React.useState(false);
+  const [showPanel, setShowPanel] = React.useState(false);
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>Status</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-48">
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-40">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Show bookings</DropdownMenuLabel>
-          <DropdownMenuCheckboxItem checked={confirmed} onCheckedChange={setConfirmed}>
-            Confirmed
+          <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+          <DropdownMenuCheckboxItem
+            checked={showStatusBar ?? false}
+            onCheckedChange={setShowStatusBar}
+          >
+            Status Bar
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem checked={pending} onCheckedChange={setPending}>
-            Pending
+          <DropdownMenuCheckboxItem
+            checked={showActivityBar}
+            onCheckedChange={setShowActivityBar}
+            disabled
+          >
+            Activity Bar
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem checked={cancelled} onCheckedChange={setCancelled}>
-            Cancelled
+          <DropdownMenuCheckboxItem checked={showPanel} onCheckedChange={setShowPanel}>
+            Panel
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem disabled>No-shows</DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

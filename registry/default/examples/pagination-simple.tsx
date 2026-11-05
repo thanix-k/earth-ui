@@ -2,24 +2,31 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationLink,
 } from "@/registry/default/ui/pagination";
 
-export default function PaginationSimple() {
+export function PaginationSimple() {
   return (
-    <div className="flex w-full max-w-md items-center justify-between gap-4">
-      <p className="text-body-12 text-eds-secondary">Showing 21–40 of 128 customers</p>
-      <Pagination className="mx-0 w-auto">
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    </div>
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationLink href="#">1</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" isActive>
+            2
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">3</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">4</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">5</PaginationLink>
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
   );
 }

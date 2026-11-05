@@ -1,16 +1,16 @@
 "use client";
 
 import {
+  AudioLinesIcon,
   BlocksIcon,
   CalendarIcon,
-  ClockIcon,
   HomeIcon,
   InboxIcon,
   MessageCircleQuestionIcon,
-  PhoneCallIcon,
   SearchIcon,
   Settings2Icon,
   SparklesIcon,
+  TerminalIcon,
   Trash2Icon,
 } from "lucide-react";
 import * as React from "react";
@@ -25,18 +25,18 @@ import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from "@/registry/
 const data = {
   teams: [
     {
-      name: "Setmore",
-      logo: <ClockIcon />,
-      plan: "Premium",
+      name: "Acme Inc",
+      logo: <TerminalIcon />,
+      plan: "Enterprise",
     },
     {
-      name: "AnswerConnect",
-      logo: <PhoneCallIcon />,
-      plan: "Pro",
+      name: "Acme Corp.",
+      logo: <AudioLinesIcon />,
+      plan: "Startup",
     },
     {
-      name: "YoCoBoard",
-      logo: <ClockIcon />,
+      name: "Evil Corp.",
+      logo: <TerminalIcon />,
       plan: "Free",
     },
   ],
@@ -93,159 +93,159 @@ const data = {
   ],
   favorites: [
     {
-      name: "Q4 Launch Plan",
+      name: "Project Management & Task Tracking",
       url: "#",
       emoji: "📊",
     },
     {
-      name: "Front Desk Playbook",
+      name: "Family Recipe Collection & Meal Planning",
       url: "#",
-      emoji: "📞",
+      emoji: "🍳",
     },
     {
-      name: "Holiday Hours",
+      name: "Fitness Tracker & Workout Routines",
       url: "#",
-      emoji: "🗓️",
+      emoji: "💪",
     },
     {
-      name: "Customer Interviews",
+      name: "Book Notes & Reading List",
       url: "#",
-      emoji: "🎙️",
+      emoji: "📚",
     },
     {
-      name: "Brand Guidelines",
+      name: "Sustainable Gardening Tips & Plant Care",
       url: "#",
-      emoji: "🎨",
+      emoji: "🌱",
     },
     {
-      name: "Support Macros",
+      name: "Language Learning Progress & Resources",
       url: "#",
-      emoji: "💬",
+      emoji: "🗣️",
     },
     {
-      name: "Office Moves",
+      name: "Home Renovation Ideas & Budget Tracker",
       url: "#",
-      emoji: "🏢",
+      emoji: "🏠",
     },
     {
-      name: "Revenue Dashboard",
+      name: "Personal Finance & Investment Portfolio",
       url: "#",
-      emoji: "📈",
+      emoji: "💰",
     },
     {
-      name: "Competitor Notes",
+      name: "Movie & TV Show Watchlist with Reviews",
       url: "#",
-      emoji: "🔍",
+      emoji: "🎬",
     },
     {
-      name: "Team OKRs",
+      name: "Daily Habit Tracker & Goal Setting",
       url: "#",
       emoji: "✅",
     },
   ],
   workspaces: [
     {
-      name: "Setmore",
-      emoji: "🏢",
+      name: "Personal Life Management",
+      emoji: "🏠",
       pages: [
         {
-          name: "Release Notes",
+          name: "Daily Journal & Reflection",
           url: "#",
-          emoji: "📝",
+          emoji: "📔",
         },
         {
-          name: "Booking Page Redesign",
+          name: "Health & Wellness Tracker",
           url: "#",
-          emoji: "🖥️",
+          emoji: "🍏",
         },
         {
-          name: "Mobile App Roadmap",
+          name: "Personal Growth & Learning Goals",
           url: "#",
-          emoji: "📱",
+          emoji: "🌟",
         },
       ],
     },
     {
-      name: "AnswerConnect",
+      name: "Professional Development",
       emoji: "💼",
       pages: [
         {
-          name: "Call Scripts",
+          name: "Career Objectives & Milestones",
           url: "#",
           emoji: "🎯",
         },
         {
-          name: "Receptionist Training",
+          name: "Skill Acquisition & Training Log",
           url: "#",
-          emoji: "🎧",
+          emoji: "🧠",
         },
         {
-          name: "Client Onboarding",
+          name: "Networking Contacts & Events",
           url: "#",
           emoji: "🤝",
         },
       ],
     },
     {
-      name: "YoCoBoard",
-      emoji: "⏱️",
+      name: "Creative Projects",
+      emoji: "🎨",
       pages: [
         {
-          name: "Timesheet Policies",
+          name: "Writing Ideas & Story Outlines",
           url: "#",
-          emoji: "📋",
+          emoji: "✍️",
         },
         {
-          name: "Payroll Exports",
+          name: "Art & Design Portfolio",
           url: "#",
-          emoji: "💵",
+          emoji: "🖼️",
         },
         {
-          name: "Shift Templates",
+          name: "Music Composition & Practice Log",
           url: "#",
-          emoji: "🔁",
+          emoji: "🎵",
         },
       ],
     },
     {
-      name: "AdaptiveU",
-      emoji: "🎓",
+      name: "Home Management",
+      emoji: "🏡",
       pages: [
         {
-          name: "Course Catalog",
+          name: "Household Budget & Expense Tracking",
           url: "#",
-          emoji: "📈",
+          emoji: "💰",
         },
         {
-          name: "Quiz Bank",
+          name: "Home Maintenance Schedule & Tasks",
           url: "#",
-          emoji: "❓",
+          emoji: "🔧",
         },
         {
-          name: "Learning Paths",
-          url: "#",
-          emoji: "🛤️",
-        },
-      ],
-    },
-    {
-      name: "Lister Place",
-      emoji: "🏛️",
-      pages: [
-        {
-          name: "Room Bookings",
-          url: "#",
-          emoji: "🚪",
-        },
-        {
-          name: "Event Calendar",
+          name: "Family Calendar & Event Planning",
           url: "#",
           emoji: "📅",
         },
+      ],
+    },
+    {
+      name: "Travel & Adventure",
+      emoji: "🧳",
+      pages: [
         {
-          name: "Member Directory",
+          name: "Trip Planning & Itineraries",
           url: "#",
-          emoji: "👥",
+          emoji: "🗺️",
+        },
+        {
+          name: "Travel Bucket List & Inspiration",
+          url: "#",
+          emoji: "🌎",
+        },
+        {
+          name: "Travel Journal & Photo Gallery",
+          url: "#",
+          emoji: "📸",
         },
       ],
     },

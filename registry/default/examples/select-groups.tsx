@@ -9,26 +9,27 @@ import {
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const hair = [
-  { label: "Haircut", value: "haircut" },
-  { label: "Colour", value: "colour" },
-  { label: "Blow-dry", value: "blow-dry" },
-];
-const nails = [
-  { label: "Manicure", value: "manicure" },
-  { label: "Pedicure", value: "pedicure" },
-];
-
-export default function SelectGroups() {
+export function SelectGroups() {
+  const fruits = [
+    { label: "Apple", value: "apple" },
+    { label: "Banana", value: "banana" },
+    { label: "Blueberry", value: "blueberry" },
+  ];
+  const vegetables = [
+    { label: "Carrot", value: "carrot" },
+    { label: "Broccoli", value: "broccoli" },
+    { label: "Spinach", value: "spinach" },
+  ];
+  const allItems = [{ label: "Select a fruit", value: null }, ...fruits, ...vegetables];
   return (
-    <Select items={[...hair, ...nails]}>
-      <SelectTrigger className="w-56" aria-label="Service">
-        <SelectValue placeholder="Select a service" />
+    <Select items={allItems}>
+      <SelectTrigger className="w-full max-w-48">
+        <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Hair</SelectLabel>
-          {hair.map((item) => (
+          <SelectLabel>Fruits</SelectLabel>
+          {fruits.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
             </SelectItem>
@@ -36,8 +37,8 @@ export default function SelectGroups() {
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Nails</SelectLabel>
-          {nails.map((item) => (
+          <SelectLabel>Vegetables</SelectLabel>
+          {vegetables.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
             </SelectItem>

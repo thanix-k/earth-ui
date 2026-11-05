@@ -1,12 +1,11 @@
+import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Textarea } from "@/registry/default/ui/textarea";
 
-export default function TextareaDisabled() {
+export function TextareaDisabled() {
   return (
-    <Textarea
-      className="max-w-xs"
-      disabled
-      placeholder="Add a note for your customer"
-      aria-label="Booking note"
-    />
+    <Field data-disabled>
+      <FieldLabel htmlFor="textarea-disabled">Message</FieldLabel>
+      <Textarea id="textarea-disabled" placeholder="Type your message here." disabled />
+    </Field>
   );
 }

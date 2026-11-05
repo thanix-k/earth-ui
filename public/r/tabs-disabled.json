@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/tabs-disabled.tsx",
-      "content": "import { Tabs, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function TabsDisabled() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Tabs defaultValue=\"day\">\n        <TabsList>\n          <TabsTrigger value=\"day\">Day</TabsTrigger>\n          <TabsTrigger value=\"week\">Week</TabsTrigger>\n          <TabsTrigger value=\"month\" disabled>\n            Month\n          </TabsTrigger>\n        </TabsList>\n      </Tabs>\n      <Tabs defaultValue=\"day\">\n        <TabsList variant=\"line\">\n          <TabsTrigger value=\"day\">Day</TabsTrigger>\n          <TabsTrigger value=\"week\">Week</TabsTrigger>\n          <TabsTrigger value=\"month\" disabled>\n            Month\n          </TabsTrigger>\n        </TabsList>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "content": "import { Tabs, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport function TabsDisabled() {\n  return (\n    <Tabs defaultValue=\"home\">\n      <TabsList>\n        <TabsTrigger value=\"home\">Home</TabsTrigger>\n        <TabsTrigger value=\"settings\" disabled>\n          Disabled\n        </TabsTrigger>\n      </TabsList>\n    </Tabs>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

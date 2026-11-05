@@ -24,7 +24,9 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="line-clamp-1">Q4 Launch Plan</BreadcrumbPage>
+                  <BreadcrumbPage className="line-clamp-1">
+                    Project Management & Task Tracking
+                  </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

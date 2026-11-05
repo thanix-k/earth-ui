@@ -93,10 +93,10 @@ export function TimesheetCard() {
             />
           </LineChart>
         </ChartContainer>
-        <div className="flex items-center justify-between rounded-lg border border-eds-tertiary p-2">
+        <div className="flex items-center justify-between rounded-lg border border-border p-2">
           <div className="flex flex-col">
-            <span className="text-heading-14 lg:text-heading-12">Setmore · booking page</span>
-            <span className="tabular-nums text-eds-secondary">
+            <span className="text-sm font-semibold lg:text-xs">Setmore · booking page</span>
+            <span className="tabular-nums text-muted-foreground">
               {running ? "Running · 00:42:18" : "Paused"}
             </span>
           </div>
@@ -111,7 +111,7 @@ export function TimesheetCard() {
         </div>
         <Collapsible className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="text-heading-14 lg:text-heading-12">Today's entries</span>
+            <span className="text-sm font-semibold lg:text-xs">Today's entries</span>
             <CollapsibleTrigger
               render={<Button variant="ghost" size="icon-sm" aria-label="Toggle entries" />}
             >
@@ -122,7 +122,7 @@ export function TimesheetCard() {
             {entries.map((e) => (
               <div key={e.project} className="flex justify-between">
                 <span>{e.project}</span>
-                <span className="tabular-nums text-eds-secondary">{e.hours}</span>
+                <span className="tabular-nums text-muted-foreground">{e.hours}</span>
               </div>
             ))}
           </CollapsibleContent>

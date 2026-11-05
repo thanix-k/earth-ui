@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/native-select-invalid.tsx",
-      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectInvalid() {\n  return (\n    <NativeSelect defaultValue=\"\" aria-label=\"Staff member\" aria-invalid>\n      <NativeSelectOption value=\"\" disabled>\n        Select staff\n      </NativeSelectOption>\n      <NativeSelectOption value=\"alex\">Alex Morgan</NativeSelectOption>\n      <NativeSelectOption value=\"sam\">Sam Patel</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
+      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport function NativeSelectInvalid() {\n  return (\n    <NativeSelect aria-invalid=\"true\">\n      <NativeSelectOption value=\"\">Error state</NativeSelectOption>\n      <NativeSelectOption value=\"apple\">Apple</NativeSelectOption>\n      <NativeSelectOption value=\"banana\">Banana</NativeSelectOption>\n      <NativeSelectOption value=\"blueberry\">Blueberry</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

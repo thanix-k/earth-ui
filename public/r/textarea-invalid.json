@@ -5,13 +5,13 @@
   "description": "Textarea example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth-ui/label",
+    "@earth-ui/field",
     "@earth-ui/textarea"
   ],
   "files": [
     {
       "path": "registry/default/examples/textarea-invalid.tsx",
-      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaInvalid() {\n  return (\n    <div className=\"grid w-full max-w-xs gap-1\">\n      <Label htmlFor=\"cancellation-reason\">Cancellation reason</Label>\n      <Textarea id=\"cancellation-reason\" aria-invalid />\n    </div>\n  );\n}\n",
+      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function TextareaInvalid() {\n  return (\n    <Field data-invalid>\n      <FieldLabel htmlFor=\"textarea-invalid\">Message</FieldLabel>\n      <Textarea id=\"textarea-invalid\" placeholder=\"Type your message here.\" aria-invalid />\n      <FieldDescription>Please enter a valid message.</FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

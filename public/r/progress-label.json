@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/progress-label.tsx",
-      "content": "import { Progress, ProgressLabel, ProgressValue } from \"@/registry/default/ui/progress\";\n\nexport default function ProgressLabelExample() {\n  return (\n    <Progress value={75} className=\"w-full max-w-sm\">\n      <ProgressLabel>Importing customers</ProgressLabel>\n      <ProgressValue />\n    </Progress>\n  );\n}\n",
+      "content": "import { Progress, ProgressLabel, ProgressValue } from \"@/registry/default/ui/progress\";\n\nexport function ProgressWithLabel() {\n  return (\n    <Progress value={56} className=\"w-full max-w-sm\">\n      <ProgressLabel>Upload progress</ProgressLabel>\n      <ProgressValue />\n    </Progress>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

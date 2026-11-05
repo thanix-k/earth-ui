@@ -51,8 +51,8 @@ export default async function BlocksPage({ params }: Props) {
   return (
     <div className="container-wrapper flex flex-col gap-8 py-12">
       <header className="flex max-w-2xl flex-col gap-2">
-        <h1 className="text-heading-32 text-eds-primary">Blocks</h1>
-        <p className="text-body-16 text-eds-secondary">
+        <h1 className="text-3xl font-semibold text-foreground">Blocks</h1>
+        <p className="text-base text-muted-foreground">
           shadcn&apos;s blocks, built on Earth UI components. Kept in sync with shadcn by a weekly
           job.
         </p>
@@ -68,10 +68,10 @@ export default async function BlocksPage({ params }: Props) {
             key={tab.href}
             href={tab.href}
             aria-current={tab.active ? "page" : undefined}
-            className="flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-body-14 text-eds-secondary transition-colors duration-300 ease-[ease] hover:bg-eds-neutral-hover hover:text-eds-primary focus-visible:focus-ring aria-[current=page]:bg-eds-accent aria-[current=page]:text-eds-onPrimary"
+            className="flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors duration-300 ease-[ease] hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground"
           >
             {tab.label}
-            <span className="text-body-12 opacity-70">{tab.count}</span>
+            <span className="text-xs opacity-70">{tab.count}</span>
           </a>
         ))}
       </nav>
@@ -79,12 +79,12 @@ export default async function BlocksPage({ params }: Props) {
         {shown.map((block) => (
           <article key={block.name} id={block.name} className="flex scroll-mt-32 flex-col gap-3">
             <div className="flex flex-col gap-0.5">
-              <h2 className="text-heading-16 text-eds-primary">
+              <h2 className="text-base font-semibold text-foreground">
                 <a href={`#${block.name}`} className="hover:underline">
                   {block.title}
                 </a>
               </h2>
-              <p className="text-body-14 text-eds-secondary">{block.description}</p>
+              <p className="text-sm text-muted-foreground">{block.description}</p>
             </div>
             <PackageManagerTabs
               command={(pm) => `${RUNNERS[pm]} shadcn@latest add ${site.namespace}/${block.name}`}

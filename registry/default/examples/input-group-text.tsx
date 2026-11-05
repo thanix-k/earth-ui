@@ -3,30 +3,42 @@ import {
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
+  InputGroupTextarea,
 } from "@/registry/default/ui/input-group";
 
 export default function InputGroupTextExample() {
   return (
-    <div className="grid w-full max-w-xs gap-4">
+    <div className="grid w-full max-w-sm gap-6">
       <InputGroup>
         <InputGroupAddon>
           <InputGroupText>$</InputGroupText>
         </InputGroupAddon>
-        <InputGroupInput placeholder="45.00" aria-label="Service price" />
+        <InputGroupInput placeholder="0.00" />
         <InputGroupAddon align="inline-end">
           <InputGroupText>USD</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
         <InputGroupAddon>
-          <InputGroupText>setmore.com/</InputGroupText>
+          <InputGroupText>https://</InputGroupText>
         </InputGroupAddon>
-        <InputGroupInput placeholder="glow-salon" aria-label="Booking page URL" />
+        <InputGroupInput placeholder="example.com" className="pl-0.5!" />
+        <InputGroupAddon align="inline-end">
+          <InputGroupText>.com</InputGroupText>
+        </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="30" aria-label="Buffer time" />
+        <InputGroupInput placeholder="Enter your username" />
         <InputGroupAddon align="inline-end">
-          <InputGroupText>minutes</InputGroupText>
+          <InputGroupText>@company.com</InputGroupText>
+        </InputGroupAddon>
+      </InputGroup>
+      <InputGroup>
+        <InputGroupTextarea placeholder="Enter your message" />
+        <InputGroupAddon align="block-end">
+          <InputGroupText className="text-xs text-muted-foreground">
+            120 characters left
+          </InputGroupText>
         </InputGroupAddon>
       </InputGroup>
     </div>

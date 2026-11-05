@@ -4,21 +4,21 @@ import {
   ResizablePanelGroup,
 } from "@/registry/default/ui/resizable";
 
-export default function ResizableVertical() {
+export function ResizableVertical() {
   return (
     <ResizablePanelGroup
       orientation="vertical"
-      className="min-h-64 max-w-md rounded-lg border border-eds-secondary"
+      className="min-h-[200px] max-w-sm rounded-lg border"
     >
-      <ResizablePanel defaultSize="30%">
-        <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-          Appointment details
+      <ResizablePanel defaultSize="25%">
+        <div className="flex h-full items-center justify-center p-6">
+          <span className="font-semibold">Header</span>
         </div>
       </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel defaultSize="70%">
-        <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-          Booking history
+      <ResizableHandle />
+      <ResizablePanel defaultSize="75%">
+        <div className="flex h-full items-center justify-center p-6">
+          <span className="font-semibold">Content</span>
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>

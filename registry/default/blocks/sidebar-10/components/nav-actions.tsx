@@ -4,12 +4,12 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
   BellIcon,
-  CalendarDaysIcon,
   ChartLineIcon,
   CopyIcon,
   CornerUpLeftIcon,
   CornerUpRightIcon,
   FileTextIcon,
+  GalleryVerticalEndIcon,
   LinkIcon,
   MoreHorizontalIcon,
   Settings2Icon,
@@ -70,7 +70,7 @@ const data = [
     },
     {
       label: "Version History",
-      icon: <CalendarDaysIcon />,
+      icon: <GalleryVerticalEndIcon />,
     },
     {
       label: "Show delete pages",

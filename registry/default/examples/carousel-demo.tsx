@@ -1,3 +1,6 @@
+import * as React from "react";
+
+import { Card, CardContent } from "@/registry/default/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -6,25 +9,18 @@ import {
   CarouselPrevious,
 } from "@/registry/default/ui/carousel";
 
-const services = [
-  { name: "Haircut & style", duration: "45 min", price: "$55" },
-  { name: "Colour refresh", duration: "90 min", price: "$120" },
-  { name: "Beard trim", duration: "20 min", price: "$25" },
-  { name: "Scalp treatment", duration: "30 min", price: "$40" },
-  { name: "Blow-dry", duration: "30 min", price: "$35" },
-];
-
 export default function CarouselDemo() {
   return (
-    <Carousel className="w-full max-w-xs">
+    <Carousel className="w-full max-w-[12rem] sm:max-w-xs">
       <CarouselContent>
-        {services.map((service) => (
-          <CarouselItem key={service.name}>
-            <div className="flex aspect-square flex-col items-center justify-center gap-1 rounded-xl border border-eds-secondary bg-eds-canvas p-6">
-              <span className="text-heading-20 text-eds-primary">{service.name}</span>
-              <span className="text-body-14 text-eds-secondary">
-                {service.duration} · {service.price}
-              </span>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
             </div>
           </CarouselItem>
         ))}

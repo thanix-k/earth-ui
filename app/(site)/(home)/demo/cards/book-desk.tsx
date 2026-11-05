@@ -38,21 +38,21 @@ const spaces: { name: string; seats: string; price: number; icon: LucideIcon; ti
     seats: "1 seat",
     price: 25,
     icon: ArmchairIcon,
-    tint: "bg-eds-palette-green-background",
+    tint: "bg-green-100 dark:bg-green-950",
   },
   {
     name: "Meeting room",
     seats: "6 seats",
     price: 40,
     icon: UsersIcon,
-    tint: "bg-eds-palette-blue-background",
+    tint: "bg-blue-100 dark:bg-blue-950",
   },
   {
     name: "Event space",
     seats: "40 seats",
     price: 120,
     icon: PresentationIcon,
-    tint: "bg-eds-palette-orange-background",
+    tint: "bg-orange-100 dark:bg-orange-950",
   },
 ];
 const lengths = ["Half day", "Full day", "Week"] as const;
@@ -81,14 +81,14 @@ export function BookDeskCard() {
                     className={cn(
                       "flex items-center justify-center rounded-lg",
                       sp.tint,
-                      i === space && "ring-2 ring-eds-focus",
+                      i === space && "ring-2 ring-ring",
                     )}
                   >
-                    <sp.icon className="size-10 text-eds-secondary" />
+                    <sp.icon className="size-10 text-muted-foreground" />
                   </AspectRatio>
                   <div className="mt-2 flex justify-between">
-                    <span className="text-heading-14 lg:text-heading-12">{sp.name}</span>
-                    <span className="text-eds-secondary">{sp.seats}</span>
+                    <span className="text-sm font-semibold lg:text-xs">{sp.name}</span>
+                    <span className="text-muted-foreground">{sp.seats}</span>
                   </div>
                 </button>
               </CarouselItem>
@@ -111,7 +111,7 @@ export function BookDeskCard() {
         </ButtonGroup>
       </CardContent>
       <CardFooter className="justify-between">
-        <span className="text-heading-16 lg:text-heading-14">£{total}</span>
+        <span className="text-base font-semibold lg:text-sm">£{total}</span>
         <Drawer showSwipeHandle>
           <DrawerTrigger render={<Button />}>Reserve</DrawerTrigger>
           <DrawerContent>

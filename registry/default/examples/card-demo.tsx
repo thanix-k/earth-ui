@@ -15,29 +15,41 @@ export default function CardDemo() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Add a service</CardTitle>
-        <CardDescription>Customers can book it from your page.</CardDescription>
+        <CardTitle>Login to your account</CardTitle>
+        <CardDescription>Enter your email below to login to your account</CardDescription>
         <CardAction>
-          <Button variant="link" size="sm" className="px-0">
-            Import
-          </Button>
+          <Button variant="link">Sign Up</Button>
         </CardAction>
       </CardHeader>
       <CardContent>
-        <form className="flex flex-col gap-4">
-          <div className="grid gap-1">
-            <Label htmlFor="service-name">Service name</Label>
-            <Input id="service-name" placeholder="Haircut and style" />
-          </div>
-          <div className="grid gap-1">
-            <Label htmlFor="service-duration">Duration (minutes)</Label>
-            <Input id="service-duration" type="number" placeholder="45" />
+        <form>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" placeholder="m@example.com" required />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <a
+                  href="#"
+                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+              <Input id="password" type="password" required />
+            </div>
           </div>
         </form>
       </CardContent>
-      <CardFooter className="justify-end gap-2">
-        <Button variant="outline">Cancel</Button>
-        <Button>Save service</Button>
+      <CardFooter className="flex-col gap-2">
+        <Button type="submit" className="w-full">
+          Login
+        </Button>
+        <Button variant="outline" className="w-full">
+          Login with Google
+        </Button>
       </CardFooter>
     </Card>
   );

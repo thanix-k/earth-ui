@@ -9,7 +9,7 @@ import {
   TriangleAlertIcon,
   XIcon,
 } from "lucide-react";
-import type * as React from "react";
+import * as React from "react";
 import { cn } from "@/registry/default/lib/cn";
 import { Button } from "@/registry/default/ui/button";
 
@@ -28,7 +28,7 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
     <ToastPrimitive.Viewport
       data-slot="toast-viewport"
       className={cn(
-        "pointer-events-none fixed inset-x-4 bottom-4 z-50 mx-auto w-auto max-w-[360px] outline-none sm:right-4 sm:left-auto sm:mx-0 sm:w-full",
+        "pointer-events-none fixed inset-x-4 bottom-4 z-50 mx-auto w-auto max-w-sm outline-none sm:right-4 sm:left-auto sm:mx-0 sm:w-full",
         className,
       )}
       {...props}
@@ -41,7 +41,7 @@ function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
     <ToastPrimitive.Root
       data-slot="toast"
       className={cn(
-        "group/toast pointer-events-auto absolute right-0 bottom-0 z-[calc(1000-var(--toast-index))] w-full origin-bottom rounded-lg bg-eds-inverse-secondary text-eds-inverse shadow-eds-40 will-change-transform outline-none select-none focus-visible:focus-ring",
+        "group/toast pointer-events-auto absolute right-0 bottom-0 z-[calc(1000-var(--toast-index))] w-full origin-bottom rounded-2xl border bg-popover text-popover-foreground shadow-lg will-change-transform outline-none select-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
         "[--gap:0.75rem] [--height:var(--toast-frontmost-height,var(--toast-height))] [--offset-y:calc(var(--toast-offset-y)*-1+calc(var(--toast-index)*var(--gap)*-1)+var(--toast-swipe-movement-y))] [--peek:0.75rem] [--scale:calc(max(0,1-(var(--toast-index)*0.1)))] [--shrink:calc(1-var(--scale))]",
         "h-(--height) [transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)-(var(--toast-index)*var(--peek))-(var(--shrink)*var(--height))))_scale(var(--scale))] [transition:transform_500ms_cubic-bezier(0.22,1,0.36,1),opacity_500ms,height_150ms]",
         "after:absolute after:top-full after:left-0 after:h-[calc(var(--gap)+1px)] after:w-full after:content-['']",
@@ -68,7 +68,7 @@ function ToastContent({ className, ...props }: ToastPrimitive.Content.Props) {
     <ToastPrimitive.Content
       data-slot="toast-content"
       className={cn(
-        "flex h-full min-h-11 items-center gap-2 overflow-hidden rounded-lg px-4 py-2 transition-opacity duration-250 ease-[cubic-bezier(0.22,1,0.36,1)] data-behind:opacity-0 data-expanded:opacity-100",
+        "flex h-full items-center gap-3 overflow-hidden p-4 transition-opacity duration-250 ease-[cubic-bezier(0.22,1,0.36,1)] data-behind:opacity-0 data-expanded:opacity-100",
         className,
       )}
       {...props}
@@ -80,7 +80,7 @@ function ToastTitle({ className, ...props }: ToastPrimitive.Title.Props) {
   return (
     <ToastPrimitive.Title
       data-slot="toast-title"
-      className={cn("line-clamp-2 text-body-14 text-eds-inverse lg:text-body-12", className)}
+      className={cn("text-sm font-medium", className)}
       {...props}
     />
   );
@@ -90,10 +90,7 @@ function ToastDescription({ className, ...props }: ToastPrimitive.Description.Pr
   return (
     <ToastPrimitive.Description
       data-slot="toast-description"
-      className={cn(
-        "-mt-0.5 line-clamp-2 text-body-14 text-eds-inverse-secondary lg:text-body-12",
-        className,
-      )}
+      className={cn("text-sm text-muted-foreground", className)}
       {...props}
     />
   );
@@ -114,13 +111,19 @@ function ToastAction({
   );
 }
 
-function ToastClose({ className, children, ...props }: ToastPrimitive.Close.Props) {
+function ToastClose({
+  className,
+  children,
+  render = <Button variant="ghost" size="icon-sm" />,
+  ...props
+}: ToastPrimitive.Close.Props) {
   return (
     <ToastPrimitive.Close
       data-slot="toast-close"
       aria-label="Close toast"
+      render={render}
       className={cn(
-        "absolute -start-2 -top-2 flex cursor-pointer rounded-full bg-eds-inverse-tertiary p-0.5 text-eds-general-constant-white opacity-0 transition-opacity outline-none group-hover/toast:opacity-100 after:absolute after:inset-0 after:scale-150 after:rounded-full hover:bg-eds-inverse-tertiary-hover focus-visible:opacity-100 focus-visible:focus-ring active:bg-eds-inverse-tertiary-pressed [&_svg:not([class*='size-'])]:size-4",
+        "relative shrink-0 text-muted-foreground after:absolute after:-inset-2 after:content-[''] hover:text-foreground",
         className,
       )}
       {...props}
@@ -134,23 +137,23 @@ function ToastIcon({ type }: { type: string | undefined }) {
   let icon: React.ReactNode = null;
 
   if (type === "success") {
-    icon = <CircleCheckIcon className="text-eds-inverse-positive" aria-hidden="true" />;
+    icon = <CircleCheckIcon aria-hidden="true" />;
   }
 
   if (type === "info") {
-    icon = <InfoIcon className="text-eds-inverse" aria-hidden="true" />;
+    icon = <InfoIcon aria-hidden="true" />;
   }
 
   if (type === "warning") {
-    icon = <TriangleAlertIcon className="text-eds-inverse-caution" aria-hidden="true" />;
+    icon = <TriangleAlertIcon aria-hidden="true" />;
   }
 
   if (type === "error") {
-    icon = <OctagonXIcon className="text-eds-inverse-critical" aria-hidden="true" />;
+    icon = <OctagonXIcon className="text-destructive" aria-hidden="true" />;
   }
 
   if (type === "loading") {
-    icon = <Loader2Icon className="animate-spin text-eds-inverse" aria-hidden="true" />;
+    icon = <Loader2Icon className="animate-spin" aria-hidden="true" />;
   }
 
   if (!icon) {
@@ -160,7 +163,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
   return (
     <span
       data-slot="toast-icon"
-      className="flex shrink-0 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5"
+      className="shrink-0 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
     >
       {icon}
     </span>
@@ -174,13 +177,13 @@ function ToastList() {
     <Toast key={toastItem.id} toast={toastItem}>
       <ToastContent>
         <ToastIcon type={toastItem.type} />
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="flex min-w-0 flex-1 flex-col gap-1">
           <ToastTitle />
           <ToastDescription />
         </div>
         <ToastAction />
+        <ToastClose />
       </ToastContent>
-      <ToastClose />
     </Toast>
   ));
 }

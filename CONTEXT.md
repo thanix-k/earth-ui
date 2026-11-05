@@ -1,20 +1,20 @@
 # Earth shadcn registry
 
-A public shadcn registry (`@earth-ui`) that re-skins shadcn on Base UI with the
-Earth Design System's setmore-black tokens. This repo is the source of truth
+A public shadcn registry (`@earth-ui`): stock shadcn on Base UI, with shadcn's
+CSS variables set to the Earth Design System's setmore-black values. This repo is the source of truth
 (ADR-0002): tokens are authored here as DTCG JSON, seeded once from
 `@adaptavant/eds-brands@1.12.0`. eds-core is being sunset and is reference only.
 
 ## Language
 
 **EDS token**:
-A design token from `eds-brands/tokens/*.json` (DTCG), exposed here under the
-`eds-` namespace, property-scoped: `bg-eds-neutral-hover`, `text-eds-secondary`.
-_Avoid_: calling these "theme" or "shadcn" tokens.
+A design token from `eds-brands/tokens/*.json` (DTCG). Not shipped as CSS or
+utilities; only read to fill the shadcn aliases (ADR-0006).
+_Avoid_: `eds-` classes or variables in registry or app code.
 
 **shadcn alias**:
 A stock shadcn CSS variable (`--primary`, `--accent`, `--ring`, …) whose value
-is a reference to an EDS token. Exists so third-party shadcn code renders as Earth.
+is an EDS token's value. Exists so third-party shadcn code renders as Earth.
 _Avoid_: assuming shadcn `accent` means EDS `accent` — they differ (ADR-0001).
 
 **Component API**:
@@ -25,25 +25,18 @@ guide is out of scope for release 1.
 _Avoid_: EDS prop names in component source.
 
 **Release 1**:
-Every shadcn Base UI component, re-skinned to Earth. EDS-only components
+Every shadcn Base UI component, stock, on Earth's values. EDS-only components
 (chip, tag, select-card, timepicker…) come later.
 
 **Seed**:
-The one-time starting copy of a component from shadcn's Base UI source.
-After seeding, the file is owned here and never re-synced (ADR-0003).
-_Avoid_: upstream, sync.
+The copy of a component from shadcn's Base UI source. Kept stock (ADR-0006).
 
 **Generated output**:
-Anything a script writes: token CSS, registry item JSON, `registry.json`,
-`public/r/*`, docs preview index, install tabs. Never hand-edited.
+Anything a script writes: `app/earth.css`, `public/r/*`, docs preview index,
+install tabs. Never hand-edited. `registry.json` is not generated; it is edited by hand.
 
 **Icons**:
 lucide (shadcn's default `iconLibrary`). EDS icons are not shipped.
-
-**Focus ring**:
-EDS's ring, not shadcn's 3px translucent ring. Buttons, links and other
-controls: 1px gap in the canvas colour plus a 2px `border-focus` ring
-(`#111` light). Text inputs: no ring; the border becomes 2px `border-input-active`.
 
 **Docs (release 1)**:
 Information architecture follows coss.com/ui/docs. Overview: Introduction,
@@ -62,7 +55,7 @@ _Avoid_: calling these blocks or templates.
 A page-level registry item (`@earth-ui/login-03`, `@earth-ui/sidebar-07`) mirrored
 from shadcn's Base UI blocks by `scripts/sync-blocks.ts` and kept current by a
 weekly CI job (ADR-0005). Generated, never hand-edited. The one thing in this
-repo that tracks shadcn upstream; components are seeded once.
+repo that is synced by a script; components are copied stock.
 _Avoid_: editing block files; calling `/demo` cards blocks.
 
 **Figma library**:

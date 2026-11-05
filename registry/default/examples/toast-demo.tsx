@@ -1,22 +1,25 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { Toaster, toast } from "@/registry/default/ui/toast";
+import { toast } from "@/registry/default/ui/toast";
 
-export default function ToastDemo() {
+export function ToastDemo() {
+  function showToast() {
+    const id = toast.add({
+      title: "Event created",
+      description: "Sunday, December 3 at 9:00 AM",
+      actionProps: {
+        children: "Undo",
+        onClick() {
+          toast.close(id);
+        },
+      },
+    });
+  }
+
   return (
-    <Toaster>
-      <Button
-        variant="outline"
-        onClick={() =>
-          toast.add({
-            title: "Appointment booked",
-            description: "Haircut with Maya, Fri 7 Nov at 2:30 pm",
-          })
-        }
-      >
-        Book appointment
-      </Button>
-    </Toaster>
+    <Button variant="outline" onClick={showToast}>
+      Show Toast
+    </Button>
   );
 }

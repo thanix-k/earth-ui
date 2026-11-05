@@ -9,16 +9,16 @@ import {
   ComboboxList,
 } from "@/registry/default/ui/combobox";
 
-const staff = ["Alex Morgan", "Jordan Lee", "Priya Shah", "Sam Patel", "Taylor Kim"];
+const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const;
 
-export default function ComboboxClear() {
+export function ComboboxWithClear() {
   return (
-    <Combobox items={staff} defaultValue={staff[2]}>
-      <ComboboxInput className="w-64" placeholder="Select staff" aria-label="Staff" showClear />
+    <Combobox items={frameworks} defaultValue={frameworks[0]}>
+      <ComboboxInput placeholder="Select a framework" showClear />
       <ComboboxContent>
-        <ComboboxEmpty>No staff found.</ComboboxEmpty>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {(item: string) => (
+          {(item) => (
             <ComboboxItem key={item} value={item}>
               {item}
             </ComboboxItem>

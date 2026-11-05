@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/toggle-group-outline.tsx",
-      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nconst days = [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\", \"Sun\"];\n\nexport default function ToggleGroupOutline() {\n  return (\n    <ToggleGroup\n      variant=\"outline\"\n      multiple\n      defaultValue={[\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"]}\n      aria-label=\"Working days\"\n      className=\"flex-wrap\"\n    >\n      {days.map((day) => (\n        <ToggleGroupItem key={day} value={day} className=\"min-w-12\">\n          {day}\n        </ToggleGroupItem>\n      ))}\n    </ToggleGroup>\n  );\n}\n",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport function ToggleGroupOutline() {\n  return (\n    <ToggleGroup variant=\"outline\" defaultValue={[\"all\"]}>\n      <ToggleGroupItem value=\"all\" aria-label=\"Toggle all\">\n        All\n      </ToggleGroupItem>\n      <ToggleGroupItem value=\"missed\" aria-label=\"Toggle missed\">\n        Missed\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

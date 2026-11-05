@@ -66,7 +66,7 @@ export function LeadSourcesCard() {
                         <p.icon className="mt-0.5" />
                         <div className="flex flex-col">
                           <span className="font-medium">{p.title}</span>
-                          <span className="text-eds-secondary">{p.desc}</span>
+                          <span className="text-muted-foreground">{p.desc}</span>
                         </div>
                       </NavigationMenuLink>
                     </li>

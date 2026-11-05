@@ -2,6 +2,7 @@
 
 import { CalendarIcon } from "lucide-react";
 import * as React from "react";
+
 import { Calendar } from "@/registry/default/ui/calendar";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import {
@@ -28,23 +29,23 @@ function isValidDate(date: Date | undefined) {
   if (!date) {
     return false;
   }
-  return !Number.isNaN(date.getTime());
+  return !isNaN(date.getTime());
 }
 
-export default function DatePickerInput() {
+export function DatePickerInput() {
   const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(new Date(2026, 5, 1));
+  const [date, setDate] = React.useState<Date | undefined>(new Date("2025-06-01"));
   const [month, setMonth] = React.useState<Date | undefined>(date);
   const [value, setValue] = React.useState(formatDate(date));
 
   return (
     <Field className="mx-auto w-48">
-      <FieldLabel htmlFor="date-picker-input">Subscription date</FieldLabel>
+      <FieldLabel htmlFor="date-required">Subscription Date</FieldLabel>
       <InputGroup>
         <InputGroupInput
-          id="date-picker-input"
+          id="date-required"
           value={value}
-          placeholder="June 01, 2026"
+          placeholder="June 01, 2025"
           onChange={(e) => {
             const date = new Date(e.target.value);
             setValue(e.target.value);
@@ -63,9 +64,17 @@ export default function DatePickerInput() {
         <InputGroupAddon align="inline-end">
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger
-              render={<InputGroupButton variant="ghost" size="icon-xs" aria-label="Select date" />}
+              render={
+                <InputGroupButton
+                  id="date-picker"
+                  variant="ghost"
+                  size="icon-xs"
+                  aria-label="Select date"
+                />
+              }
             >
               <CalendarIcon />
+              <span className="sr-only">Select date</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"

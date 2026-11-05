@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/registry/default/ui/card";
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
-export default function SkeletonCard() {
+export function SkeletonCard() {
   return (
     <Card className="w-full max-w-xs">
       <CardHeader>

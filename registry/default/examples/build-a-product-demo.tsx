@@ -57,12 +57,12 @@ export default function BuildAProductDemo() {
               <AvatarFallback>{booking.initials}</AvatarFallback>
             </Avatar>
             <div className="flex min-w-0 flex-1 flex-col">
-              <span className="truncate text-body-14 text-eds-primary">{booking.name}</span>
-              <span className="truncate text-body-12 text-eds-secondary">
+              <span className="truncate text-sm text-foreground">{booking.name}</span>
+              <span className="truncate text-xs text-muted-foreground">
                 {booking.service} · {booking.time}
               </span>
             </div>
-            <Badge variant={booking.status === "Confirmed" ? "positive" : "caution"}>
+            <Badge variant={booking.status === "Confirmed" ? "default" : "outline"}>
               {booking.status}
             </Badge>
           </div>

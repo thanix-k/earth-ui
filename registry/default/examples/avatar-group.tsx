@@ -1,25 +1,20 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarGroup,
-  AvatarGroupCount,
-  AvatarImage,
-} from "@/registry/default/ui/avatar";
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "@/registry/default/ui/avatar";
 
-export default function AvatarGroupExample() {
+export function AvatarGroupExample() {
   return (
-    <AvatarGroup>
+    <AvatarGroup className="grayscale">
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="Maya Patel" />
-        <AvatarFallback>MP</AvatarFallback>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback>JL</AvatarFallback>
+        <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
+        <AvatarFallback>LR</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarFallback>AR</AvatarFallback>
+        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+        <AvatarFallback>ER</AvatarFallback>
       </Avatar>
-      <AvatarGroupCount>+4</AvatarGroupCount>
     </AvatarGroup>
   );
 }

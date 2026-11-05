@@ -1,3 +1,6 @@
+import * as React from "react";
+
+import { Card, CardContent } from "@/registry/default/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -6,19 +9,23 @@ import {
   CarouselPrevious,
 } from "@/registry/default/ui/carousel";
 
-const staff = ["Maya", "Jordan", "Priya", "Sam", "Alex", "Noah"];
-
 export default function CarouselSize() {
   return (
-    <Carousel opts={{ align: "start" }} className="w-full max-w-sm">
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      className="w-full max-w-[12rem] sm:max-w-xs md:max-w-sm"
+    >
       <CarouselContent>
-        {staff.map((name) => (
-          <CarouselItem key={name} className="basis-1/2 lg:basis-1/3">
-            <div className="flex aspect-square flex-col items-center justify-center gap-2 rounded-xl border border-eds-secondary bg-eds-canvas p-4">
-              <span className="flex size-10 items-center justify-center rounded-full bg-eds-avatar text-body-14 font-medium text-eds-primary">
-                {name[0]}
-              </span>
-              <span className="text-body-12 text-eds-primary">{name}</span>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-3xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
             </div>
           </CarouselItem>
         ))}

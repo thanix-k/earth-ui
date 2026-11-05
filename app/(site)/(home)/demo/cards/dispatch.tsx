@@ -23,7 +23,7 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/registry/default/ui/menubar";
-import { Toaster, toast } from "@/registry/default/ui/toast";
+import { toast } from "@/registry/default/ui/toast";
 
 const jobs = [
   { id: 1, what: "No heat, furnace clicking", where: "Elm St, Beaverton", urgent: true },
@@ -94,7 +94,7 @@ function DispatchBoard() {
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
-        <div className="flex items-center gap-2 text-eds-secondary">
+        <div className="flex items-center gap-2 text-muted-foreground">
           <Avatar size="sm">
             <AvatarFallback>{tech}</AvatarFallback>
           </Avatar>
@@ -103,14 +103,14 @@ function DispatchBoard() {
         {visible.map((j) => (
           <div
             key={j.id}
-            className="flex items-center justify-between gap-2 rounded-lg border border-eds-tertiary p-2"
+            className="flex items-center justify-between gap-2 rounded-lg border border-border p-2"
           >
             <div className="flex flex-col">
-              <span className="text-heading-14 lg:text-heading-12">{j.what}</span>
-              <span className="text-eds-secondary">{j.where}</span>
+              <span className="text-sm font-semibold lg:text-xs">{j.what}</span>
+              <span className="text-muted-foreground">{j.where}</span>
             </div>
             {sent.includes(j.id) ? (
-              <Badge variant="positive">En route</Badge>
+              <Badge variant="default">En route</Badge>
             ) : (
               <div className="flex items-center gap-2">
                 {j.urgent && <Badge variant="destructive">Urgent</Badge>}
@@ -126,11 +126,6 @@ function DispatchBoard() {
   );
 }
 
-// Base UI Toast needs its provider around whatever calls toast.add.
 export function DispatchCard() {
-  return (
-    <Toaster>
-      <DispatchBoard />
-    </Toaster>
-  );
+  return <DispatchBoard />;
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Toaster } from "@/registry/default/ui/sonner";
 import { AgendaCard } from "./cards/agenda";
 import { BookDeskCard } from "./cards/book-desk";
 import { BookSlotCard } from "./cards/book-slot";
@@ -26,8 +25,8 @@ export default function DemoPage() {
   return (
     <div className="container-wrapper flex flex-col gap-8 py-12">
       <header className="flex max-w-2xl flex-col gap-2">
-        <h1 className="text-heading-32 text-eds-primary">Demo</h1>
-        <p className="text-body-16 text-eds-secondary">
+        <h1 className="text-3xl font-semibold text-foreground">Demo</h1>
+        <p className="text-base text-muted-foreground">
           Earth UI in the products it ships with: bookings, calls, chat, leads, learning and time
           tracking.
         </p>
@@ -51,7 +50,6 @@ export default function DemoPage() {
         <DispatchCard />
         <LeadSourcesCard />
       </div>
-      <Toaster />
     </div>
   );
 }

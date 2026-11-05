@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/avatar-group.tsx",
-      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarGroup,\n  AvatarGroupCount,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\n\nexport default function AvatarGroupExample() {\n  return (\n    <AvatarGroup>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"Maya Patel\" />\n        <AvatarFallback>MP</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>JL</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>AR</AvatarFallback>\n      </Avatar>\n      <AvatarGroupCount>+4</AvatarGroupCount>\n    </AvatarGroup>\n  );\n}\n",
+      "content": "import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from \"@/registry/default/ui/avatar\";\n\nexport function AvatarGroupExample() {\n  return (\n    <AvatarGroup className=\"grayscale\">\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/maxleiter.png\" alt=\"@maxleiter\" />\n        <AvatarFallback>LR</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/evilrabbit.png\" alt=\"@evilrabbit\" />\n        <AvatarFallback>ER</AvatarFallback>\n      </Avatar>\n    </AvatarGroup>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

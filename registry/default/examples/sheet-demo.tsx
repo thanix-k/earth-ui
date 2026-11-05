@@ -15,25 +15,27 @@ import {
 export default function SheetDemo() {
   return (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>Edit staff</SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open</SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit staff</SheetTitle>
-          <SheetDescription>Update how Jordan appears on your booking page.</SheetDescription>
+          <SheetTitle>Edit profile</SheetTitle>
+          <SheetDescription>
+            Make changes to your profile here. Click save when you&apos;re done.
+          </SheetDescription>
         </SheetHeader>
-        <div className="grid flex-1 auto-rows-min gap-4 px-6">
-          <div className="grid gap-1">
-            <Label htmlFor="staff-name">Name</Label>
-            <Input id="staff-name" defaultValue="Jordan Lee" />
+        <div className="grid flex-1 auto-rows-min gap-6 px-4">
+          <div className="grid gap-3">
+            <Label htmlFor="sheet-demo-name">Name</Label>
+            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
           </div>
-          <div className="grid gap-1">
-            <Label htmlFor="staff-email">Email</Label>
-            <Input id="staff-email" type="email" defaultValue="jordan@glowsalon.com" />
+          <div className="grid gap-3">
+            <Label htmlFor="sheet-demo-username">Username</Label>
+            <Input id="sheet-demo-username" defaultValue="@peduarte" />
           </div>
         </div>
         <SheetFooter>
-          <SheetClose render={<Button variant="ghost" />}>Cancel</SheetClose>
           <Button type="submit">Save changes</Button>
+          <SheetClose render={<Button variant="outline" />}>Close</SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>

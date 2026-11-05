@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/textarea-demo.tsx",
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaDemo() {\n  return (\n    <Textarea\n      className=\"max-w-xs\"\n      placeholder=\"Add a note for your customer\"\n      aria-label=\"Booking note\"\n    />\n  );\n}\n",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaDemo() {\n  return <Textarea placeholder=\"Type your message here.\" />;\n}\n",
       "type": "registry:example"
     }
   ],

@@ -1,16 +1,16 @@
 "use client";
 
 import {
+  AudioLinesIcon,
   BookOpenIcon,
-  CalendarCheckIcon,
-  CalendarDaysIcon,
-  CalendarIcon,
-  ClockIcon,
-  HospitalIcon,
-  MapPinIcon,
-  PhoneCallIcon,
+  BotIcon,
+  FrameIcon,
+  GalleryVerticalEndIcon,
+  MapIcon,
+  PieChartIcon,
   Settings2Icon,
-  StoreIcon,
+  TerminalIcon,
+  TerminalSquareIcon,
 } from "lucide-react";
 import * as React from "react";
 import { NavMain } from "@/registry/default/blocks/sidebar-07/components/nav-main";
@@ -28,40 +28,40 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "Riley Carter",
-    email: "riley@anywhere.co",
-    avatar: "/avatars/riley.jpg",
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   teams: [
     {
-      name: "Setmore",
-      logo: <CalendarDaysIcon />,
-      plan: "Premium",
+      name: "Acme Inc",
+      logo: <GalleryVerticalEndIcon />,
+      plan: "Enterprise",
     },
     {
-      name: "AnswerConnect",
-      logo: <PhoneCallIcon />,
-      plan: "Pro",
+      name: "Acme Corp.",
+      logo: <AudioLinesIcon />,
+      plan: "Startup",
     },
     {
-      name: "YoCoBoard",
-      logo: <ClockIcon />,
+      name: "Evil Corp.",
+      logo: <TerminalIcon />,
       plan: "Free",
     },
   ],
   navMain: [
     {
-      title: "Calendar",
+      title: "Playground",
       url: "#",
-      icon: <CalendarIcon />,
+      icon: <TerminalSquareIcon />,
       isActive: true,
       items: [
         {
-          title: "Today",
+          title: "History",
           url: "#",
         },
         {
-          title: "This Week",
+          title: "Starred",
           url: "#",
         },
         {
@@ -71,26 +71,26 @@ const data = {
       ],
     },
     {
-      title: "Bookings",
+      title: "Models",
       url: "#",
-      icon: <CalendarCheckIcon />,
+      icon: <BotIcon />,
       items: [
         {
-          title: "Upcoming",
+          title: "Genesis",
           url: "#",
         },
         {
-          title: "Past",
+          title: "Explorer",
           url: "#",
         },
         {
-          title: "Cancelled",
+          title: "Quantum",
           url: "#",
         },
       ],
     },
     {
-      title: "Help Center",
+      title: "Documentation",
       url: "#",
       icon: <BookOpenIcon />,
       items: [
@@ -99,15 +99,15 @@ const data = {
           url: "#",
         },
         {
-          title: "Booking Page",
+          title: "Get Started",
           url: "#",
         },
         {
-          title: "Video Guides",
+          title: "Tutorials",
           url: "#",
         },
         {
-          title: "What's New",
+          title: "Changelog",
           url: "#",
         },
       ],
@@ -130,7 +130,7 @@ const data = {
           url: "#",
         },
         {
-          title: "Integrations",
+          title: "Limits",
           url: "#",
         },
       ],
@@ -138,19 +138,19 @@ const data = {
   ],
   projects: [
     {
-      name: "Downtown Studio",
+      name: "Design Engineering",
       url: "#",
-      icon: <StoreIcon />,
+      icon: <FrameIcon />,
     },
     {
-      name: "Riverside Clinic",
+      name: "Sales & Marketing",
       url: "#",
-      icon: <HospitalIcon />,
+      icon: <PieChartIcon />,
     },
     {
-      name: "Westside Studio",
+      name: "Travel",
       url: "#",
-      icon: <MapPinIcon />,
+      icon: <MapIcon />,
     },
   ],
 };

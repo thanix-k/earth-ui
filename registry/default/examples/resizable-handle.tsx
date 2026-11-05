@@ -4,21 +4,21 @@ import {
   ResizablePanelGroup,
 } from "@/registry/default/ui/resizable";
 
-export default function ResizableWithHandle() {
+export default function ResizableHandleDemo() {
   return (
     <ResizablePanelGroup
       orientation="horizontal"
-      className="min-h-48 max-w-md rounded-lg border border-eds-secondary"
+      className="min-h-[200px] max-w-sm rounded-lg border"
     >
-      <ResizablePanel defaultSize="30%" minSize="20%">
-        <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-          Services
+      <ResizablePanel defaultSize="25%">
+        <div className="flex h-full items-center justify-center p-6">
+          <span className="font-semibold">Sidebar</span>
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
-      <ResizablePanel defaultSize="70%">
-        <div className="flex h-full items-center justify-center p-4 text-body-12 text-eds-secondary">
-          Service details
+      <ResizablePanel defaultSize="75%">
+        <div className="flex h-full items-center justify-center p-6">
+          <span className="font-semibold">Content</span>
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>

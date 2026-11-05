@@ -25,11 +25,11 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Manage Bookings</BreadcrumbLink>
+                  <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Staff Availability</BreadcrumbPage>
+                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

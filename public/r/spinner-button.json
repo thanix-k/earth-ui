@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "registry/default/examples/spinner-button.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function SpinnerButton() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Button disabled>\n        <Spinner data-icon=\"inline-start\" />\n        Saving\n      </Button>\n      <Button variant=\"outline\" disabled>\n        <Spinner data-icon=\"inline-start\" />\n        Syncing calendar\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function SpinnerButton() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Button disabled size=\"sm\">\n        <Spinner data-icon=\"inline-start\" />\n        Loading...\n      </Button>\n      <Button variant=\"outline\" disabled size=\"sm\">\n        <Spinner data-icon=\"inline-start\" />\n        Please wait\n      </Button>\n      <Button variant=\"secondary\" disabled size=\"sm\">\n        <Spinner data-icon=\"inline-start\" />\n        Processing\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

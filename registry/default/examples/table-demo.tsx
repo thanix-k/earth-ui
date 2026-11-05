@@ -1,4 +1,3 @@
-import { Badge } from "@/registry/default/ui/badge";
 import {
   Table,
   TableBody,
@@ -10,79 +9,77 @@ import {
   TableRow,
 } from "@/registry/default/ui/table";
 
-const bookings = [
+const invoices = [
   {
-    id: "BK-1042",
-    customer: "Ava Thompson",
-    service: "Haircut",
-    staff: "Maya Patel",
-    status: "Confirmed",
-    amount: "$45.00",
+    invoice: "INV001",
+    paymentStatus: "Paid",
+    totalAmount: "$250.00",
+    paymentMethod: "Credit Card",
   },
   {
-    id: "BK-1043",
-    customer: "Liam Chen",
-    service: "Beard trim",
-    staff: "James Lee",
-    status: "Pending",
-    amount: "$25.00",
+    invoice: "INV002",
+    paymentStatus: "Pending",
+    totalAmount: "$150.00",
+    paymentMethod: "PayPal",
   },
   {
-    id: "BK-1044",
-    customer: "Sofia Rossi",
-    service: "Colour",
-    staff: "Maya Patel",
-    status: "Confirmed",
-    amount: "$120.00",
+    invoice: "INV003",
+    paymentStatus: "Unpaid",
+    totalAmount: "$350.00",
+    paymentMethod: "Bank Transfer",
   },
   {
-    id: "BK-1045",
-    customer: "Noah Williams",
-    service: "Manicure",
-    staff: "Aisha Rahman",
-    status: "Cancelled",
-    amount: "$35.00",
+    invoice: "INV004",
+    paymentStatus: "Paid",
+    totalAmount: "$450.00",
+    paymentMethod: "Credit Card",
   },
-] as const;
+  {
+    invoice: "INV005",
+    paymentStatus: "Paid",
+    totalAmount: "$550.00",
+    paymentMethod: "PayPal",
+  },
+  {
+    invoice: "INV006",
+    paymentStatus: "Pending",
+    totalAmount: "$200.00",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+];
 
-const statusVariant = {
-  Confirmed: "positive",
-  Pending: "caution",
-  Cancelled: "destructive",
-} as const;
-
-export default function TableDemo() {
+export function TableDemo() {
   return (
     <Table>
-      <TableCaption>Bookings for Thursday, 24 October.</TableCaption>
+      <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Booking</TableHead>
-          <TableHead>Customer</TableHead>
-          <TableHead>Service</TableHead>
-          <TableHead>Staff</TableHead>
+          <TableHead className="w-[100px]">Invoice</TableHead>
           <TableHead>Status</TableHead>
+          <TableHead>Method</TableHead>
           <TableHead className="text-right">Amount</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {bookings.map((booking) => (
-          <TableRow key={booking.id}>
-            <TableCell className="font-medium">{booking.id}</TableCell>
-            <TableCell>{booking.customer}</TableCell>
-            <TableCell>{booking.service}</TableCell>
-            <TableCell>{booking.staff}</TableCell>
-            <TableCell>
-              <Badge variant={statusVariant[booking.status]}>{booking.status}</Badge>
-            </TableCell>
-            <TableCell className="text-right">{booking.amount}</TableCell>
+        {invoices.map((invoice) => (
+          <TableRow key={invoice.invoice}>
+            <TableCell className="font-medium">{invoice.invoice}</TableCell>
+            <TableCell>{invoice.paymentStatus}</TableCell>
+            <TableCell>{invoice.paymentMethod}</TableCell>
+            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={5}>Total</TableCell>
-          <TableCell className="text-right">$225.00</TableCell>
+          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>
     </Table>

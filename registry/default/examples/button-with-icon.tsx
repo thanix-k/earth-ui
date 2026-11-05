@@ -1,16 +1,16 @@
-import { DownloadIcon, PlusIcon } from "lucide-react";
+import { GitBranchIcon, GitForkIcon } from "lucide-react";
+
 import { Button } from "@/registry/default/ui/button";
 
 export default function ButtonWithIcon() {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <Button>
-        <PlusIcon data-icon="inline-start" />
-        New appointment
+    <div className="flex gap-2">
+      <Button variant="outline">
+        <GitBranchIcon data-icon="inline-start" /> New Branch
       </Button>
       <Button variant="outline">
-        Export
-        <DownloadIcon data-icon="inline-end" />
+        Fork
+        <GitForkIcon data-icon="inline-end" />
       </Button>
     </div>
   );

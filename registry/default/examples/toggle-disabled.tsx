@@ -1,17 +1,13 @@
 import { Toggle } from "@/registry/default/ui/toggle";
 
-export default function ToggleDisabled() {
+export function ToggleDisabled() {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Toggle disabled>Chip</Toggle>
-      <Toggle disabled defaultPressed>
-        Pressed
+      <Toggle aria-label="Toggle disabled" disabled>
+        Disabled
       </Toggle>
-      <Toggle variant="outline" disabled>
-        Outline
-      </Toggle>
-      <Toggle variant="outline" disabled defaultPressed>
-        Pressed
+      <Toggle variant="outline" aria-label="Toggle disabled outline" disabled>
+        Disabled
       </Toggle>
     </div>
   );

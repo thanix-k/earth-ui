@@ -49,7 +49,7 @@ export function Installation({ name }: { name: string }) {
         />
       </TabsContent>
       <TabsContent value="manual">
-        <ol className="flex flex-col gap-6 text-body-14 text-eds-primary">
+        <ol className="flex flex-col gap-6 text-sm text-foreground">
           {deps.length > 0 && (
             <li className="flex flex-col gap-2">
               <p>Install the dependencies:</p>

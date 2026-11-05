@@ -1,42 +1,35 @@
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const zones = [
-  { label: "London (GMT)", value: "london" },
-  { label: "New York (EST)", value: "new-york" },
-];
-
-export default function SelectDisabled() {
+export function SelectDisabled() {
+  const items = [
+    { label: "Select a fruit", value: null },
+    { label: "Apple", value: "apple" },
+    { label: "Banana", value: "banana" },
+    { label: "Blueberry", value: "blueberry" },
+    { label: "Grapes", value: "grapes", disabled: true },
+    { label: "Pineapple", value: "pineapple" },
+  ];
   return (
-    <div className="flex flex-col gap-4">
-      <Select items={zones} defaultValue="london" disabled>
-        <SelectTrigger className="w-56" aria-label="Time zone">
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          {zones.map((item) => (
-            <SelectItem key={item.value} value={item.value}>
+    <Select items={items} disabled>
+      <SelectTrigger className="w-full max-w-48">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          {items.map((item) => (
+            <SelectItem key={item.value} value={item.value} disabled={item.disabled}>
               {item.label}
             </SelectItem>
           ))}
-        </SelectContent>
-      </Select>
-      <Select items={zones}>
-        <SelectTrigger className="w-56" aria-label="Time zone">
-          <SelectValue placeholder="Time zone" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="london">London (GMT)</SelectItem>
-          <SelectItem value="new-york" disabled>
-            New York (EST)
-          </SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }

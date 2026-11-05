@@ -1,6 +1,8 @@
 "use client";
 
-import { ChevronsUpDownIcon } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
+import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import {
   Collapsible,
@@ -8,46 +10,32 @@ import {
   CollapsibleTrigger,
 } from "@/registry/default/ui/collapsible";
 
-const bookings = [
-  { time: "9:00 am", customer: "Ava Thompson", service: "Haircut" },
-  { time: "10:30 am", customer: "Liam Chen", service: "Beard trim" },
-  { time: "1:00 pm", customer: "Sofia Rossi", service: "Colour" },
-];
-
 export default function CollapsibleDemo() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <Collapsible className="flex w-full max-w-xs flex-col gap-2">
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="flex w-[350px] flex-col gap-2">
       <div className="flex items-center justify-between gap-4 px-4">
-        <div className="text-heading-14 text-eds-primary lg:text-heading-12">Today's bookings</div>
-        <CollapsibleTrigger render={<Button variant="ghost" size="icon-sm" aria-label="Toggle" />}>
-          <ChevronsUpDownIcon />
+        <h4 className="text-sm font-semibold">Order #4189</h4>
+        <CollapsibleTrigger render={<Button variant="ghost" size="icon" className="size-8" />}>
+          <ChevronsUpDown />
+          <span className="sr-only">Toggle details</span>
         </CollapsibleTrigger>
       </div>
-      <BookingRow {...bookings[0]} />
+      <div className="flex items-center justify-between rounded-md border px-4 py-2 text-sm">
+        <span className="text-muted-foreground">Status</span>
+        <span className="font-medium">Shipped</span>
+      </div>
       <CollapsibleContent className="flex flex-col gap-2">
-        {bookings.slice(1).map((booking) => (
-          <BookingRow key={booking.time} {...booking} />
-        ))}
+        <div className="rounded-md border px-4 py-2 text-sm">
+          <p className="font-medium">Shipping address</p>
+          <p className="text-muted-foreground">100 Market St, San Francisco</p>
+        </div>
+        <div className="rounded-md border px-4 py-2 text-sm">
+          <p className="font-medium">Items</p>
+          <p className="text-muted-foreground">2x Studio Headphones</p>
+        </div>
       </CollapsibleContent>
     </Collapsible>
-  );
-}
-
-function BookingRow({
-  time,
-  customer,
-  service,
-}: {
-  time: string;
-  customer: string;
-  service: string;
-}) {
-  return (
-    <div className="flex items-center justify-between rounded-lg border border-eds-secondary px-4 py-2 text-body-14 text-eds-primary lg:text-body-12">
-      <span>
-        {customer} · {service}
-      </span>
-      <span className="text-eds-secondary">{time}</span>
-    </div>
   );
 }

@@ -7,11 +7,11 @@ How to get `@earth-ui` into the shadcn directory (ui.shadcn.com/docs/directory),
 
 1. This repo's `main` is deployed and these return 200 with JSON:
    - https://earthui.vercel.app/r/registry.json
-   - https://earthui.vercel.app/r/theme.json
+   - https://earthui.vercel.app/r/base.json
    - https://earthui.vercel.app/r/button.json
 2. A fresh project installs a component without `init`:
    `npx shadcn@latest add https://earthui.vercel.app/r/button.json`, and the
-   button renders with the Earth fill and focus ring.
+   button renders with the Earth fill.
 3. Sign your commits. shadcn-ui/ui blocks unsigned commits and closes the PR
    after 14 days. Editing `directory.json` in GitHub's web editor signs it for you.
 
@@ -30,7 +30,7 @@ How to get `@earth-ui` into the shadcn directory (ui.shadcn.com/docs/directory),
   "name": "@earth-ui",
   "homepage": "https://earthui.vercel.app",
   "url": "https://earthui.vercel.app/r/{name}.json",
-  "description": "Earth Design System for shadcn: 55 Base UI components and 27 blocks on Earth tokens, light and dark. Stock shadcn classes are aliased, so any shadcn code renders as Earth.",
+  "description": "Earth Design System for shadcn: 55 Base UI components and 27 blocks, stock, with shadcn's variables set to Earth values, light and dark.",
   "logo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='var(--foreground)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 2a15 15 0 0 0 0 20a15 15 0 0 0 0-20M2.5 9h19M2.5 15h19'/></svg>"
 }
 ```
@@ -41,13 +41,13 @@ How to get `@earth-ui` into the shadcn directory (ui.shadcn.com/docs/directory),
 
 ```md
 Adds `@earth-ui`, the Earth Design System as a shadcn registry: every shadcn
-Base UI component re-skinned with Earth tokens, plus shadcn's Base UI blocks.
+Base UI component on Earth's colour and radius values, plus shadcn's Base UI blocks.
 
 - Homepage: https://earthui.vercel.app
 - Registry index: https://earthui.vercel.app/r/registry.json
 - Example item: https://earthui.vercel.app/r/button.json
 - Source: https://github.com/thanix-k/earth-ui (MIT)
-- Items: 277 (55 components, 27 blocks, examples, theme, font)
+- Items: 274 (55 components, 27 blocks, examples, base, font)
 
 - [x] Open source and publicly accessible
 - [x] Flat registry: `/r/registry.json` and `/r/<item>.json`

@@ -1,14 +1,15 @@
-import { ChevronDownIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { ButtonGroup, ButtonGroupSeparator } from "@/registry/default/ui/button-group";
 
-export default function ButtonGroupWithSeparator() {
+export default function ButtonGroupSeparatorDemo() {
   return (
     <ButtonGroup>
-      <Button variant="ghost">New appointment</Button>
+      <Button variant="secondary" size="sm">
+        Copy
+      </Button>
       <ButtonGroupSeparator />
-      <Button variant="ghost" size="icon" aria-label="More booking options">
-        <ChevronDownIcon />
+      <Button variant="secondary" size="sm">
+        Paste
       </Button>
     </ButtonGroup>
   );

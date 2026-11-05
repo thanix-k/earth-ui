@@ -2,7 +2,6 @@
 
 import { toast } from "sonner";
 import { Button } from "@/registry/default/ui/button";
-import { Toaster } from "@/registry/default/ui/sonner";
 
 export default function SonnerDemo() {
   return (
@@ -21,7 +20,6 @@ export default function SonnerDemo() {
       >
         Book appointment
       </Button>
-      <Toaster />
     </>
   );
 }

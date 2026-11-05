@@ -58,7 +58,7 @@ export function InboxCard() {
       <CardContent>
         <ResizablePanelGroup
           orientation="horizontal"
-          className="h-80 rounded-lg border border-eds-tertiary"
+          className="h-80 rounded-lg border border-border"
         >
           <ResizablePanel defaultSize="38%" minSize="25%">
             <div className="flex flex-col">
@@ -68,12 +68,12 @@ export function InboxCard() {
                   type="button"
                   onClick={() => setActive(c.id === active ? null : c.id)}
                   className={cn(
-                    "flex flex-col items-start gap-0.5 border-b border-eds-tertiary p-2 text-left hover:bg-eds-neutral-hover",
-                    c.id === active && "bg-eds-neutral-pressed",
+                    "flex flex-col items-start gap-0.5 border-b border-border p-2 text-left hover:bg-accent",
+                    c.id === active && "bg-accent",
                   )}
                 >
-                  <span className="text-heading-14 lg:text-heading-12">{c.name}</span>
-                  <span className="line-clamp-1 text-eds-secondary">
+                  <span className="text-sm font-semibold lg:text-xs">{c.name}</span>
+                  <span className="line-clamp-1 text-muted-foreground">
                     {replied[c.id] ? "You replied" : c.msg}
                   </span>
                 </button>
@@ -85,16 +85,16 @@ export function InboxCard() {
             {chat ? (
               <div className="flex h-full flex-col gap-2 p-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-heading-14 lg:text-heading-12">{chat.name}</span>
+                  <span className="text-sm font-semibold lg:text-xs">{chat.name}</span>
                   <Badge variant="outline">{chat.page}</Badge>
                 </div>
-                <p className="rounded-lg bg-eds-neutral-hover p-2">{chat.msg}</p>
+                <p className="rounded-lg bg-accent p-2">{chat.msg}</p>
                 {replied[chat.id] ? (
-                  <p className="self-end rounded-lg bg-eds-accent p-2 text-eds-onPrimary">
+                  <p className="self-end rounded-lg bg-primary p-2 text-primary-foreground">
                     {replied[chat.id]}
                   </p>
                 ) : (
-                  <Command className="mt-auto rounded-lg border border-eds-tertiary">
+                  <Command className="mt-auto rounded-lg border border-border">
                     <CommandInput placeholder="Canned replies…" />
                     <CommandList className="max-h-28">
                       <CommandEmpty>No reply found.</CommandEmpty>

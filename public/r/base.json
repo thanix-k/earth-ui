@@ -3,18 +3,29 @@
   "extends": "none",
   "name": "base",
   "title": "Earth base",
-  "description": "Earth (setmore-black) tokens, shadcn aliases, focus ring and the Inter font. Install first.",
+  "description": "shadcn's variables set to Earth (setmore-black) values, plus the Inter font. Install first.",
   "dependencies": [
     "@base-ui/react",
     "class-variance-authority",
-    "lucide-react"
+    "lucide-react",
+    "shadcn",
+    "tw-animate-css"
   ],
   "registryDependencies": [
     "@earth-ui/cn",
-    "@earth-ui/font-inter",
-    "@earth-ui/theme"
+    "@earth-ui/font-inter"
   ],
   "cssVars": {
+    "theme": {
+      "radius-xs": "var(--radius)",
+      "radius-sm": "var(--radius)",
+      "radius-md": "var(--radius)",
+      "radius-lg": "var(--radius)",
+      "radius-xl": "var(--radius)",
+      "radius-2xl": "var(--radius)",
+      "radius-3xl": "var(--radius)",
+      "radius-4xl": "var(--radius)"
+    },
     "light": {
       "background": "#ffffff",
       "foreground": "#111111",
@@ -46,7 +57,8 @@
       "sidebar-accent": "#f1f1f1",
       "sidebar-accent-foreground": "#111111",
       "sidebar-border": "#dbdbdb",
-      "sidebar-ring": "#111111"
+      "sidebar-ring": "#111111",
+      "radius": "8px"
     },
     "dark": {
       "background": "#1a1a1a",
@@ -83,9 +95,11 @@
     }
   },
   "css": {
+    "@import \"tw-animate-css\"": {},
+    "@import \"shadcn/tailwind.css\"": {},
     "@layer base": {
       "*": {
-        "@apply border-border outline-ring": {}
+        "@apply border-border outline-ring/50": {}
       },
       "body": {
         "@apply bg-background text-foreground font-sans": {}
@@ -94,7 +108,7 @@
   },
   "type": "registry:base",
   "config": {
-    "style": "base-nova",
+    "style": "base-maia",
     "tailwind": {
       "baseColor": "neutral"
     },

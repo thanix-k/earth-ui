@@ -24,11 +24,11 @@ export function SignupForm({ className, ...props }: React.ComponentProps<"div">)
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="name">Full Name</FieldLabel>
-                <Input id="name" type="text" placeholder="Riley Carter" required />
+                <Input id="name" type="text" placeholder="John Doe" required />
               </Field>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="riley@anywhere.co" required />
+                <Input id="email" type="email" placeholder="m@example.com" required />
               </Field>
               <Field>
                 <Field className="grid grid-cols-2 gap-4">

@@ -3,26 +3,27 @@
 import { format } from "date-fns";
 import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import { Calendar } from "@/registry/default/ui/calendar";
 import { Field, FieldGroup, FieldLabel } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 
-export default function DatePickerTime() {
+export function DatePickerTime() {
   const [open, setOpen] = React.useState(false);
   const [date, setDate] = React.useState<Date | undefined>(undefined);
 
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-time-date">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger
             render={
               <Button
                 variant="outline"
-                id="date-picker-time-date"
+                id="date-picker-optional"
                 className="w-32 justify-between font-normal"
               />
             }
@@ -45,13 +46,13 @@ export default function DatePickerTime() {
         </Popover>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="date-picker-time-time">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
         <Input
           type="time"
-          id="date-picker-time-time"
+          id="time-picker-optional"
           step="1"
           defaultValue="10:30:00"
-          className="appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+          className="appearance-none bg-background [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
         />
       </Field>
     </FieldGroup>

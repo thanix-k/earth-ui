@@ -13,12 +13,12 @@ const services = [
 
 export default function ScrollAreaHorizontal() {
   return (
-    <ScrollArea className="w-full max-w-sm rounded-lg border border-eds-secondary whitespace-nowrap">
+    <ScrollArea className="w-full max-w-sm rounded-lg border border-border whitespace-nowrap">
       <div className="flex w-max gap-3 p-4">
         {services.map((service) => (
           <div
             key={service}
-            className="flex h-20 w-32 shrink-0 items-end rounded-lg bg-eds-canvas-tertiary p-3 text-body-14 font-medium text-eds-primary lg:text-body-12"
+            className="flex h-20 w-32 shrink-0 items-end rounded-lg bg-muted p-3 text-sm font-medium text-foreground lg:text-xs"
           >
             {service}
           </div>

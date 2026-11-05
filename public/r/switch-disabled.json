@@ -5,13 +5,13 @@
   "description": "Switch example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth-ui/label",
+    "@earth-ui/field",
     "@earth-ui/switch"
   ],
   "files": [
     {
       "path": "registry/default/examples/switch-disabled.tsx",
-      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function SwitchDisabled() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Label>\n        <Switch disabled />\n        Take payments (connect Stripe first)\n      </Label>\n      <Label>\n        <Switch disabled defaultChecked />\n        Email confirmations (required)\n      </Label>\n    </div>\n  );\n}\n",
+      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport function SwitchDisabled() {\n  return (\n    <Field orientation=\"horizontal\" data-disabled className=\"w-fit\">\n      <Switch id=\"switch-disabled-unchecked\" disabled />\n      <FieldLabel htmlFor=\"switch-disabled-unchecked\">Disabled</FieldLabel>\n    </Field>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

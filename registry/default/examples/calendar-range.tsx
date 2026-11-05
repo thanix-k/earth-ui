@@ -1,22 +1,26 @@
 "use client";
 
+import { addDays } from "date-fns";
 import * as React from "react";
-import type { DateRange } from "react-day-picker";
-import { Calendar } from "@/registry/default/ui/calendar";
+import { type DateRange } from "react-day-picker";
 
-export default function CalendarRange() {
-  const [range, setRange] = React.useState<DateRange | undefined>({
-    from: new Date(2026, 10, 9),
-    to: new Date(2026, 10, 15),
+import { Calendar } from "@/registry/default/ui/calendar";
+import { Card, CardContent } from "@/registry/default/ui/card";
+
+export function CalendarRange() {
+  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
+    from: new Date(new Date().getFullYear(), 0, 12),
+    to: addDays(new Date(new Date().getFullYear(), 0, 12), 30),
   });
 
   return (
     <Calendar
       mode="range"
-      defaultMonth={range?.from}
-      selected={range}
-      onSelect={setRange}
+      defaultMonth={dateRange?.from}
+      selected={dateRange}
+      onSelect={setDateRange}
       numberOfMonths={2}
+      className="rounded-lg border"
     />
   );
 }

@@ -20,22 +20,22 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "Riley Carter",
-    email: "riley@anywhere.co",
-    avatar: "/avatars/riley.jpg",
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   calendars: [
     {
       name: "My Calendars",
-      items: ["Personal", "Front Desk", "Team"],
+      items: ["Personal", "Work", "Family"],
     },
     {
       name: "Favorites",
-      items: ["Holidays", "Staff Leave"],
+      items: ["Holidays", "Birthdays"],
     },
     {
       name: "Other",
-      items: ["Westside Studio", "Reminders", "Follow-ups"],
+      items: ["Travel", "Reminders", "Deadlines"],
     },
   ],
 };

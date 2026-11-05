@@ -1,13 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import {
   Menubar,
   MenubarCheckboxItem,
   MenubarContent,
   MenubarGroup,
   MenubarItem,
-  MenubarLabel,
   MenubarMenu,
   MenubarRadioGroup,
   MenubarRadioItem,
@@ -20,67 +16,119 @@ import {
 } from "@/registry/default/ui/menubar";
 
 export default function MenubarDemo() {
-  const [showCancelled, setShowCancelled] = useState(false);
-  const [showWeekends, setShowWeekends] = useState(true);
-  const [view, setView] = useState("week");
-
   return (
-    <Menubar>
+    <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>Booking</MenubarTrigger>
+        <MenubarTrigger>File</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              New appointment <MenubarShortcut>N</MenubarShortcut>
+              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
             </MenubarItem>
             <MenubarItem>
-              New class <MenubarShortcut>C</MenubarShortcut>
+              New Window <MenubarShortcut>⌘N</MenubarShortcut>
             </MenubarItem>
-            <MenubarItem disabled>Duplicate</MenubarItem>
+            <MenubarItem disabled>New Incognito Window</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
-          <MenubarSub>
-            <MenubarSubTrigger>Share booking page</MenubarSubTrigger>
-            <MenubarSubContent>
-              <MenubarItem>Copy link</MenubarItem>
-              <MenubarItem>Email</MenubarItem>
-              <MenubarItem>QR code</MenubarItem>
-            </MenubarSubContent>
-          </MenubarSub>
+          <MenubarGroup>
+            <MenubarSub>
+              <MenubarSubTrigger>Share</MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarGroup>
+                  <MenubarItem>Email link</MenubarItem>
+                  <MenubarItem>Messages</MenubarItem>
+                  <MenubarItem>Notes</MenubarItem>
+                </MenubarGroup>
+              </MenubarSubContent>
+            </MenubarSub>
+          </MenubarGroup>
           <MenubarSeparator />
-          <MenubarItem>Print day sheet</MenubarItem>
+          <MenubarGroup>
+            <MenubarItem>
+              Print... <MenubarShortcut>⌘P</MenubarShortcut>
+            </MenubarItem>
+          </MenubarGroup>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarGroup>
+            <MenubarItem>
+              Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>
+              Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+            </MenubarItem>
+          </MenubarGroup>
+          <MenubarSeparator />
+          <MenubarGroup>
+            <MenubarSub>
+              <MenubarSubTrigger>Find</MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarGroup>
+                  <MenubarItem>Search the web</MenubarItem>
+                </MenubarGroup>
+                <MenubarSeparator />
+                <MenubarGroup>
+                  <MenubarItem>Find...</MenubarItem>
+                  <MenubarItem>Find Next</MenubarItem>
+                  <MenubarItem>Find Previous</MenubarItem>
+                </MenubarGroup>
+              </MenubarSubContent>
+            </MenubarSub>
+          </MenubarGroup>
+          <MenubarSeparator />
+          <MenubarGroup>
+            <MenubarItem>Cut</MenubarItem>
+            <MenubarItem>Copy</MenubarItem>
+            <MenubarItem>Paste</MenubarItem>
+          </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>View</MenubarTrigger>
-        <MenubarContent>
-          <MenubarCheckboxItem checked={showWeekends} onCheckedChange={setShowWeekends}>
-            Show weekends
-          </MenubarCheckboxItem>
-          <MenubarCheckboxItem checked={showCancelled} onCheckedChange={setShowCancelled}>
-            Show cancelled
-          </MenubarCheckboxItem>
+        <MenubarContent className="w-44">
+          <MenubarGroup>
+            <MenubarCheckboxItem>Bookmarks Bar</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>Full URLs</MenubarCheckboxItem>
+          </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarLabel inset>Calendar</MenubarLabel>
-            <MenubarRadioGroup value={view} onValueChange={setView}>
-              <MenubarRadioItem value="day">Day</MenubarRadioItem>
-              <MenubarRadioItem value="week">Week</MenubarRadioItem>
-              <MenubarRadioItem value="month">Month</MenubarRadioItem>
-            </MenubarRadioGroup>
+            <MenubarItem inset>
+              Reload <MenubarShortcut>⌘R</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem disabled inset>
+              Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+            </MenubarItem>
+          </MenubarGroup>
+          <MenubarSeparator />
+          <MenubarGroup>
+            <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+          </MenubarGroup>
+          <MenubarSeparator />
+          <MenubarGroup>
+            <MenubarItem inset>Hide Sidebar</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Staff</MenubarTrigger>
+        <MenubarTrigger>Profiles</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>Jordan Lee</MenubarItem>
-          <MenubarItem>Maya Patel</MenubarItem>
+          <MenubarRadioGroup value="benoit">
+            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
+            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+          </MenubarRadioGroup>
           <MenubarSeparator />
-          <MenubarItem inset>Manage staff</MenubarItem>
-          <MenubarItem variant="destructive" inset>
-            Remove staff
-          </MenubarItem>
+          <MenubarGroup>
+            <MenubarItem inset>Edit...</MenubarItem>
+          </MenubarGroup>
+          <MenubarSeparator />
+          <MenubarGroup>
+            <MenubarItem inset>Add Profile...</MenubarItem>
+          </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

@@ -4,7 +4,10 @@ import { Kbd } from "@/registry/default/ui/kbd";
 export default function KbdButton() {
   return (
     <Button variant="outline">
-      New booking <Kbd data-icon="inline-end">N</Kbd>
+      Accept{" "}
+      <Kbd data-icon="inline-end" className="translate-x-0.5">
+        ⏎
+      </Kbd>
     </Button>
   );
 }

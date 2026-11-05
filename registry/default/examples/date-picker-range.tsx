@@ -3,21 +3,22 @@
 import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import * as React from "react";
-import type { DateRange } from "react-day-picker";
+import { type DateRange } from "react-day-picker";
+
 import { Button } from "@/registry/default/ui/button";
 import { Calendar } from "@/registry/default/ui/calendar";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 
-export default function DatePickerRange() {
+export function DatePickerWithRange() {
   const [date, setDate] = React.useState<DateRange | undefined>({
-    from: new Date(2026, 0, 20),
-    to: addDays(new Date(2026, 0, 20), 20),
+    from: new Date(new Date().getFullYear(), 0, 20),
+    to: addDays(new Date(new Date().getFullYear(), 0, 20), 20),
   });
 
   return (
     <Field className="mx-auto w-60">
-      <FieldLabel htmlFor="date-picker-range">Date range</FieldLabel>
+      <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
       <Popover>
         <PopoverTrigger
           render={

@@ -1,20 +1,17 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
+import { Button } from "@/registry/default/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
 
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger
-        href="#staff"
-        className="text-body-14 text-eds-link underline-offset-4 hover:text-eds-link-hover hover:underline lg:text-body-12"
-      >
-        Jordan Lee
+      <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="link" />}>
+        Hover Here
       </HoverCardTrigger>
-      <HoverCardContent>
-        <div className="flex flex-col gap-1">
-          <p className="text-heading-14 lg:text-heading-12">Jordan Lee</p>
-          <p>Senior stylist. Cuts, colour and bridal styling.</p>
-          <p className="text-eds-secondary">Works Tue–Sat, 9:00 am – 6:00 pm</p>
-        </div>
+      <HoverCardContent className="flex w-64 flex-col gap-0.5">
+        <div className="font-semibold">@nextjs</div>
+        <div>The React Framework – created and maintained by @vercel.</div>
+        <div className="mt-1 text-xs text-muted-foreground">Joined December 2021</div>
       </HoverCardContent>
     </HoverCard>
   );

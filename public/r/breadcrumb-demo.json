@@ -5,12 +5,14 @@
   "description": "Breadcrumb example. Shows where the current page sits in the app and links back to its parents.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth-ui/breadcrumb"
+    "@earth-ui/breadcrumb",
+    "@earth-ui/button",
+    "@earth-ui/dropdown-menu"
   ],
   "files": [
     {
       "path": "registry/default/examples/breadcrumb-demo.tsx",
-      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\n\nexport default function BreadcrumbDemo() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">Settings</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">Services</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Haircut &amp; style</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "content": "import Link from \"next/link\";\n\nimport {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\";\n\nexport function BreadcrumbDemo() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<a href=\"#\" />}>Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <DropdownMenu>\n            <DropdownMenuTrigger render={<Button size=\"icon-sm\" variant=\"ghost\" />}>\n              <BreadcrumbEllipsis />\n              <span className=\"sr-only\">Toggle menu</span>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"start\">\n              <DropdownMenuGroup>\n                <DropdownMenuItem>Documentation</DropdownMenuItem>\n                <DropdownMenuItem>Themes</DropdownMenuItem>\n                <DropdownMenuItem>GitHub</DropdownMenuItem>\n              </DropdownMenuGroup>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<a href=\"#\" />}>Components</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

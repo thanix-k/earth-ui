@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { site } from "@/lib/site";
+import { Toaster } from "@/registry/default/ui/sonner";
+import { Toaster as BaseToaster } from "@/registry/default/ui/toast";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -17,7 +19,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="flex min-h-svh flex-col antialiased">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          {children}
+          {/* shadcn's toast examples call toast() and expect these, as on shadcn's site. */}
+          <Toaster position="top-center" />
+          <BaseToaster />
+        </RootProvider>
       </body>
     </html>
   );

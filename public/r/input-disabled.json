@@ -5,12 +5,13 @@
   "description": "Input example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
+    "@earth-ui/field",
     "@earth-ui/input"
   ],
   "files": [
     {
       "path": "registry/default/examples/input-disabled.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function InputDisabled() {\n  return <Input className=\"max-w-xs\" disabled placeholder=\"Email\" aria-label=\"Email\" />;\n}\n",
+      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function InputDisabled() {\n  return (\n    <Field data-disabled>\n      <FieldLabel htmlFor=\"input-demo-disabled\">Email</FieldLabel>\n      <Input id=\"input-demo-disabled\" type=\"email\" placeholder=\"Email\" disabled />\n      <FieldDescription>This field is currently disabled.</FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

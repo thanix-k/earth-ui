@@ -30,11 +30,11 @@ export function SiteHeader() {
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">Manage Bookings</BreadcrumbLink>
+              <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Staff Availability</BreadcrumbPage>
+              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

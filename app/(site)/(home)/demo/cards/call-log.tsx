@@ -46,8 +46,8 @@ const kinds = {
 const outcomeVariant = {
   "Message taken": "secondary",
   Spam: "destructive",
-  Callback: "caution",
-  Appointment: "positive",
+  Callback: "outline",
+  Appointment: "default",
   Transferred: "outline",
 } as const;
 
@@ -90,7 +90,11 @@ export function CallLogCard() {
                     <Tooltip>
                       <TooltipTrigger
                         render={
-                          <span role="img" aria-label={label} className="flex text-eds-secondary" />
+                          <span
+                            role="img"
+                            aria-label={label}
+                            className="flex text-muted-foreground"
+                          />
                         }
                       >
                         <Icon className="size-4" />
@@ -100,7 +104,7 @@ export function CallLogCard() {
                   </TableCell>
                   <TableCell>
                     <div className="font-medium">{c.caller}</div>
-                    <div className="text-eds-secondary">{c.time}</div>
+                    <div className="text-muted-foreground">{c.time}</div>
                   </TableCell>
                   <TableCell className="text-right">
                     <Badge variant={outcomeVariant[c.outcome]}>{c.outcome}</Badge>

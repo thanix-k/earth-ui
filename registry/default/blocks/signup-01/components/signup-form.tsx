@@ -21,11 +21,11 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
           <FieldGroup>
             <Field>
               <FieldLabel htmlFor="name">Full Name</FieldLabel>
-              <Input id="name" type="text" placeholder="Riley Carter" required />
+              <Input id="name" type="text" placeholder="John Doe" required />
             </Field>
             <Field>
               <FieldLabel htmlFor="email">Email</FieldLabel>
-              <Input id="email" type="email" placeholder="riley@anywhere.co" required />
+              <Input id="email" type="email" placeholder="m@example.com" required />
               <FieldDescription>
                 We&apos;ll use this to contact you. We will not share your email with anyone else.
               </FieldDescription>

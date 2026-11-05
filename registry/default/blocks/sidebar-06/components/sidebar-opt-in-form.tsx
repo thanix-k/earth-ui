@@ -13,9 +13,7 @@ export function SidebarOptInForm() {
     <Card className="gap-2 py-4 shadow-none">
       <CardHeader className="px-4">
         <CardTitle className="text-sm">Subscribe to our newsletter</CardTitle>
-        <CardDescription>
-          Get Setmore product updates and booking tips in your inbox.
-        </CardDescription>
+        <CardDescription>Opt-in to receive updates and news about the sidebar.</CardDescription>
       </CardHeader>
       <CardContent className="px-4">
         <form>

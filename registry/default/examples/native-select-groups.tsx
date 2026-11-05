@@ -6,15 +6,22 @@ import {
 
 export default function NativeSelectGroups() {
   return (
-    <NativeSelect defaultValue="haircut" aria-label="Service">
-      <NativeSelectOptGroup label="Hair">
-        <NativeSelectOption value="haircut">Haircut</NativeSelectOption>
-        <NativeSelectOption value="colour">Colour</NativeSelectOption>
-        <NativeSelectOption value="blow-dry">Blow-dry</NativeSelectOption>
+    <NativeSelect>
+      <NativeSelectOption value="">Select department</NativeSelectOption>
+      <NativeSelectOptGroup label="Engineering">
+        <NativeSelectOption value="frontend">Frontend</NativeSelectOption>
+        <NativeSelectOption value="backend">Backend</NativeSelectOption>
+        <NativeSelectOption value="devops">DevOps</NativeSelectOption>
       </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Nails">
-        <NativeSelectOption value="manicure">Manicure</NativeSelectOption>
-        <NativeSelectOption value="pedicure">Pedicure</NativeSelectOption>
+      <NativeSelectOptGroup label="Sales">
+        <NativeSelectOption value="sales-rep">Sales Rep</NativeSelectOption>
+        <NativeSelectOption value="account-manager">Account Manager</NativeSelectOption>
+        <NativeSelectOption value="sales-director">Sales Director</NativeSelectOption>
+      </NativeSelectOptGroup>
+      <NativeSelectOptGroup label="Operations">
+        <NativeSelectOption value="support">Customer Support</NativeSelectOption>
+        <NativeSelectOption value="product-manager">Product Manager</NativeSelectOption>
+        <NativeSelectOption value="ops-manager">Operations Manager</NativeSelectOption>
       </NativeSelectOptGroup>
     </NativeSelect>
   );

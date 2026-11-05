@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+
 import {
   Combobox,
   ComboboxChip,
@@ -14,29 +15,29 @@ import {
   useComboboxAnchor,
 } from "@/registry/default/ui/combobox";
 
-const staff = ["Alex Morgan", "Jordan Lee", "Priya Shah", "Sam Patel", "Taylor Kim"];
+const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const;
 
-export default function ComboboxMultiple() {
+export function ComboboxMultiple() {
   const anchor = useComboboxAnchor();
 
   return (
-    <Combobox multiple autoHighlight items={staff} defaultValue={[staff[0], staff[2]]}>
+    <Combobox multiple autoHighlight items={frameworks} defaultValue={[frameworks[0]]}>
       <ComboboxChips ref={anchor} className="w-full max-w-xs">
         <ComboboxValue>
-          {(values: string[]) => (
+          {(values) => (
             <React.Fragment>
-              {values.map((value) => (
+              {values.map((value: string) => (
                 <ComboboxChip key={value}>{value}</ComboboxChip>
               ))}
-              <ComboboxChipsInput placeholder="Add staff" aria-label="Staff" />
+              <ComboboxChipsInput />
             </React.Fragment>
           )}
         </ComboboxValue>
       </ComboboxChips>
       <ComboboxContent anchor={anchor}>
-        <ComboboxEmpty>No staff found.</ComboboxEmpty>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {(item: string) => (
+          {(item) => (
             <ComboboxItem key={item} value={item}>
               {item}
             </ComboboxItem>

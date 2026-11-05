@@ -5,12 +5,13 @@
   "description": "Textarea example: Disabled.",
   "dependencies": [],
   "registryDependencies": [
+    "@earth-ui/field",
     "@earth-ui/textarea"
   ],
   "files": [
     {
       "path": "registry/default/examples/textarea-disabled.tsx",
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function TextareaDisabled() {\n  return (\n    <Textarea\n      className=\"max-w-xs\"\n      disabled\n      placeholder=\"Add a note for your customer\"\n      aria-label=\"Booking note\"\n    />\n  );\n}\n",
+      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function TextareaDisabled() {\n  return (\n    <Field data-disabled>\n      <FieldLabel htmlFor=\"textarea-disabled\">Message</FieldLabel>\n      <Textarea id=\"textarea-disabled\" placeholder=\"Type your message here.\" disabled />\n    </Field>\n  );\n}\n",
       "type": "registry:example"
     }
   ],
