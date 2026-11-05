@@ -103,13 +103,7 @@
       },
       "body": {
         "@apply bg-background text-foreground font-sans": {}
-      },
-      ".group\\/button": {
-        "--radius": "9999px"
       }
-    },
-    ".group\\/calendar": {
-      "--cell-radius": "9999px"
     }
   },
   "type": "registry:base",
