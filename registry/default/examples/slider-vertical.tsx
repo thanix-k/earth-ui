@@ -1,10 +1,10 @@
 import { Slider } from "@/registry/default/ui/slider";
 
-export default function SliderVertical() {
+export function SliderVertical() {
   return (
-    <div className="flex h-40 items-center gap-8">
-      <Slider defaultValue={[60]} orientation="vertical" aria-label="Volume" />
-      <Slider defaultValue={[20, 80]} orientation="vertical" aria-label="Range" />
+    <div className="mx-auto flex w-full max-w-xs items-center justify-center gap-6">
+      <Slider defaultValue={[50]} max={100} step={1} orientation="vertical" className="h-40" />
+      <Slider defaultValue={[25]} max={100} step={1} orientation="vertical" className="h-40" />
     </div>
   );
 }

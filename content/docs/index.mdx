@@ -3,13 +3,12 @@ title: Introduction
 description: Earth Design System components for shadcn, built on Base UI and Tailwind CSS.
 ---
 
-Earth UI is the [Earth Design System](https://earth.anywhere.co) delivered as a [shadcn](https://ui.shadcn.com) registry. You install components with the shadcn CLI and own the source. They come styled with Earth's tokens, typography and focus treatment.
+Earth UI is the [Earth Design System](https://earth.anywhere.co) delivered as a [shadcn](https://ui.shadcn.com) registry. You install components with the shadcn CLI and own the source. They are stock shadcn components; Earth's look comes from shadcn's own CSS variables set to Earth values.
 
 ## What you get
 
 - **Every shadcn component on Base UI.** Same APIs, parts and composition as shadcn's Base UI components, so shadcn docs, blocks and AI-generated code work as-is.
-- **Earth tokens, everywhere.** The `@earth-ui/base` item installs the setmore-black colour, type, radius and shadow tokens for light and dark mode. Stock shadcn variables such as `--primary` and `--muted` map to Earth values, so third-party shadcn code looks like Earth too.
-- **Earth's own utilities.** Every EDS token is also available directly: `bg-eds-neutral-hover`, `text-eds-secondary`, `border-eds-input-active`, `text-body-14`, `text-heading-24`, `shadow-eds-20` and `focus-ring`.
+- **Earth values in shadcn's variables.** The `@earth-ui/base` item sets stock shadcn variables such as `--primary`, `--muted` and `--radius` to setmore-black values for light and dark mode, so any shadcn code looks like Earth.
 
 ## How it fits together
 
@@ -17,7 +16,7 @@ Earth UI is the [Earth Design System](https://earth.anywhere.co) delivered as a 
 | --- | --- |
 | Behaviour and accessibility | [Base UI](https://base-ui.com) |
 | Component API and composition | [shadcn](https://ui.shadcn.com) (Base UI flavour) |
-| Visual design | Earth Design System (setmore-black) |
+| Colours and radius | Earth Design System (setmore-black) |
 | Delivery | shadcn registry: `npx shadcn add @earth-ui/<component>` |
 
 Ready to install? Head to [Get Started](/docs/get-started).

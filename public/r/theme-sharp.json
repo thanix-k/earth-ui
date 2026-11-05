@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-sharp",
+  "title": "Earth Sharp",
+  "description": "A square radius. Install after base.",
+  "cssVars": {
+    "light": {
+      "radius": "2px"
+    }
+  },
+  "type": "registry:theme"
+}

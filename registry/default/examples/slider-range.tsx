@@ -1,13 +1,5 @@
 import { Slider } from "@/registry/default/ui/slider";
 
-export default function SliderRange() {
-  return (
-    <Slider
-      defaultValue={[25, 75]}
-      max={150}
-      step={5}
-      className="max-w-xs"
-      aria-label="Price range"
-    />
-  );
+export function SliderRange() {
+  return <Slider defaultValue={[25, 50]} max={100} step={5} className="mx-auto w-full max-w-xs" />;
 }

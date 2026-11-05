@@ -1,9 +1,9 @@
 import { Progress, ProgressLabel, ProgressValue } from "@/registry/default/ui/progress";
 
-export default function ProgressLabelExample() {
+export function ProgressWithLabel() {
   return (
-    <Progress value={75} className="w-full max-w-sm">
-      <ProgressLabel>Importing customers</ProgressLabel>
+    <Progress value={56} className="w-full max-w-sm">
+      <ProgressLabel>Upload progress</ProgressLabel>
       <ProgressValue />
     </Progress>
   );

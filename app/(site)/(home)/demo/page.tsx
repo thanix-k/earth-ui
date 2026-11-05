@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Toaster } from "@/registry/default/ui/sonner";
+import { getRegistryItem } from "@/lib/registry";
 import { AgendaCard } from "./cards/agenda";
 import { BookDeskCard } from "./cards/book-desk";
 import { BookSlotCard } from "./cards/book-slot";
@@ -15,6 +15,7 @@ import { LeadSourcesCard } from "./cards/lead-sources";
 import { RoutingRulesCard } from "./cards/routing-rules";
 import { TeamChatCard } from "./cards/team-chat";
 import { TimesheetCard } from "./cards/timesheet";
+import { type DemoTheme, ThemeSwitcher } from "./theme-switcher";
 
 export const metadata: Metadata = {
   title: "Demo",
@@ -23,14 +24,20 @@ export const metadata: Metadata = {
 
 // Product moments from full.io/tools, one per card. Showcase only, not in the registry.
 export default function DemoPage() {
+  const themes = ["theme-sharp", "theme-soft"].map(
+    (name) => getRegistryItem(name) as unknown as DemoTheme,
+  );
   return (
     <div className="container-wrapper flex flex-col gap-8 py-12">
-      <header className="flex max-w-2xl flex-col gap-2">
-        <h1 className="text-heading-32 text-eds-primary">Demo</h1>
-        <p className="text-body-16 text-eds-secondary">
-          Earth UI in the products it ships with: bookings, calls, chat, leads, learning and time
-          tracking.
-        </p>
+      <header className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex max-w-2xl flex-col gap-2">
+          <h1 className="text-3xl font-semibold text-foreground">Demo</h1>
+          <p className="text-base text-muted-foreground">
+            Earth UI in the products it ships with: bookings, calls, chat, leads, learning and time
+            tracking.
+          </p>
+        </div>
+        <ThemeSwitcher themes={themes} />
       </header>
       <div className="columns-1 gap-4 md:columns-2 xl:columns-3 2xl:columns-4 *:mb-4 *:break-inside-avoid">
         {/* Streams: Calendar reads the time for "today". */}
@@ -51,7 +58,6 @@ export default function DemoPage() {
         <DispatchCard />
         <LeadSourcesCard />
       </div>
-      <Toaster />
     </div>
   );
 }

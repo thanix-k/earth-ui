@@ -3,20 +3,22 @@
 import {
   Combobox,
   ComboboxContent,
+  ComboboxEmpty,
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
 } from "@/registry/default/ui/combobox";
 
-const locations = ["Brighton", "London", "Manchester"];
+const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const;
 
-export default function ComboboxDisabled() {
+export function ComboboxDisabled() {
   return (
-    <Combobox items={locations} defaultValue={locations[0]} disabled>
-      <ComboboxInput className="w-64" aria-label="Location" disabled />
+    <Combobox items={frameworks}>
+      <ComboboxInput placeholder="Select a framework" disabled />
       <ComboboxContent>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {(item: string) => (
+          {(item) => (
             <ComboboxItem key={item} value={item}>
               {item}
             </ComboboxItem>

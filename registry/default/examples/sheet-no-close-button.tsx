@@ -1,10 +1,8 @@
 import { Button } from "@/registry/default/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -13,15 +11,15 @@ import {
 export default function SheetNoCloseButton() {
   return (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>Daily summary</SheetTrigger>
-      <SheetContent side="bottom" showCloseButton={false}>
+      <SheetTrigger render={<Button variant="outline" />}>Open Sheet</SheetTrigger>
+      <SheetContent showCloseButton={false}>
         <SheetHeader>
-          <SheetTitle>Today at Glow Salon</SheetTitle>
-          <SheetDescription>14 appointments, 2 cancellations and 3 new customers.</SheetDescription>
+          <SheetTitle>No Close Button</SheetTitle>
+          <SheetDescription>
+            This sheet doesn&apos;t have a close button in the top-right corner. Click outside to
+            close.
+          </SheetDescription>
         </SheetHeader>
-        <SheetFooter>
-          <SheetClose render={<Button />}>Done</SheetClose>
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

@@ -1,7 +1,5 @@
 import { Slider } from "@/registry/default/ui/slider";
 
-export default function SliderDemo() {
-  return (
-    <Slider defaultValue={[30]} max={60} step={5} className="max-w-xs" aria-label="Buffer time" />
-  );
+export function SliderDemo() {
+  return <Slider defaultValue={[75]} max={100} step={1} className="mx-auto w-full max-w-xs" />;
 }

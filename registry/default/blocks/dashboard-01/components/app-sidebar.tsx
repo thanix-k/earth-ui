@@ -1,17 +1,17 @@
 "use client";
 
 import {
-  CalendarCheckIcon,
+  CameraIcon,
   ChartBarIcon,
   CircleHelpIcon,
   CommandIcon,
-  FileAudioIcon,
+  DatabaseIcon,
   FileChartColumnIcon,
   FileIcon,
   FileTextIcon,
+  FolderIcon,
   LayoutDashboardIcon,
-  MapPinIcon,
-  PhoneIcon,
+  ListIcon,
   SearchIcon,
   Settings2Icon,
   UsersIcon,
@@ -33,9 +33,9 @@ import {
 
 const data = {
   user: {
-    name: "Riley Carter",
-    email: "riley@anywhere.co",
-    avatar: "/avatars/riley.jpg",
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
@@ -44,9 +44,9 @@ const data = {
       icon: <LayoutDashboardIcon />,
     },
     {
-      title: "Bookings",
+      title: "Lifecycle",
       url: "#",
-      icon: <CalendarCheckIcon />,
+      icon: <ListIcon />,
     },
     {
       title: "Analytics",
@@ -54,9 +54,9 @@ const data = {
       icon: <ChartBarIcon />,
     },
     {
-      title: "Locations",
+      title: "Projects",
       url: "#",
-      icon: <MapPinIcon />,
+      icon: <FolderIcon />,
     },
     {
       title: "Team",
@@ -66,13 +66,13 @@ const data = {
   ],
   navClouds: [
     {
-      title: "Calls",
-      icon: <PhoneIcon />,
+      title: "Capture",
+      icon: <CameraIcon />,
       isActive: true,
       url: "#",
       items: [
         {
-          title: "Active",
+          title: "Active Proposals",
           url: "#",
         },
         {
@@ -82,12 +82,12 @@ const data = {
       ],
     },
     {
-      title: "Leads",
+      title: "Proposal",
       icon: <FileTextIcon />,
       url: "#",
       items: [
         {
-          title: "Active",
+          title: "Active Proposals",
           url: "#",
         },
         {
@@ -97,12 +97,12 @@ const data = {
       ],
     },
     {
-      title: "Messages",
+      title: "Prompts",
       icon: <FileTextIcon />,
       url: "#",
       items: [
         {
-          title: "Active",
+          title: "Active Proposals",
           url: "#",
         },
         {
@@ -131,9 +131,9 @@ const data = {
   ],
   documents: [
     {
-      name: "Call Recordings",
+      name: "Data Library",
       url: "#",
-      icon: <FileAudioIcon />,
+      icon: <DatabaseIcon />,
     },
     {
       name: "Reports",
@@ -141,7 +141,7 @@ const data = {
       icon: <FileChartColumnIcon />,
     },
     {
-      name: "Booking Page",
+      name: "Word Assistant",
       url: "#",
       icon: <FileIcon />,
     },
@@ -158,7 +158,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               render={<a href="#" />}
             >
               <CommandIcon className="size-5!" />
-              <span className="text-base font-semibold">Setmore</span>
+              <span className="text-base font-semibold">Acme Inc.</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

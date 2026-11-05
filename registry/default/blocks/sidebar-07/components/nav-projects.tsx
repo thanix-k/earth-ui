@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRightIcon, MapPinIcon, MoreHorizontalIcon, Trash2Icon } from "lucide-react";
+import { ArrowRightIcon, FolderIcon, MoreHorizontalIcon, Trash2Icon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,7 +30,7 @@ export function NavProjects({
   const { isMobile } = useSidebar();
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Locations</SidebarGroupLabel>
+      <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
@@ -51,17 +51,17 @@ export function NavProjects({
                 align={isMobile ? "end" : "start"}
               >
                 <DropdownMenuItem>
-                  <MapPinIcon />
-                  <span>View Location</span>
+                  <FolderIcon />
+                  <span>View Project</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <ArrowRightIcon />
-                  <span>Share Location</span>
+                  <span>Share Project</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
                   <Trash2Icon />
-                  <span>Delete Location</span>
+                  <span>Delete Project</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

@@ -1,26 +1,105 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+"use client";
+
+import {
+  ArchiveIcon,
+  ArrowLeftIcon,
+  CalendarPlusIcon,
+  ClockIcon,
+  ListFilterIcon,
+  MailCheckIcon,
+  MoreHorizontalIcon,
+  TagIcon,
+  Trash2Icon,
+} from "lucide-react";
+import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import { ButtonGroup } from "@/registry/default/ui/button-group";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/registry/default/ui/dropdown-menu";
 
 export default function ButtonGroupDemo() {
+  const [label, setLabel] = React.useState("personal");
+
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <ButtonGroup aria-label="Change week">
-        <Button variant="outline" size="icon" aria-label="Previous week">
-          <ChevronLeftIcon />
-        </Button>
-        <Button variant="outline">Today</Button>
-        <Button variant="outline" size="icon" aria-label="Next week">
-          <ChevronRightIcon />
+    <ButtonGroup>
+      <ButtonGroup className="hidden sm:flex">
+        <Button variant="outline" size="icon" aria-label="Go Back">
+          <ArrowLeftIcon />
         </Button>
       </ButtonGroup>
-      <ButtonGroup aria-label="Calendar view">
-        <Button variant="outline">Day</Button>
-        <Button variant="outline" aria-pressed>
-          Week
-        </Button>
-        <Button variant="outline">Month</Button>
+      <ButtonGroup>
+        <Button variant="outline">Archive</Button>
+        <Button variant="outline">Report</Button>
       </ButtonGroup>
-    </div>
+      <ButtonGroup>
+        <Button variant="outline">Snooze</Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger
+            render={<Button variant="outline" size="icon" aria-label="More Options" />}
+          >
+            <MoreHorizontalIcon />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-40">
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <MailCheckIcon />
+                Mark as Read
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <ArchiveIcon />
+                Archive
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <ClockIcon />
+                Snooze
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <CalendarPlusIcon />
+                Add to Calendar
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <ListFilterIcon />
+                Add to List
+              </DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>
+                  <TagIcon />
+                  Label As...
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuRadioGroup value={label} onValueChange={setLabel}>
+                    <DropdownMenuRadioItem value="personal">Personal</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="work">Work</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="other">Other</DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem variant="destructive">
+                <Trash2Icon />
+                Trash
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </ButtonGroup>
+    </ButtonGroup>
   );
 }

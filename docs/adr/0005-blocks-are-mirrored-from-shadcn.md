@@ -17,14 +17,12 @@ drift from the component APIs that new blocks expect.
 ## Decision
 
 - `scripts/sync-blocks.ts` mirrors every `registry:block` from shadcn's Base UI
-  style (`base-nova`) into `registry/default/blocks/`, except the `preview*`
+  style (`base-maia`) into `registry/default/blocks/`, except the `preview*`
   showcase pages. It rewires imports to Earth's components, swaps shadcn's
   multi-library `IconPlaceholder` for lucide icons, and writes
   `registry/default/blocks/index.json`.
-- shadcn's sample copy (Acme Inc, Next.js docs, personal notes) is swapped for
-  Full Creative products from full.io/tools (Setmore, AnswerConnect,
-  YoCoBoard…) via `scripts/blocks-content.ts`. Entries are exact upstream
-  strings, and the sync reports any entry upstream no longer uses.
+- shadcn's sample copy is kept as is (ADR-0006). It was swapped for Full
+  Creative products until 2026-11-05.
 - Block files are generated. Fixes for upstream bugs live in the script's
   `PATCHES` list, and each patch fails the sync once upstream fixes the code.
   Blocks are exempt from the hand-written styling rules and from lint.

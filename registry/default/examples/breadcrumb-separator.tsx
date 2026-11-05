@@ -1,3 +1,6 @@
+import { DotIcon } from "lucide-react";
+import Link from "next/link";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,20 +10,24 @@ import {
   BreadcrumbSeparator,
 } from "@/registry/default/ui/breadcrumb";
 
-export default function BreadcrumbCustomSeparator() {
+export function BreadcrumbSeparatorDemo() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Team</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>/</BreadcrumbSeparator>
+        <BreadcrumbSeparator>
+          <DotIcon />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Staff</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>/</BreadcrumbSeparator>
+        <BreadcrumbSeparator>
+          <DotIcon />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbPage>Maya Patel</BreadcrumbPage>
+          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

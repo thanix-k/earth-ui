@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
@@ -12,19 +13,19 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
 
-export default function DropdownMenuRadioGroupDemo() {
-  const [view, setView] = useState("week");
+export function DropdownMenuRadioGroupDemo() {
+  const [position, setPosition] = React.useState("bottom");
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>Calendar view</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-40">
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-32">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>View</DropdownMenuLabel>
-          <DropdownMenuRadioGroup value={view} onValueChange={setView}>
-            <DropdownMenuRadioItem value="day">Day</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="week">Week</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="month">Month</DropdownMenuRadioItem>
+          <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuGroup>
       </DropdownMenuContent>

@@ -1,6 +1,6 @@
 # 0003 — Own component source; generate everything around it
 
-Status: accepted (2026-10-24)
+Status: partly superseded by ADR-0006 (2026-11-04): components are no longer re-skinned, and `registry.json` is now edited by hand instead of generated
 
 ## Context
 

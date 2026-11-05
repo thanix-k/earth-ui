@@ -125,14 +125,14 @@ const chartData = [
 
 const chartConfig = {
   visitors: {
-    label: "Bookings",
+    label: "Visitors",
   },
   desktop: {
-    label: "Online",
+    label: "Desktop",
     color: "var(--primary)",
   },
   mobile: {
-    label: "Phone",
+    label: "Mobile",
     color: "var(--primary)",
   },
 } satisfies ChartConfig;
@@ -164,7 +164,7 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader>
-        <CardTitle>Total Bookings</CardTitle>
+        <CardTitle>Total Visitors</CardTitle>
         <CardDescription>
           <span className="hidden @[540px]/card:block">Total for the last 3 months</span>
           <span className="@[540px]/card:hidden">Last 3 months</span>

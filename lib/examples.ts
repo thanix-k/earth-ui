@@ -22,7 +22,11 @@ export async function loadExample(name: string) {
   if (!/^[a-z0-9-]+$/.test(name)) return null;
   if (existsSync(path.join(dir, `${name}.tsx`))) {
     const mod = await import(`@/registry/default/examples/${name}.tsx`);
-    return mod.default as ComponentType;
+    // shadcn's examples export one named component (`export function BadgeAsLink`).
+    return (mod.default ??
+      Object.entries(mod).find(([k, v]) => /^[A-Z]/.test(k) && typeof v === "function")?.[1]) as
+      | ComponentType
+      | undefined;
   }
   if (blocks().some((b) => b.name === name)) {
     const mod = await import(`@/registry/default/blocks/${name}/page.tsx`);

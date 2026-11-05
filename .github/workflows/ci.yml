@@ -16,7 +16,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # Rebuilds tokens, utils, registry.json and public/r, validates the
+      # Rebuilds app/earth.css and public/r from registry.json, validates the
       # registry, then fails if any generated file differs from the commit.
       - run: pnpm check
       - run: pnpm next build

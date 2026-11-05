@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDaysIcon, CheckIcon, ChevronsUpDownIcon } from "lucide-react";
+import { CheckIcon, ChevronsUpDownIcon, GalleryVerticalEndIcon } from "lucide-react";
 import * as React from "react";
 import {
   DropdownMenu,
@@ -31,10 +31,10 @@ export function VersionSwitcher({
             }
           >
             <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              <CalendarDaysIcon className="size-4" />
+              <GalleryVerticalEndIcon className="size-4" />
             </div>
             <div className="flex flex-col gap-0.5 leading-none">
-              <span className="font-medium">Help Center</span>
+              <span className="font-medium">Documentation</span>
               <span className="">v{selectedVersion}</span>
             </div>
             <ChevronsUpDownIcon className="ml-auto" />

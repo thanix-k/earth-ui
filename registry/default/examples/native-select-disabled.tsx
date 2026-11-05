@@ -1,10 +1,12 @@
 import { NativeSelect, NativeSelectOption } from "@/registry/default/ui/native-select";
 
-export default function NativeSelectDisabled() {
+export function NativeSelectDisabled() {
   return (
-    <NativeSelect disabled defaultValue="utc" aria-label="Time zone">
-      <NativeSelectOption value="utc">UTC</NativeSelectOption>
-      <NativeSelectOption value="est">Eastern Time</NativeSelectOption>
+    <NativeSelect disabled>
+      <NativeSelectOption value="">Disabled</NativeSelectOption>
+      <NativeSelectOption value="apple">Apple</NativeSelectOption>
+      <NativeSelectOption value="banana">Banana</NativeSelectOption>
+      <NativeSelectOption value="blueberry">Blueberry</NativeSelectOption>
     </NativeSelect>
   );
 }

@@ -81,17 +81,17 @@ export function IntakeCard() {
         <CardDescription>Lexreception</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
-        <p className="text-eds-secondary">Right-click a matter for actions.</p>
+        <p className="text-muted-foreground">Right-click a matter for actions.</p>
         {matters.map((m, i) => (
           <div key={m.client} className="flex flex-col gap-2">
             {i > 0 && <Separator />}
             <ContextMenu>
-              <ContextMenuTrigger className="flex items-center justify-between rounded-md p-2 hover:bg-eds-neutral-hover">
+              <ContextMenuTrigger className="flex items-center justify-between rounded-md p-2 hover:bg-accent">
                 <div className="flex flex-col">
-                  <span className="text-heading-14 lg:text-heading-12">{m.client}</span>
-                  <span className="text-eds-secondary">{m.area}</span>
+                  <span className="text-sm font-semibold lg:text-xs">{m.client}</span>
+                  <span className="text-muted-foreground">{m.area}</span>
                 </div>
-                <span className="text-eds-secondary">
+                <span className="text-muted-foreground">
                   {m.calls} {m.calls === 1 ? "call" : "calls"}
                 </span>
               </ContextMenuTrigger>

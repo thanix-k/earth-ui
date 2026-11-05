@@ -36,7 +36,7 @@ export async function ComponentPreview({
         ) : (
           <div
             className={cn(
-              "flex min-h-72 items-center justify-center rounded-xl border border-eds-tertiary bg-eds-canvas p-10",
+              "flex min-h-72 items-center justify-center rounded-xl border border-border bg-background p-10",
               className,
             )}
           >

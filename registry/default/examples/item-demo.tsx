@@ -1,4 +1,5 @@
-import { ChevronRightIcon, ScissorsIcon } from "lucide-react";
+import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react";
+
 import { Button } from "@/registry/default/ui/button";
 import {
   Item,
@@ -9,31 +10,29 @@ import {
   ItemTitle,
 } from "@/registry/default/ui/item";
 
-export default function ItemDemo() {
+export function ItemDemo() {
   return (
-    <div className="flex w-full max-w-md flex-col gap-4">
+    <div className="flex w-full max-w-md flex-col gap-6">
       <Item variant="outline">
         <ItemContent>
-          <ItemTitle>Online booking</ItemTitle>
-          <ItemDescription>
-            Customers can book any open slot from your booking page.
-          </ItemDescription>
+          <ItemTitle>Basic Item</ItemTitle>
+          <ItemDescription>A simple item with title and description.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Settings
+            Action
           </Button>
         </ItemActions>
       </Item>
-      <Item variant="outline" size="sm" render={<a href="#services" />}>
-        <ItemMedia variant="icon">
-          <ScissorsIcon />
+      <Item variant="outline" size="sm" render={<a href="#" />}>
+        <ItemMedia>
+          <BadgeCheckIcon className="size-5" />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Manage services</ItemTitle>
+          <ItemTitle>Your profile has been verified.</ItemTitle>
         </ItemContent>
         <ItemActions>
-          <ChevronRightIcon className="size-4 text-eds-icon-secondary" />
+          <ChevronRightIcon className="size-4" />
         </ItemActions>
       </Item>
     </div>

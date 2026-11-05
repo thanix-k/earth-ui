@@ -2,6 +2,7 @@ import {
   Field,
   FieldContent,
   FieldDescription,
+  FieldGroup,
   FieldLabel,
   FieldLegend,
   FieldSet,
@@ -11,37 +12,31 @@ import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function FieldChoiceCard() {
   return (
-    <FieldSet className="w-full max-w-sm">
-      <FieldLegend variant="label">Location</FieldLegend>
-      <RadioGroup defaultValue="in-person">
-        <FieldLabel htmlFor="location-in-person">
-          <Field orientation="horizontal">
-            <RadioGroupItem value="in-person" id="location-in-person" />
-            <FieldContent>
-              <FieldTitle>In person</FieldTitle>
-              <FieldDescription>At 24 King Street, Brighton.</FieldDescription>
-            </FieldContent>
-          </Field>
-        </FieldLabel>
-        <FieldLabel htmlFor="location-video">
-          <Field orientation="horizontal">
-            <RadioGroupItem value="video" id="location-video" />
-            <FieldContent>
-              <FieldTitle>Video call</FieldTitle>
-              <FieldDescription>A meeting link is sent with the confirmation.</FieldDescription>
-            </FieldContent>
-          </Field>
-        </FieldLabel>
-        <FieldLabel htmlFor="location-phone">
-          <Field orientation="horizontal">
-            <RadioGroupItem value="phone" id="location-phone" disabled />
-            <FieldContent>
-              <FieldTitle>Phone call</FieldTitle>
-              <FieldDescription>Add a business phone number first.</FieldDescription>
-            </FieldContent>
-          </Field>
-        </FieldLabel>
-      </RadioGroup>
-    </FieldSet>
+    <FieldGroup className="w-full max-w-xs">
+      <FieldSet>
+        <FieldLegend variant="label">Compute Environment</FieldLegend>
+        <FieldDescription>Select the compute environment for your cluster.</FieldDescription>
+        <RadioGroup defaultValue="kubernetes">
+          <FieldLabel htmlFor="kubernetes-r2h">
+            <Field orientation="horizontal">
+              <FieldContent>
+                <FieldTitle>Kubernetes</FieldTitle>
+                <FieldDescription>Run GPU workloads on a K8s cluster.</FieldDescription>
+              </FieldContent>
+              <RadioGroupItem value="kubernetes" id="kubernetes-r2h" />
+            </Field>
+          </FieldLabel>
+          <FieldLabel htmlFor="vm-z4k">
+            <Field orientation="horizontal">
+              <FieldContent>
+                <FieldTitle>Virtual Machine</FieldTitle>
+                <FieldDescription>Access a cluster to run GPU workloads.</FieldDescription>
+              </FieldContent>
+              <RadioGroupItem value="vm" id="vm-z4k" />
+            </Field>
+          </FieldLabel>
+        </RadioGroup>
+      </FieldSet>
+    </FieldGroup>
   );
 }

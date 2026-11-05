@@ -1,11 +1,17 @@
+import { BoldIcon, ItalicIcon } from "lucide-react";
+
 import { Toggle } from "@/registry/default/ui/toggle";
 
-export default function ToggleOutline() {
+export function ToggleOutline() {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Toggle variant="outline">Walk-ins</Toggle>
-      <Toggle variant="outline" defaultPressed>
-        Online
+      <Toggle variant="outline" aria-label="Toggle italic">
+        <ItalicIcon />
+        Italic
+      </Toggle>
+      <Toggle variant="outline" aria-label="Toggle bold">
+        <BoldIcon />
+        Bold
       </Toggle>
     </div>
   );

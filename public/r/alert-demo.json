@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/default/examples/alert-demo.tsx",
-      "content": "import { InfoIcon } from \"lucide-react\";\nimport { Alert, AlertDescription, AlertTitle } from \"@/registry/default/ui/alert\";\n\nexport default function AlertDemo() {\n  return (\n    <Alert className=\"max-w-md\">\n      <InfoIcon />\n      <AlertTitle>Reminders are on</AlertTitle>\n      <AlertDescription>Customers get an email 24 hours before their booking.</AlertDescription>\n    </Alert>\n  );\n}\n",
+      "content": "import { CheckCircle2Icon, InfoIcon } from \"lucide-react\";\n\nimport { Alert, AlertDescription, AlertTitle } from \"@/registry/default/ui/alert\";\n\nexport default function AlertDemo() {\n  return (\n    <div className=\"grid w-full max-w-md items-start gap-4\">\n      <Alert>\n        <CheckCircle2Icon />\n        <AlertTitle>Payment successful</AlertTitle>\n        <AlertDescription>\n          Your payment of $29.99 has been processed. A receipt has been sent to your email address.\n        </AlertDescription>\n      </Alert>\n      <Alert>\n        <InfoIcon />\n        <AlertTitle>New feature available</AlertTitle>\n        <AlertDescription>\n          We&apos;ve added dark mode support. You can enable it in your account settings.\n        </AlertDescription>\n      </Alert>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

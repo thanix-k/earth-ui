@@ -2,23 +2,24 @@
 
 import { format } from "date-fns";
 import * as React from "react";
+
 import { Button } from "@/registry/default/ui/button";
 import { Calendar } from "@/registry/default/ui/calendar";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 
-export default function DatePickerBasic() {
+export function DatePickerSimple() {
   const [date, setDate] = React.useState<Date>();
 
   return (
     <Field className="mx-auto w-44">
-      <FieldLabel htmlFor="date-picker-basic">Date</FieldLabel>
+      <FieldLabel htmlFor="date-picker-simple">Date</FieldLabel>
       <Popover>
         <PopoverTrigger
           render={
             <Button
               variant="outline"
-              id="date-picker-basic"
+              id="date-picker-simple"
               className="justify-start font-normal"
             />
           }

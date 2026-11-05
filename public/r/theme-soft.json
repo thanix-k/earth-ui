@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-soft",
+  "title": "Earth Soft",
+  "description": "A rounder radius. Install after base.",
+  "cssVars": {
+    "light": {
+      "radius": "12px"
+    }
+  },
+  "type": "registry:theme"
+}

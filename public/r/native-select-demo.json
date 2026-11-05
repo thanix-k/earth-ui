@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/native-select-demo.tsx",
-      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectDemo() {\n  return (\n    <NativeSelect defaultValue=\"\" aria-label=\"Duration\">\n      <NativeSelectOption value=\"\" disabled>\n        Select duration\n      </NativeSelectOption>\n      <NativeSelectOption value=\"15\">15 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"30\">30 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"45\">45 minutes</NativeSelectOption>\n      <NativeSelectOption value=\"60\">1 hour</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
+      "content": "import { NativeSelect, NativeSelectOption } from \"@/registry/default/ui/native-select\";\n\nexport default function NativeSelectDemo() {\n  return (\n    <NativeSelect>\n      <NativeSelectOption value=\"\">Select status</NativeSelectOption>\n      <NativeSelectOption value=\"todo\">Todo</NativeSelectOption>\n      <NativeSelectOption value=\"in-progress\">In Progress</NativeSelectOption>\n      <NativeSelectOption value=\"done\">Done</NativeSelectOption>\n      <NativeSelectOption value=\"cancelled\">Cancelled</NativeSelectOption>\n    </NativeSelect>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

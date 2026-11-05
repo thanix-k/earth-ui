@@ -1,4 +1,5 @@
-import { CalendarXIcon } from "lucide-react";
+import { ArrowUpRightIcon, FolderCodeIcon } from "lucide-react";
+
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,
@@ -13,18 +14,27 @@ export default function EmptyDemo() {
   return (
     <Empty>
       <EmptyHeader>
-        <EmptyMedia>
-          <CalendarXIcon />
+        <EmptyMedia variant="icon">
+          <FolderCodeIcon />
         </EmptyMedia>
-        <EmptyTitle>No bookings yet</EmptyTitle>
-        <EmptyDescription>Share your booking page so customers can pick a time.</EmptyDescription>
+        <EmptyTitle>No Projects Yet</EmptyTitle>
+        <EmptyDescription>
+          You haven&apos;t created any projects yet. Get started by creating your first project.
+        </EmptyDescription>
       </EmptyHeader>
-      <EmptyContent>
-        <div className="flex gap-2">
-          <Button>Share booking page</Button>
-          <Button variant="outline">Add a booking</Button>
-        </div>
+      <EmptyContent className="flex-row justify-center gap-2">
+        <Button>Create Project</Button>
+        <Button variant="outline">Import Project</Button>
       </EmptyContent>
+      <Button
+        variant="link"
+        render={<a href="#" />}
+        className="text-muted-foreground"
+        size="sm"
+        nativeButton={false}
+      >
+        Learn More <ArrowUpRightIcon />
+      </Button>
     </Empty>
   );
 }

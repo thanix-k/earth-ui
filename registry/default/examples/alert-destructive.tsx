@@ -1,13 +1,14 @@
-import { CircleAlertIcon } from "lucide-react";
+import { AlertCircleIcon } from "lucide-react";
+
 import { Alert, AlertDescription, AlertTitle } from "@/registry/default/ui/alert";
 
 export default function AlertDestructive() {
   return (
     <Alert variant="destructive" className="max-w-md">
-      <CircleAlertIcon />
+      <AlertCircleIcon />
       <AlertTitle>Payment failed</AlertTitle>
       <AlertDescription>
-        We couldn't charge the card ending 4242. Ask the customer to update it.
+        Your payment could not be processed. Please check your payment method and try again.
       </AlertDescription>
     </Alert>
   );

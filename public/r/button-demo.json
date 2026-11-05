@@ -3,14 +3,16 @@
   "name": "button-demo",
   "title": "Button Demo",
   "description": "Button example. Triggers an action. Use one default button per view for the main action.",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "@earth-ui/button"
   ],
   "files": [
     {
       "path": "registry/default/examples/button-demo.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}\n",
+      "content": "import { ArrowUpIcon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 md:flex-row\">\n      <Button variant=\"outline\">Button</Button>\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Submit\">\n        <ArrowUpIcon />\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

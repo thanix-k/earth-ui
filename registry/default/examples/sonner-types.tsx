@@ -2,7 +2,6 @@
 
 import { toast } from "sonner";
 import { Button } from "@/registry/default/ui/button";
-import { Toaster } from "@/registry/default/ui/sonner";
 
 export default function SonnerTypes() {
   return (
@@ -34,7 +33,6 @@ export default function SonnerTypes() {
       >
         Promise
       </Button>
-      <Toaster />
     </div>
   );
 }

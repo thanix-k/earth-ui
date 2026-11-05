@@ -1,3 +1,6 @@
+import * as React from "react";
+
+import { Card, CardContent } from "@/registry/default/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -6,16 +9,24 @@ import {
   CarouselPrevious,
 } from "@/registry/default/ui/carousel";
 
-const slots = ["9:00 am", "9:30 am", "10:00 am", "11:15 am", "2:00 pm"];
-
 export default function CarouselOrientation() {
   return (
-    <Carousel opts={{ align: "start" }} orientation="vertical" className="w-full max-w-xs">
-      <CarouselContent className="-mt-2 h-48">
-        {slots.map((slot) => (
-          <CarouselItem key={slot} className="basis-1/2 pt-2">
-            <div className="flex h-full items-center justify-center rounded-xl border border-eds-secondary bg-eds-canvas p-4 text-heading-16 text-eds-primary">
-              {slot}
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      orientation="vertical"
+      className="w-full max-w-xs"
+    >
+      <CarouselContent className="-mt-1 h-[270px]">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className="basis-1/2 pt-1">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center justify-center p-6">
+                  <span className="text-3xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
             </div>
           </CarouselItem>
         ))}

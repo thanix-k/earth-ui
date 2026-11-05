@@ -2,15 +2,15 @@
 
 import {
   BookOpenIcon,
-  CalendarCheckIcon,
-  CalendarIcon,
-  ClockIcon,
-  HospitalIcon,
+  BotIcon,
+  FrameIcon,
   LifeBuoyIcon,
-  MapPinIcon,
+  MapIcon,
+  PieChartIcon,
   SendIcon,
   Settings2Icon,
-  StoreIcon,
+  TerminalIcon,
+  TerminalSquareIcon,
 } from "lucide-react";
 import * as React from "react";
 import { NavMain } from "@/registry/default/blocks/sidebar-16/components/nav-main";
@@ -29,23 +29,23 @@ import {
 
 const data = {
   user: {
-    name: "Riley Carter",
-    email: "riley@anywhere.co",
-    avatar: "/avatars/riley.jpg",
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
-      title: "Calendar",
+      title: "Playground",
       url: "#",
-      icon: <CalendarIcon />,
+      icon: <TerminalSquareIcon />,
       isActive: true,
       items: [
         {
-          title: "Today",
+          title: "History",
           url: "#",
         },
         {
-          title: "This Week",
+          title: "Starred",
           url: "#",
         },
         {
@@ -55,26 +55,26 @@ const data = {
       ],
     },
     {
-      title: "Bookings",
+      title: "Models",
       url: "#",
-      icon: <CalendarCheckIcon />,
+      icon: <BotIcon />,
       items: [
         {
-          title: "Upcoming",
+          title: "Genesis",
           url: "#",
         },
         {
-          title: "Past",
+          title: "Explorer",
           url: "#",
         },
         {
-          title: "Cancelled",
+          title: "Quantum",
           url: "#",
         },
       ],
     },
     {
-      title: "Help Center",
+      title: "Documentation",
       url: "#",
       icon: <BookOpenIcon />,
       items: [
@@ -83,15 +83,15 @@ const data = {
           url: "#",
         },
         {
-          title: "Booking Page",
+          title: "Get Started",
           url: "#",
         },
         {
-          title: "Video Guides",
+          title: "Tutorials",
           url: "#",
         },
         {
-          title: "What's New",
+          title: "Changelog",
           url: "#",
         },
       ],
@@ -114,7 +114,7 @@ const data = {
           url: "#",
         },
         {
-          title: "Integrations",
+          title: "Limits",
           url: "#",
         },
       ],
@@ -134,19 +134,19 @@ const data = {
   ],
   projects: [
     {
-      name: "Downtown Studio",
+      name: "Design Engineering",
       url: "#",
-      icon: <StoreIcon />,
+      icon: <FrameIcon />,
     },
     {
-      name: "Riverside Clinic",
+      name: "Sales & Marketing",
       url: "#",
-      icon: <HospitalIcon />,
+      icon: <PieChartIcon />,
     },
     {
-      name: "Westside Studio",
+      name: "Travel",
       url: "#",
-      icon: <MapPinIcon />,
+      icon: <MapIcon />,
     },
   ],
 };
@@ -158,11 +158,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" render={<a href="#" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <ClockIcon className="size-4" />
+                <TerminalIcon className="size-4" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">Setmore</span>
-                <span className="truncate text-xs">Premium</span>
+                <span className="truncate font-medium">Acme Inc</span>
+                <span className="truncate text-xs">Enterprise</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>

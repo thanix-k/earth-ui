@@ -26,7 +26,7 @@ export function SignupForm({ className, ...props }: React.ComponentProps<"div">)
               </div>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="riley@anywhere.co" required />
+                <Input id="email" type="email" placeholder="m@example.com" required />
                 <FieldDescription>
                   We&apos;ll use this to contact you. We will not share your email with anyone else.
                 </FieldDescription>

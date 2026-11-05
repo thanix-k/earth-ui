@@ -1,11 +1,12 @@
+import { Field, FieldDescription, FieldLabel } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
 
-export default function InputInvalid() {
+export function InputInvalid() {
   return (
-    <div className="grid w-full max-w-xs gap-1">
-      <Label htmlFor="phone">Phone</Label>
-      <Input id="phone" defaultValue="12" aria-invalid />
-    </div>
+    <Field data-invalid>
+      <FieldLabel htmlFor="input-invalid">Invalid Input</FieldLabel>
+      <Input id="input-invalid" placeholder="Error" aria-invalid />
+      <FieldDescription>This field contains validation errors.</FieldDescription>
+    </Field>
   );
 }

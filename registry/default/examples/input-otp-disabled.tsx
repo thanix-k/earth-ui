@@ -1,13 +1,24 @@
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/registry/default/ui/input-otp";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/registry/default/ui/input-otp";
 
-export default function InputOTPDisabled() {
+export function InputOTPDisabled() {
   return (
-    <InputOTP maxLength={4} defaultValue="27" disabled aria-label="Verification code">
+    <InputOTP id="disabled" maxLength={6} disabled value="123456">
       <InputOTPGroup>
         <InputOTPSlot index={0} />
         <InputOTPSlot index={1} />
         <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
         <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
       </InputOTPGroup>
     </InputOTP>
   );

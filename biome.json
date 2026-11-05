@@ -40,17 +40,14 @@
   },
   "overrides": [
     {
-      "includes": ["registry/default/blocks/**"],
-      "linter": { "enabled": false }
-    },
-    {
-      "includes": ["registry/default/ui/**"],
+      "includes": [
+        "registry/default/blocks/**",
+        "registry/default/examples/**",
+        "registry/default/ui/**",
+        "registry/default/hooks/**"
+      ],
       "linter": {
-        "rules": {
-          "a11y": {
-            "noLabelWithoutControl": "off"
-          }
-        }
+        "enabled": false
       }
     }
   ]

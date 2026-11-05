@@ -7,23 +7,29 @@ import {
 } from "@/registry/default/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
-export default function FieldRadio() {
+export function FieldRadio() {
   return (
-    <FieldSet className="max-w-sm">
-      <FieldLegend variant="label">Payment</FieldLegend>
-      <FieldDescription>When customers pay for their booking.</FieldDescription>
-      <RadioGroup defaultValue="deposit">
+    <FieldSet className="w-full max-w-xs">
+      <FieldLegend variant="label">Subscription Plan</FieldLegend>
+      <FieldDescription>Yearly and lifetime plans offer significant savings.</FieldDescription>
+      <RadioGroup defaultValue="monthly">
         <Field orientation="horizontal">
-          <RadioGroupItem value="full" id="payment-full" />
-          <FieldLabel htmlFor="payment-full">Pay in full when booking</FieldLabel>
+          <RadioGroupItem value="monthly" id="plan-monthly" />
+          <FieldLabel htmlFor="plan-monthly" className="font-normal">
+            Monthly ($9.99/month)
+          </FieldLabel>
         </Field>
         <Field orientation="horizontal">
-          <RadioGroupItem value="deposit" id="payment-deposit" />
-          <FieldLabel htmlFor="payment-deposit">Pay a 20% deposit</FieldLabel>
+          <RadioGroupItem value="yearly" id="plan-yearly" />
+          <FieldLabel htmlFor="plan-yearly" className="font-normal">
+            Yearly ($99.99/year)
+          </FieldLabel>
         </Field>
         <Field orientation="horizontal">
-          <RadioGroupItem value="later" id="payment-later" />
-          <FieldLabel htmlFor="payment-later">Pay at the appointment</FieldLabel>
+          <RadioGroupItem value="lifetime" id="plan-lifetime" />
+          <FieldLabel htmlFor="plan-lifetime" className="font-normal">
+            Lifetime ($299.99)
+          </FieldLabel>
         </Field>
       </RadioGroup>
     </FieldSet>

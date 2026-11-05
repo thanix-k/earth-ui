@@ -9,24 +9,26 @@ import {
   CardTitle,
 } from "@/registry/default/ui/card";
 
-export default function CardImage() {
+export function CardImage() {
   return (
-    <Card className="w-full max-w-sm">
-      {/* biome-ignore lint/performance/noImgElement: registry examples stay framework-agnostic. */}
+    <Card className="relative mx-auto w-full max-w-sm pt-0">
+      <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <img
-        src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
-        alt="Salon interior with styling chairs"
-        className="aspect-video w-full object-cover"
+        src="https://avatar.vercel.sh/shadcn1"
+        alt="Event cover"
+        className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader>
-        <CardTitle>Deep tissue massage</CardTitle>
-        <CardDescription>60 min · $85 · with Maya Patel</CardDescription>
         <CardAction>
-          <Badge variant="positive">Popular</Badge>
+          <Badge variant="secondary">Featured</Badge>
         </CardAction>
+        <CardTitle>Design systems meetup</CardTitle>
+        <CardDescription>
+          A practical talk on component APIs, accessibility, and shipping faster.
+        </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">Book now</Button>
+        <Button className="w-full">View Event</Button>
       </CardFooter>
     </Card>
   );

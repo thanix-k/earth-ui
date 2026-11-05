@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightIcon, FileIcon, MapPinIcon } from "lucide-react";
+import { ChevronRightIcon, FileIcon, FolderIcon } from "lucide-react";
 import * as React from "react";
 import {
   Collapsible,
@@ -107,7 +107,7 @@ function Tree({ item }: { item: TreeItem }) {
       >
         <SidebarMenuButton render={<CollapsibleTrigger />}>
           <ChevronRightIcon className="transition-transform" />
-          <MapPinIcon />
+          <FolderIcon />
           {name}
         </SidebarMenuButton>
         <CollapsibleContent>

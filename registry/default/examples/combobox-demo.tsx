@@ -9,25 +9,16 @@ import {
   ComboboxList,
 } from "@/registry/default/ui/combobox";
 
-const services = [
-  "Haircut",
-  "Haircut and blow-dry",
-  "Colour",
-  "Highlights",
-  "Beard trim",
-  "Manicure",
-  "Pedicure",
-  "Deep tissue massage",
-];
+const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const;
 
-export default function ComboboxDemo() {
+export default function ComboboxBasic() {
   return (
-    <Combobox items={services}>
-      <ComboboxInput className="w-64" placeholder="Select a service" aria-label="Service" />
+    <Combobox items={frameworks}>
+      <ComboboxInput placeholder="Select a framework" />
       <ComboboxContent>
-        <ComboboxEmpty>No services found.</ComboboxEmpty>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
-          {(item: string) => (
+          {(item) => (
             <ComboboxItem key={item} value={item}>
               {item}
             </ComboboxItem>

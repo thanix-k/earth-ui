@@ -2,34 +2,38 @@ import { Field, FieldError, FieldLabel } from "@/registry/default/ui/field";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const reasons = [
-  { label: "Customer request", value: "customer" },
-  { label: "Staff unavailable", value: "staff" },
-  { label: "Weather", value: "weather" },
+const items = [
+  { label: "Select a fruit", value: null },
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+  { label: "Blueberry", value: "blueberry" },
 ];
 
-export default function SelectInvalid() {
+export function SelectInvalid() {
   return (
-    <Field className="w-56" data-invalid>
-      <FieldLabel htmlFor="cancellation-reason">Cancellation reason</FieldLabel>
-      <Select items={reasons}>
-        <SelectTrigger id="cancellation-reason" className="w-full" aria-invalid>
-          <SelectValue placeholder="Select a reason" />
+    <Field data-invalid className="w-full max-w-48">
+      <FieldLabel>Fruit</FieldLabel>
+      <Select items={items}>
+        <SelectTrigger aria-invalid>
+          <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          {reasons.map((item) => (
-            <SelectItem key={item.value} value={item.value}>
-              {item.label}
-            </SelectItem>
-          ))}
+          <SelectGroup>
+            {items.map((item) => (
+              <SelectItem key={item.value} value={item.value}>
+                {item.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
         </SelectContent>
       </Select>
-      <FieldError>Choose a reason to cancel.</FieldError>
+      <FieldError>Please select a fruit.</FieldError>
     </Field>
   );
 }

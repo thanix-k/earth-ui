@@ -178,14 +178,14 @@ const columns = columnHelper.columns([
     enableHiding: false,
   }),
   columnHelper.accessor("header", {
-    header: "Service",
+    header: "Header",
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />;
     },
     enableHiding: false,
   }),
   columnHelper.accessor("type", {
-    header: "Type",
+    header: "Section Type",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="px-1.5 text-muted-foreground">
@@ -208,7 +208,7 @@ const columns = columnHelper.columns([
     ),
   }),
   columnHelper.accessor("target", {
-    header: () => <div className="w-full text-right">Booked</div>,
+    header: () => <div className="w-full text-right">Target</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -221,7 +221,7 @@ const columns = columnHelper.columns([
         }}
       >
         <Label htmlFor={`${row.original.id}-target`} className="sr-only">
-          Booked
+          Target
         </Label>
         <Input
           className="h-8 w-16 border-transparent bg-transparent text-right shadow-none hover:bg-input/30 focus-visible:border focus-visible:bg-background dark:bg-transparent dark:hover:bg-input/30 dark:focus-visible:bg-input/30"
@@ -232,7 +232,7 @@ const columns = columnHelper.columns([
     ),
   }),
   columnHelper.accessor("limit", {
-    header: () => <div className="w-full text-right">Capacity</div>,
+    header: () => <div className="w-full text-right">Limit</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -245,7 +245,7 @@ const columns = columnHelper.columns([
         }}
       >
         <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Capacity
+          Limit
         </Label>
         <Input
           className="h-8 w-16 border-transparent bg-transparent text-right shadow-none hover:bg-input/30 focus-visible:border focus-visible:bg-background dark:bg-transparent dark:hover:bg-input/30 dark:focus-visible:bg-input/30"
@@ -256,16 +256,16 @@ const columns = columnHelper.columns([
     ),
   }),
   columnHelper.accessor("reviewer", {
-    header: "Staff",
+    header: "Reviewer",
     cell: ({ row }) => {
-      const isAssigned = row.original.reviewer !== "Assign staff";
+      const isAssigned = row.original.reviewer !== "Assign reviewer";
       if (isAssigned) {
         return row.original.reviewer;
       }
       return (
         <>
           <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-            Staff
+            Reviewer
           </Label>
           <Select
             items={[
@@ -278,7 +278,7 @@ const columns = columnHelper.columns([
               size="sm"
               id={`${row.original.id}-reviewer`}
             >
-              <SelectValue placeholder="Assign staff" />
+              <SelectValue placeholder="Assign reviewer" />
             </SelectTrigger>
             <SelectContent align="end">
               <SelectGroup>
@@ -396,10 +396,10 @@ export function DataTable({ data: initialData }: { data: z.infer<typeof schema>[
         <Select
           defaultValue="outline"
           items={[
-            { label: "Services", value: "outline" },
-            { label: "Packages", value: "past-performance" },
-            { label: "Staff", value: "key-personnel" },
-            { label: "Add-ons", value: "focus-documents" },
+            { label: "Outline", value: "outline" },
+            { label: "Past Performance", value: "past-performance" },
+            { label: "Key Personnel", value: "key-personnel" },
+            { label: "Focus Documents", value: "focus-documents" },
           ]}
         >
           <SelectTrigger className="flex w-fit @4xl/main:hidden" size="sm" id="view-selector">
@@ -407,22 +407,22 @@ export function DataTable({ data: initialData }: { data: z.infer<typeof schema>[
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="outline">Services</SelectItem>
-              <SelectItem value="past-performance">Packages</SelectItem>
-              <SelectItem value="key-personnel">Staff</SelectItem>
-              <SelectItem value="focus-documents">Add-ons</SelectItem>
+              <SelectItem value="outline">Outline</SelectItem>
+              <SelectItem value="past-performance">Past Performance</SelectItem>
+              <SelectItem value="key-personnel">Key Personnel</SelectItem>
+              <SelectItem value="focus-documents">Focus Documents</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
         <TabsList className="hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:rounded-full **:data-[slot=badge]:bg-muted-foreground/30 **:data-[slot=badge]:px-1 @4xl/main:flex">
-          <TabsTrigger value="outline">Services</TabsTrigger>
+          <TabsTrigger value="outline">Outline</TabsTrigger>
           <TabsTrigger value="past-performance">
-            Packages <Badge variant="secondary">3</Badge>
+            Past Performance <Badge variant="secondary">3</Badge>
           </TabsTrigger>
           <TabsTrigger value="key-personnel">
-            Staff <Badge variant="secondary">2</Badge>
+            Key Personnel <Badge variant="secondary">2</Badge>
           </TabsTrigger>
-          <TabsTrigger value="focus-documents">Add-ons</TabsTrigger>
+          <TabsTrigger value="focus-documents">Focus Documents</TabsTrigger>
         </TabsList>
         <div className="flex items-center gap-2">
           <DropdownMenu>
@@ -451,7 +451,7 @@ export function DataTable({ data: initialData }: { data: z.infer<typeof schema>[
           </DropdownMenu>
           <Button variant="outline" size="sm">
             <PlusIcon />
-            <span className="hidden lg:inline">Add Service</span>
+            <span className="hidden lg:inline">Add Section</span>
           </Button>
         </div>
       </div>
@@ -626,11 +626,11 @@ const chartData = [
 ];
 const chartConfig = {
   desktop: {
-    label: "Online",
+    label: "Desktop",
     color: "var(--primary)",
   },
   mobile: {
-    label: "Phone",
+    label: "Mobile",
     color: "var(--primary)",
   },
 } satisfies ChartConfig;
@@ -646,7 +646,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
       <DrawerContent>
         <DrawerHeader className="gap-1">
           <DrawerTitle>{item.header}</DrawerTitle>
-          <DrawerDescription>Showing total bookings for the last 6 months</DrawerDescription>
+          <DrawerDescription>Showing total visitors for the last 6 months</DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
           {!isMobile && (
@@ -694,7 +694,8 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                   Trending up by 5.2% this month <TrendingUpIcon className="size-4" />
                 </div>
                 <div className="text-muted-foreground">
-                  Bookings for this service over the last 6 months, online and by phone.
+                  Showing total visitors for the last 6 months. This is just some random text to
+                  test the layout. It spans multiple lines and should wrap around.
                 </div>
               </div>
               <Separator />
@@ -702,7 +703,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           )}
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Service</Label>
+              <Label htmlFor="header">Header</Label>
               <Input id="header" defaultValue={item.header} />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -711,17 +712,17 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                 <Select
                   defaultValue={item.type}
                   items={[
-                    { label: "Featured", value: "Featured" },
-                    { label: "In person", value: "In person" },
+                    { label: "Table of Contents", value: "Table of Contents" },
+                    { label: "Executive Summary", value: "Executive Summary" },
                     {
-                      label: "Online",
-                      value: "Online",
+                      label: "Technical Approach",
+                      value: "Technical Approach",
                     },
-                    { label: "Group", value: "Group" },
-                    { label: "Package", value: "Package" },
-                    { label: "Add-ons", value: "Add-ons" },
-                    { label: "Virtual", value: "Virtual" },
-                    { label: "Consultation", value: "Consultation" },
+                    { label: "Design", value: "Design" },
+                    { label: "Capabilities", value: "Capabilities" },
+                    { label: "Focus Documents", value: "Focus Documents" },
+                    { label: "Narrative", value: "Narrative" },
+                    { label: "Cover Page", value: "Cover Page" },
                   ]}
                 >
                   <SelectTrigger id="type" className="w-full">
@@ -729,14 +730,14 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectItem value="Featured">Featured</SelectItem>
-                      <SelectItem value="In person">In person</SelectItem>
-                      <SelectItem value="Online">Online</SelectItem>
-                      <SelectItem value="Group">Group</SelectItem>
-                      <SelectItem value="Package">Package</SelectItem>
-                      <SelectItem value="Add-ons">Add-ons</SelectItem>
-                      <SelectItem value="Virtual">Virtual</SelectItem>
-                      <SelectItem value="Consultation">Consultation</SelectItem>
+                      <SelectItem value="Table of Contents">Table of Contents</SelectItem>
+                      <SelectItem value="Executive Summary">Executive Summary</SelectItem>
+                      <SelectItem value="Technical Approach">Technical Approach</SelectItem>
+                      <SelectItem value="Design">Design</SelectItem>
+                      <SelectItem value="Capabilities">Capabilities</SelectItem>
+                      <SelectItem value="Focus Documents">Focus Documents</SelectItem>
+                      <SelectItem value="Narrative">Narrative</SelectItem>
+                      <SelectItem value="Cover Page">Cover Page</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -766,16 +767,16 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Booked</Label>
+                <Label htmlFor="target">Target</Label>
                 <Input id="target" defaultValue={item.target} />
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Capacity</Label>
+                <Label htmlFor="limit">Limit</Label>
                 <Input id="limit" defaultValue={item.limit} />
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Staff</Label>
+              <Label htmlFor="reviewer">Reviewer</Label>
               <Select
                 defaultValue={item.reviewer}
                 items={[
@@ -785,7 +786,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                 ]}
               >
                 <SelectTrigger id="reviewer" className="w-full">
-                  <SelectValue placeholder="Select staff" />
+                  <SelectValue placeholder="Select a reviewer" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>

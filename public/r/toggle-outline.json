@@ -3,14 +3,16 @@
   "name": "toggle-outline",
   "title": "Toggle Outline",
   "description": "Toggle example: Outline.",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "@earth-ui/toggle"
   ],
   "files": [
     {
       "path": "registry/default/examples/toggle-outline.tsx",
-      "content": "import { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function ToggleOutline() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Toggle variant=\"outline\">Walk-ins</Toggle>\n      <Toggle variant=\"outline\" defaultPressed>\n        Online\n      </Toggle>\n    </div>\n  );\n}\n",
+      "content": "import { BoldIcon, ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function ToggleOutline() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Toggle variant=\"outline\" aria-label=\"Toggle italic\">\n        <ItalicIcon />\n        Italic\n      </Toggle>\n      <Toggle variant=\"outline\" aria-label=\"Toggle bold\">\n        <BoldIcon />\n        Bold\n      </Toggle>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

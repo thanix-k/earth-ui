@@ -1,6 +1,6 @@
 # 0001 — shadcn owns unprefixed token names; EDS tokens live under `eds-`
 
-Status: accepted (2026-10-24)
+Status: superseded by ADR-0006 (2026-11-04)
 
 ## Context
 

@@ -1,6 +1,7 @@
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -9,18 +10,28 @@ import {
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
 import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
-export default function DialogCloseButton() {
+export function DialogCloseButton() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Share booking page</DialogTrigger>
-      <DialogContent className="sm:max-w-120" showCloseButton={false}>
+      <DialogTrigger render={<Button variant="outline" />}>Share</DialogTrigger>
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Share booking page</DialogTitle>
-          <DialogDescription>Anyone with this link can book with your team.</DialogDescription>
+          <DialogTitle>Share link</DialogTitle>
+          <DialogDescription>Anyone who has this link will be able to view this.</DialogDescription>
         </DialogHeader>
-        <Input readOnly defaultValue="https://glowsalon.setmore.com" aria-label="Booking link" />
-        <DialogFooter showCloseButton />
+        <div className="flex items-center gap-2">
+          <div className="grid flex-1 gap-2">
+            <Label htmlFor="link" className="sr-only">
+              Link
+            </Label>
+            <Input id="link" defaultValue="https://ui.shadcn.com/docs/installation" readOnly />
+          </div>
+        </div>
+        <DialogFooter className="sm:justify-start">
+          <DialogClose render={<Button type="button" />}>Close</DialogClose>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );

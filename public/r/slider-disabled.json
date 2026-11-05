@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/slider-disabled.tsx",
-      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderDisabled() {\n  return <Slider defaultValue={[40]} disabled className=\"max-w-xs\" aria-label=\"Capacity\" />;\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport function SliderDisabled() {\n  return (\n    <Slider defaultValue={[50]} max={100} step={1} disabled className=\"mx-auto w-full max-w-xs\" />\n  );\n}\n",
       "type": "registry:example"
     }
   ],

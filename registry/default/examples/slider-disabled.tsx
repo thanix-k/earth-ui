@@ -1,5 +1,7 @@
 import { Slider } from "@/registry/default/ui/slider";
 
-export default function SliderDisabled() {
-  return <Slider defaultValue={[40]} disabled className="max-w-xs" aria-label="Capacity" />;
+export function SliderDisabled() {
+  return (
+    <Slider defaultValue={[50]} max={100} step={1} disabled className="mx-auto w-full max-w-xs" />
+  );
 }

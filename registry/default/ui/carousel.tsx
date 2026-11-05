@@ -3,7 +3,6 @@
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import * as React from "react";
-
 import { cn } from "@/registry/default/lib/cn";
 import { Button } from "@/registry/default/ui/button";
 
@@ -115,7 +114,6 @@ function Carousel({
         canScrollNext,
       }}
     >
-      {/* biome-ignore lint/a11y/useSemanticElements: WAI-ARIA carousel pattern */}
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn("relative", className)}
@@ -147,7 +145,6 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   const { orientation } = useCarousel();
 
   return (
-    // biome-ignore lint/a11y/useSemanticElements: WAI-ARIA carousel pattern (slides are not form fields)
     <div
       role="group"
       aria-roledescription="slide"
@@ -165,7 +162,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 function CarouselPrevious({
   className,
   variant = "outline",
-  size = "icon",
+  size = "icon-sm",
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -186,7 +183,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon className="rtl:rotate-180" />
+      <ChevronLeftIcon className="cn-rtl-flip" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -195,7 +192,7 @@ function CarouselPrevious({
 function CarouselNext({
   className,
   variant = "outline",
-  size = "icon",
+  size = "icon-sm",
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -216,7 +213,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon className="rtl:rotate-180" />
+      <ChevronRightIcon className="cn-rtl-flip" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

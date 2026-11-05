@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDaysIcon, MinusIcon, PlusIcon } from "lucide-react";
+import { GalleryVerticalEndIcon, MinusIcon, PlusIcon } from "lucide-react";
 import * as React from "react";
 import { SearchForm } from "@/registry/default/blocks/sidebar-05/components/search-form";
 import {
@@ -30,102 +30,102 @@ const data = {
       url: "#",
       items: [
         {
-          title: "Create Your Account",
+          title: "Installation",
           url: "#",
         },
         {
-          title: "Set Up Your Booking Page",
+          title: "Project Structure",
           url: "#",
         },
       ],
     },
     {
-      title: "Manage Bookings",
+      title: "Build Your Application",
       url: "#",
       items: [
         {
-          title: "Services",
+          title: "Routing",
           url: "#",
         },
         {
-          title: "Staff Availability",
+          title: "Data Fetching",
           url: "#",
           isActive: true,
         },
         {
-          title: "Appointments",
+          title: "Rendering",
           url: "#",
         },
         {
-          title: "Reminders",
+          title: "Caching",
           url: "#",
         },
         {
-          title: "Payments",
+          title: "Styling",
           url: "#",
         },
         {
-          title: "Integrations",
+          title: "Optimizing",
           url: "#",
         },
         {
-          title: "Customer Records",
+          title: "Configuring",
           url: "#",
         },
         {
-          title: "Reviews",
+          title: "Testing",
           url: "#",
         },
         {
-          title: "Team Accounts",
+          title: "Authentication",
           url: "#",
         },
         {
-          title: "Booking Widgets",
+          title: "Deploying",
           url: "#",
         },
         {
-          title: "Plans & Billing",
+          title: "Upgrading",
           url: "#",
         },
         {
-          title: "Industry Templates",
+          title: "Examples",
           url: "#",
         },
       ],
     },
     {
-      title: "Developers",
+      title: "API Reference",
       url: "#",
       items: [
         {
-          title: "REST API",
+          title: "Components",
           url: "#",
         },
         {
-          title: "Webhooks",
+          title: "File Conventions",
           url: "#",
         },
         {
-          title: "OAuth Apps",
+          title: "Functions",
           url: "#",
         },
         {
-          title: "Rate Limits",
+          title: "next.config.js Options",
           url: "#",
         },
         {
-          title: "SDKs",
+          title: "CLI",
           url: "#",
         },
         {
-          title: "Zapier",
+          title: "Edge Runtime",
           url: "#",
         },
       ],
     },
     {
-      title: "Account & Security",
+      title: "Architecture",
       url: "#",
       items: [
         {
@@ -133,11 +133,11 @@ const data = {
           url: "#",
         },
         {
-          title: "Two-Factor Login",
+          title: "Fast Refresh",
           url: "#",
         },
         {
-          title: "Data Export",
+          title: "Next.js Compiler",
           url: "#",
         },
         {
@@ -145,7 +145,7 @@ const data = {
           url: "#",
         },
         {
-          title: "Privacy & GDPR",
+          title: "Turbopack",
           url: "#",
         },
       ],
@@ -155,7 +155,7 @@ const data = {
       url: "#",
       items: [
         {
-          title: "Setmore Academy",
+          title: "Contribution Guide",
           url: "#",
         },
       ],
@@ -170,10 +170,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" render={<a href="#" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <CalendarDaysIcon className="size-4" />
+                <GalleryVerticalEndIcon className="size-4" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-medium">Help Center</span>
+                <span className="font-medium">Documentation</span>
                 <span className="">v1.0.0</span>
               </div>
             </SidebarMenuButton>

@@ -1,13 +1,13 @@
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
-import type * as React from "react";
+import * as React from "react";
 import { cn } from "@/registry/default/lib/cn";
+
 import { Separator } from "@/registry/default/ui/separator";
 
 function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: items can render as any element, so the group keeps role="list".
     <div
       role="list"
       data-slot="item-group"
@@ -31,22 +31,19 @@ function ItemSeparator({ className, ...props }: React.ComponentProps<typeof Sepa
   );
 }
 
-// Surfaces follow EDS tiles (integration tile, attachment card): subtle
-// `border-tertiary` edge, `canvas-secondary` fill, neutral hover/pressed
-// when the item is a link or button.
 const itemVariants = cva(
-  "group/item flex w-full flex-wrap items-center rounded-lg border text-body-14 text-eds-primary transition-colors duration-300 ease-[ease] outline-none focus-visible:focus-ring lg:text-body-12 [a]:hover:bg-eds-neutral-hover [a]:active:bg-eds-neutral-pressed [button]:cursor-pointer [button]:text-left [button]:hover:bg-eds-neutral-hover [button]:active:bg-eds-neutral-pressed",
+  "group/item flex w-full flex-wrap items-center rounded-2xl border text-sm transition-colors duration-100 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors [a]:hover:bg-muted",
   {
     variants: {
       variant: {
         default: "border-transparent",
-        outline: "border-eds-tertiary",
-        muted: "border-transparent bg-eds-canvas-secondary",
+        outline: "border-border",
+        muted: "border-transparent bg-muted/50",
       },
       size: {
-        default: "gap-2.5 px-3 py-2.5",
-        sm: "gap-2.5 px-3 py-2.5",
-        xs: "gap-2 px-2.5 py-2 in-data-[slot=dropdown-menu-content]:p-0",
+        default: "gap-3.5 px-4 py-3.5",
+        sm: "gap-3.5 px-3.5 py-3",
+        xs: "gap-2.5 px-3 py-2.5 in-data-[slot=dropdown-menu-content]:p-0",
       },
     },
     defaultVariants: {
@@ -86,9 +83,9 @@ const itemMediaVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        icon: "text-eds-icon-primary [&_svg:not([class*='size-'])]:size-5 lg:[&_svg:not([class*='size-'])]:size-4",
+        icon: "[&_svg:not([class*='size-'])]:size-4",
         image:
-          "size-10 overflow-hidden rounded-md bg-eds-neutral-disabled group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 [&_img]:size-full [&_img]:object-cover",
+          "size-10 overflow-hidden rounded-lg group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-md [&_img]:size-full [&_img]:object-cover",
       },
     },
     defaultVariants: {
@@ -117,7 +114,7 @@ function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-content"
       className={cn(
-        "flex flex-1 flex-col gap-0.5 group-data-[size=xs]/item:gap-0 [&+[data-slot=item-content]]:flex-none",
+        "flex flex-1 flex-col gap-1 group-data-[size=xs]/item:gap-0.5 [&+[data-slot=item-content]]:flex-none",
         className,
       )}
       {...props}
@@ -130,7 +127,7 @@ function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-title"
       className={cn(
-        "line-clamp-1 flex w-fit items-center gap-2 font-medium text-eds-primary underline-offset-4",
+        "line-clamp-1 flex w-fit items-center gap-2 text-sm leading-snug font-medium underline-offset-4",
         className,
       )}
       {...props}
@@ -143,7 +140,7 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="item-description"
       className={cn(
-        "line-clamp-2 text-left font-normal text-eds-secondary group-data-[size=xs]/item:text-body-12 lg:group-data-[size=xs]/item:text-body-10 [&>a]:text-eds-link [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-eds-link-hover",
+        "line-clamp-2 text-left text-sm font-normal text-muted-foreground [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
         className,
       )}
       {...props}

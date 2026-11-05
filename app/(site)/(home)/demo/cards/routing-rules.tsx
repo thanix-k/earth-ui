@@ -34,7 +34,7 @@ export function RoutingRulesCard() {
             <div className="flex flex-col gap-2">
               <div className="flex justify-between">
                 <Label>Ring my phone first</Label>
-                <span className="tabular-nums text-eds-secondary">{rings} rings</span>
+                <span className="tabular-nums text-muted-foreground">{rings} rings</span>
               </div>
               <Slider
                 value={[rings]}
@@ -46,7 +46,7 @@ export function RoutingRulesCard() {
             </div>
             <Separator />
             <RadioGroup defaultValue="dispatch" aria-label="Then">
-              <span className="text-heading-14 lg:text-heading-12">If I don't pick up</span>
+              <span className="text-sm font-semibold lg:text-xs">If I don't pick up</span>
               <Label>
                 <RadioGroupItem value="dispatch" />
                 Receptionist books a technician

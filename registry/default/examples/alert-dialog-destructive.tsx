@@ -1,3 +1,5 @@
+import { Trash2Icon } from "lucide-react";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -6,27 +8,30 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
+  AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/registry/default/ui/alert-dialog";
 import { Button } from "@/registry/default/ui/button";
 
-export default function AlertDialogDestructive() {
+export function AlertDialogDestructive() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="destructive" />}>
-        Remove staff
-      </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogTrigger render={<Button variant="destructive">Delete Chat</Button>} />
+      <AlertDialogContent size="sm">
         <AlertDialogHeader>
-          <AlertDialogTitle>Remove Jordan Lee?</AlertDialogTitle>
+          <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
+            <Trash2Icon />
+          </AlertDialogMedia>
+          <AlertDialogTitle>Delete chat?</AlertDialogTitle>
           <AlertDialogDescription>
-            Their 12 upcoming appointments will be unassigned. This can't be undone.
+            This will permanently delete this chat conversation. View <a href="#">Settings</a>{" "}
+            delete any memories saved during this chat.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction variant="destructive">Remove</AlertDialogAction>
+          <AlertDialogCancel variant="outline">Cancel</AlertDialogCancel>
+          <AlertDialogAction variant="destructive">Delete</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

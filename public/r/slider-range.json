@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/slider-range.tsx",
-      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderRange() {\n  return (\n    <Slider\n      defaultValue={[25, 75]}\n      max={150}\n      step={5}\n      className=\"max-w-xs\"\n      aria-label=\"Price range\"\n    />\n  );\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport function SliderRange() {\n  return <Slider defaultValue={[25, 50]} max={100} step={5} className=\"mx-auto w-full max-w-xs\" />;\n}\n",
       "type": "registry:example"
     }
   ],

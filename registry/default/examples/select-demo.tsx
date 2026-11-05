@@ -3,27 +3,30 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const staff = [
-  { label: "Any available staff", value: "any" },
-  { label: "Alex Morgan", value: "alex" },
-  { label: "Priya Shah", value: "priya" },
-  { label: "Sam Patel", value: "sam" },
-  { label: "Jordan Lee", value: "jordan" },
+const items = [
+  { label: "Select a fruit", value: null },
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+  { label: "Blueberry", value: "blueberry" },
+  { label: "Grapes", value: "grapes" },
+  { label: "Pineapple", value: "pineapple" },
 ];
 
-export default function SelectDemo() {
+export function SelectDemo() {
   return (
-    <Select items={staff} defaultValue="any">
-      <SelectTrigger className="w-56" aria-label="Staff member">
+    <Select items={items}>
+      <SelectTrigger className="w-full max-w-48">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {staff.map((item) => (
+          <SelectLabel>Fruits</SelectLabel>
+          {items.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
             </SelectItem>

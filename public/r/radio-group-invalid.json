@@ -5,13 +5,13 @@
   "description": "Radio Group example: Invalid.",
   "dependencies": [],
   "registryDependencies": [
-    "@earth-ui/label",
+    "@earth-ui/field",
     "@earth-ui/radio-group"
   ],
   "files": [
     {
       "path": "registry/default/examples/radio-group-invalid.tsx",
-      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport default function RadioGroupInvalid() {\n  return (\n    <RadioGroup aria-label=\"Payment\" className=\"w-fit\">\n      <Label>\n        <RadioGroupItem value=\"online\" aria-invalid />\n        Pay online\n      </Label>\n      <Label>\n        <RadioGroupItem value=\"in-store\" aria-invalid />\n        Pay in store\n      </Label>\n    </RadioGroup>\n  );\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n  FieldLegend,\n  FieldSet,\n} from \"@/registry/default/ui/field\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\n\nexport function RadioGroupInvalid() {\n  return (\n    <FieldSet className=\"w-full max-w-xs\">\n      <FieldLegend variant=\"label\">Notification Preferences</FieldLegend>\n      <FieldDescription>Choose how you want to receive notifications.</FieldDescription>\n      <RadioGroup defaultValue=\"email\">\n        <Field orientation=\"horizontal\" data-invalid>\n          <RadioGroupItem value=\"email\" id=\"invalid-email\" aria-invalid />\n          <FieldLabel htmlFor=\"invalid-email\" className=\"font-normal\">\n            Email only\n          </FieldLabel>\n        </Field>\n        <Field orientation=\"horizontal\" data-invalid>\n          <RadioGroupItem value=\"sms\" id=\"invalid-sms\" aria-invalid />\n          <FieldLabel htmlFor=\"invalid-sms\" className=\"font-normal\">\n            SMS only\n          </FieldLabel>\n        </Field>\n        <Field orientation=\"horizontal\" data-invalid>\n          <RadioGroupItem value=\"both\" id=\"invalid-both\" aria-invalid />\n          <FieldLabel htmlFor=\"invalid-both\" className=\"font-normal\">\n            Both Email & SMS\n          </FieldLabel>\n        </Field>\n      </RadioGroup>\n    </FieldSet>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

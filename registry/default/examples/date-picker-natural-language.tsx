@@ -3,6 +3,7 @@
 import { parseDate } from "chrono-node";
 import { CalendarIcon } from "lucide-react";
 import * as React from "react";
+
 import { Calendar } from "@/registry/default/ui/calendar";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import {
@@ -12,10 +13,6 @@ import {
   InputGroupInput,
 } from "@/registry/default/ui/input-group";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-
-// A fixed "today" keeps the example static. In your app, drop this argument
-// so chrono-node parses relative to now.
-const REFERENCE = new Date(2026, 10, 9);
 
 function formatDate(date: Date | undefined) {
   if (!date) {
@@ -29,24 +26,22 @@ function formatDate(date: Date | undefined) {
   });
 }
 
-export default function DatePickerNaturalLanguage() {
+export function DatePickerNaturalLanguage() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("In 2 days");
-  const [date, setDate] = React.useState<Date | undefined>(
-    parseDate(value, REFERENCE) || undefined,
-  );
+  const [date, setDate] = React.useState<Date | undefined>(parseDate(value) || undefined);
 
   return (
     <Field className="mx-auto max-w-xs">
-      <FieldLabel htmlFor="date-picker-natural-language">Schedule date</FieldLabel>
+      <FieldLabel htmlFor="date-optional">Schedule Date</FieldLabel>
       <InputGroup>
         <InputGroupInput
-          id="date-picker-natural-language"
+          id="date-optional"
           value={value}
           placeholder="Tomorrow or next week"
           onChange={(e) => {
             setValue(e.target.value);
-            const date = parseDate(e.target.value, REFERENCE);
+            const date = parseDate(e.target.value);
             if (date) {
               setDate(date);
             }
@@ -61,9 +56,17 @@ export default function DatePickerNaturalLanguage() {
         <InputGroupAddon align="inline-end">
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger
-              render={<InputGroupButton variant="ghost" size="icon-xs" aria-label="Select date" />}
+              render={
+                <InputGroupButton
+                  id="date-picker"
+                  variant="ghost"
+                  size="icon-xs"
+                  aria-label="Select date"
+                />
+              }
             >
               <CalendarIcon />
+              <span className="sr-only">Select date</span>
             </PopoverTrigger>
             <PopoverContent className="w-auto overflow-hidden p-0" align="end" sideOffset={8}>
               <Calendar
@@ -81,7 +84,7 @@ export default function DatePickerNaturalLanguage() {
           </Popover>
         </InputGroupAddon>
       </InputGroup>
-      <div className="px-1 text-body-14 text-eds-secondary lg:text-body-12">
+      <div className="px-1 text-sm text-muted-foreground">
         Your post will be published on <span className="font-medium">{formatDate(date)}</span>.
       </div>
     </Field>

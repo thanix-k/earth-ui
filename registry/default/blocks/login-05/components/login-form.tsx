@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDaysIcon } from "lucide-react";
+import { GalleryVerticalEndIcon } from "lucide-react";
 import { cn } from "@/registry/default/lib/cn";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -20,18 +20,18 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
           <div className="flex flex-col items-center gap-2 text-center">
             <a href="#" className="flex flex-col items-center gap-2 font-medium">
               <div className="flex size-8 items-center justify-center rounded-md">
-                <CalendarDaysIcon className="size-6" />
+                <GalleryVerticalEndIcon className="size-6" />
               </div>
-              <span className="sr-only">Setmore</span>
+              <span className="sr-only">Acme Inc.</span>
             </a>
-            <h1 className="text-xl font-bold">Welcome to Setmore</h1>
+            <h1 className="text-xl font-bold">Welcome to Acme Inc.</h1>
             <FieldDescription>
               Don&apos;t have an account? <a href="#">Sign up</a>
             </FieldDescription>
           </div>
           <Field>
             <FieldLabel htmlFor="email">Email</FieldLabel>
-            <Input id="email" type="email" placeholder="riley@anywhere.co" required />
+            <Input id="email" type="email" placeholder="m@example.com" required />
           </Field>
           <Field>
             <Button type="submit">Login</Button>

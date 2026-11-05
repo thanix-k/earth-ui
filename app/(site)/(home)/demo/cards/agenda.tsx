@@ -54,9 +54,9 @@ const initial = [
 ] as const;
 
 const statusVariant = {
-  "Checked in": "positive",
+  "Checked in": "default",
   Confirmed: "secondary",
-  Unconfirmed: "caution",
+  Unconfirmed: "outline",
 } as const;
 
 export function AgendaCard() {
@@ -73,7 +73,7 @@ export function AgendaCard() {
         <ItemGroup className="gap-2">
           {items.map((a) => (
             <Item key={a.id} variant="outline" size="sm">
-              <span className="w-10 shrink-0 tabular-nums text-eds-secondary">{a.time}</span>
+              <span className="w-10 shrink-0 tabular-nums text-muted-foreground">{a.time}</span>
               <ItemContent>
                 <ItemTitle>{a.who}</ItemTitle>
                 <ItemDescription>{a.what}</ItemDescription>

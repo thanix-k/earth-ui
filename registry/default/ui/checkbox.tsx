@@ -1,7 +1,7 @@
 "use client";
 
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
-import { CheckIcon, MinusIcon } from "lucide-react";
+import { CheckIcon } from "lucide-react";
 import { cn } from "@/registry/default/lib/cn";
 
 function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
@@ -9,20 +9,16 @@ function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
     <CheckboxPrimitive.Root
       data-slot="checkbox"
       className={cn(
-        "peer relative flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-sm border border-eds-input bg-eds-canvas text-eds-inverse transition-colors duration-300 ease-[ease] outline-none after:absolute after:-inset-x-3 after:-inset-y-2 hover:border-eds-input-hover focus-visible:focus-ring lg:size-4",
-        "data-checked:border-eds-input-active data-checked:bg-eds-inverse data-checked:hover:border-eds-input-active-hover data-indeterminate:border-eds-input-active data-indeterminate:bg-eds-inverse data-indeterminate:hover:border-eds-input-active-hover",
-        "aria-invalid:border-eds-input-critical aria-invalid:hover:border-eds-input-critical-hover",
-        "data-disabled:pointer-events-none data-disabled:border-eds-input-disabled data-disabled:bg-eds-neutral-disabled data-disabled:text-eds-disabled",
+        "peer relative flex size-4 shrink-0 items-center justify-center rounded-[6px] border border-input transition-shadow outline-none group-has-disabled/field:opacity-50 group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-data-checked:border-input after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground group-has-[:focus-visible]/field-label:data-checked:border-primary dark:data-checked:bg-primary",
         className,
       )}
       {...props}
     >
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
-        className="grid place-content-center text-current transition-none [&>svg]:size-4 [&>svg]:stroke-3 lg:[&>svg]:size-3.5"
+        className="grid place-content-center text-current transition-none [&>svg]:size-3.5"
       >
-        <CheckIcon className="in-data-indeterminate:hidden" />
-        <MinusIcon className="hidden in-data-indeterminate:block" />
+        <CheckIcon />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   );

@@ -1,11 +1,19 @@
+import { Bold, Italic, Underline } from "lucide-react";
+
 import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
 
-export default function ToggleGroupDisabled() {
+export function ToggleGroupDisabled() {
   return (
-    <ToggleGroup variant="outline" disabled defaultValue={["week"]} aria-label="Calendar view">
-      <ToggleGroupItem value="day">Day</ToggleGroupItem>
-      <ToggleGroupItem value="week">Week</ToggleGroupItem>
-      <ToggleGroupItem value="month">Month</ToggleGroupItem>
+    <ToggleGroup disabled>
+      <ToggleGroupItem value="bold" aria-label="Toggle bold">
+        <Bold />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="italic" aria-label="Toggle italic">
+        <Italic />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
+        <Underline />
+      </ToggleGroupItem>
     </ToggleGroup>
   );
 }

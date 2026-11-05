@@ -2,18 +2,14 @@ import { Separator } from "@/registry/default/ui/separator";
 
 export default function SeparatorDemo() {
   return (
-    <div className="w-full max-w-sm text-body-14 text-eds-primary lg:text-body-12">
-      <div className="flex flex-col gap-0.5">
-        <div className="font-medium">Glow Salon</div>
-        <div className="text-eds-secondary">Hair, nails and skin care.</div>
+    <div className="flex max-w-sm flex-col gap-4 text-sm">
+      <div className="flex flex-col gap-1.5">
+        <div className="leading-none font-medium">shadcn/ui</div>
+        <div className="text-muted-foreground">The Foundation for your Design System</div>
       </div>
-      <Separator className="my-4" />
-      <div className="flex h-5 items-center gap-4">
-        <div>Bookings</div>
-        <Separator orientation="vertical" />
-        <div>Staff</div>
-        <Separator orientation="vertical" />
-        <div>Services</div>
+      <Separator />
+      <div>
+        A set of beautifully designed components that you can customize, extend, and build on.
       </div>
     </div>
   );

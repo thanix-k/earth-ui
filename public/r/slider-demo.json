@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/default/examples/slider-demo.tsx",
-      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function SliderDemo() {\n  return (\n    <Slider defaultValue={[30]} max={60} step={5} className=\"max-w-xs\" aria-label=\"Buffer time\" />\n  );\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport function SliderDemo() {\n  return <Slider defaultValue={[75]} max={100} step={1} className=\"mx-auto w-full max-w-xs\" />;\n}\n",
       "type": "registry:example"
     }
   ],

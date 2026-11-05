@@ -30,9 +30,6 @@ export default function PaginationDemo() {
           <PaginationEllipsis />
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="#">12</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
           <PaginationNext href="#" />
         </PaginationItem>
       </PaginationContent>

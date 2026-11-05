@@ -1,11 +1,5 @@
-import {
-  CalendarPlusIcon,
-  ClockIcon,
-  ScissorsIcon,
-  SettingsIcon,
-  UserRoundIcon,
-  UsersIcon,
-} from "lucide-react";
+import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "lucide-react";
+
 import {
   Command,
   CommandEmpty,
@@ -17,41 +11,41 @@ import {
   CommandShortcut,
 } from "@/registry/default/ui/command";
 
-export default function CommandDemo() {
+export function CommandDemo() {
   return (
-    <Command className="max-w-sm border border-eds-secondary shadow-eds-20">
-      <CommandInput placeholder="Search bookings, staff, services…" />
+    <Command className="max-w-sm rounded-lg border">
+      <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <CalendarPlusIcon />
-            New appointment
+            <Calendar />
+            <span>Calendar</span>
           </CommandItem>
           <CommandItem>
-            <ClockIcon />
-            Working hours
+            <Smile />
+            <span>Search Emoji</span>
           </CommandItem>
           <CommandItem disabled>
-            <ScissorsIcon />
-            Services
+            <Calculator />
+            <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
-            <UserRoundIcon />
-            Profile
+            <User />
+            <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <UsersIcon />
-            Staff
-            <CommandShortcut>⌘T</CommandShortcut>
+            <CreditCard />
+            <span>Billing</span>
+            <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <SettingsIcon />
-            Booking page
+            <Settings />
+            <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>
         </CommandGroup>

@@ -5,12 +5,13 @@
   "description": "Input example. A single-line text field. Pair it with a Label, or a Field for descriptions and errors.",
   "dependencies": [],
   "registryDependencies": [
+    "@earth-ui/field",
     "@earth-ui/input"
   ],
   "files": [
     {
       "path": "registry/default/examples/input-demo.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function InputDemo() {\n  return <Input className=\"max-w-xs\" type=\"email\" placeholder=\"Email\" aria-label=\"Email\" />;\n}\n",
+      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function InputDemo() {\n  return (\n    <Field>\n      <FieldLabel htmlFor=\"input-demo-api-key\">API Key</FieldLabel>\n      <Input id=\"input-demo-api-key\" type=\"password\" placeholder=\"sk-...\" />\n      <FieldDescription>Your API key is encrypted and stored securely.</FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

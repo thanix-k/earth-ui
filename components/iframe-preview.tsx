@@ -25,7 +25,7 @@ export function IframePreview({ name }: { name: string }) {
   return (
     <div
       ref={ref}
-      className="overflow-hidden rounded-xl border border-eds-tertiary bg-eds-canvas"
+      className="overflow-hidden rounded-xl border border-border bg-background"
       style={{ height: HEIGHT * scale }}
     >
       <iframe

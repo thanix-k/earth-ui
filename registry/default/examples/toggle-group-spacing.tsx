@@ -1,11 +1,20 @@
 import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
 
-export default function ToggleGroupSpacing() {
+export function ToggleGroupSpacing() {
   return (
-    <ToggleGroup variant="outline" spacing={0} defaultValue={["list"]} aria-label="Layout">
-      <ToggleGroupItem value="list">List</ToggleGroupItem>
-      <ToggleGroupItem value="calendar">Calendar</ToggleGroupItem>
-      <ToggleGroupItem value="map">Map</ToggleGroupItem>
+    <ToggleGroup size="sm" defaultValue={["top"]} variant="outline" spacing={2}>
+      <ToggleGroupItem value="top" aria-label="Toggle top">
+        Top
+      </ToggleGroupItem>
+      <ToggleGroupItem value="bottom" aria-label="Toggle bottom">
+        Bottom
+      </ToggleGroupItem>
+      <ToggleGroupItem value="left" aria-label="Toggle left">
+        Left
+      </ToggleGroupItem>
+      <ToggleGroupItem value="right" aria-label="Toggle right">
+        Right
+      </ToggleGroupItem>
     </ToggleGroup>
   );
 }

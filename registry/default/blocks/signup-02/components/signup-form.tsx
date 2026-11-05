@@ -22,20 +22,14 @@ export function SignupForm({ className, ...props }: React.ComponentProps<"form">
         </div>
         <Field>
           <FieldLabel htmlFor="name">Full Name</FieldLabel>
-          <Input
-            id="name"
-            type="text"
-            placeholder="Riley Carter"
-            required
-            className="bg-background"
-          />
+          <Input id="name" type="text" placeholder="John Doe" required className="bg-background" />
         </Field>
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
           <Input
             id="email"
             type="email"
-            placeholder="riley@anywhere.co"
+            placeholder="m@example.com"
             required
             className="bg-background"
           />

@@ -7,10 +7,10 @@
       "name": "base",
       "type": "registry:base",
       "title": "Earth base",
-      "description": "Earth (setmore-black) tokens, shadcn aliases, focus ring and the Inter font. Install first.",
+      "description": "shadcn's variables set to Earth (setmore-black) values, plus the Inter font. Install first.",
       "extends": "none",
       "config": {
-        "style": "base-nova",
+        "style": "base-maia",
         "iconLibrary": "lucide",
         "tailwind": {
           "baseColor": "neutral"
@@ -22,14 +22,25 @@
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority",
-        "lucide-react"
+        "lucide-react",
+        "shadcn",
+        "tw-animate-css"
       ],
       "registryDependencies": [
         "@earth-ui/cn",
-        "@earth-ui/font-inter",
-        "@earth-ui/theme"
+        "@earth-ui/font-inter"
       ],
       "cssVars": {
+        "theme": {
+          "radius-xs": "var(--radius)",
+          "radius-sm": "var(--radius)",
+          "radius-md": "var(--radius)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "var(--radius)",
+          "radius-2xl": "var(--radius)",
+          "radius-3xl": "var(--radius)",
+          "radius-4xl": "var(--radius)"
+        },
         "light": {
           "background": "#ffffff",
           "foreground": "#111111",
@@ -61,7 +72,8 @@
           "sidebar-accent": "#f1f1f1",
           "sidebar-accent-foreground": "#111111",
           "sidebar-border": "#dbdbdb",
-          "sidebar-ring": "#111111"
+          "sidebar-ring": "#111111",
+          "radius": "8px"
         },
         "dark": {
           "background": "#1a1a1a",
@@ -98,9 +110,11 @@
         }
       },
       "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
         "@layer base": {
           "*": {
-            "@apply border-border outline-ring": {}
+            "@apply border-border outline-ring/50": {}
           },
           "body": {
             "@apply bg-background text-foreground font-sans": {}
@@ -109,820 +123,24 @@
       }
     },
     {
-      "name": "theme",
+      "name": "theme-soft",
       "type": "registry:theme",
-      "title": "Earth theme",
-      "description": "Earth's eds- tokens, type scale, radius and focus ring, without the shadcn aliases.",
-      "dependencies": [
-        "shadcn",
-        "tw-animate-css"
-      ],
+      "title": "Earth Soft",
+      "description": "A rounder radius. Install after base.",
       "cssVars": {
-        "theme": {
-          "text-color-eds-accent": "var(--eds-text-accent)",
-          "text-color-eds-accent-hover": "var(--eds-text-accent-hover)",
-          "text-color-eds-accent-pressed": "var(--eds-text-accent-pressed)",
-          "text-color-eds-primary": "var(--eds-text-primary)",
-          "text-color-eds-primary-hover": "var(--eds-text-primary-hover)",
-          "text-color-eds-secondary": "var(--eds-text-secondary)",
-          "text-color-eds-secondary-hover": "var(--eds-text-secondary-hover)",
-          "text-color-eds-tertiary": "var(--eds-text-tertiary)",
-          "text-color-eds-disabled": "var(--eds-text-disabled)",
-          "text-color-eds-disabled-secondary": "var(--eds-text-disabled-secondary)",
-          "text-color-eds-onPrimary": "var(--eds-text-onPrimary)",
-          "text-color-eds-onPrimary-disabled": "var(--eds-text-onPrimary-disabled)",
-          "text-color-eds-positive": "var(--eds-text-positive)",
-          "text-color-eds-positive-secondary": "var(--eds-text-positive-secondary)",
-          "text-color-eds-caution": "var(--eds-text-caution)",
-          "text-color-eds-caution-secondary": "var(--eds-text-caution-secondary)",
-          "text-color-eds-inverse": "var(--eds-text-inverse)",
-          "text-color-eds-inverse-secondary": "var(--eds-text-inverse-secondary)",
-          "text-color-eds-inverse-caution": "var(--eds-text-inverse-caution)",
-          "text-color-eds-inverse-positive": "var(--eds-text-inverse-positive)",
-          "text-color-eds-inverse-critical": "var(--eds-text-inverse-critical)",
-          "text-color-eds-inverse-accent": "var(--eds-text-inverse-accent)",
-          "text-color-eds-link": "var(--eds-text-link)",
-          "text-color-eds-link-hover": "var(--eds-text-link-hover)",
-          "text-color-eds-link-pressed": "var(--eds-text-link-pressed)",
-          "text-color-eds-critical": "var(--eds-text-critical)",
-          "text-color-eds-critical-onPrimary": "var(--eds-text-critical-onPrimary)",
-          "text-color-eds-critical-secondary": "var(--eds-text-critical-secondary)",
-          "text-color-eds-icon-accent": "var(--eds-icon-accent)",
-          "text-color-eds-icon-critical": "var(--eds-icon-critical)",
-          "text-color-eds-icon-critical-onPrimary": "var(--eds-icon-critical-onPrimary)",
-          "text-color-eds-icon-onPrimary": "var(--eds-icon-onPrimary)",
-          "text-color-eds-icon-primary": "var(--eds-icon-primary)",
-          "text-color-eds-icon-secondary": "var(--eds-icon-secondary)",
-          "text-color-eds-icon-tertiary": "var(--eds-icon-tertiary)",
-          "text-color-eds-icon-positive": "var(--eds-icon-positive)",
-          "text-color-eds-icon-positive-hover": "var(--eds-icon-positive-hover)",
-          "text-color-eds-icon-caution": "var(--eds-icon-caution)",
-          "text-color-eds-icon-inverse": "var(--eds-icon-inverse)",
-          "background-color-eds-canvas": "var(--eds-background-canvas)",
-          "background-color-eds-canvas-secondary": "var(--eds-background-canvas-secondary)",
-          "background-color-eds-canvas-tertiary": "var(--eds-background-canvas-tertiary)",
-          "background-color-eds-menu": "var(--eds-background-menu)",
-          "background-color-eds-neutral": "var(--eds-background-neutral)",
-          "background-color-eds-neutral-hover": "var(--eds-background-neutral-hover)",
-          "background-color-eds-neutral-pressed": "var(--eds-background-neutral-pressed)",
-          "background-color-eds-neutral-active": "var(--eds-background-neutral-active)",
-          "background-color-eds-neutral-disabled": "var(--eds-background-neutral-disabled)",
-          "background-color-eds-neutral-secondary": "var(--eds-background-neutral-secondary)",
-          "background-color-eds-neutral-secondary-hover": "var(--eds-background-neutral-secondary-hover)",
-          "background-color-eds-neutral-secondary-pressed": "var(--eds-background-neutral-secondary-pressed)",
-          "background-color-eds-neutral-tertiary": "var(--eds-background-neutral-tertiary)",
-          "background-color-eds-neutral-tertiary-hover": "var(--eds-background-neutral-tertiary-hover)",
-          "background-color-eds-inverse": "var(--eds-background-inverse)",
-          "background-color-eds-inverse-hover": "var(--eds-background-inverse-hover)",
-          "background-color-eds-inverse-pressed": "var(--eds-background-inverse-pressed)",
-          "background-color-eds-inverse-secondary": "var(--eds-background-inverse-secondary)",
-          "background-color-eds-inverse-tertiary": "var(--eds-background-inverse-tertiary)",
-          "background-color-eds-inverse-tertiary-hover": "var(--eds-background-inverse-tertiary-hover)",
-          "background-color-eds-inverse-tertiary-pressed": "var(--eds-background-inverse-tertiary-pressed)",
-          "background-color-eds-critical": "var(--eds-background-critical)",
-          "background-color-eds-critical-hover": "var(--eds-background-critical-hover)",
-          "background-color-eds-critical-pressed": "var(--eds-background-critical-pressed)",
-          "background-color-eds-critical-secondary": "var(--eds-background-critical-secondary)",
-          "background-color-eds-critical-secondary-hover": "var(--eds-background-critical-secondary-hover)",
-          "background-color-eds-critical-secondary-pressed": "var(--eds-background-critical-secondary-pressed)",
-          "background-color-eds-accent": "var(--eds-background-accent)",
-          "background-color-eds-accent-hover": "var(--eds-background-accent-hover)",
-          "background-color-eds-accent-pressed": "var(--eds-background-accent-pressed)",
-          "background-color-eds-accent-secondary": "var(--eds-background-accent-secondary)",
-          "background-color-eds-accent-secondary-hover": "var(--eds-background-accent-secondary-hover)",
-          "background-color-eds-accent-secondary-pressed": "var(--eds-background-accent-secondary-pressed)",
-          "background-color-eds-accent-tertiary": "var(--eds-background-accent-tertiary)",
-          "background-color-eds-accent-tertiary-hover": "var(--eds-background-accent-tertiary-hover)",
-          "background-color-eds-accent-tertiary-pressed": "var(--eds-background-accent-tertiary-pressed)",
-          "background-color-eds-positive": "var(--eds-background-positive)",
-          "background-color-eds-positive-hover": "var(--eds-background-positive-hover)",
-          "background-color-eds-positive-pressed": "var(--eds-background-positive-pressed)",
-          "background-color-eds-positive-secondary": "var(--eds-background-positive-secondary)",
-          "background-color-eds-positive-secondary-hover": "var(--eds-background-positive-secondary-hover)",
-          "background-color-eds-positive-secondary-pressed": "var(--eds-background-positive-secondary-pressed)",
-          "background-color-eds-caution": "var(--eds-background-caution)",
-          "background-color-eds-caution-hover": "var(--eds-background-caution-hover)",
-          "background-color-eds-caution-pressed": "var(--eds-background-caution-pressed)",
-          "background-color-eds-caution-secondary": "var(--eds-background-caution-secondary)",
-          "background-color-eds-avatar": "var(--eds-background-avatar)",
-          "background-color-eds-avatar-hover": "var(--eds-background-avatar-hover)",
-          "background-color-eds-calendar": "var(--eds-background-calendar)",
-          "background-color-eds-calendar-disabled": "var(--eds-background-calendar-disabled)",
-          "background-color-eds-modal-overlay": "var(--eds-background-modal-overlay)",
-          "border-color-eds-secondary": "var(--eds-border-secondary)",
-          "ring-color-eds-secondary": "var(--eds-border-secondary)",
-          "border-color-eds-tertiary": "var(--eds-border-tertiary)",
-          "ring-color-eds-tertiary": "var(--eds-border-tertiary)",
-          "border-color-eds-hover": "var(--eds-border-hover)",
-          "ring-color-eds-hover": "var(--eds-border-hover)",
-          "border-color-eds-input": "var(--eds-border-input)",
-          "ring-color-eds-input": "var(--eds-border-input)",
-          "border-color-eds-input-hover": "var(--eds-border-input-hover)",
-          "ring-color-eds-input-hover": "var(--eds-border-input-hover)",
-          "border-color-eds-input-active": "var(--eds-border-input-active)",
-          "ring-color-eds-input-active": "var(--eds-border-input-active)",
-          "border-color-eds-input-active-hover": "var(--eds-border-input-active-hover)",
-          "ring-color-eds-input-active-hover": "var(--eds-border-input-active-hover)",
-          "border-color-eds-input-active-pressed": "var(--eds-border-input-active-pressed)",
-          "ring-color-eds-input-active-pressed": "var(--eds-border-input-active-pressed)",
-          "border-color-eds-input-disabled": "var(--eds-border-input-disabled)",
-          "ring-color-eds-input-disabled": "var(--eds-border-input-disabled)",
-          "border-color-eds-input-critical": "var(--eds-border-input-critical)",
-          "ring-color-eds-input-critical": "var(--eds-border-input-critical)",
-          "border-color-eds-input-critical-hover": "var(--eds-border-input-critical-hover)",
-          "ring-color-eds-input-critical-hover": "var(--eds-border-input-critical-hover)",
-          "border-color-eds-input-critical-pressed": "var(--eds-border-input-critical-pressed)",
-          "ring-color-eds-input-critical-pressed": "var(--eds-border-input-critical-pressed)",
-          "border-color-eds-input-caution": "var(--eds-border-input-caution)",
-          "ring-color-eds-input-caution": "var(--eds-border-input-caution)",
-          "border-color-eds-input-caution-hover": "var(--eds-border-input-caution-hover)",
-          "ring-color-eds-input-caution-hover": "var(--eds-border-input-caution-hover)",
-          "border-color-eds-input-caution-pressed": "var(--eds-border-input-caution-pressed)",
-          "ring-color-eds-input-caution-pressed": "var(--eds-border-input-caution-pressed)",
-          "border-color-eds-focus": "var(--eds-border-focus)",
-          "ring-color-eds-focus": "var(--eds-border-focus)",
-          "border-color-eds-accent": "var(--eds-border-accent)",
-          "ring-color-eds-accent": "var(--eds-border-accent)",
-          "border-color-eds-primary": "var(--eds-border-primary)",
-          "ring-color-eds-primary": "var(--eds-border-primary)",
-          "border-color-eds-calendar": "var(--eds-border-calendar)",
-          "ring-color-eds-calendar": "var(--eds-border-calendar)",
-          "color-eds-status-available": "var(--eds-status-available)",
-          "color-eds-status-away": "var(--eds-status-away)",
-          "color-eds-status-busy": "var(--eds-status-busy)",
-          "color-eds-status-offline": "var(--eds-status-offline)",
-          "color-eds-status-icon": "var(--eds-status-icon)",
-          "color-eds-status-border": "var(--eds-status-border)",
-          "color-eds-decoration-brand": "var(--eds-decoration-brand)",
-          "color-eds-decoration-facebook": "var(--eds-decoration-facebook)",
-          "color-eds-decoration-instagram": "var(--eds-decoration-instagram)",
-          "color-eds-decoration-teleport": "var(--eds-decoration-teleport)",
-          "color-eds-decoration-twitter": "var(--eds-decoration-twitter)",
-          "color-eds-decoration-whatsapp": "var(--eds-decoration-whatsapp)",
-          "color-eds-decoration-youtube": "var(--eds-decoration-youtube)",
-          "color-eds-general-constant-white": "var(--eds-general-constant-white)",
-          "color-eds-general-constant-black": "var(--eds-general-constant-black)",
-          "color-eds-chart-accent-100": "var(--eds-chart-accent-100)",
-          "color-eds-chart-accent-200": "var(--eds-chart-accent-200)",
-          "color-eds-chart-accent-300": "var(--eds-chart-accent-300)",
-          "color-eds-chart-accent-400": "var(--eds-chart-accent-400)",
-          "color-eds-chart-accent-500": "var(--eds-chart-accent-500)",
-          "color-eds-chart-accent-600": "var(--eds-chart-accent-600)",
-          "color-eds-chart-accent-700": "var(--eds-chart-accent-700)",
-          "color-eds-chart-accent-800": "var(--eds-chart-accent-800)",
-          "color-eds-chart-neutral-100": "var(--eds-chart-neutral-100)",
-          "color-eds-chart-neutral-200": "var(--eds-chart-neutral-200)",
-          "color-eds-chart-neutral-300": "var(--eds-chart-neutral-300)",
-          "color-eds-chart-neutral-400": "var(--eds-chart-neutral-400)",
-          "color-eds-chart-neutral-500": "var(--eds-chart-neutral-500)",
-          "color-eds-chart-neutral-600": "var(--eds-chart-neutral-600)",
-          "color-eds-chart-neutral-700": "var(--eds-chart-neutral-700)",
-          "color-eds-chart-neutral-800": "var(--eds-chart-neutral-800)",
-          "color-eds-palette-gray-background": "var(--eds-palette-gray-background)",
-          "color-eds-palette-gray-background-hover": "var(--eds-palette-gray-background-hover)",
-          "color-eds-palette-gray-background-active": "var(--eds-palette-gray-background-active)",
-          "color-eds-palette-gray-border": "var(--eds-palette-gray-border)",
-          "color-eds-palette-gray-text": "var(--eds-palette-gray-text)",
-          "color-eds-palette-gray-text-active": "var(--eds-palette-gray-text-active)",
-          "color-eds-palette-gray-text-secondary": "var(--eds-palette-gray-text-secondary)",
-          "color-eds-palette-dark-gray-background": "var(--eds-palette-dark-gray-background)",
-          "color-eds-palette-dark-gray-background-hover": "var(--eds-palette-dark-gray-background-hover)",
-          "color-eds-palette-dark-gray-background-active": "var(--eds-palette-dark-gray-background-active)",
-          "color-eds-palette-dark-gray-border": "var(--eds-palette-dark-gray-border)",
-          "color-eds-palette-dark-gray-text": "var(--eds-palette-dark-gray-text)",
-          "color-eds-palette-dark-gray-text-active": "var(--eds-palette-dark-gray-text-active)",
-          "color-eds-palette-dark-gray-text-secondary": "var(--eds-palette-dark-gray-text-secondary)",
-          "color-eds-palette-light-pink-background": "var(--eds-palette-light-pink-background)",
-          "color-eds-palette-light-pink-background-hover": "var(--eds-palette-light-pink-background-hover)",
-          "color-eds-palette-light-pink-background-active": "var(--eds-palette-light-pink-background-active)",
-          "color-eds-palette-light-pink-border": "var(--eds-palette-light-pink-border)",
-          "color-eds-palette-light-pink-text": "var(--eds-palette-light-pink-text)",
-          "color-eds-palette-light-pink-text-active": "var(--eds-palette-light-pink-text-active)",
-          "color-eds-palette-light-pink-text-secondary": "var(--eds-palette-light-pink-text-secondary)",
-          "color-eds-palette-pink-background": "var(--eds-palette-pink-background)",
-          "color-eds-palette-pink-background-hover": "var(--eds-palette-pink-background-hover)",
-          "color-eds-palette-pink-background-active": "var(--eds-palette-pink-background-active)",
-          "color-eds-palette-pink-border": "var(--eds-palette-pink-border)",
-          "color-eds-palette-pink-text": "var(--eds-palette-pink-text)",
-          "color-eds-palette-pink-text-active": "var(--eds-palette-pink-text-active)",
-          "color-eds-palette-pink-text-secondary": "var(--eds-palette-pink-text-secondary)",
-          "color-eds-palette-red-background": "var(--eds-palette-red-background)",
-          "color-eds-palette-red-background-hover": "var(--eds-palette-red-background-hover)",
-          "color-eds-palette-red-background-active": "var(--eds-palette-red-background-active)",
-          "color-eds-palette-red-border": "var(--eds-palette-red-border)",
-          "color-eds-palette-red-text": "var(--eds-palette-red-text)",
-          "color-eds-palette-red-text-active": "var(--eds-palette-red-text-active)",
-          "color-eds-palette-red-text-secondary": "var(--eds-palette-red-text-secondary)",
-          "color-eds-palette-maroon-background": "var(--eds-palette-maroon-background)",
-          "color-eds-palette-maroon-background-hover": "var(--eds-palette-maroon-background-hover)",
-          "color-eds-palette-maroon-background-active": "var(--eds-palette-maroon-background-active)",
-          "color-eds-palette-maroon-border": "var(--eds-palette-maroon-border)",
-          "color-eds-palette-maroon-text": "var(--eds-palette-maroon-text)",
-          "color-eds-palette-maroon-text-active": "var(--eds-palette-maroon-text-active)",
-          "color-eds-palette-maroon-text-secondary": "var(--eds-palette-maroon-text-secondary)",
-          "color-eds-palette-orange-background": "var(--eds-palette-orange-background)",
-          "color-eds-palette-orange-background-hover": "var(--eds-palette-orange-background-hover)",
-          "color-eds-palette-orange-background-active": "var(--eds-palette-orange-background-active)",
-          "color-eds-palette-orange-border": "var(--eds-palette-orange-border)",
-          "color-eds-palette-orange-text": "var(--eds-palette-orange-text)",
-          "color-eds-palette-orange-text-active": "var(--eds-palette-orange-text-active)",
-          "color-eds-palette-orange-text-secondary": "var(--eds-palette-orange-text-secondary)",
-          "color-eds-palette-violet-background": "var(--eds-palette-violet-background)",
-          "color-eds-palette-violet-background-hover": "var(--eds-palette-violet-background-hover)",
-          "color-eds-palette-violet-background-active": "var(--eds-palette-violet-background-active)",
-          "color-eds-palette-violet-border": "var(--eds-palette-violet-border)",
-          "color-eds-palette-violet-text": "var(--eds-palette-violet-text)",
-          "color-eds-palette-violet-text-active": "var(--eds-palette-violet-text-active)",
-          "color-eds-palette-violet-text-secondary": "var(--eds-palette-violet-text-secondary)",
-          "color-eds-palette-yellow-background": "var(--eds-palette-yellow-background)",
-          "color-eds-palette-yellow-background-hover": "var(--eds-palette-yellow-background-hover)",
-          "color-eds-palette-yellow-background-active": "var(--eds-palette-yellow-background-active)",
-          "color-eds-palette-yellow-border": "var(--eds-palette-yellow-border)",
-          "color-eds-palette-yellow-text": "var(--eds-palette-yellow-text)",
-          "color-eds-palette-yellow-text-active": "var(--eds-palette-yellow-text-active)",
-          "color-eds-palette-yellow-text-secondary": "var(--eds-palette-yellow-text-secondary)",
-          "color-eds-palette-green-background": "var(--eds-palette-green-background)",
-          "color-eds-palette-green-background-hover": "var(--eds-palette-green-background-hover)",
-          "color-eds-palette-green-background-active": "var(--eds-palette-green-background-active)",
-          "color-eds-palette-green-border": "var(--eds-palette-green-border)",
-          "color-eds-palette-green-text": "var(--eds-palette-green-text)",
-          "color-eds-palette-green-text-active": "var(--eds-palette-green-text-active)",
-          "color-eds-palette-green-text-secondary": "var(--eds-palette-green-text-secondary)",
-          "color-eds-palette-dark-green-background": "var(--eds-palette-dark-green-background)",
-          "color-eds-palette-dark-green-background-hover": "var(--eds-palette-dark-green-background-hover)",
-          "color-eds-palette-dark-green-background-active": "var(--eds-palette-dark-green-background-active)",
-          "color-eds-palette-dark-green-border": "var(--eds-palette-dark-green-border)",
-          "color-eds-palette-dark-green-text": "var(--eds-palette-dark-green-text)",
-          "color-eds-palette-dark-green-text-active": "var(--eds-palette-dark-green-text-active)",
-          "color-eds-palette-dark-green-text-secondary": "var(--eds-palette-dark-green-text-secondary)",
-          "color-eds-palette-blue-background": "var(--eds-palette-blue-background)",
-          "color-eds-palette-blue-background-hover": "var(--eds-palette-blue-background-hover)",
-          "color-eds-palette-blue-background-active": "var(--eds-palette-blue-background-active)",
-          "color-eds-palette-blue-border": "var(--eds-palette-blue-border)",
-          "color-eds-palette-blue-text": "var(--eds-palette-blue-text)",
-          "color-eds-palette-blue-text-active": "var(--eds-palette-blue-text-active)",
-          "color-eds-palette-blue-text-secondary": "var(--eds-palette-blue-text-secondary)",
-          "color-eds-palette-dark-blue-background": "var(--eds-palette-dark-blue-background)",
-          "color-eds-palette-dark-blue-background-hover": "var(--eds-palette-dark-blue-background-hover)",
-          "color-eds-palette-dark-blue-background-active": "var(--eds-palette-dark-blue-background-active)",
-          "color-eds-palette-dark-blue-border": "var(--eds-palette-dark-blue-border)",
-          "color-eds-palette-dark-blue-text": "var(--eds-palette-dark-blue-text)",
-          "color-eds-palette-dark-blue-text-active": "var(--eds-palette-dark-blue-text-active)",
-          "color-eds-palette-dark-blue-text-secondary": "var(--eds-palette-dark-blue-text-secondary)",
-          "shadow-eds-10": "var(--eds-shadow-10)",
-          "shadow-eds-20": "var(--eds-shadow-20)",
-          "shadow-eds-30": "var(--eds-shadow-30)",
-          "shadow-eds-40": "var(--eds-shadow-40)",
-          "shadow-eds-50": "var(--eds-shadow-50)",
-          "text-heading-12": "12px",
-          "text-heading-12--line-height": "20px",
-          "text-heading-12--letter-spacing": "0px",
-          "text-heading-12--font-weight": "600",
-          "text-heading-14": "14px",
-          "text-heading-14--line-height": "22px",
-          "text-heading-14--letter-spacing": "0px",
-          "text-heading-14--font-weight": "600",
-          "text-heading-16": "16px",
-          "text-heading-16--line-height": "24px",
-          "text-heading-16--letter-spacing": "0px",
-          "text-heading-16--font-weight": "600",
-          "text-heading-18": "18px",
-          "text-heading-18--line-height": "26px",
-          "text-heading-18--letter-spacing": "0px",
-          "text-heading-18--font-weight": "600",
-          "text-heading-20": "20px",
-          "text-heading-20--line-height": "28px",
-          "text-heading-20--letter-spacing": "0px",
-          "text-heading-20--font-weight": "600",
-          "text-heading-24": "24px",
-          "text-heading-24--line-height": "32px",
-          "text-heading-24--letter-spacing": "0px",
-          "text-heading-24--font-weight": "600",
-          "text-heading-28": "28px",
-          "text-heading-28--line-height": "40px",
-          "text-heading-28--letter-spacing": "0px",
-          "text-heading-28--font-weight": "600",
-          "text-heading-32": "32px",
-          "text-heading-32--line-height": "48px",
-          "text-heading-32--letter-spacing": "0px",
-          "text-heading-32--font-weight": "600",
-          "text-body-8": "8px",
-          "text-body-8--line-height": "12px",
-          "text-body-8--letter-spacing": "0px",
-          "text-body-8--font-weight": "400",
-          "text-body-10": "10px",
-          "text-body-10--line-height": "16px",
-          "text-body-10--letter-spacing": "0px",
-          "text-body-10--font-weight": "400",
-          "text-body-12": "12px",
-          "text-body-12--line-height": "20px",
-          "text-body-12--letter-spacing": "0px",
-          "text-body-12--font-weight": "400",
-          "text-body-14": "14px",
-          "text-body-14--line-height": "22px",
-          "text-body-14--letter-spacing": "0px",
-          "text-body-14--font-weight": "400",
-          "text-body-16": "16px",
-          "text-body-16--line-height": "24px",
-          "text-body-16--letter-spacing": "0px",
-          "text-body-16--font-weight": "400",
-          "text-body-20": "20px",
-          "text-body-20--line-height": "28px",
-          "text-body-20--letter-spacing": "0px",
-          "text-body-20--font-weight": "400",
-          "font-weight-eds-regular": "400",
-          "font-weight-eds-strong": "500",
-          "font-weight-eds-stronger": "600",
-          "radius-sm": "4px",
-          "radius-md": "6px",
-          "radius-lg": "8px",
-          "radius-xl": "12px",
-          "radius-2xl": "16px",
-          "ease-eds-regular": "cubic-bezier(0.5, 0, 0.5, 0.99)",
-          "ease-eds-entrance": "cubic-bezier(0.2, 0, 0.44, 0.99)"
+        "light": {
+          "radius": "12px"
         }
-      },
-      "css": {
-        "@import \"tw-animate-css\"": {},
-        "@import \"shadcn/tailwind.css\"": {},
-        ":root": {
-          "--eds-text-accent": "#111111",
-          "--eds-text-accent-hover": "#707070",
-          "--eds-text-accent-pressed": "#999999",
-          "--eds-text-primary": "#111111",
-          "--eds-text-primary-hover": "#6f6f71",
-          "--eds-text-secondary": "#676767",
-          "--eds-text-secondary-hover": "#323232",
-          "--eds-text-tertiary": "#9c9c9c",
-          "--eds-text-disabled": "#b2b2b2",
-          "--eds-text-disabled-secondary": "#676767",
-          "--eds-text-onPrimary": "#ffffff",
-          "--eds-text-onPrimary-disabled": "#9c9c9c",
-          "--eds-text-positive": "#57a57a",
-          "--eds-text-positive-secondary": "#0d442e",
-          "--eds-text-caution": "#e27e27",
-          "--eds-text-caution-secondary": "#523100",
-          "--eds-text-inverse": "#f0f0f0",
-          "--eds-text-inverse-secondary": "#dbdbdb",
-          "--eds-text-inverse-caution": "#ffc257",
-          "--eds-text-inverse-positive": "#83d3b2",
-          "--eds-text-inverse-critical": "#ce6b64",
-          "--eds-text-inverse-accent": "#eeeeee",
-          "--eds-text-link": "#1d90f5",
-          "--eds-text-link-hover": "#096cc3",
-          "--eds-text-link-pressed": "#075192",
-          "--eds-text-critical": "#c44c44",
-          "--eds-text-critical-onPrimary": "#ffffff",
-          "--eds-text-critical-secondary": "#470b0b",
-          "--eds-icon-accent": "#111111",
-          "--eds-icon-critical": "#c44c44",
-          "--eds-icon-critical-onPrimary": "#ffffff",
-          "--eds-icon-onPrimary": "#eeeeee",
-          "--eds-icon-primary": "#111111",
-          "--eds-icon-secondary": "#676767",
-          "--eds-icon-tertiary": "#9c9c9c",
-          "--eds-icon-positive": "#198057",
-          "--eds-icon-positive-hover": "#198057",
-          "--eds-icon-caution": "#e27e27",
-          "--eds-icon-inverse": "#eeeeee",
-          "--eds-background-canvas": "#ffffff",
-          "--eds-background-canvas-secondary": "#fafafa",
-          "--eds-background-canvas-tertiary": "#f2f2f2",
-          "--eds-background-menu": "#ffffff",
-          "--eds-background-neutral": "#ffffff",
-          "--eds-background-neutral-hover": "#f1f1f1",
-          "--eds-background-neutral-pressed": "#d9d9d9",
-          "--eds-background-neutral-active": "#f1f1f1",
-          "--eds-background-neutral-disabled": "#f0f0f0",
-          "--eds-background-neutral-secondary": "#f4f4f4",
-          "--eds-background-neutral-secondary-hover": "#e5e5e5",
-          "--eds-background-neutral-secondary-pressed": "#dbdbdb",
-          "--eds-background-neutral-tertiary": "#dbdbdb",
-          "--eds-background-neutral-tertiary-hover": "#c7c7c7",
-          "--eds-background-inverse": "#111111",
-          "--eds-background-inverse-hover": "#4d4d4d",
-          "--eds-background-inverse-pressed": "#707070",
-          "--eds-background-inverse-secondary": "#323232",
-          "--eds-background-inverse-tertiary": "#676767",
-          "--eds-background-inverse-tertiary-hover": "#5a5a5a",
-          "--eds-background-inverse-tertiary-pressed": "#4d4d4d",
-          "--eds-background-critical": "#c44c44",
-          "--eds-background-critical-hover": "#b01c1c",
-          "--eds-background-critical-pressed": "#841515",
-          "--eds-background-critical-secondary": "#ffece5",
-          "--eds-background-critical-secondary-hover": "#fceded",
-          "--eds-background-critical-secondary-pressed": "#f8d3d3",
-          "--eds-background-accent": "#111111",
-          "--eds-background-accent-hover": "#707070",
-          "--eds-background-accent-pressed": "#999999",
-          "--eds-background-accent-secondary": "#f4f4f4",
-          "--eds-background-accent-secondary-hover": "#f0f0f0",
-          "--eds-background-accent-secondary-pressed": "#dbdbdb",
-          "--eds-background-accent-tertiary": "#f4f4f4",
-          "--eds-background-accent-tertiary-hover": "#f0f0f0",
-          "--eds-background-accent-tertiary-pressed": "#dbdbdb",
-          "--eds-background-positive": "#57a57a",
-          "--eds-background-positive-hover": "#198057",
-          "--eds-background-positive-pressed": "#156b48",
-          "--eds-background-positive-secondary": "#d4f7e9",
-          "--eds-background-positive-secondary-hover": "#bbf2dc",
-          "--eds-background-positive-secondary-pressed": "#a1ecce",
-          "--eds-background-caution": "#e27e27",
-          "--eds-background-caution-hover": "#cc7c00",
-          "--eds-background-caution-pressed": "#995d00",
-          "--eds-background-caution-secondary": "#fdf6ed",
-          "--eds-background-avatar": "#e7e7e7",
-          "--eds-background-avatar-hover": "#dddddd",
-          "--eds-background-calendar": "#ffffff",
-          "--eds-background-calendar-disabled": "#f0f0f0",
-          "--eds-background-modal-overlay": "#11111199",
-          "--eds-border-secondary": "#dbdbdb",
-          "--eds-border-tertiary": "#f0f0f0",
-          "--eds-border-hover": "#c7c7c7",
-          "--eds-border-input": "#dbdbdb",
-          "--eds-border-input-hover": "#949494",
-          "--eds-border-input-active": "#111111",
-          "--eds-border-input-active-hover": "#424242",
-          "--eds-border-input-active-pressed": "#545454",
-          "--eds-border-input-disabled": "#dbdbdb",
-          "--eds-border-input-critical": "#c44c44",
-          "--eds-border-input-critical-hover": "#b01c1c",
-          "--eds-border-input-critical-pressed": "#841515",
-          "--eds-border-input-caution": "#e27e27",
-          "--eds-border-input-caution-hover": "#cb7024",
-          "--eds-border-input-caution-pressed": "#b4641f",
-          "--eds-border-focus": "#111111",
-          "--eds-border-accent": "#111111",
-          "--eds-border-primary": "#111111",
-          "--eds-border-calendar": "#e4e4e4",
-          "--eds-status-available": "#57a57a",
-          "--eds-status-away": "#e27e27",
-          "--eds-status-busy": "#c44c44",
-          "--eds-status-offline": "#c7c7c7",
-          "--eds-status-icon": "#ffffff",
-          "--eds-status-border": "#ffffff",
-          "--eds-decoration-brand": "#1d90f6",
-          "--eds-decoration-facebook": "#1877f2",
-          "--eds-decoration-instagram": "#e4405f",
-          "--eds-decoration-teleport": "#6285ff",
-          "--eds-decoration-twitter": "#1d9bf0",
-          "--eds-decoration-whatsapp": "#25d366",
-          "--eds-decoration-youtube": "#ff0000",
-          "--eds-general-constant-white": "#ffffff",
-          "--eds-general-constant-black": "#111111",
-          "--eds-chart-accent-100": "#ebebeb",
-          "--eds-chart-accent-200": "#dbdbdb",
-          "--eds-chart-accent-300": "#c7c7c7",
-          "--eds-chart-accent-400": "#b2b2b2",
-          "--eds-chart-accent-500": "#999999",
-          "--eds-chart-accent-600": "#666666",
-          "--eds-chart-accent-700": "#474747",
-          "--eds-chart-accent-800": "#111111",
-          "--eds-chart-neutral-100": "#ebebeb",
-          "--eds-chart-neutral-200": "#dbdbdb",
-          "--eds-chart-neutral-300": "#c7c7c7",
-          "--eds-chart-neutral-400": "#b2b2b2",
-          "--eds-chart-neutral-500": "#999999",
-          "--eds-chart-neutral-600": "#666666",
-          "--eds-chart-neutral-700": "#474747",
-          "--eds-chart-neutral-800": "#111111",
-          "--eds-palette-gray-background": "#f6f6f6",
-          "--eds-palette-gray-background-hover": "#efefef",
-          "--eds-palette-gray-background-active": "#c0c0c0",
-          "--eds-palette-gray-border": "#c0c0c0",
-          "--eds-palette-gray-text": "#202020",
-          "--eds-palette-gray-text-active": "#ffffff",
-          "--eds-palette-gray-text-secondary": "#404040",
-          "--eds-palette-dark-gray-background": "#f6f6f6",
-          "--eds-palette-dark-gray-background-hover": "#e7ebed",
-          "--eds-palette-dark-gray-background-active": "#9daeb6",
-          "--eds-palette-dark-gray-border": "#9daeb6",
-          "--eds-palette-dark-gray-text": "#202020",
-          "--eds-palette-dark-gray-text-active": "#ffffff",
-          "--eds-palette-dark-gray-text-secondary": "#404040",
-          "--eds-palette-light-pink-background": "#fef6f8",
-          "--eds-palette-light-pink-background-hover": "#fce6e9",
-          "--eds-palette-light-pink-background-active": "#ea556c",
-          "--eds-palette-light-pink-border": "#ea556c",
-          "--eds-palette-light-pink-text": "#421c21",
-          "--eds-palette-light-pink-text-active": "#ffffff",
-          "--eds-palette-light-pink-text-secondary": "#68494d",
-          "--eds-palette-pink-background": "#f8e2ef",
-          "--eds-palette-pink-background-hover": "#f3cee4",
-          "--eds-palette-pink-background-active": "#ce3b93",
-          "--eds-palette-pink-border": "#ce3b93",
-          "--eds-palette-pink-text": "#451231",
-          "--eds-palette-pink-text-active": "#ffffff",
-          "--eds-palette-pink-text-secondary": "#6a415a",
-          "--eds-palette-red-background": "#f9e1d9",
-          "--eds-palette-red-background-hover": "#f6cebf",
-          "--eds-palette-red-background-active": "#da3a00",
-          "--eds-palette-red-border": "#da3a00",
-          "--eds-palette-red-text": "#2d0c00",
-          "--eds-palette-red-text-active": "#ffffff",
-          "--eds-palette-red-text-secondary": "#573c33",
-          "--eds-palette-maroon-background": "#eee4dd",
-          "--eds-palette-maroon-background-hover": "#e3d2c6",
-          "--eds-palette-maroon-background-active": "#8e4c1b",
-          "--eds-palette-maroon-border": "#8e4c1b",
-          "--eds-palette-maroon-text": "#271407",
-          "--eds-palette-maroon-text-active": "#ffffff",
-          "--eds-palette-maroon-text-secondary": "#524339",
-          "--eds-palette-orange-background": "#ffede1",
-          "--eds-palette-orange-background-hover": "#ffe2cc",
-          "--eds-palette-orange-background-active": "#ff8a35",
-          "--eds-palette-orange-border": "#ff8a35",
-          "--eds-palette-orange-text": "#351600",
-          "--eds-palette-orange-text-active": "#ffffff",
-          "--eds-palette-orange-text-secondary": "#5d4533",
-          "--eds-palette-violet-background": "#e5e0f3",
-          "--eds-palette-violet-background-hover": "#d3cbeb",
-          "--eds-palette-violet-background-active": "#512fb1",
-          "--eds-palette-violet-border": "#512fb1",
-          "--eds-palette-violet-text": "#110837",
-          "--eds-palette-violet-text-active": "#ffffff",
-          "--eds-palette-violet-text-secondary": "#3f375e",
-          "--eds-palette-yellow-background": "#fff7d9",
-          "--eds-palette-yellow-background-hover": "#fff1bf",
-          "--eds-palette-yellow-background-active": "#ffc700",
-          "--eds-palette-yellow-border": "#ffc700",
-          "--eds-palette-yellow-text": "#2c2200",
-          "--eds-palette-yellow-text-active": "#ffffff",
-          "--eds-palette-yellow-text-secondary": "#564e33",
-          "--eds-palette-green-background": "#e2f3ed",
-          "--eds-palette-green-background-hover": "#cfebe1",
-          "--eds-palette-green-background-active": "#3ead85",
-          "--eds-palette-green-border": "#3ead85",
-          "--eds-palette-green-text": "#3b594e",
-          "--eds-palette-green-text-active": "#ffffff",
-          "--eds-palette-green-text-secondary": "#3b594e",
-          "--eds-palette-dark-green-background": "#d9eaeb",
-          "--eds-palette-dark-green-background-hover": "#bfdbdd",
-          "--eds-palette-dark-green-background-active": "#007178",
-          "--eds-palette-dark-green-border": "#007178",
-          "--eds-palette-dark-green-text": "#002022",
-          "--eds-palette-dark-green-text-active": "#ffffff",
-          "--eds-palette-dark-green-text-secondary": "#334d4e",
-          "--eds-palette-blue-background": "#e7f3fe",
-          "--eds-palette-blue-background-hover": "#d7ebfd",
-          "--eds-palette-blue-background-active": "#5eb0f8",
-          "--eds-palette-blue-border": "#5eb0f8",
-          "--eds-palette-blue-text": "#001d36",
-          "--eds-palette-blue-text-active": "#111111",
-          "--eds-palette-blue-text-secondary": "#31485c",
-          "--eds-palette-dark-blue-background": "#d9ebfc",
-          "--eds-palette-dark-blue-background-hover": "#bfdefa",
-          "--eds-palette-dark-blue-background-active": "#007cea",
-          "--eds-palette-dark-blue-border": "#1c8bec",
-          "--eds-palette-dark-blue-text": "#001f3a",
-          "--eds-palette-dark-blue-text-active": "#ffffff",
-          "--eds-palette-dark-blue-text-secondary": "#334c62",
-          "--eds-shadow-10": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 1px 4px 0px rgba(88, 104, 116, 0.12)",
-          "--eds-shadow-20": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 4px 12px 0px rgba(88, 104, 116, 0.16)",
-          "--eds-shadow-30": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 8px 16px 0px rgba(88, 104, 116, 0.16)",
-          "--eds-shadow-40": "0px -1px 4px 0px rgba(88, 104, 116, 0.12), 0px 16px 32px 0px rgba(88, 104, 116, 0.20)",
-          "--eds-shadow-50": "0px 0px 0px 4px rgba(0, 0, 0, 0.15)"
-        },
-        ".dark": {
-          "--eds-text-primary": "#eeeeee",
-          "--eds-text-primary-hover": "#949494",
-          "--eds-text-secondary": "#949494",
-          "--eds-text-secondary-hover": "#a0a0a0",
-          "--eds-text-tertiary": "#737373",
-          "--eds-text-caution": "#ffc257",
-          "--eds-text-caution-secondary": "#e4c79b",
-          "--eds-text-critical": "#ce6b64",
-          "--eds-text-critical-onPrimary": "#ffffff",
-          "--eds-text-critical-secondary": "#ff8585",
-          "--eds-text-disabled": "#737373",
-          "--eds-text-disabled-secondary": "#949494",
-          "--eds-text-inverse": "#1e1e1e",
-          "--eds-text-inverse-accent": "#1e1e1e",
-          "--eds-text-inverse-caution": "#e78c00",
-          "--eds-text-inverse-critical": "#c44c44",
-          "--eds-text-inverse-positive": "#57a57a",
-          "--eds-text-inverse-secondary": "#666666",
-          "--eds-text-accent": "#eeeeee",
-          "--eds-text-accent-hover": "#a3a3a3",
-          "--eds-text-accent-pressed": "#737373",
-          "--eds-text-link": "#5eb0f8",
-          "--eds-text-link-hover": "#94cafa",
-          "--eds-text-link-pressed": "#a7d4fb",
-          "--eds-text-onPrimary": "#1e1e1e",
-          "--eds-text-onPrimary-disabled": "#666666",
-          "--eds-text-positive-secondary": "#58b285",
-          "--eds-text-positive": "#83d3b2",
-          "--eds-icon-accent": "#eeeeee",
-          "--eds-icon-critical": "#ce6b64",
-          "--eds-icon-critical-onPrimary": "#ffffff",
-          "--eds-icon-onPrimary": "#111111",
-          "--eds-icon-primary": "#eeeeee",
-          "--eds-icon-secondary": "#8c8c8c",
-          "--eds-icon-tertiary": "#737373",
-          "--eds-icon-positive": "#83d3b2",
-          "--eds-icon-positive-hover": "#198057",
-          "--eds-icon-caution": "#ffc257",
-          "--eds-icon-inverse": "#111111",
-          "--eds-background-canvas": "#1a1a1a",
-          "--eds-background-canvas-secondary": "#212121",
-          "--eds-background-canvas-tertiary": "#292929",
-          "--eds-background-menu": "#1e1e1e",
-          "--eds-background-neutral": "#1a1a1a",
-          "--eds-background-neutral-hover": "#333333",
-          "--eds-background-neutral-pressed": "#666666",
-          "--eds-background-neutral-active": "#333333",
-          "--eds-background-neutral-disabled": "#2e2e2e",
-          "--eds-background-neutral-secondary": "#292929",
-          "--eds-background-neutral-secondary-hover": "#333333",
-          "--eds-background-neutral-secondary-pressed": "#3d3d3d",
-          "--eds-background-neutral-tertiary": "#525252",
-          "--eds-background-neutral-tertiary-hover": "#5c5c5c",
-          "--eds-background-inverse": "#eeeeee",
-          "--eds-background-inverse-hover": "#e5e5e5",
-          "--eds-background-inverse-pressed": "#b2b2b2",
-          "--eds-background-inverse-secondary": "#eaeaea",
-          "--eds-background-inverse-tertiary": "#616161",
-          "--eds-background-inverse-tertiary-hover": "#585858",
-          "--eds-background-inverse-tertiary-pressed": "#4d4d4d",
-          "--eds-background-critical": "#c44c44",
-          "--eds-background-critical-hover": "#b01c1c",
-          "--eds-background-critical-pressed": "#841515",
-          "--eds-background-critical-secondary": "#421e1e",
-          "--eds-background-critical-secondary-hover": "#4e1818",
-          "--eds-background-critical-secondary-pressed": "#6e2121",
-          "--eds-background-accent": "#eeeeee",
-          "--eds-background-accent-hover": "#b2b2b2",
-          "--eds-background-accent-pressed": "#808080",
-          "--eds-background-accent-secondary": "#292929",
-          "--eds-background-accent-secondary-hover": "#2e2e2e",
-          "--eds-background-accent-secondary-pressed": "#3d3d3d",
-          "--eds-background-accent-tertiary": "#292929",
-          "--eds-background-accent-tertiary-hover": "#2e2e2e",
-          "--eds-background-accent-tertiary-pressed": "#3d3d3d",
-          "--eds-background-positive": "#57a57a",
-          "--eds-background-positive-hover": "#198057",
-          "--eds-background-positive-pressed": "#156b48",
-          "--eds-background-positive-secondary": "#19382e",
-          "--eds-background-positive-secondary-hover": "#234d40",
-          "--eds-background-positive-secondary-pressed": "#2e6151",
-          "--eds-background-caution": "#e27e27",
-          "--eds-background-caution-hover": "#cc7c00",
-          "--eds-background-caution-pressed": "#995d00",
-          "--eds-background-caution-secondary": "#302821",
-          "--eds-background-avatar": "#292929",
-          "--eds-background-avatar-hover": "#383838",
-          "--eds-background-calendar": "#1a1a1a",
-          "--eds-background-calendar-disabled": "#222222",
-          "--eds-background-modal-overlay": "#11111199",
-          "--eds-border-secondary": "#3d3d3d",
-          "--eds-border-tertiary": "#2a2a2a",
-          "--eds-border-hover": "#5c5c5c",
-          "--eds-border-input": "#3d3d3d",
-          "--eds-border-input-hover": "#5c5c5c",
-          "--eds-border-input-active": "#eeeeee",
-          "--eds-border-input-active-hover": "#dbdbdb",
-          "--eds-border-input-active-pressed": "#cacaca",
-          "--eds-border-input-disabled": "#3d3d3d",
-          "--eds-border-input-critical": "#ce6b64",
-          "--eds-border-input-critical-hover": "#e84a4a",
-          "--eds-border-input-critical-pressed": "#e42f2f",
-          "--eds-border-input-caution": "#ffc257",
-          "--eds-border-input-caution-hover": "#e2ac4d",
-          "--eds-border-input-caution-pressed": "#e2ac4d",
-          "--eds-border-focus": "#eeeeee",
-          "--eds-border-accent": "#eeeeee",
-          "--eds-border-primary": "#eeeeee",
-          "--eds-border-calendar": "#303030",
-          "--eds-status-available": "#83d3b2",
-          "--eds-status-away": "#ffc257",
-          "--eds-status-busy": "#ce6b64",
-          "--eds-status-offline": "#6b6b6b",
-          "--eds-status-icon": "#ffffff",
-          "--eds-status-border": "#1a1a1a",
-          "--eds-decoration-brand": "#1d90f6",
-          "--eds-decoration-facebook": "#1877f2",
-          "--eds-decoration-instagram": "#e4405f",
-          "--eds-decoration-teleport": "#6285ff",
-          "--eds-decoration-twitter": "#1d9bf0",
-          "--eds-decoration-whatsapp": "#25d366",
-          "--eds-decoration-youtube": "#ff0000",
-          "--eds-general-constant-white": "#ffffff",
-          "--eds-general-constant-black": "#111111",
-          "--eds-chart-accent-100": "#292929",
-          "--eds-chart-accent-200": "#3d3d3d",
-          "--eds-chart-accent-300": "#666666",
-          "--eds-chart-accent-400": "#808080",
-          "--eds-chart-accent-500": "#999999",
-          "--eds-chart-accent-600": "#b2b2b2",
-          "--eds-chart-accent-700": "#d4d4d4",
-          "--eds-chart-accent-800": "#eeeeee",
-          "--eds-chart-neutral-100": "#292929",
-          "--eds-chart-neutral-200": "#3d3d3d",
-          "--eds-chart-neutral-300": "#666666",
-          "--eds-chart-neutral-400": "#808080",
-          "--eds-chart-neutral-500": "#999999",
-          "--eds-chart-neutral-600": "#b2b2b2",
-          "--eds-chart-neutral-700": "#d4d4d4",
-          "--eds-chart-neutral-800": "#eeeeee",
-          "--eds-palette-gray-background": "#2e3337",
-          "--eds-palette-gray-background-hover": "#464d53",
-          "--eds-palette-gray-background-active": "#c0c0c0",
-          "--eds-palette-gray-border": "#c0c0c0",
-          "--eds-palette-gray-text": "#f2f2f2",
-          "--eds-palette-gray-text-active": "#ffffff",
-          "--eds-palette-gray-text-secondary": "#e5e5e5",
-          "--eds-palette-dark-gray-background": "#3d4449",
-          "--eds-palette-dark-gray-background-hover": "#586168",
-          "--eds-palette-dark-gray-background-active": "#d6d6d6",
-          "--eds-palette-dark-gray-border": "#d6d6d6",
-          "--eds-palette-dark-gray-text": "#f2f2f2",
-          "--eds-palette-dark-gray-text-active": "#111111",
-          "--eds-palette-dark-gray-text-secondary": "#e5e5e5",
-          "--eds-palette-light-pink-background": "#34232b",
-          "--eds-palette-light-pink-background-hover": "#523744",
-          "--eds-palette-light-pink-background-active": "#ea556c",
-          "--eds-palette-light-pink-border": "#ea556c",
-          "--eds-palette-light-pink-text": "#f0cfde",
-          "--eds-palette-light-pink-text-active": "#ffffff",
-          "--eds-palette-light-pink-text-secondary": "#ccb8c1",
-          "--eds-palette-pink-background": "#301f30",
-          "--eds-palette-pink-background-hover": "#4d324d",
-          "--eds-palette-pink-background-active": "#ce3b93",
-          "--eds-palette-pink-border": "#ce3b93",
-          "--eds-palette-pink-text": "#eedbee",
-          "--eds-palette-pink-text-active": "#ffffff",
-          "--eds-palette-pink-text-secondary": "#c8becb",
-          "--eds-palette-red-background": "#321f1a",
-          "--eds-palette-red-background-hover": "#54342c",
-          "--eds-palette-red-background-active": "#da3a00",
-          "--eds-palette-red-border": "#da3a00",
-          "--eds-palette-red-text": "#eecdc4",
-          "--eds-palette-red-text-active": "#ffffff",
-          "--eds-palette-red-text-secondary": "#cab5b0",
-          "--eds-palette-maroon-background": "#26221e",
-          "--eds-palette-maroon-background-hover": "#423834",
-          "--eds-palette-maroon-background-active": "#af6b39",
-          "--eds-palette-maroon-border": "#af6b39",
-          "--eds-palette-maroon-text": "#ead8cb",
-          "--eds-palette-maroon-text-active": "#ffffff",
-          "--eds-palette-maroon-text-secondary": "#c5bbb4",
-          "--eds-palette-orange-background": "#372b22",
-          "--eds-palette-orange-background-hover": "#554335",
-          "--eds-palette-orange-background-active": "#ff8a35",
-          "--eds-palette-orange-border": "#ff8a35",
-          "--eds-palette-orange-text": "#f7d8c1",
-          "--eds-palette-orange-text-active": "#111111",
-          "--eds-palette-orange-text-secondary": "#d1bfb3",
-          "--eds-palette-violet-background": "#22202f",
-          "--eds-palette-violet-background-hover": "#37344c",
-          "--eds-palette-violet-background-active": "#9c83e5",
-          "--eds-palette-violet-border": "#9c83e5",
-          "--eds-palette-violet-text": "#d6d0ee",
-          "--eds-palette-violet-text-active": "#ffffff",
-          "--eds-palette-violet-text-secondary": "#bcb9cb",
-          "--eds-palette-yellow-background": "#2d2b15",
-          "--eds-palette-yellow-background-hover": "#504c25",
-          "--eds-palette-yellow-background-active": "#ffc700",
-          "--eds-palette-yellow-border": "#ffc700",
-          "--eds-palette-yellow-text": "#f9efcc",
-          "--eds-palette-yellow-text-active": "#111111",
-          "--eds-palette-yellow-text-secondary": "#d0cab4",
-          "--eds-palette-green-background": "#1a302e",
-          "--eds-palette-green-background-hover": "#203c39",
-          "--eds-palette-green-background-active": "#3ead85",
-          "--eds-palette-green-border": "#3ead85",
-          "--eds-palette-green-text": "#c3ecde",
-          "--eds-palette-green-text-active": "#ffffff",
-          "--eds-palette-green-text-secondary": "#b0cac2",
-          "--eds-palette-dark-green-background": "#1e2c2c",
-          "--eds-palette-dark-green-background-hover": "#344c4c",
-          "--eds-palette-dark-green-background-active": "#53a9ae",
-          "--eds-palette-dark-green-border": "#53a9ae",
-          "--eds-palette-dark-green-text": "#b2dcdc",
-          "--eds-palette-dark-green-text-active": "#111111",
-          "--eds-palette-dark-green-text-secondary": "#a3bdbd",
-          "--eds-palette-blue-background": "#1f2830",
-          "--eds-palette-blue-background-hover": "#32414d",
-          "--eds-palette-blue-background-active": "#67adeb",
-          "--eds-palette-blue-border": "#67adeb",
-          "--eds-palette-blue-text": "#bdd3ea",
-          "--eds-palette-blue-text-active": "#111111",
-          "--eds-palette-blue-text-secondary": "#adb9c7",
-          "--eds-palette-dark-blue-background": "#152532",
-          "--eds-palette-dark-blue-background-hover": "#244056",
-          "--eds-palette-dark-blue-background-active": "#007cea",
-          "--eds-palette-dark-blue-border": "#1c8bec",
-          "--eds-palette-dark-blue-text": "#b2d5f2",
-          "--eds-palette-dark-blue-text-active": "#ffffff",
-          "--eds-palette-dark-blue-text-secondary": "#adb9c7",
-          "--eds-shadow-10": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
-          "--eds-shadow-20": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 12px 0px rgba(0, 0, 0, 0.12)",
-          "--eds-shadow-30": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.14)",
-          "--eds-shadow-40": "0px -1px 4px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(0, 0, 0, 0.20)",
-          "--eds-shadow-50": "0px 0px 0px 4px rgba(255, 255, 255, 0.20)"
-        },
-        "@utility focus-ring": {
-          "@apply outline-hidden ring-2 ring-eds-focus ring-offset-1 ring-offset-(--eds-background-canvas)": {}
+      }
+    },
+    {
+      "name": "theme-sharp",
+      "type": "registry:theme",
+      "title": "Earth Sharp",
+      "description": "A square radius. Install after base.",
+      "cssVars": {
+        "light": {
+          "radius": "2px"
         }
       }
     },
@@ -952,8 +170,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -972,8 +189,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -991,8 +207,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1008,8 +223,7 @@
       "description": "Keeps content, such as an image or video, at a fixed width-to-height ratio.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1027,8 +241,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1047,8 +260,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1067,8 +279,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1088,8 +299,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/cn",
-        "@earth-ui/separator",
-        "@earth-ui/theme"
+        "@earth-ui/separator"
       ],
       "files": [
         {
@@ -1103,13 +313,13 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "Triggers an action. Use one default button per view for the main action.",
+      "docs": "## Earth UI · Button guidelines\n\nImport: `import { Button } from \"@/components/ui/button\"`\n\n### Choosing a variant\n- `default`: the main action. Use at most one per view, dialog or card.\n- `outline`: secondary actions next to a default button (Cancel, Export).\n- `secondary`: low-emphasis actions that still need a filled shape.\n- `ghost`: actions in toolbars, table rows and menus, where many actions repeat.\n- `destructive`: irreversible actions (Delete, Cancel booking). Confirm them with an AlertDialog.\n- `link`: inline actions inside text. To navigate, render a real link instead (see below).\n\n### Sizes\n- `default` for forms and dialogs, `sm` in dense UI such as tables and toolbars, `lg` for a page's main call to action, `xs` sparingly.\n- Icon-only buttons use `icon`, `icon-xs`, `icon-sm` or `icon-lg` and must have an `aria-label`.\n\n### Icons\n- lucide-react only. Put `data-icon=\"inline-start\"` or `data-icon=\"inline-end\"` on the icon so padding adjusts.\n- Don't set icon size classes; the button sizes icons itself.\n\n### Navigation\n- For a link that looks like a button: `<Button nativeButton={false} render={<a href=\"/book\" />}>Book now</Button>`.\n- Never wrap a Button in `<a>` or a Button in a Button.\n\n### Text\n- Use a verb plus an object in sentence case: \"New appointment\", \"Save changes\". Avoid \"OK\" and \"Click here\".\n- Keep it to one line; buttons don't wrap.\n\n### Don't\n- Don't override colours, radius or height with `className`. The look comes from the theme variables.\n- Don't put two default buttons side by side. Make one of them `outline`.\n- Don't use `disabled` without explaining why nearby. Prefer validating on submit.",
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1125,12 +335,12 @@
       "description": "Lets people pick a date or a range of dates from a month grid.",
       "dependencies": [
         "lucide-react",
-        "react-day-picker"
+        "react-day-picker@latest",
+        "date-fns"
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1146,8 +356,7 @@
       "description": "A bordered surface that groups related content and actions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1167,8 +376,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1183,11 +391,10 @@
       "title": "Chart",
       "description": "Recharts charts with Earth's chart palette, tooltip and legend.",
       "dependencies": [
-        "recharts"
+        "recharts@3.8.0"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1206,8 +413,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1224,9 +430,7 @@
       "dependencies": [
         "@base-ui/react"
       ],
-      "registryDependencies": [
-        "@earth-ui/theme"
-      ],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/default/ui/collapsible.tsx",
@@ -1246,8 +450,7 @@
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/cn",
-        "@earth-ui/input-group",
-        "@earth-ui/theme"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -1268,8 +471,7 @@
       "registryDependencies": [
         "@earth-ui/cn",
         "@earth-ui/dialog",
-        "@earth-ui/input-group",
-        "@earth-ui/theme"
+        "@earth-ui/input-group"
       ],
       "files": [
         {
@@ -1288,8 +490,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1309,8 +510,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1328,8 +528,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1348,8 +547,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1367,8 +565,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1383,14 +580,12 @@
       "title": "Field",
       "description": "Lays out a form control with its label, description and error message.",
       "dependencies": [
-        "class-variance-authority",
-        "lucide-react"
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@earth-ui/cn",
         "@earth-ui/label",
-        "@earth-ui/separator",
-        "@earth-ui/theme"
+        "@earth-ui/separator"
       ],
       "files": [
         {
@@ -1408,8 +603,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1430,8 +624,7 @@
         "@earth-ui/button",
         "@earth-ui/cn",
         "@earth-ui/input",
-        "@earth-ui/textarea",
-        "@earth-ui/theme"
+        "@earth-ui/textarea"
       ],
       "files": [
         {
@@ -1450,8 +643,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1469,8 +661,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1490,8 +681,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/cn",
-        "@earth-ui/separator",
-        "@earth-ui/theme"
+        "@earth-ui/separator"
       ],
       "files": [
         {
@@ -1507,8 +697,7 @@
       "description": "Shows a keyboard key or shortcut.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1524,8 +713,7 @@
       "description": "Names a form control. Clicking the label focuses or toggles its control.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1545,8 +733,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/cn",
-        "@earth-ui/dropdown-menu",
-        "@earth-ui/theme"
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -1564,8 +751,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1585,8 +771,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1605,8 +790,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1624,8 +808,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1643,8 +826,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1662,8 +844,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1681,8 +862,7 @@
         "react-resizable-panels"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1700,8 +880,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1720,8 +899,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1739,8 +917,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1760,8 +937,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1787,7 +963,6 @@
         "@earth-ui/separator",
         "@earth-ui/sheet",
         "@earth-ui/skeleton",
-        "@earth-ui/theme",
         "@earth-ui/tooltip",
         "@earth-ui/use-mobile"
       ],
@@ -1805,8 +980,7 @@
       "description": "A pulsing placeholder shown while content loads.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1824,8 +998,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1841,11 +1014,10 @@
       "description": "Shows brief notifications, such as a booking confirmation, at the edge of the screen.",
       "dependencies": [
         "lucide-react",
+        "next-themes",
         "sonner"
       ],
-      "registryDependencies": [
-        "@earth-ui/theme"
-      ],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/default/ui/sonner.tsx",
@@ -1858,10 +1030,11 @@
       "type": "registry:ui",
       "title": "Spinner",
       "description": "An animated indicator that shows something is loading.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1879,8 +1052,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1896,8 +1068,7 @@
       "description": "Rows and columns of data, such as bookings or payments.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1916,8 +1087,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1933,8 +1103,7 @@
       "description": "A multi-line text field for notes, messages and descriptions.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1954,8 +1123,7 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -1975,7 +1143,6 @@
       ],
       "registryDependencies": [
         "@earth-ui/cn",
-        "@earth-ui/theme",
         "@earth-ui/toggle"
       ],
       "files": [
@@ -1995,8 +1162,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -2014,8 +1180,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@earth-ui/cn",
-        "@earth-ui/theme"
+        "@earth-ui/cn"
       ],
       "files": [
         {
@@ -2106,9 +1271,7 @@
       "type": "registry:example",
       "title": "Alert Action",
       "description": "Alert example: Action.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/alert",
         "@earth-ui/button"
@@ -2178,7 +1341,9 @@
       "type": "registry:example",
       "title": "Alert Dialog Destructive",
       "description": "Alert Dialog example: Destructive.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/alert-dialog",
         "@earth-ui/button"
@@ -2195,9 +1360,7 @@
       "type": "registry:example",
       "title": "Alert Dialog Small",
       "description": "Alert Dialog example: Small with media.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/alert-dialog",
         "@earth-ui/button"
@@ -2205,24 +1368,6 @@
       "files": [
         {
           "path": "registry/default/examples/alert-dialog-small.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "alert-status",
-      "type": "registry:example",
-      "title": "Alert Status",
-      "description": "Alert example: Status.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/alert"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/alert-status.tsx",
           "type": "registry:example"
         }
       ]
@@ -2248,9 +1393,7 @@
       "type": "registry:example",
       "title": "Avatar Badge",
       "description": "Avatar example: Badge.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/avatar"
       ],
@@ -2408,22 +1551,6 @@
       ]
     },
     {
-      "name": "badge-status",
-      "type": "registry:example",
-      "title": "Badge Status",
-      "description": "Badge example: Status.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/badge"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/badge-status.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "badge-with-icon",
       "type": "registry:example",
       "title": "Badge With Icon",
@@ -2464,7 +1591,9 @@
       "description": "Breadcrumb example. Shows where the current page sits in the app and links back to its parents.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/breadcrumb"
+        "@earth-ui/breadcrumb",
+        "@earth-ui/button",
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -2478,7 +1607,9 @@
       "type": "registry:example",
       "title": "Breadcrumb Separator",
       "description": "Breadcrumb example: Custom separator.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/breadcrumb"
       ],
@@ -2532,7 +1663,9 @@
       "type": "registry:example",
       "title": "Button Demo",
       "description": "Button example. Triggers an action. Use one default button per view for the main action.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/button"
       ],
@@ -2555,22 +1688,6 @@
       "files": [
         {
           "path": "registry/default/examples/button-destructive.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "button-disabled",
-      "type": "registry:example",
-      "title": "Button Disabled",
-      "description": "Button example: Disabled.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/button"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/button-disabled.tsx",
           "type": "registry:example"
         }
       ]
@@ -2601,7 +1718,8 @@
       ],
       "registryDependencies": [
         "@earth-ui/button",
-        "@earth-ui/button-group"
+        "@earth-ui/button-group",
+        "@earth-ui/dropdown-menu"
       ],
       "files": [
         {
@@ -2615,12 +1733,13 @@
       "type": "registry:example",
       "title": "Button Group Input",
       "description": "Button Group example: With input.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/button-group",
-        "@earth-ui/input",
-        "@earth-ui/label"
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -2634,9 +1753,7 @@
       "type": "registry:example",
       "title": "Button Group Separator",
       "description": "Button Group example: Separator.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/button-group"
@@ -2805,30 +1922,16 @@
       "title": "Calendar Range",
       "description": "Calendar example: Range.",
       "dependencies": [
+        "date-fns",
         "react-day-picker"
       ],
       "registryDependencies": [
-        "@earth-ui/calendar"
+        "@earth-ui/calendar",
+        "@earth-ui/card"
       ],
       "files": [
         {
           "path": "registry/default/examples/calendar-range.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "calendar-small",
-      "type": "registry:example",
-      "title": "Calendar Small",
-      "description": "Calendar example: Small.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/calendar"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/calendar-small.tsx",
           "type": "registry:example"
         }
       ]
@@ -2875,7 +1978,9 @@
       "type": "registry:example",
       "title": "Card Small",
       "description": "Card example: Small.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/card"
@@ -2894,6 +1999,7 @@
       "description": "Carousel example. Scrolls through a row of slides with buttons, swipe or the arrow keys.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/card",
         "@earth-ui/carousel"
       ],
       "files": [
@@ -2910,6 +2016,7 @@
       "description": "Carousel example: Vertical.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/card",
         "@earth-ui/carousel"
       ],
       "files": [
@@ -2926,6 +2033,7 @@
       "description": "Carousel example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/card",
         "@earth-ui/carousel"
       ],
       "files": [
@@ -2955,42 +2063,6 @@
       ]
     },
     {
-      "name": "chart-line",
-      "type": "registry:example",
-      "title": "Chart Line",
-      "description": "Chart example: Line.",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "@earth-ui/chart"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/chart-line.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "chart-pie",
-      "type": "registry:example",
-      "title": "Chart Pie",
-      "description": "Chart example: Pie.",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "@earth-ui/chart"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/chart-pie.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "checkbox-demo",
       "type": "registry:example",
       "title": "Checkbox Demo",
@@ -2998,6 +2070,7 @@
       "dependencies": [],
       "registryDependencies": [
         "@earth-ui/checkbox",
+        "@earth-ui/field",
         "@earth-ui/label"
       ],
       "files": [
@@ -3097,8 +2170,7 @@
       "description": "Combobox example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/combobox",
-        "@earth-ui/field"
+        "@earth-ui/combobox"
       ],
       "files": [
         {
@@ -3167,9 +2239,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/button",
-        "@earth-ui/command",
-        "@earth-ui/kbd"
+        "@earth-ui/command"
       ],
       "files": [
         {
@@ -3183,9 +2253,7 @@
       "type": "registry:example",
       "title": "Context Menu Demo",
       "description": "Context Menu example. A menu of actions that opens on right-click or long press.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/context-menu"
       ],
@@ -3378,7 +2446,8 @@
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/dialog",
-        "@earth-ui/input"
+        "@earth-ui/input",
+        "@earth-ui/label"
       ],
       "files": [
         {
@@ -3396,6 +2465,7 @@
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/dialog",
+        "@earth-ui/field",
         "@earth-ui/input",
         "@earth-ui/label"
       ],
@@ -3428,10 +2498,16 @@
       "type": "registry:example",
       "title": "Drawer Demo",
       "description": "Drawer example. A panel that slides in from an edge and can be swiped away, built for touch screens.",
-      "dependencies": [],
+      "dependencies": [
+        "sonner"
+      ],
       "registryDependencies": [
+        "@earth-ui/badge",
         "@earth-ui/button",
-        "@earth-ui/drawer"
+        "@earth-ui/drawer",
+        "@earth-ui/field",
+        "@earth-ui/radio-group",
+        "@earth-ui/use-mobile"
       ],
       "files": [
         {
@@ -3479,9 +2555,7 @@
       "type": "registry:example",
       "title": "Dropdown Menu Demo",
       "description": "Dropdown Menu example. A list of actions or options that opens from a button.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/dropdown-menu"
@@ -3525,25 +2599,6 @@
       "files": [
         {
           "path": "registry/default/examples/empty-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "empty-icon",
-      "type": "registry:example",
-      "title": "Empty Icon",
-      "description": "Empty example: Icon and border.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/button",
-        "@earth-ui/empty"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/empty-icon.tsx",
           "type": "registry:example"
         }
       ]
@@ -3593,29 +2648,12 @@
         "@earth-ui/checkbox",
         "@earth-ui/field",
         "@earth-ui/input",
-        "@earth-ui/native-select",
+        "@earth-ui/select",
         "@earth-ui/textarea"
       ],
       "files": [
         {
           "path": "registry/default/examples/field-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "field-disabled",
-      "type": "registry:example",
-      "title": "Field Disabled",
-      "description": "Field example: Disabled.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/field",
-        "@earth-ui/input"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/field-disabled.tsx",
           "type": "registry:example"
         }
       ]
@@ -3633,23 +2671,6 @@
       "files": [
         {
           "path": "registry/default/examples/field-input.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "field-invalid",
-      "type": "registry:example",
-      "title": "Field Invalid",
-      "description": "Field example: Error.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/field",
-        "@earth-ui/input"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/field-invalid.tsx",
           "type": "registry:example"
         }
       ]
@@ -3695,6 +2716,8 @@
       "description": "Hover Card example. Previews the content behind a link when people hover or focus it.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/avatar",
+        "@earth-ui/button",
         "@earth-ui/hover-card"
       ],
       "files": [
@@ -3711,6 +2734,7 @@
       "description": "Input example. A single-line text field. Pair it with a Label, or a Field for descriptions and errors.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/field",
         "@earth-ui/input"
       ],
       "files": [
@@ -3727,6 +2751,7 @@
       "description": "Input example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/field",
         "@earth-ui/input"
       ],
       "files": [
@@ -3773,42 +2798,6 @@
       ]
     },
     {
-      "name": "input-group-disabled",
-      "type": "registry:example",
-      "title": "Input Group Disabled",
-      "description": "Input Group example: Disabled.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/input-group"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/input-group-disabled.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "input-group-invalid",
-      "type": "registry:example",
-      "title": "Input Group Invalid",
-      "description": "Input Group example: Invalid.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/input-group"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/input-group-invalid.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "input-group-text",
       "type": "registry:example",
       "title": "Input Group Text",
@@ -3849,8 +2838,8 @@
       "description": "Input example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/input",
-        "@earth-ui/label"
+        "@earth-ui/field",
+        "@earth-ui/input"
       ],
       "files": [
         {
@@ -3882,6 +2871,7 @@
       "description": "Input OTP example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/field",
         "@earth-ui/input-otp"
       ],
       "files": [
@@ -3898,7 +2888,6 @@
       "description": "Input OTP example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/field",
         "@earth-ui/input-otp"
       ],
       "files": [
@@ -3917,6 +2906,7 @@
         "input-otp"
       ],
       "registryDependencies": [
+        "@earth-ui/field",
         "@earth-ui/input-otp"
       ],
       "files": [
@@ -4163,22 +3153,6 @@
       ]
     },
     {
-      "name": "native-select-sizes",
-      "type": "registry:example",
-      "title": "Native Select Sizes",
-      "description": "Native Select example: Sizes.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/native-select"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/native-select-sizes.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "navigation-menu-demo",
       "type": "registry:example",
       "title": "Navigation Menu Demo",
@@ -4320,7 +3294,7 @@
       "description": "Radio Group example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/label",
+        "@earth-ui/field",
         "@earth-ui/radio-group"
       ],
       "files": [
@@ -4337,7 +3311,7 @@
       "description": "Radio Group example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/label",
+        "@earth-ui/field",
         "@earth-ui/radio-group"
       ],
       "files": [
@@ -4494,22 +3468,6 @@
       ]
     },
     {
-      "name": "select-sizes",
-      "type": "registry:example",
-      "title": "Select Sizes",
-      "description": "Select example: Sizes.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/select"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/select-sizes.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "separator-demo",
       "type": "registry:example",
       "title": "Separator Demo",
@@ -4587,31 +3545,14 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "@earth-ui/breadcrumb",
-        "@earth-ui/separator",
+        "@earth-ui/avatar",
+        "@earth-ui/collapsible",
+        "@earth-ui/dropdown-menu",
         "@earth-ui/sidebar"
       ],
       "files": [
         {
           "path": "registry/default/examples/sidebar-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "sidebar-inset",
-      "type": "registry:example",
-      "title": "Sidebar Inset",
-      "description": "Sidebar example: Inset with sub-menu.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/sidebar"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/sidebar-inset.tsx",
           "type": "registry:example"
         }
       ]
@@ -4731,25 +3672,6 @@
       ]
     },
     {
-      "name": "sonner-close-button",
-      "type": "registry:example",
-      "title": "Sonner Close Button",
-      "description": "Sonner example: Close button.",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "@earth-ui/button",
-        "@earth-ui/sonner"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/sonner-close-button.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "sonner-demo",
       "type": "registry:example",
       "title": "Sonner Demo",
@@ -4811,6 +3733,7 @@
       "description": "Spinner example. An animated indicator that shows something is loading.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/item",
         "@earth-ui/spinner"
       ],
       "files": [
@@ -4860,7 +3783,7 @@
       "description": "Switch example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/label",
+        "@earth-ui/field",
         "@earth-ui/switch"
       ],
       "files": [
@@ -4877,7 +3800,7 @@
       "description": "Switch example: Sizes.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/label",
+        "@earth-ui/field",
         "@earth-ui/switch"
       ],
       "files": [
@@ -4894,7 +3817,6 @@
       "description": "Table example. Rows and columns of data, such as bookings or payments.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/badge",
         "@earth-ui/table"
       ],
       "files": [
@@ -4911,6 +3833,7 @@
       "description": "Tabs example. Switches between related views that share one place on the page.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/card",
         "@earth-ui/tabs"
       ],
       "files": [
@@ -5009,6 +3932,7 @@
       "description": "Textarea example: Disabled.",
       "dependencies": [],
       "registryDependencies": [
+        "@earth-ui/field",
         "@earth-ui/textarea"
       ],
       "files": [
@@ -5025,7 +3949,7 @@
       "description": "Textarea example: Invalid.",
       "dependencies": [],
       "registryDependencies": [
-        "@earth-ui/label",
+        "@earth-ui/field",
         "@earth-ui/textarea"
       ],
       "files": [
@@ -5048,23 +3972,6 @@
       "files": [
         {
           "path": "registry/default/examples/textarea-with-label.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "toast-action",
-      "type": "registry:example",
-      "title": "Toast Action",
-      "description": "Toast example: With action.",
-      "dependencies": [],
-      "registryDependencies": [
-        "@earth-ui/button",
-        "@earth-ui/toast"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/toast-action.tsx",
           "type": "registry:example"
         }
       ]
@@ -5142,7 +4049,9 @@
       "type": "registry:example",
       "title": "Toggle Group Demo",
       "description": "Toggle Group example. A set of toggles where one, or several, can be pressed at a time.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/toggle-group"
       ],
@@ -5158,7 +4067,9 @@
       "type": "registry:example",
       "title": "Toggle Group Disabled",
       "description": "Toggle Group example: Disabled.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/toggle-group"
       ],
@@ -5218,29 +4129,13 @@
       ]
     },
     {
-      "name": "toggle-icon",
-      "type": "registry:example",
-      "title": "Toggle Icon",
-      "description": "Toggle example: Icon.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@earth-ui/toggle"
-      ],
-      "files": [
-        {
-          "path": "registry/default/examples/toggle-icon.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "toggle-outline",
       "type": "registry:example",
       "title": "Toggle Outline",
       "description": "Toggle example: Outline.",
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "@earth-ui/toggle"
       ],
@@ -5272,9 +4167,7 @@
       "type": "registry:example",
       "title": "Tooltip Demo",
       "description": "Tooltip example. A short label that appears when people hover or focus a control.",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@earth-ui/button",
         "@earth-ui/tooltip"

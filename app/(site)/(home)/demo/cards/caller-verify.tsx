@@ -71,13 +71,13 @@ export function CallerVerifyCard() {
           </div>
         )}
         {state === "checking" && (
-          <div className="flex h-10 items-center gap-2 text-eds-secondary">
+          <div className="flex h-10 items-center gap-2 text-muted-foreground">
             <Spinner />
             Matching patient record…
           </div>
         )}
         {state === "verified" && (
-          <Alert variant="positive">
+          <Alert>
             <CircleCheckIcon />
             <AlertTitle>Eleanor Shaw · DOB 03/14/1961</AlertTitle>
             <AlertDescription>Dr. Patel's patient · next visit Dec 2</AlertDescription>
