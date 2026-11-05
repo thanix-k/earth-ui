@@ -24,7 +24,11 @@ made third-party shadcn code look different from ours, and needed a custom
 ## Consequences
 
 - Earth's look is only colour, radius and font. Every radius tier is
-  `var(--radius)` (8px). Buttons set `--radius: 9999px` on `[data-slot="button"]`
-  in the base CSS, so they are pills without a component edit. EDS hover/pressed tiers,
+  `var(--radius)` (8px). The base CSS sets `--radius: 9999px` on `.group/button`,
+  the class `buttonVariants` adds, so everything styled as a button is a pill
+  (including triggers rendered as a Button, whose `data-slot` is the trigger's)
+  without a component edit. Calendar's cells (today, range ends) get the same
+  pill through `--cell-radius` on `.group/calendar`, unlayered so it beats the
+  calendar's own utility. EDS hover/pressed tiers,
   type scale, shadows and its focus ring are not reproduced.
 - Components can be refreshed from shadcn without merging styles.

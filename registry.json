@@ -119,9 +119,12 @@
           "body": {
             "@apply bg-background text-foreground font-sans": {}
           },
-          "[data-slot=\"button\"]": {
+          ".group\\/button": {
             "--radius": "9999px"
           }
+        },
+        ".group\\/calendar": {
+          "--cell-radius": "9999px"
         }
       }
     },
