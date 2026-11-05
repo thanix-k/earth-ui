@@ -118,29 +118,10 @@
           },
           "body": {
             "@apply bg-background text-foreground font-sans": {}
+          },
+          "[data-slot=\"button\"]": {
+            "--radius": "9999px"
           }
-        }
-      }
-    },
-    {
-      "name": "theme-soft",
-      "type": "registry:theme",
-      "title": "Earth Soft",
-      "description": "A rounder radius. Install after base.",
-      "cssVars": {
-        "light": {
-          "radius": "12px"
-        }
-      }
-    },
-    {
-      "name": "theme-sharp",
-      "type": "registry:theme",
-      "title": "Earth Sharp",
-      "description": "A square radius. Install after base.",
-      "cssVars": {
-        "light": {
-          "radius": "2px"
         }
       }
     },

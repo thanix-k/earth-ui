@@ -23,7 +23,8 @@ made third-party shadcn code look different from ours, and needed a custom
 
 ## Consequences
 
-- Earth's look is only colour, radius and font. `--radius: 8px` drives
-  `rounded-sm`…`rounded-2xl` as EDS's 4/6/8/12/16; `3xl`/`4xl` stay Tailwind's. EDS hover/pressed tiers,
+- Earth's look is only colour, radius and font. Every radius tier is
+  `var(--radius)` (8px). Buttons set `--radius: 9999px` on `[data-slot="button"]`
+  in the base CSS, so they are pills without a component edit. EDS hover/pressed tiers,
   type scale, shadows and its focus ring are not reproduced.
 - Components can be refreshed from shadcn without merging styles.

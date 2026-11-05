@@ -103,6 +103,9 @@
       },
       "body": {
         "@apply bg-background text-foreground font-sans": {}
+      },
+      "[data-slot=\"button\"]": {
+        "--radius": "9999px"
       }
     }
   },
