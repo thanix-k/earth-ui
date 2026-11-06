@@ -7,6 +7,7 @@ export const docs = defineDocs({
     schema: frontmatterSchema.extend({
       links: z.object({ doc: z.string().url(), api: z.string().url() }).partial().optional(),
     }),
+    postprocess: { includeProcessedMarkdown: true },
   },
 });
 

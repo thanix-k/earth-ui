@@ -1,0 +1,42 @@
+---
+title: MCP server
+description: Connect AI agents to Earth UI docs through the Model Context Protocol.
+---
+
+The docs expose an [MCP](https://modelcontextprotocol.io) server, so AI agents can read and search Earth UI docs directly. Use it to give a coding assistant accurate component APIs and usage examples.
+
+## Endpoint
+
+```txt
+https://earthui.vercel.app/mcp
+```
+
+The endpoint uses the streamable HTTP transport. No authentication is required.
+
+## Connect a client
+
+### Claude Code
+
+```bash
+claude mcp add --transport http earth-ui https://earthui.vercel.app/mcp
+```
+
+### Other clients
+
+Add a remote MCP server with the URL above and transport `http`. Check your client's docs for the exact setting name.
+
+## Tools
+
+| Tool         | Input              | Output                                                 |
+| ------------ | ------------------ | ------------------------------------------------------ |
+| `list_pages` | None               | Index of all docs pages with their URLs.               |
+| `get_page`   | `url` of a page    | Page content as Markdown, or an error if no page matches. |
+| `search`     | `query`, `locale?` | Matching docs pages and sections, as JSON.             |
+
+## Example
+
+Ask your agent to use the `earth-ui` server:
+
+> Use the earth-ui docs to find the props for `Button`, then write a destructive button.
+
+The agent calls `search` for `button`, then `get_page` for `/docs/components/button`.
