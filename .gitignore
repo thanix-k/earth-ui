@@ -1,8 +1,9 @@
 node_modules
+dist
 .next
 .source
-next-env.d.ts
+.nx
 *.tsbuildinfo
-.DS_Store
-.env*
+next-env.d.ts
 .vercel
+.claude/launch.json

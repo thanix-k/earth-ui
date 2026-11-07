@@ -1,0 +1,15 @@
+/* Earth UI Theme from source, then fumadocs on top of the same shadcn tokens. */
+@import '../../../packages/ui/src/index.css';
+@import 'fumadocs-ui/css/shadcn.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@source '../../../packages/ui/src';
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}

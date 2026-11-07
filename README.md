@@ -1,33 +1,18 @@
 # Earth UI
 
-The Earth Design System as a [shadcn](https://ui.shadcn.com) registry: every
-shadcn Base UI component, styled with Earth's setmore-black tokens.
+AnywhereWorks' design system: [shadcn/ui](https://ui.shadcn.com) with one Preset, shipped as the npm package `earthui` and as the `@earthui` shadcn registry (the registry namespace is separate from npm, so no npm org is needed). See [CONTEXT.md](CONTEXT.md) for vocabulary and [docs/adr](docs/adr) for decisions.
 
-```bash
-npx shadcn@latest init https://earthui.vercel.app/r/base.json
-npx shadcn@latest add @earth-ui/button
-```
-
-Docs: https://earthui.vercel.app
-
-## Development
+| Path | What |
+| --- | --- |
+| `packages/ui` | Generated Components, hooks, lib, Examples, `registry.json`. Never edit by hand. |
+| `apps/docs` | Fumadocs site. Serves the registry at `/r/{name}.json` and `llms.txt`. |
+| `scripts/sync-shadcn.mjs` | Upstream sync. Holds the Preset. |
 
 ```bash
 pnpm install
-pnpm dev          # builds the registry, then serves docs on :4000
-pnpm check        # what CI runs
+pnpm dev            # docs at localhost:3000
+pnpm build          # npm package + docs + registry
+pnpm sync:shadcn    # regenerate from shadcn (CI runs this weekly)
 ```
 
-- `tokens/`: DTCG design tokens. This is the source of truth for colour, type,
-  radius and shadow.
-- `registry/default/`: components, examples and lib. These files are hand-written.
-- `content/docs/`: docs pages (Fumadocs MDX).
-- `scripts/build-registry.ts`: generates everything else, namely `registry.json`,
-  `public/r/*`, `app/earth.css` and `registry/default/lib/cn.ts`.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a component,
-[CONTEXT.md](CONTEXT.md) for vocabulary and [docs/adr](docs/adr) for decisions.
-
-## License
-
-MIT
+Releases: run the **Release** workflow and pick patch, minor or major. Needs the `NPM_TOKEN` secret.

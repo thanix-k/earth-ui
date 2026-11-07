@@ -1,0 +1,31 @@
+name: Upstream sync
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm add -Dw shadcn@latest
+      - run: pnpm sync:shadcn
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: shadcn-sync
+          commit-message: "Upstream sync with shadcn"
+          title: "Upstream sync with shadcn"
+          body: |
+            Weekly regeneration of every Component and Example under the Preset, with the shadcn CLI bumped to latest.
+
+            Review the diff, then pick the version bump when running the Release workflow (breaking upstream change = major).
+          labels: shadcn-sync

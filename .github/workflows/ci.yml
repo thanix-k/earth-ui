@@ -1,22 +1,45 @@
 name: CI
-
 on:
+  pull_request:
   push:
     branches: [main]
-  pull_request:
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: pnpm
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
       - run: pnpm install --frozen-lockfile
-      # Rebuilds tokens, utils, registry.json and public/r, validates the
-      # registry, then fails if any generated file differs from the commit.
-      - run: pnpm check
-      - run: pnpm next build
+      - run: pnpm build
+
+  # ADR 0001: Components are generated, never edited. If a PR touches the UI
+  # package, regenerating from upstream must reproduce it exactly.
+  generated:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - id: changed
+        run: |
+          if git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -qE '^(packages/ui/(src|registry.json|components.json)|scripts/sync-shadcn.mjs)'; then
+            echo "ui=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.changed.outputs.ui
+        uses: pnpm/action-setup@v4
+      - if: steps.changed.outputs.ui
+        uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - if: steps.changed.outputs.ui
+        run: pnpm install --frozen-lockfile && pnpm sync:shadcn
+      - if: steps.changed.outputs.ui
+        run: |
+          # Only generated source is compared. Dependency ranges depend on what npm
+          # resolves at sync time, so they change only via the weekly sync PR.
+          git diff --exit-code -- packages/ui/src packages/ui/registry.json packages/ui/components.json || {
+            echo "::error::packages/ui differs from a fresh shadcn generation. Do not edit Components; change the Preset in scripts/sync-shadcn.mjs and run pnpm sync:shadcn."
+            exit 1
+          }

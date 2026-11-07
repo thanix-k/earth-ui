@@ -1,0 +1,47 @@
+---
+title: Getting started
+description: Use Earth UI from npm or copy it into your project with the shadcn registry.
+---
+
+Earth UI is [shadcn/ui](https://ui.shadcn.com) with one preset applied, nothing more. Pick an install mode with the toggle on any page; every code sample follows it.
+
+<Install />
+
+## npm
+
+Depend on `earthui`. Your app needs Tailwind CSS v4.
+
+```bash
+pnpm add earthui
+```
+
+Replace `@import "tailwindcss";` in your main CSS file with:
+
+```css
+@import "earthui/tailwind.css";
+```
+
+Then import components by name:
+
+```tsx
+import { Button } from "earthui/button"
+```
+
+## shadcn registry
+
+Own the code. Add the registry to your `components.json`:
+
+```json
+{
+  "registries": {
+    "@earthui": "https://earthui.vercel.app/r/{name}.json"
+  }
+}
+```
+
+Install the theme once, then any component:
+
+```bash
+pnpm dlx shadcn@latest add @earthui/theme
+pnpm dlx shadcn@latest add @earthui/button
+```
