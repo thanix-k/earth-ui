@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       bump:
-        description: Version bump for earthui ("none" re-publishes the current version, e.g. after a failed publish)
+        description: Version bump for eds-ui ("none" re-publishes the current version, e.g. after a failed publish)
         type: choice
         options: [patch, minor, major, none]
         required: true
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: pnpm, registry-url: "https://registry.npmjs.org" }
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx run earthui:build
+      - run: pnpm nx run eds-ui:build
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

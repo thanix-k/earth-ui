@@ -23,7 +23,7 @@ importers:
       cn:
         specifier: ^0.5.0
         version: 0.5.2
-      earthui:
+      eds-ui:
         specifier: workspace:*
         version: link:../../packages/ui
       fumadocs-core:

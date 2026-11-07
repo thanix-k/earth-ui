@@ -14,10 +14,10 @@
   },
   "release": {
     "projects": [
-      "earthui"
+      "eds-ui"
     ],
     "releaseTag": {
-      "pattern": "earthui@{version}"
+      "pattern": "eds-ui@{version}"
     },
     "version": {
       "conventionalCommits": false,
