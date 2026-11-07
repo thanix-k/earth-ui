@@ -6,7 +6,7 @@ export function Install({ name }: { name?: string }) {
   const mode = useInstallMode();
   const code =
     mode === 'npm'
-      ? 'pnpm add earthui'
+      ? 'pnpm add eds-ui'
       : `pnpm dlx shadcn@latest add @earthui/${name ?? 'theme'}`;
   return (
     <div className="not-prose my-6 flex flex-col gap-2">

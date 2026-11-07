@@ -1,6 +1,6 @@
 # Earth UI
 
-AnywhereWorks' design system: [shadcn/ui](https://ui.shadcn.com) with one Preset, shipped as the npm package `earthui` and as the `@earthui` shadcn registry (the registry namespace is separate from npm, so no npm org is needed). See [CONTEXT.md](CONTEXT.md) for vocabulary and [docs/adr](docs/adr) for decisions.
+AnywhereWorks' design system: [shadcn/ui](https://ui.shadcn.com) with one Preset, shipped as the npm package `eds-ui` and as the `@earthui` shadcn registry (the registry namespace is separate from npm, so no npm org is needed). See [CONTEXT.md](CONTEXT.md) for vocabulary and [docs/adr](docs/adr) for decisions.
 
 | Path | What |
 | --- | --- |
