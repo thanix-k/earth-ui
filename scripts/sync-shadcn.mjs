@@ -52,7 +52,7 @@ try {
   writeJson(join(ui, "package.json"), pkg)
 
   writeJson(join(ui, "registry.json"), buildRegistry(index))
-  execFileSync("pnpm", ["install"], { stdio: "inherit", cwd: root })
+  execFileSync("pnpm", ["install", "--no-frozen-lockfile"], { stdio: "inherit", cwd: root })
 } finally {
   rmSync(tmp, { recursive: true, force: true })
 }

@@ -37,7 +37,9 @@ jobs:
         run: pnpm install --frozen-lockfile && pnpm sync:shadcn
       - if: steps.changed.outputs.ui
         run: |
-          git diff --exit-code || {
+          # Only generated source is compared. Dependency ranges depend on what npm
+          # resolves at sync time, so they change only via the weekly sync PR.
+          git diff --exit-code -- packages/ui/src packages/ui/registry.json packages/ui/components.json || {
             echo "::error::packages/ui differs from a fresh shadcn generation. Do not edit Components; change the Preset in scripts/sync-shadcn.mjs and run pnpm sync:shadcn."
             exit 1
           }
