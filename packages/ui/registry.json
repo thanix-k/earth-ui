@@ -1,0 +1,2707 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "earthui",
+  "homepage": "https://earthui.vercel.app",
+  "items": [
+    {
+      "name": "theme",
+      "dependencies": [
+        "class-variance-authority",
+        "cn",
+        "lucide-react",
+        "@base-ui/react",
+        "@fontsource-variable/inter"
+      ],
+      "devDependencies": [
+        "tw-animate-css",
+        "shadcn"
+      ],
+      "registryDependencies": [
+        "@earthui/utils"
+      ],
+      "files": [],
+      "cssVars": {
+        "theme": {
+          "font-heading": "var(--font-sans)",
+          "font-sans": "'Inter Variable', sans-serif",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar": "var(--sidebar)",
+          "color-chart-5": "var(--chart-5)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-1": "var(--chart-1)",
+          "color-ring": "var(--ring)",
+          "color-input": "var(--input)",
+          "color-border": "var(--border)",
+          "color-destructive": "var(--destructive)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-accent": "var(--accent)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-muted": "var(--muted)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-primary": "var(--primary)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-popover": "var(--popover)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-card": "var(--card)",
+          "color-foreground": "var(--foreground)",
+          "color-background": "var(--background)",
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
+        },
+        "light": {
+          "background": "oklch(1 0 0)",
+          "foreground": "oklch(0.145 0 0)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.145 0 0)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.145 0 0)",
+          "primary": "oklch(0.205 0 0)",
+          "primary-foreground": "oklch(0.985 0 0)",
+          "secondary": "oklch(0.97 0 0)",
+          "secondary-foreground": "oklch(0.205 0 0)",
+          "muted": "oklch(0.97 0 0)",
+          "muted-foreground": "oklch(0.556 0 0)",
+          "accent": "oklch(0.97 0 0)",
+          "accent-foreground": "oklch(0.205 0 0)",
+          "destructive": "oklch(0.577 0.245 27.325)",
+          "border": "oklch(0.922 0 0)",
+          "input": "oklch(0.922 0 0)",
+          "ring": "oklch(0.708 0 0)",
+          "chart-1": "oklch(0.87 0 0)",
+          "chart-2": "oklch(0.556 0 0)",
+          "chart-3": "oklch(0.439 0 0)",
+          "chart-4": "oklch(0.371 0 0)",
+          "chart-5": "oklch(0.269 0 0)",
+          "radius": "0.625rem",
+          "sidebar": "oklch(0.985 0 0)",
+          "sidebar-foreground": "oklch(0.145 0 0)",
+          "sidebar-primary": "oklch(0.205 0 0)",
+          "sidebar-primary-foreground": "oklch(0.985 0 0)",
+          "sidebar-accent": "oklch(0.97 0 0)",
+          "sidebar-accent-foreground": "oklch(0.205 0 0)",
+          "sidebar-border": "oklch(0.922 0 0)",
+          "sidebar-ring": "oklch(0.708 0 0)"
+        },
+        "dark": {
+          "background": "oklch(0.145 0 0)",
+          "foreground": "oklch(0.985 0 0)",
+          "card": "oklch(0.205 0 0)",
+          "card-foreground": "oklch(0.985 0 0)",
+          "popover": "oklch(0.205 0 0)",
+          "popover-foreground": "oklch(0.985 0 0)",
+          "primary": "oklch(0.922 0 0)",
+          "primary-foreground": "oklch(0.205 0 0)",
+          "secondary": "oklch(0.269 0 0)",
+          "secondary-foreground": "oklch(0.985 0 0)",
+          "muted": "oklch(0.269 0 0)",
+          "muted-foreground": "oklch(0.708 0 0)",
+          "accent": "oklch(0.269 0 0)",
+          "accent-foreground": "oklch(0.985 0 0)",
+          "destructive": "oklch(0.704 0.191 22.216)",
+          "border": "oklch(1 0 0 / 10%)",
+          "input": "oklch(1 0 0 / 15%)",
+          "ring": "oklch(0.556 0 0)",
+          "chart-1": "oklch(0.87 0 0)",
+          "chart-2": "oklch(0.556 0 0)",
+          "chart-3": "oklch(0.439 0 0)",
+          "chart-4": "oklch(0.371 0 0)",
+          "chart-5": "oklch(0.269 0 0)",
+          "sidebar": "oklch(0.205 0 0)",
+          "sidebar-foreground": "oklch(0.985 0 0)",
+          "sidebar-primary": "oklch(0.488 0.243 264.376)",
+          "sidebar-primary-foreground": "oklch(0.985 0 0)",
+          "sidebar-accent": "oklch(0.269 0 0)",
+          "sidebar-accent-foreground": "oklch(0.985 0 0)",
+          "sidebar-border": "oklch(1 0 0 / 10%)",
+          "sidebar-ring": "oklch(0.556 0 0)"
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
+        "@layer base": {
+          "*": {
+            "@apply border-border outline-ring/50": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground": {}
+          },
+          "button:not(:disabled), [role=\"button\"]:not(:disabled)": {
+            "cursor": "pointer"
+          },
+          "html": {
+            "@apply font-sans": {}
+          }
+        },
+        "@import \"@fontsource-variable/inter\"": {}
+      },
+      "type": "registry:style",
+      "title": "Earth UI Theme",
+      "description": "Earth UI Preset tokens, font and base styles."
+    },
+    {
+      "name": "accordion",
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/accordion",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/accordion-example.tsx",
+          "api": "https://base-ui.com/react/components/accordion.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "alert",
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/alert",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/alert-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/alert-dialog",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/alert-dialog-example.tsx",
+          "api": "https://base-ui.com/react/components/alert-dialog.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "files": [
+        {
+          "path": "src/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/aspect-ratio",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/aspect-ratio-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "avatar",
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/avatar",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/avatar-example.tsx",
+          "api": "https://base-ui.com/react/components/avatar.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "badge",
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/badge",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/badge-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/breadcrumb",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/breadcrumb-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "button",
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/button",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/button-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "button-group",
+      "registryDependencies": [
+        "@earthui/separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/button-group",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/button-group-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "calendar",
+      "dependencies": [
+        "cn",
+        "react-day-picker@latest",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/calendar",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/calendar-example.tsx",
+          "api": "https://react-day-picker.js.org"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "card",
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/card",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/card-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "carousel",
+      "dependencies": [
+        "cn",
+        "embla-carousel-react"
+      ],
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/carousel",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/carousel-example.tsx",
+          "api": "https://www.embla-carousel.com/get-started/react"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "chart",
+      "dependencies": [
+        "cn",
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "@earthui/card"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/chart",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/chart-example.tsx"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "checkbox",
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/checkbox",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/checkbox-example.tsx",
+          "api": "https://base-ui.com/react/components/checkbox.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/collapsible",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/collapsible-example.tsx",
+          "api": "https://base-ui.com/react/components/collapsible.md"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox",
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/input-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/combobox",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/combobox-example.tsx",
+          "api": "https://base-ui.com/react/components/combobox.md"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "command",
+      "dependencies": [
+        "cn",
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "@earthui/dialog",
+        "@earthui/input-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/command",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/command-example.tsx",
+          "api": "https://github.com/dip/cmdk"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu",
+      "files": [
+        {
+          "path": "src/components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/context-menu",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/context-menu-example.tsx",
+          "api": "https://base-ui.com/react/components/context-menu.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "dialog",
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/dialog",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/dialog-example.tsx",
+          "api": "https://base-ui.com/react/components/dialog.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "drawer",
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/drawer",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/drawer-example.tsx",
+          "api": "https://base-ui.com/react/components/drawer.md"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu",
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/dropdown-menu",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/dropdown-menu-example.tsx",
+          "api": "https://base-ui.com/react/components/menu.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "empty",
+      "files": [
+        {
+          "path": "src/components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/empty",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/empty-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "field",
+      "registryDependencies": [
+        "@earthui/label",
+        "@earthui/separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/field",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/field-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/hover-card",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/hover-card-example.tsx",
+          "api": "https://base-ui.com/react/components/hover-card.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "input",
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/input",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/input-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "input-group",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/input",
+        "@earthui/textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/input-group",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/input-group-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "input-otp",
+      "dependencies": [
+        "cn",
+        "input-otp"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/input-otp",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/input-otp-example.tsx",
+          "api": "https://input-otp.rodz.dev"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "item",
+      "registryDependencies": [
+        "@earthui/separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/item",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/item-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "label",
+      "files": [
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/label",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/label-example.tsx",
+          "api": "https://base-ui.com/react/components/label.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "menubar",
+      "registryDependencies": [
+        "@earthui/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/menubar",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/menubar-example.tsx",
+          "api": "https://base-ui.com/react/components/menubar.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/navigation-menu",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/navigation-menu-example.tsx",
+          "api": "https://base-ui.com/react/components/navigation-menu.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "pagination",
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/pagination",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/pagination-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "popover",
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/popover",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/popover-example.tsx",
+          "api": "https://base-ui.com/react/components/popover.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "progress",
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/progress",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/progress-example.tsx",
+          "api": "https://base-ui.com/react/components/progress.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/radio-group",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/radio-group-example.tsx",
+          "api": "https://base-ui.com/react/components/radio-group.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "resizable",
+      "dependencies": [
+        "cn",
+        "react-resizable-panels"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/resizable",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/resizable-example.tsx",
+          "api": "https://github.com/bvaughn/react-resizable-panels"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-area",
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/scroll-area",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/scroll-area-example.tsx",
+          "api": "https://base-ui.com/react/components/scroll-area.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "select",
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/select",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/select-example.tsx",
+          "api": "https://base-ui.com/react/components/select.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "separator",
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/separator",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/separator-example.tsx",
+          "api": "https://base-ui.com/react/components/separator.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "sheet",
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/sheet",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/sheet-example.tsx",
+          "api": "https://base-ui.com/react/components/dialog.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/input",
+        "@earthui/separator",
+        "@earthui/sheet",
+        "@earthui/skeleton",
+        "@earthui/tooltip",
+        "@earthui/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/sidebar",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/sidebar-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "skeleton",
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/skeleton",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/skeleton-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "slider",
+      "files": [
+        {
+          "path": "src/components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/slider",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/slider-example.tsx",
+          "api": "https://base-ui.com/react/components/slider.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "sonner",
+      "dependencies": [
+        "sonner",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/sonner",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/sonner-example.tsx",
+          "api": "https://sonner.emilkowal.ski"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner",
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/spinner",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/spinner-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "switch",
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/switch",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/switch-example.tsx",
+          "api": "https://base-ui.com/react/components/switch.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "table",
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/table",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/table-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "tabs",
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/tabs",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/tabs-example.tsx",
+          "api": "https://base-ui.com/react/components/tabs.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "textarea",
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/textarea",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/textarea-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "toast",
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/toast",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/toast-example.tsx",
+          "api": "https://base-ui.com/react/components/toast.md"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle",
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/toggle",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/toggle-example.tsx",
+          "api": "https://base-ui.com/react/components/toggle.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "registryDependencies": [
+        "@earthui/toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/toggle-group",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/toggle-group-example.tsx",
+          "api": "https://base-ui.com/react/components/toggle-group.md"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/tooltip",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/tooltip-example.tsx",
+          "api": "https://base-ui.com/react/components/tooltip.md"
+        }
+      },
+      "docs": "The `tooltip` component has been added. Remember to wrap your app with the `TooltipProvider` component.\n\n```tsx title=\"app/layout.tsx\"\nimport { TooltipProvider } from \"@/components/ui/tooltip\"\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <TooltipProvider>{children}</TooltipProvider>\n      </body>\n    </html>\n  )\n}\n```\n",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "kbd",
+      "files": [
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/kbd",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/kbd-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "native-select",
+      "files": [
+        {
+          "path": "src/components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/native-select",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/native-select-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "direction",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/direction",
+          "api": "https://base-ui.com/react/utils/direction-provider.md"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "attachment",
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "bubble",
+      "files": [
+        {
+          "path": "src/components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ],
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "questionnaire",
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ],
+      "registryDependencies": [
+        "@earthui/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/questionnaire",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/questionnaire-example.tsx"
+        }
+      },
+      "type": "registry:ui"
+    },
+    {
+      "name": "marker",
+      "files": [
+        {
+          "path": "src/components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "trace",
+      "registryDependencies": [
+        "@earthui/collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/trace",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/trace-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "code-block",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/use-highlighted-code"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "links": {
+          "docs": "https://ui.shadcn.com/docs/components/base/code-block",
+          "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/base/examples/code-block-example.tsx"
+        }
+      },
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "message",
+      "files": [
+        {
+          "path": "src/components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "accordion-example",
+      "title": "Accordion",
+      "registryDependencies": [
+        "@earthui/accordion",
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/accordion-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "alert-example",
+      "title": "Alert",
+      "registryDependencies": [
+        "@earthui/alert",
+        "@earthui/badge",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/alert-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "alert-dialog-example",
+      "title": "Alert Dialog",
+      "registryDependencies": [
+        "@earthui/alert-dialog",
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/alert-dialog-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "aspect-ratio-example",
+      "title": "Aspect Ratio",
+      "registryDependencies": [
+        "@earthui/aspect-ratio",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/aspect-ratio-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "avatar-example",
+      "title": "Avatar",
+      "registryDependencies": [
+        "@earthui/avatar",
+        "@earthui/button",
+        "@earthui/empty",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/avatar-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "badge-example",
+      "title": "Badge",
+      "registryDependencies": [
+        "@earthui/badge",
+        "@earthui/spinner",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/badge-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "breadcrumb-example",
+      "title": "Breadcrumb",
+      "registryDependencies": [
+        "@earthui/breadcrumb",
+        "@earthui/dropdown-menu",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/breadcrumb-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "button-example",
+      "title": "Button",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "button-group-example",
+      "title": "Button Group",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/button-group",
+        "@earthui/dropdown-menu",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/input-group",
+        "@earthui/label",
+        "@earthui/popover",
+        "@earthui/select",
+        "@earthui/tooltip",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-group-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "calendar-example",
+      "title": "Calendar",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/calendar",
+        "@earthui/card",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/label",
+        "@earthui/popover",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/calendar-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "card-example",
+      "title": "Card",
+      "registryDependencies": [
+        "@earthui/avatar",
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/card-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "carousel-example",
+      "title": "Carousel",
+      "registryDependencies": [
+        "@earthui/card",
+        "@earthui/carousel",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/carousel-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "chart-example",
+      "title": "Chart",
+      "registryDependencies": [
+        "@earthui/chart",
+        "@earthui/card",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/chart-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "checkbox-example",
+      "title": "Checkbox",
+      "registryDependencies": [
+        "@earthui/checkbox",
+        "@earthui/field",
+        "@earthui/table",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/checkbox-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "collapsible-example",
+      "title": "Collapsible",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/collapsible",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/tabs",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/collapsible-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "combobox-example",
+      "title": "Combobox",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/combobox",
+        "@earthui/dialog",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/input-group",
+        "@earthui/item",
+        "@earthui/select",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/combobox-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "command-example",
+      "title": "Command",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/command",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/command-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "context-menu-example",
+      "title": "Context Menu",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/context-menu",
+        "@earthui/dialog",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/context-menu-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "dialog-example",
+      "title": "Dialog",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/checkbox",
+        "@earthui/dialog",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/input-group",
+        "@earthui/kbd",
+        "@earthui/native-select",
+        "@earthui/select",
+        "@earthui/switch",
+        "@earthui/tabs",
+        "@earthui/textarea",
+        "@earthui/tooltip",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/dialog-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "drawer-example",
+      "title": "Drawer",
+      "registryDependencies": [
+        "@earthui/drawer",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/drawer-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "dropdown-menu-example",
+      "title": "Dropdown Menu",
+      "registryDependencies": [
+        "@earthui/avatar",
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/dropdown-menu",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/dropdown-menu-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "empty-example",
+      "title": "Empty",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/empty",
+        "@earthui/input-group",
+        "@earthui/kbd",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/empty-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "field-example",
+      "title": "Field",
+      "registryDependencies": [
+        "@earthui/badge",
+        "@earthui/checkbox",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/input-otp",
+        "@earthui/native-select",
+        "@earthui/radio-group",
+        "@earthui/select",
+        "@earthui/slider",
+        "@earthui/switch",
+        "@earthui/textarea",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/field-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "hover-card-example",
+      "title": "Hover Card",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/hover-card",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/hover-card-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "input-example",
+      "title": "Input",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/native-select",
+        "@earthui/select",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "input-group-example",
+      "title": "Input Group",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/button-group",
+        "@earthui/card",
+        "@earthui/dropdown-menu",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/input-group",
+        "@earthui/kbd",
+        "@earthui/popover",
+        "@earthui/spinner",
+        "@earthui/textarea",
+        "@earthui/tooltip",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-group-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "input-otp-example",
+      "title": "Input OTP",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/field",
+        "@earthui/input-otp",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-otp-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "item-example",
+      "title": "Item",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/item",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/item-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "kbd-example",
+      "title": "Kbd",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/input-group",
+        "@earthui/kbd",
+        "@earthui/tooltip",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/kbd-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "label-example",
+      "title": "Label",
+      "registryDependencies": [
+        "@earthui/checkbox",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/label",
+        "@earthui/textarea",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/label-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "menubar-example",
+      "title": "Menubar",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/menubar",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/menubar-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "native-select-example",
+      "title": "Native Select",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/native-select",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/native-select-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "navigation-menu-example",
+      "title": "Navigation Menu",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/navigation-menu",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/navigation-menu-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "pagination-example",
+      "title": "Pagination",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/pagination",
+        "@earthui/select",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/pagination-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "popover-example",
+      "title": "Popover",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/popover",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/popover-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "progress-example",
+      "title": "Progress",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/item",
+        "@earthui/progress",
+        "@earthui/slider",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/progress-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "radio-group-example",
+      "title": "Radio Group",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/radio-group",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/radio-group-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "resizable-example",
+      "title": "Resizable",
+      "registryDependencies": [
+        "@earthui/resizable",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/resizable-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-area-example",
+      "title": "Scroll Area",
+      "registryDependencies": [
+        "@earthui/scroll-area",
+        "@earthui/separator",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/scroll-area-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "select-example",
+      "title": "Select",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/item",
+        "@earthui/native-select",
+        "@earthui/select",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/select-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "separator-example",
+      "title": "Separator",
+      "registryDependencies": [
+        "@earthui/separator",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/separator-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sheet-example",
+      "title": "Sheet",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/sheet",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sheet-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sidebar-example",
+      "title": "Sidebar",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dropdown-menu",
+        "@earthui/item",
+        "@earthui/label",
+        "@earthui/sidebar",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sidebar-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sidebar-icon-example",
+      "title": "Sidebar (Icon)",
+      "registryDependencies": [
+        "@earthui/avatar",
+        "@earthui/button",
+        "@earthui/collapsible",
+        "@earthui/dropdown-menu",
+        "@earthui/item",
+        "@earthui/sidebar",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sidebar-icon-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sidebar-inset-example",
+      "title": "Sidebar (Inset)",
+      "registryDependencies": [
+        "@earthui/collapsible",
+        "@earthui/sidebar",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sidebar-inset-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sidebar-floating-example",
+      "title": "Sidebar (Floating)",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/dropdown-menu",
+        "@earthui/field",
+        "@earthui/item",
+        "@earthui/sidebar",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sidebar-floating-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "skeleton-example",
+      "title": "Skeleton",
+      "registryDependencies": [
+        "@earthui/skeleton",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/skeleton-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "slider-example",
+      "title": "Slider",
+      "registryDependencies": [
+        "@earthui/label",
+        "@earthui/slider",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/slider-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "sonner-example",
+      "title": "Sonner",
+      "registryDependencies": [
+        "@earthui/sonner",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/sonner-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "spinner-example",
+      "title": "Spinner",
+      "registryDependencies": [
+        "@earthui/badge",
+        "@earthui/button",
+        "@earthui/empty",
+        "@earthui/field",
+        "@earthui/input-group",
+        "@earthui/spinner",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/spinner-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "switch-example",
+      "title": "Switch",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/label",
+        "@earthui/switch",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/switch-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "table-example",
+      "title": "Table",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dropdown-menu",
+        "@earthui/input",
+        "@earthui/select",
+        "@earthui/table",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/table-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "tabs-example",
+      "title": "Tabs",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/dropdown-menu",
+        "@earthui/tabs",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/tabs-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "textarea-example",
+      "title": "Textarea",
+      "registryDependencies": [
+        "@earthui/field",
+        "@earthui/textarea",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/textarea-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "toast-example",
+      "title": "Toast",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/toast",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/toast-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "toggle-example",
+      "title": "Toggle",
+      "registryDependencies": [
+        "@earthui/toggle",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/toggle-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "toggle-group-example",
+      "title": "Toggle Group",
+      "registryDependencies": [
+        "@earthui/input",
+        "@earthui/select",
+        "@earthui/toggle-group",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/toggle-group-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "tooltip-example",
+      "title": "Tooltip",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/kbd",
+        "@earthui/tooltip",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/tooltip-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "demo",
+      "title": "Demo",
+      "registryDependencies": [
+        "@earthui/alert-dialog",
+        "@earthui/badge",
+        "@earthui/button",
+        "@earthui/button-group",
+        "@earthui/card",
+        "@earthui/checkbox",
+        "@earthui/dropdown-menu",
+        "@earthui/field",
+        "@earthui/input-group",
+        "@earthui/item",
+        "@earthui/radio-group",
+        "@earthui/slider",
+        "@earthui/switch",
+        "@earthui/textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "component-example",
+      "title": "Example",
+      "registryDependencies": [
+        "@earthui/alert-dialog",
+        "@earthui/badge",
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/combobox",
+        "@earthui/dropdown-menu",
+        "@earthui/field",
+        "@earthui/input",
+        "@earthui/select",
+        "@earthui/textarea",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/component-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "attachment-example",
+      "title": "Attachment",
+      "registryDependencies": [
+        "@earthui/attachment",
+        "@earthui/button",
+        "@earthui/dialog",
+        "@earthui/example",
+        "@earthui/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/attachment-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "bubble-example",
+      "title": "Bubble",
+      "registryDependencies": [
+        "@earthui/bubble",
+        "@earthui/button",
+        "@earthui/collapsible",
+        "@earthui/example",
+        "@earthui/marker",
+        "@earthui/sonner"
+      ],
+      "files": [
+        {
+          "path": "src/components/bubble-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "questionnaire-example",
+      "title": "Questionnaire",
+      "registryDependencies": [
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/dialog",
+        "@earthui/example",
+        "@earthui/questionnaire",
+        "@earthui/sonner"
+      ],
+      "files": [
+        {
+          "path": "src/components/questionnaire-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "marker-example",
+      "title": "Marker",
+      "registryDependencies": [
+        "@earthui/marker",
+        "@earthui/button",
+        "@earthui/accordion",
+        "@earthui/drawer",
+        "@earthui/spinner",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/marker-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "code-block-example",
+      "title": "Code Block",
+      "dependencies": [
+        "streamdown"
+      ],
+      "registryDependencies": [
+        "@earthui/code-block",
+        "@earthui/use-highlighted-code",
+        "@earthui/bubble",
+        "@earthui/button",
+        "@earthui/card",
+        "@earthui/dialog",
+        "@earthui/message",
+        "@earthui/tabs",
+        "@earthui/trace",
+        "@earthui/example"
+      ],
+      "files": [
+        {
+          "path": "src/components/code-block-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "utils",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:lib"
+    },
+    {
+      "name": "example",
+      "title": "Example",
+      "files": [
+        {
+          "path": "src/components/example.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "files": [
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "type": "registry:hook"
+    },
+    {
+      "name": "use-highlighted-code",
+      "dependencies": [
+        "shiki"
+      ],
+      "files": [
+        {
+          "path": "src/hooks/use-highlighted-code.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/lib/highlighter.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:hook"
+    }
+  ]
+}

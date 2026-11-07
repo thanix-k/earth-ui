@@ -1,0 +1,33 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Version bump for @earthui/ui
+        type: choice
+        options: [patch, minor, major]
+        required: true
+
+permissions:
+  contents: write
+  id-token: write # npm provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm, registry-url: "https://registry.npmjs.org" }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm nx run @earthui/ui:build
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: pnpm nx release ${{ inputs.bump }} --skip-publish --yes
+      - run: git push --follow-tags
+      - run: pnpm nx release publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

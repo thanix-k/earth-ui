@@ -1,0 +1,3 @@
+# DS team owns the Preset, the Theme and Upstream syncs (ADR 0001).
+/scripts/sync-shadcn.mjs @thanix-k
+/packages/ui/ @thanix-k
