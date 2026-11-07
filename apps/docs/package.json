@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/pages.mjs && pnpm --filter @earthui/ui registry:build && next dev",
-    "build": "node scripts/pages.mjs && pnpm --filter @earthui/ui registry:build && next build",
+    "dev": "node scripts/pages.mjs && pnpm --filter earthui registry:build && next dev",
+    "build": "node scripts/pages.mjs && pnpm --filter earthui registry:build && next build",
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@earthui/ui": "workspace:*",
+    "earthui": "workspace:*",
     "cn": "^0.5.0",
     "fumadocs-core": "16.18.1",
     "fumadocs-mdx": "15.5.0",

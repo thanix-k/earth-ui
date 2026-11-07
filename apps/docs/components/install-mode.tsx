@@ -33,9 +33,9 @@ export function useInstallMode() {
 export function forMode(code: string, mode: InstallMode) {
   if (mode === 'registry') return code;
   return code
-    .replaceAll('"@/components/ui/', '"@earthui/ui/')
-    .replaceAll('"@/hooks/', '"@earthui/ui/hooks/')
-    .replaceAll('"@/lib/', '"@earthui/ui/lib/');
+    .replaceAll('"@/components/ui/', '"earthui/')
+    .replaceAll('"@/hooks/', '"earthui/hooks/')
+    .replaceAll('"@/lib/', '"earthui/lib/');
 }
 
 export function InstallModeToggle() {
