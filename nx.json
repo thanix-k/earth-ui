@@ -1,11 +1,32 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
-    "build": { "dependsOn": ["^build"], "outputs": ["{projectRoot}/dist", "{projectRoot}/.next"], "cache": true }
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/.next"
+      ],
+      "cache": true
+    }
   },
   "release": {
-    "projects": ["earthui"],
-    "version": { "conventionalCommits": false },
-    "changelog": { "projectChangelogs": true }
+    "projects": [
+      "earthui"
+    ],
+    "releaseTag": {
+      "pattern": "earthui@{version}"
+    },
+    "version": {
+      "conventionalCommits": false,
+      "fallbackCurrentVersionResolver": "disk",
+      "adjustSemverBumpsForZeroMajorVersion": false
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": true
+    }
   }
 }

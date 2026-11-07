@@ -9,6 +9,7 @@
     "release": "nx release"
   },
   "devDependencies": {
+    "@nx/js": "24.0.5",
     "nx": "24.0.5",
     "shadcn": "4.23.0"
   }
