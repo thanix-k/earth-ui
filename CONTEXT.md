@@ -1,76 +1,50 @@
-# Earth shadcn registry
+# Earth UI
 
-A public shadcn registry (`@earth-ui`) that re-skins shadcn on Base UI with the
-Earth Design System's setmore-black tokens. This repo is the source of truth
-(ADR-0002): tokens are authored here as DTCG JSON, seeded once from
-`@adaptavant/eds-brands@1.12.0`. eds-core is being sunset and is reference only.
+Earth UI is AnywhereWorks' design system: shadcn/ui components shaped only by a Preset, shipped two ways (npm package and shadcn registry) from one source.
 
 ## Language
 
-**EDS token**:
-A design token from `eds-brands/tokens/*.json` (DTCG), exposed here under the
-`eds-` namespace, property-scoped: `bg-eds-neutral-hover`, `text-eds-secondary`.
-_Avoid_: calling these "theme" or "shadcn" tokens.
+### The design system
 
-**shadcn alias**:
-A stock shadcn CSS variable (`--primary`, `--accent`, `--ring`, …) whose value
-is a reference to an EDS token. Exists so third-party shadcn code renders as Earth.
-_Avoid_: assuming shadcn `accent` means EDS `accent` — they differ (ADR-0001).
+**Preset**:
+The shadcn preset code (`bIkeymG`) plus init flags that decide the look of every Component. The only place the design system is customised.
+_Avoid_: theme config, customisation, overrides
 
-**Component API**:
-Stock shadcn / Base UI props and composition (`variant="outline"`, `size="sm"`).
-EDS-only variants are added only where shadcn has no equivalent. eds-core
-prop names (`accentPrimary`, `isDisabled`) are not accepted. A migration
-guide is out of scope for release 1.
-_Avoid_: EDS prop names in component source.
+**Theme**:
+The tokens (colours, radius, font) produced by the Preset, shipped as a stylesheet and as a registry item.
+_Avoid_: tokens file, skin
 
-**Release 1**:
-Every shadcn Base UI component, re-skinned to Earth. EDS-only components
-(chip, tag, select-card, timepicker…) come later.
+**Component**:
+A UI building block exactly as shadcn generates it under the Preset. Never edited by hand.
+_Avoid_: primitive, widget, fork
 
-**Seed**:
-The one-time starting copy of a component from shadcn's Base UI source.
-After seeding, the file is owned here and never re-synced (ADR-0003).
-_Avoid_: upstream, sync.
+**Example**:
+A small usage demo of a Component, taken from shadcn's registry, shown in the docs.
+_Avoid_: demo, story, snippet
 
-**Generated output**:
-Anything a script writes: token CSS, registry item JSON, `registry.json`,
-`public/r/*`, docs preview index, install tabs. Never hand-edited.
+**Registry item**:
+One installable unit in the Earth UI shadcn registry (a Component, the Theme, a hook, a lib file, or an Example).
+_Avoid_: block, package
 
-**Icons**:
-lucide (shadcn's default `iconLibrary`). EDS icons are not shipped.
+### Distribution
 
-**Focus ring**:
-EDS's ring, not shadcn's 3px translucent ring. Buttons, links and other
-controls: 1px gap in the canvas colour plus a 2px `border-focus` ring
-(`#111` light). Text inputs: no ring; the border becomes 2px `border-input-active`.
+**Install mode**:
+How a Consumer gets Components: **npm mode** (depend on the published package) or **registry mode** (copy source into their project with the shadcn CLI).
+_Avoid_: channel, flavour
 
-**Docs (release 1)**:
-Information architecture follows coss.com/ui/docs. Overview: Introduction,
-Get Started (incl. AI usage: shadcn MCP, v0, Lovable). Components: one page
-each (preview, code, install tabs, examples).
-No foundations pages, migration guide, particles or chat UI.
+**Consumer**:
+A team or app that uses Earth UI in either Install mode.
+_Avoid_: user, client
 
-**Demo**:
-The `/demo` showcase page: components composed into product moments from
-Full Creative's consumer products (full.io/tools), one card per moment.
-App-local code, not registry items; not customisable. Earth's version of
-shadcn's `/create`.
-_Avoid_: calling these blocks or templates.
+### Maintenance
 
-**Block**:
-A page-level registry item (`@earth-ui/login-03`, `@earth-ui/sidebar-07`) mirrored
-from shadcn's Base UI blocks by `scripts/sync-blocks.ts` and kept current by a
-weekly CI job (ADR-0005). Generated, never hand-edited. The one thing in this
-repo that tracks shadcn upstream; components are seeded once.
-_Avoid_: editing block files; calling `/demo` cards blocks.
+**Upstream sync**:
+Regenerating every Component and Example from the latest shadcn under the Preset, reviewed as one change.
+_Avoid_: update, upgrade, rebase
 
-**Figma library**:
-The `EDS playground` Figma file, rebuilt from this repo (ADR-0004). Same
-components, parts, props and tokens as the registry; Code Connect on each.
-_Avoid_: treating Figma as the source; drawing components the registry lacks.
+**DS team**:
+The people who own the Preset, the Theme and Upstream syncs. Nobody else changes them.
+_Avoid_: maintainers, core team
 
-**Base brand**:
-setmore-black. The only brand shipped. No brand switching. Ships both its
-light and dark colour schemes (`:root` / `.dark`), both generated.
-_Avoid_: theme, brand switcher; reading "no theming" as "no dark mode".
+**Prototyper**:
+A future tool for agentic prototyping on top of Earth UI. Deliberately undefined for now.
