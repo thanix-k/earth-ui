@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       bump:
-        description: Version bump for earthui
+        description: Version bump for earthui ("none" re-publishes the current version, e.g. after a failed publish)
         type: choice
-        options: [patch, minor, major]
+        options: [patch, minor, major, none]
         required: true
 
 permissions:
@@ -26,8 +26,10 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - run: pnpm nx release ${{ inputs.bump }} --skip-publish
-      - run: git push --follow-tags
+      - if: inputs.bump != 'none'
+        run: pnpm nx release ${{ inputs.bump }} --skip-publish
+      - if: inputs.bump != 'none'
+        run: git push --follow-tags
       - run: pnpm nx release publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
